@@ -102,6 +102,8 @@
                   <li><a href="{{ route('committee.index') }}" ><i class="fas fa-home"></i> Committee </span></a></li>
                   <li><a href="{{ route('gallery.index') }}" ><i class="fas fa-home"></i> Gallery </span></a></li>
                   <li><a href="{{ route('allinfo.index') }}" ><i class="fas fa-home"></i> Info </span></a></li>
+                  <li><a href="{{ route('category.index') }}" ><i class="fas fa-home"></i> Category </span></a></li>
+                  <li><a href="{{ route('blog.index') }}" ><i class="fas fa-home"></i> Blogs </span></a></li>
                   <li><a href="{{ route('ad.index') }}" ><i class="fas fa-home"></i> Ad </span></a></li>
                   <li><a href="{{ route('setting.index') }}" ><i class="fas fa-home"></i> Settings </span></a></li>
 		            </ul>
@@ -438,7 +440,7 @@ var imageW,imageH,frameW,frameH;
 
 
 
-$('#memberImage , #committeeImage , #galleryImage , #infoImage , #brandsliderImage , #mainsliderImage').on('change', function () { 
+$('#memberImage , #committeeImage , #galleryImage , #infoImage , #brandsliderImage , #mainsliderImage , #blogImage , #categoryImage').on('change', function () { 
   $('#upload-image').croppie('destroy');
   if($(this).is('#memberImage')){
     imageW = 200;
@@ -480,6 +482,18 @@ $('#memberImage , #committeeImage , #galleryImage , #infoImage , #brandsliderIma
     imageH = 500;    
     frameW = 1050;
     frameH = 550;
+  }
+  if($(this).is('#blogImage')){
+    imageW = 1000;
+    imageH = 500;    
+    frameW = 1050;
+    frameH = 550;
+  }
+  if($(this).is('#categoryImage')){
+    imageW = 200;
+    imageH = 150;    
+    frameW = 250;
+    frameH = 200;
   }
 
 

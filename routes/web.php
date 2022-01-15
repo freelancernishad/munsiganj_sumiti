@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\MemberController;
 use App\Http\Controllers\Admin\CommitteeController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\AllinfoController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\AdController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\frontendController;
@@ -77,8 +79,13 @@ Route::resources([
 	'admin/members' => MemberController::class,
 	'admin/committee' => CommitteeController::class,
 	'admin/gallery' => GalleryController::class,
+	'admin/category' => CategoryController::class,
+	'admin/blog' => BlogController::class,
 	'admin/allinfo' => AllinfoController::class,
 	'admin/ad' => AdController::class,
 	'admin/setting' => SettingController::class,
 
 ]);
+
+
+Route::get('admin/check/category/{category}',[CategoryController::class , 'checkCategory']);
