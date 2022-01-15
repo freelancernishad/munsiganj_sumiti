@@ -1,0 +1,209 @@
+@extends('layouts.master')
+
+@section('content')
+
+
+    <main>
+        <section class="hero_area">
+            <div class="row p-0">
+                <div class="col-md-3" style="background: #e6f5fa">
+              
+                    <x-sidebar />
+
+
+               
+
+                    <?php 
+
+
+                    $adl = $adl[0]->image;
+                    $adl = json_decode($adl);
+                    
+                    foreach($adl as $adllist){
+                    
+                    ?>
+                    <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adllist->name) }}" alt="" />
+                    
+                    <?php 
+                    }
+                    
+                    
+                    
+                    ?>
+
+                </div>
+
+
+                <div class="col-md-9">
+
+
+
+
+                    <?php 
+
+
+                    $adtop = $adtop[0]->image;
+                    $adtop = json_decode($adtop);
+                    
+                    foreach($adtop as $adtoplist){
+                    
+                    ?>
+                    <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adtoplist->name) }}" alt="" />
+                    
+                    <?php 
+                    }
+                    
+                    
+                    
+                    ?>
+          
+<div class="about_header position-relative mt-3">
+
+<img width="100%" src="assets/img/about.jpg" alt="">
+
+<div class="about_head">
+<h5 class="about_title">About Us</h5>
+<p class="about_sort">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae tenetur non temporibus</p>
+</div>
+
+
+</div>
+
+
+
+
+<section class="aboutSection py-3 pl-5">
+<div class="row">
+<div class="col-md-9">
+
+    <div class="about">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus, lorem at porta tincidunt, tortor orci mollis turpis, porta feugiat mi mi aliquet justo. Maecenas tincidunt massa a nisi rutrum molestie. Morbi id molestie enim. Nam semper lacinia convallis. Vivamus nisl purus, mattis sit amet lectus nec, fermentum malesuada erat. Quisque condimentum, tellus a pretium aliquam, felis justo ultrices nisl, eget tincidunt dui sapien sit amet dolor. Donec placerat nunc at risus malesuada elementum. Etiam nisl est, tincidunt ac eros non, sollicitudin vehicula lorem.
+
+    Donec quam augue, vulputate ac massa non, placerat porttitor felis. Quisque mollis odio non dolor vestibulum iaculis. Proin fringilla metus at augue luctus consequat. Cras id nibh scelerisque, dapibus neque a, efficitur ante. Donec tincidunt efficitur ex, a blandit lorem porttitor sed. Nullam tempor lectus vitae enim ultrices dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi nec accumsan dolor. In porta rhoncus arcu, et lobortis odio elementum quis. Mauris pretium dui eu consectetur condimentum. Phasellus bibendum tincidunt maximus.</p>
+
+    </div>
+
+
+
+<div class="ourMission">
+    <h6>Our Mission</h6>
+</div>
+
+    <div class="about">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus, lorem at porta tincidunt, tortor orci mollis turpis, porta feugiat mi mi aliquet justo. Maecenas tincidunt massa a nisi rutrum molestie. Morbi id molestie enim. Nam semper lacinia convallis. Vivamus nisl purus, mattis sit amet lectus nec, fermentum malesuada erat. Quisque condimentum, tellus a pretium aliquam, felis justo ultrices nisl, eget tincidunt dui sapien sit amet dolor. Donec placerat nunc at risus malesuada elementum. Etiam nisl est, tincidunt ac eros non, sollicitudin vehicula lorem.
+
+    Donec quam augue, vulputate ac massa non, placerat porttitor felis. Quisque mollis odio non dolor vestibulum iaculis. Proin fringilla metus at augue luctus consequat. Cras id nibh scelerisque, dapibus neque a, efficitur ante. Donec tincidunt efficitur ex, a blandit lorem porttitor sed. Nullam tempor lectus vitae enim ultrices dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi nec accumsan dolor. In porta rhoncus arcu, et lobortis odio elementum quis. Mauris pretium dui eu consectetur condimentum. Phasellus bibendum tincidunt maximus.</p>
+
+    </div>
+
+
+
+</div>
+<div class="col-md-3">
+    
+    <?php 
+
+
+    $adr = $adr[0]->image;
+    $adr = json_decode($adr);
+    
+    foreach($adr as $adrlist){
+    
+    ?>
+    <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adrlist->name) }}" alt="" />
+    
+    <?php 
+    }
+    
+    
+    
+    ?>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </section>
+        <section class="adsection">
+            <div class="row">
+
+
+                <?php 
+
+
+                $adbottom = $adbottom[0]->image;
+                $adbottom = json_decode($adbottom);
+                
+                foreach($adbottom as $adbottomlist){
+                
+                ?>
+              
+                <div class="col-md-6 mt-3">
+                    <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adbottomlist->name) }}" alt="" />
+                </div>
+                <?php 
+                }
+                
+                
+                
+                ?>
+            </div>
+        </section>
+        <section class="committeeSeciton">
+            <div class="row">
+                <div class="col-md-9 mt-3 committeeBox">
+                    <div class="cus_container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h4 class="committeeTitlw">Executive Committee</h4>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="d-flex">
+                                    <img width="120px" src="assets/img/committee.png" alt="" />
+                                    <div class="committeeDetails">
+                                        <h6>Committee Name</h6>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            Maiores et perspiciatis architecto,
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="d-flex">
+                                    <img width="120px" src="assets/img/committee.png" alt="" />
+                                    <div class="committeeDetails">
+                                        <h6>Committee Name</h6>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            Maiores et perspiciatis architecto,
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="committeeMore">
+                                    <a href="#"> More Details >> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <img width="100%" src="assets/img/ad.png" alt="" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    @endsection
