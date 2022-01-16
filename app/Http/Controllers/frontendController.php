@@ -247,6 +247,42 @@ $data['adr'] =   DB::table('ads')->where($whr)->get();
          return view('register',$data);
     }
 
+
+    public function blogs()
+    {
+        $data['post']='';
+        $data['cate']='';
+        $data['categories'] = DB::table('categories')->orderBy('name','ASC')->get();
+        // $data['posts'] = DB::table('blogs')->orderBy('id','DESC')->get();
+        return view('blogs',$data);
+    }
+
+
+    public function blogs_category($category)
+    {
+        $data['categories'] = DB::table('categories')->orderBy('name','ASC')->get();
+        // $data['posts'] = DB::table('blogs')->where('category',$category)->orderBy('id','DESC')->get();
+$data['post']=$category;
+$data['cate']='category';
+
+
+        return view('blogs',$data);
+    }
+
+
+
+    public function blogs_single($id)
+    {
+
+        $data['posts'] = DB::table('blogs')->where('id',$id)->get();
+        return view('singleBlog',$data);
+    }
+
+
+
+
+
+
     public function store(Request $request)
     {
         // echo'<pre>';

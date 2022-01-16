@@ -31,7 +31,7 @@
                                 <li><a class="mainNanLink" href="{{ url('register') }}">Registration</a></li>
                             </ul>
                         </li>
-                        <li><a class="mainNanLink" href="#">Blog</a></li>
+                        <li><a class="mainNanLink" href="{{ url('blogs') }}">Blog</a></li>
                         <li><a class="mainNanLink" href="{{ url('contact') }}">Contact</a></li>
                     </ul>
                 </nav>

@@ -43,6 +43,7 @@
 }
 
 </style>
+<livewire:styles />
 
 </head>
 

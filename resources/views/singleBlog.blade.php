@@ -10,7 +10,7 @@
                 <div class="col-md-9">
 
 
-@foreach ($infoDetails as $list)
+@foreach ($posts as $list)
     
 
 
