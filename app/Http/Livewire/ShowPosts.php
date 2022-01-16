@@ -9,7 +9,7 @@ use Livewire\WithPagination;
 
 class ShowPosts extends Component
 {
-    use WithPagination;
+use WithPagination;
 public $count = 1;
 
 public $post;
@@ -43,6 +43,13 @@ public $cate;
             return view('livewire.show-posts',['blogs' =>blog::latest()->where('category',$this->post)->paginate(3)]);
         }else{
 
+            return view('livewire.show-posts',['blogs' =>blog::latest()
+
+            
+            ->where('title', 'LIKE', "%{$this->post}%") 
+            ->orWhere('short_description', 'LIKE', "%{$this->post}%") 
+            ->orWhere('category', 'LIKE', "%{$this->post}%") 
+            ->paginate(3)]);
         }
 
 

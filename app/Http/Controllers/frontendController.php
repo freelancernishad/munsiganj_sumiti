@@ -248,10 +248,21 @@ $data['adr'] =   DB::table('ads')->where($whr)->get();
     }
 
 
-    public function blogs()
+    public function blogs(Request $r)
     {
-        $data['post']='';
-        $data['cate']='';
+        $post='';
+        $cate='';
+if(isset($r->search)){
+
+    $post =  $r->search;
+    $cate = 'search';
+}
+
+
+$data['post']=$post;
+$data['cate']=$cate;
+
+    
         $data['categories'] = DB::table('categories')->orderBy('name','ASC')->get();
         // $data['posts'] = DB::table('blogs')->orderBy('id','DESC')->get();
         return view('blogs',$data);

@@ -80,10 +80,10 @@ button.postBtn {
 
 
 
-<form action="" method="post">
+<form action="{{ url('blogs') }}" method="get">
     <div class="form-group">
 <label> Search Now</label>
-<input type="text" name="searchPost" class="form-control">
+<input type="text" name="search" class="form-control">
 <button type="submit" class="postBtn">Go</button>
     </div>
 
@@ -95,7 +95,9 @@ button.postBtn {
 <h4 class="CategoryTitle">Categories</h4>
 
 <ul class="list-unstyled">
-
+    <li class="categoryList" >
+        <a href="{{ url('blogs') }}">All</a>
+    </li>
     @foreach ($categories as $cList)
         
    
