@@ -132,9 +132,9 @@ if (url == url ) {
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.js" integrity="sha512-vUJTqeDCu0MKkOhuI83/MEX5HSNPW+Lw46BA775bAWIp1Zwgz3qggia/t2EnSGB9GoS2Ln6npDmbJTdNhHy1Yw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  {{--  <script src="{{ asset('admin_asset/js/jquery.dataTables.min.js') }}"></script>
+   <script src="{{ asset('admin_asset/js/jquery.dataTables.min.js') }}"></script>
   <script src="{{ asset('admin_asset/js/dataTables.bootstrap.min.js') }}"></script>
-  <script src="{{ asset('admin_asset/js/dataTables.buttons.min.js') }}"></script>  --}}
+  <script src="{{ asset('admin_asset/js/dataTables.buttons.min.js') }}"></script> 
 
 <script>
 
@@ -183,6 +183,19 @@ $('#uploadimageModal').modal('hide');
 
     </script>
 <livewire:scripts />
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>

@@ -359,7 +359,33 @@ p.about_sort {
     margin: 13px 0px;
 }
 
+ul.pagination {
+    float: right;
+}
 
+ul.pagination li a {
+    padding: 7px 11px;
+    background: #5a5ccd;
+    margin: 0px 2px;
+    color: white;
+      text-decoration: none;
+      transition:all 0.5s;
+}
+ul.pagination li a:hover{
+    ackground: #6061aa !important;
+}
+
+li.paginate_button.active a {
+    background: #3537ce;
+}
+
+li#myTable_previous {}
+
+.disabled a {
+    background: grey !important;
+    cursor: no-drop;
+    text-decoration: none;
+}
 
 
 /* gallary html  */
@@ -435,8 +461,8 @@ p.about_sort {
   }
   
   /* Next & previous buttons */
-  .prev,
-  .next {
+  .prevButton,
+  .nextButton {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -453,14 +479,14 @@ p.about_sort {
   }
   
   /* Position the "next button" to the right */
-  .next {
+  .nextButton {
     right: 0;
     border-radius: 3px 0 0 3px;
   }
   
   /* On hover, add a black background color with a little bit see-through */
-  .prev:hover,
-  .next:hover {
+  .prevButton:hover,
+  .nextButton:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
   

@@ -38,7 +38,7 @@
                             </form>
                         </div>
                         <div class="membertable">
-                            <table class="table table-bordered" id="membertable">
+                            <table class="table table-bordered" id="myTable">
                                 <thead class="memberTableHead">
                                     <tr>
                                         <th>MID</th>
@@ -93,4 +93,13 @@
             </div>
         </section>
     </main>
+
+
+<script>
+$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+
+</script>
+
 @endsection

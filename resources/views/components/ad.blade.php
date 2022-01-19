@@ -12,8 +12,12 @@
     <link rel="stylesheet" href="{{ asset('assets/css/register.css') }}" />
 
     <link href="https://kit-pro.fontawesome.com/releases/v5.15.2/css/pro.min.css" rel="stylesheet"/>
-	{{--  <link href="{{ asset('admin_asset/css/dataTables.bootstrap.min.css') }}" rel="stylesheet" >  --}}
-
+    
+	 <link href="{{ asset('admin_asset/css/dataTables.bootstrap.min.css') }}" rel="stylesheet" > 
+     <link href="{{ asset('admin_asset/css/buttons.bootstrap.min.css') }}" rel="stylesheet">
+     <link href="{{ asset('admin_asset/css/fixedHeader.bootstrap.min.css') }}" rel="stylesheet">
+     <link href="{{ asset('admin_asset/css/responsive.bootstrap.min.css') }}" rel="stylesheet">
+     <link href="{{ asset('admin_asset/css/scroller.bootstrap.min.css') }}" rel="stylesheet">
         
     <link rel="stylesheet" href="{{ asset('assets/css/owl.slider.min.css') }}" />
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
 use App\Models\member;
+use App\Models\Division;
 use Illuminate\Http\Request; 
 use Illuminate\Support\Facades\DB;
 
@@ -39,7 +40,7 @@ class MemberController extends Controller
     public function create()
     {
 
-
+        $data['datas'] = Division::all();
         $Table =  DB::getSchemaBuilder()->getColumnListing('members');
         $row = [];
         foreach ($Table as $rowname) {
@@ -120,7 +121,7 @@ class MemberController extends Controller
 
 
     $data['rows'] = DB::table('members')->where('id',$id)->get();
-    
+    $data['datas'] = Division::all();
         return view('admin/members.add',$data);
     }
 

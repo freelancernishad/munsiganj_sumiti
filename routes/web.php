@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\AdController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\frontendController;
+use App\Http\Controllers\countryApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,12 @@ use App\Http\Controllers\frontendController;
 // });
 
 
+
+// country api
+Route::post('/getdistrict', [countryApiController::class,'getdistrict']);
+Route::post('/getthana', [countryApiController::class,'getthana']);
+Route::post('/getunioun', [countryApiController::class,'getunioun']);
+Route::post('/gotoUnion', [countryApiController::class,'gotoUnion']);
 
 
 

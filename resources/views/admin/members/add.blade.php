@@ -328,4 +328,113 @@
             </div>
 
 
+
+
+
+
+
+            <script>
+              // getdistrict
+//               function changedivision() {
+//                   var division = $('#pr_division').val();
+// // alert(division);
+
+//                   var district = $('#pr_dist');
+//                   $.ajax({
+//                       type: 'POST',
+//                       url: '/getdistrict',
+//                       data: {
+//                           id: division,
+//                           _token: '<?php echo csrf_token(); ?>'
+//                       },
+//                       success: function(data) {
+//                           const obj = JSON.parse(data);
+//                           var length = obj.length;
+//                           //console.log(obj)
+//                           var option = '';
+//                           for (var i = 0; i < length; i++) {
+//                               option += '<option value="' + obj[i].id + '">' + obj[i].bn_name + '</option>';
+//                           }
+//                           district.html('<option value="">জেলা</option>' + option)
+//                       }
+//                   });
+//               }   
+              
+//                // getthana
+//               function changedistrict() {
+//                   var district = $('#pr_dist').val();
+//                   var thana = $('#pr_thana');
+//                   $.ajax({
+//                       type: 'POST',
+//                       url: '/getthana',
+//                       data: {
+//                           id: district,
+//                           _token: '<?php echo csrf_token(); ?>'
+//                       },
+//                       success: function(data) {
+//                           const obj = JSON.parse(data);
+//                           var length = obj.length;
+//                           //console.log(obj)
+//                           var option = '';
+//                           for (var i = 0; i < length; i++) {
+//                               option += '<option value="' + obj[i].id + '">' + obj[i].bn_name + '</option>';
+//                           }
+//                           thana.html('<option value="">উপজেলা</option>' + option)
+//                       }
+//                   });
+//               }   
+//                // getunioun
+//               function changethana() {
+//                   var thana = $('#pr_thana').val();
+//                   var unioun = $('#pr_post');
+//                   $.ajax({
+//                       type: 'POST',
+//                       url: '/getunioun',
+//                       data: {
+//                           id: thana,
+//                           _token: '<?php echo csrf_token(); ?>'
+//                       },
+//                       success: function(data) {
+//                           const obj = JSON.parse(data);
+//                           var length = obj.length;
+//                           //console.log(obj)
+//                           var option = '';
+//                           for (var i = 0; i < length; i++) {
+//                               option += '<option value="' + obj[i].name + '">' + obj[i].bn_name + '</option>';
+//                           }
+//                           unioun.html('<option value="">ইউনিয়ন</option>' + option)
+//                       }
+//                   });
+//               }    
+                
+                
+                   // getunioun
+              // function changeunioun() {
+              //     var thana = $('#unioun').val();
+             
+              //     $.ajax({
+              //         type: 'POST',
+              //         url: '/gotoUnion',
+              //         data: {
+              //             id: thana,
+              //             _token: '<?php echo csrf_token(); ?>'
+              //         },
+              //         success: function(data) {
+                     
+              //             if(data==0){
+                              
+              //             }else{
+          
+              //                 window.location.href=data;
+              //             }
+              //         }
+              //     });
+              // }    
+          
+          </script>
+
+
+
+
+
 @endsection

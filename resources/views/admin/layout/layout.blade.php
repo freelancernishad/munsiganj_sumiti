@@ -238,6 +238,8 @@
     <script src="{{ asset('admin_asset/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('admin_asset/js/dataTables.bootstrap.min.js') }}"></script>
     <script src="{{ asset('admin_asset/js/dataTables.buttons.min.js') }}"></script>
+
+    
     <script src="{{ asset('admin_asset/js/buttons.bootstrap.min.js') }}"></script>
     <script src="{{ asset('admin_asset/js/buttons.flash.min.js') }}"></script>
     <script src="{{ asset('admin_asset/js/buttons.html5.min.js') }}"></script>
