@@ -30,9 +30,10 @@
     <script src="{{ asset('admin_asset/js/jquery.min.js') }}"></script>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.css" integrity="sha512-2eMmukTZtvwlfQoG8ztapwAH5fXaQBzaMqdljLopRSA0i6YKM8kBAOrSSykxu9NN9HrtD45lIqfONLII2AFL/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.6/dist/sweetalert2.all.min.js"></script>
 
 <style>
 
@@ -80,7 +81,7 @@
                         
                     </div>
                     <div class="col-md-8">
-                        <form action="" class="d-flex w-100 search_form">
+                        <form action="{{ url('blogs') }}" class="d-flex w-100 search_form">
                             <input type="text" id="search" class="w-90" name="search" />
                             <button type="submit" class="search_btn">
                                 <i class="fal fa-search"></i>

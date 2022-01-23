@@ -28,13 +28,33 @@
                     <div class="memberlist">
                         <div class="memberForm">
                             <h6>Member</h6>
-                            <form action="" class="d-flex">
-                                <input type="text" name="idOrName" id="idOrName" class="form-control">
-                                <select name="upszila" id="upszila" class="form-control ml-3">
-                                    <option value="">Select</option>
-                                    <option>upazila</option>
+                            <form action="{{ route('memberList_submit') }}" method="post" class="row">
+                               @csrf
+<div class="col-md-5">
+                                <select id="districtid" onchange="changedistrict()" class="form-control">
+                                    <option value="">জেলা</option>
+
+                                    @foreach ($districts as $dList)
+                                        
+                                   
+
+                                    <option value="{{ $dList->id }}">{{ $dList->bn_name }}</option>
+
+                                    @endforeach
+
                                 </select>
-                                <button type="submit" class="memberSearch btn btn-outline-info ml-3">Search</button>
+                                <input type="hidden" name="district" id='district'>
+                            </div>
+                            <div class="col-md-5">
+                                <select id="upszilaid" onchange="changethana()" class="form-control">
+                                    <option value="">উপজেলা</option>
+                        
+                                </select>
+
+                                <input type="hidden" name="upszila" id='upszila'>
+                            </div>
+
+                                <button type="submit" class="memberSearch btn btn-outline-info col-md-2">Search</button>
                             </form>
                         </div>
                         <div class="membertable">
@@ -99,6 +119,89 @@
 $(document).ready( function () {
     $('#myTable').DataTable();
 } );
+
+
+
+
+ //getthana
+              function changedistrict() {
+                  var district = $('#districtid').val();
+                  var thana = $('#upszilaid');
+                  $.ajax({
+                      type: 'POST',
+                      url: '/getthana',
+                      data: {
+                          id: district,
+                          _token: '<?php echo csrf_token(); ?>'
+                      },
+                      success: function(data) {
+            
+
+                        var data = data.split(',,,');
+                        var district = $('#district').val(data[0]);
+                          const obj = JSON.parse(data[1]);
+                          var length = obj.length;
+                          //console.log(obj)
+                          var option = '';
+                          for (var i = 0; i < length; i++) {
+                              option += '<option value="' + obj[i].id + '">' + obj[i].bn_name + '</option>';
+                          }
+                          thana.html('<option value="">উপজেলা</option>' + option)
+
+                     
+
+                      }
+                  });
+              }
+
+
+
+
+              function changethana() {
+                  var thana = $('#upszilaid').val();
+          
+                  $.ajax({
+                      type: 'POST',
+                      url: '/getunioun',
+                      data: {
+                          id: thana,
+                          _token: '<?php echo csrf_token(); ?>'
+                      },
+                      success: function(data) {
+
+                        var data = data.split(',,,');
+                  
+                        var thana = $('#upszila').val(data[0]);
+                     
+                     
+                    
+                      }
+                  });
+              } 
+
+              $(document).ready(function() {
+    $('#districtid').select2();
+    // $('#upszilaid').select2();
+});
+
+ $('#districtid').val('{{ $district }}');
+ $('#district').val('{{ $district }}');
+
+ setTimeout(function(){
+    changedistrict();
+}, 500);
+
+
+ setTimeout(function(){
+  
+    $('#upszilaid').val('{{ $upszila }}');
+    $('#upszila').val('{{ $upszila }}');
+    changethana();
+}, 1000);//wait 2 seconds
+
+
+
+
 
 </script>
 

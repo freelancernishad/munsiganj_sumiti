@@ -11,6 +11,8 @@ class countryApiController extends Controller
     public function getdistrict(Request $r)
     {
          $id =  $r->input('id');
+
+
  echo $data = District::where('division_id',$id)->get();
 
     }   
@@ -18,6 +20,11 @@ class countryApiController extends Controller
     public function getthana(Request $r)
     {
         $id =  $r->input('id');
+
+        $District = District::where('id',$id)->get();
+echo $District[0]->bn_name;
+echo ',,,';
+
  echo $data = Thana::where('district_id',$id)->get();
 
     }
@@ -26,31 +33,22 @@ class countryApiController extends Controller
     public function getunioun(Request $r)
     {
         $id =  $r->input('id');
+
+        $Thana = Thana::where('id',$id)->get();
+echo $Thana[0]->bn_name;
+echo ',,,';
+
  echo $data = Union::where('upazila_id',$id)->get();
 
     }
     
     public function gotoUnion(Request $r)
     {
-        $name =  $r->input('id');
-if($name=='Banglabandha'){
-    echo 'http://www.banglabanda.localhost:8000/';
 
-}else if($name=='Bhojoanpur'){
-    echo 'http://www.bhojoanpur.localhost:8000/';
-}else if($name=='Buraburi'){
-    echo 'http://www.buraburi.localhost:8000/';
-}else if($name=='Debnagar'){
-    echo 'http://www.debnagar.localhost:8000/';
-}else if($name=='Salbahan'){
-    echo 'http://www.salbahan.localhost:8000/';
-}else if($name=='Tentulia'){
-    echo 'http://www.tetulia.localhost:8000/';
-}else if($name=='Timaihat'){
-    echo 'http://www.tirnaihat.localhost:8000/';
-}else{
-    echo 0;
-}
 
+
+         $name =  $r->input('id');
+        $Union = Union::where('id',$name)->get();
+ echo $Union[0]->bn_name;
     }
 }

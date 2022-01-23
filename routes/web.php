@@ -52,6 +52,9 @@ Route::get('gallery',[frontendController::class, 'Gallery'])->name('Gallerylist'
 
 
 Route::get('member',[frontendController::class, 'member'])->name('memberlist');
+Route::post('member/submit',[frontendController::class, 'memberList_submit'])->name('memberList_submit');
+
+Route::get('member/{disteict}/{upozila}',[frontendController::class, 'member_search'])->name('memberlist_search');
 Route::get('register-gide',[frontendController::class, 'register_gide'])->name('register_gide');
 
 

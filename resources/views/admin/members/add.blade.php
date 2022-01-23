@@ -209,91 +209,116 @@
 
 
 
+              <div class="col-md-12">
+                <h3>স্থায়ী ঠিকানা</h3>
+            </div>
+            {{-- col-md-6 start --}}
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>জেলা</label>
+                    <select id="districtid1" onchange="changedistrict(1)" class="form-control">
+                        <option value="">জেলা</option>
+                        @foreach ($districts as $dList)
+                            <option value="{{ $dList->id }}">{{ $dList->bn_name }}</option>
+                        @endforeach
+                    </select>
+                    <input type="hidden" class="form-control" name="pr_dist" id="pr_dist1"
+                        value="{{ $row->pr_dist }}">
+                </div>
+            </div>
+            {{-- col-md-6 start --}}
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>থানা/উপজেলা</label>
+                    <select id="upszilaid1" onchange="changethana(1)" class="form-control">
+                        <option value="">উপজেলা</option>
+                    </select>
+                    <input type="hidden" class="form-control" name="pr_thana" id="pr_thana1"
+                        value="{{ $row->pr_thana }}">
+                </div>
+            </div>
+            {{-- col-md-6 start --}}
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>ডাকঘর</label>
+                    <select id="unionid1" onchange="changeunioun(1)" class="form-control">
+                        <option value="">ডাকঘর</option>
+                    </select>
+                    <input type="hidden" class="form-control" name="pr_post" id="pr_post1"
+                        value="{{ $row->pr_post }}">
+                </div>
+            </div>
+            {{-- col-md-6 start --}}
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>গ্রাম</label>
+                    <input type="text" class="form-control" name="pr_vill" id="pr_vill"
+                        value="{{ $row->pr_vill }}">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <h3>বর্তমান ঠিকানা  </h3>
+                <h5><input style="width: 32px;
+                  height: 19px;" onclick="sameAddress()" type="checkbox" id="same_Address"> <label for="same_Address">একই ঠিকানা হলে টিক দিন</label></h5>
+            </div>
 
 
-<div class="col-md-12">
-  <h3>স্থায়ী ঠিকানা</h3>
+
+{{-- col-md-6 start --}}
+<div class="col-md-6">
+<div class="form-group">
+<label>জেলা</label>
+
+<select id="districtid2" onchange="changedistrict(2)" class="form-control">
+<option value="">জেলা</option>
+@foreach ($districts as $dList)
+<option value="{{ $dList->id }}">{{ $dList->bn_name }}</option>
+@endforeach
+</select>
+
+
+
+<input type="hidden" class="form-control" name="p_dist" id="pr_dist2"
+value="{{ $row->p_dist }}">
+</div>
 </div>
 
+            {{-- col-md-6 start --}}
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>থানা/উপজেলা</label>
+                  <select id="upszilaid2" onchange="changethana(2)" class="form-control">
+                      <option value="">উপজেলা</option>
+                  </select>
 
-              {{--  col-md-6 start  --}}
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>গ্রাম</label>
-                  <input type="text" class="form-control" name="pr_vill" id="pr_vill" value="{{ $row->pr_vill }}">
-                </div>
 
+                  <input type="hidden" class="form-control" name="p_thana" id="pr_thana2"
+                      value="{{ $row->p_thana }}">
               </div>
-            {{--  col-md-6 start  --}}
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>ডাকঘর</label>
-                  <input type="text" class="form-control" name="pr_post" id="pr_post" value="{{ $row->pr_post }}">
-                </div>
+          </div>
+   
+            {{-- col-md-6 start --}}
+        <div class="col-md-6">
+              <div class="form-group">
+                <label>ডাকঘর</label>
+                <select id="unionid2" onchange="changeunioun(2)" class="form-control">
+                    <option value="">ডাকঘর</option>
+                </select>
 
+
+                  <input type="hidden" class="form-control" name="p_post" id="pr_post2"
+                      value="{{ $row->p_post }}">
               </div>
+          </div>
 
-
-              {{--  col-md-6 start  --}}
-              <div class="col-md-6">
+            {{-- col-md-6 start --}}
+            <div class="col-md-6">
                 <div class="form-group">
-                  <label>থানা/উপজেলা</label>
-                  <input type="text" class="form-control" name="pr_thana" id="pr_thana" value="{{ $row->pr_thana }}">
+                    <label>গ্রাম</label>
+                    <input type="text" class="form-control" name="p_vill" id="p_vill"
+                        value="{{ $row->p_vill }}">
                 </div>
-
-              </div>
-
-              {{--  col-md-6 start  --}}
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>জেলা</label>
-                  <input type="text" class="form-control" name="pr_dist" id="pr_dist" value="{{ $row->pr_dist }}">
-                </div>
-
-              </div>
-
-
-<div class="col-md-12">
-  <h3>বর্তমান ঠিকানা</h3>
-</div>
-
-
-              {{--  col-md-6 start  --}}
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>গ্রাম</label>
-                  <input type="text" class="form-control" name="pr_vill" id="pr_vill" value="{{ $row->pr_vill }}">
-                </div>
-
-              </div>
-
-              {{--  col-md-6 start  --}}
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>ডাকঘর</label>
-                  <input type="text" class="form-control" name="p_post" id="pr_post" value="{{ $row->pr_post }}">
-                </div>
-
-              </div>
-
-
-              {{--  col-md-6 start  --}}
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>থানা/উপজেলা</label>
-                  <input type="text" class="form-control" name="p_thana" id="pr_thana" value="{{ $row->pr_thana }}">
-                </div>
-
-              </div>
-
-              {{--  col-md-6 start  --}}
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>জেলা</label>
-                  <input type="text" class="form-control" name="p_dist" id="pr_dist" value="{{ $row->pr_dist }}">
-                </div>
-
-              </div>
+            </div>
 
 
 
@@ -313,7 +338,7 @@
                       <div class="item form-group">
                         <div class="col-md-6 col-sm-6 offset-md-3">
                       
-                          <button type="submit" class="btn btn-success">Submit</button>
+                          <button type="submit" id="submitBtn" class="btn btn-success">Submit</button>
                         </div>
                       </div>
 
@@ -332,108 +357,132 @@
 
 
 
-
             <script>
-              // getdistrict
-//               function changedivision() {
-//                   var division = $('#pr_division').val();
-// // alert(division);
+              //getthana
+              function changedistrict(id) {
+                  var district = $('#districtid'+id).val();
+                  var thana = $('#upszilaid'+id);
+                  $.ajax({
+                      type: 'POST',
+                      url: '/getthana',
+                      data: {
+                          id: district,
+                          _token: '<?php echo csrf_token(); ?>'
+                      },
+                      success: function(data) {
+                          var data = data.split(',,,');
+                          var district = $('#pr_dist'+id).val(data[0]);
+                          const obj = JSON.parse(data[1]);
+                          var length = obj.length;
+                          //console.log(obj)
+                          var option = '';
+                          for (var i = 0; i < length; i++) {
+                              option += '<option value="' + obj[i].id + '">' + obj[i].bn_name + '</option>';
+                          }
+                          thana.html('<option value="">উপজেলা</option>' + option)
+                      }
+                  });
+              }
+      
+              function changethana(id) {
+                  var thana = $('#upszilaid'+id).val();
+                  var union = $('#unionid'+id);
+                  $.ajax({
+                      type: 'POST',
+                      url: '/getunioun',
+                      data: {
+                          id: thana,
+                          _token: '<?php echo csrf_token(); ?>'
+                      },
+                      success: function(data) {
+                          var data = data.split(',,,');
+                          var thana = $('#pr_thana'+id).val(data[0]);
+                          const obj = JSON.parse(data[1]);
+                          var length = obj.length;
+                          //console.log(obj)
+                          var option = '';
+                          for (var i = 0; i < length; i++) {
+                              option += '<option value="' + obj[i].id + '">' + obj[i].bn_name + '</option>';
+                          }
+                          union.html('<option value="">ডাকঘর</option>' + option)
+                      }
+                  });
+              }
+              //   getunioun
+              function changeunioun(id) {
+                  var thana = $('#unionid'+id).val();
+                  $.ajax({
+                      type: 'POST',
+                      url: '/gotoUnion',
+                      data: {
+                          id: thana,
+                          _token: '<?php echo csrf_token(); ?>'
+                      },
+                      success: function(data) {
+                          console.log(data);
+                          $('#pr_post'+id).val(data);
+                      }
+                  });
+              }
+      
+      
+      
+      
+      function sameAddress(){
 
-//                   var district = $('#pr_dist');
-//                   $.ajax({
-//                       type: 'POST',
-//                       url: '/getdistrict',
-//                       data: {
-//                           id: division,
-//                           _token: '<?php echo csrf_token(); ?>'
-//                       },
-//                       success: function(data) {
-//                           const obj = JSON.parse(data);
-//                           var length = obj.length;
-//                           //console.log(obj)
-//                           var option = '';
-//                           for (var i = 0; i < length; i++) {
-//                               option += '<option value="' + obj[i].id + '">' + obj[i].bn_name + '</option>';
-//                           }
-//                           district.html('<option value="">জেলা</option>' + option)
-//                       }
-//                   });
-//               }   
-              
-//                // getthana
-//               function changedistrict() {
-//                   var district = $('#pr_dist').val();
-//                   var thana = $('#pr_thana');
-//                   $.ajax({
-//                       type: 'POST',
-//                       url: '/getthana',
-//                       data: {
-//                           id: district,
-//                           _token: '<?php echo csrf_token(); ?>'
-//                       },
-//                       success: function(data) {
-//                           const obj = JSON.parse(data);
-//                           var length = obj.length;
-//                           //console.log(obj)
-//                           var option = '';
-//                           for (var i = 0; i < length; i++) {
-//                               option += '<option value="' + obj[i].id + '">' + obj[i].bn_name + '</option>';
-//                           }
-//                           thana.html('<option value="">উপজেলা</option>' + option)
-//                       }
-//                   });
-//               }   
-//                // getunioun
-//               function changethana() {
-//                   var thana = $('#pr_thana').val();
-//                   var unioun = $('#pr_post');
-//                   $.ajax({
-//                       type: 'POST',
-//                       url: '/getunioun',
-//                       data: {
-//                           id: thana,
-//                           _token: '<?php echo csrf_token(); ?>'
-//                       },
-//                       success: function(data) {
-//                           const obj = JSON.parse(data);
-//                           var length = obj.length;
-//                           //console.log(obj)
-//                           var option = '';
-//                           for (var i = 0; i < length; i++) {
-//                               option += '<option value="' + obj[i].name + '">' + obj[i].bn_name + '</option>';
-//                           }
-//                           unioun.html('<option value="">ইউনিয়ন</option>' + option)
-//                       }
-//                   });
-//               }    
-                
-                
-                   // getunioun
-              // function changeunioun() {
-              //     var thana = $('#unioun').val();
-             
-              //     $.ajax({
-              //         type: 'POST',
-              //         url: '/gotoUnion',
-              //         data: {
-              //             id: thana,
-              //             _token: '<?php echo csrf_token(); ?>'
-              //         },
-              //         success: function(data) {
-                     
-              //             if(data==0){
-                              
-              //             }else{
+
+
+      
+        var same_Address = document.getElementById('same_Address');
+        var districtid1 = document.getElementById('districtid1');
+        var districtid2 = document.getElementById('districtid2');
+        var upszilaid1 = document.getElementById('upszilaid1');
+        var upszilaid2 = document.getElementById('upszilaid2');
+        var unionid1 = document.getElementById('unionid1');
+        var unionid2 = document.getElementById('unionid2');
+        var p_vill = document.getElementById('p_vill');
+        var submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled=true;
+        if (same_Address.checked == true){
+      
+          districtid2.value = districtid1.value;
+          changedistrict(2);
+          setTimeout(function(){  
+            upszilaid2.value = upszilaid1.value;
+            
+            changethana(2);
+      
+      setTimeout(function(){
+      
+        unionid2.value = unionid1.value;
+      
+        changeunioun(2)
+        submitBtn.disabled=false;
+      }, 700);
+      p_vill.value = pr_vill.value;
+      
+      
+    
+      }, 1000);
+      
+      
           
-              //                 window.location.href=data;
-              //             }
-              //         }
-              //     });
-              // }    
-          
+      
+      
+        } else {
+          districtid2.value = '';
+          upszilaid2.value = '';
+          unionid2.value = '';
+          p_vill.value = '';
+          submitBtn.disabled=false;
+      
+        }
+      
+      }
+      
+      
+      
           </script>
-
-
 
 
 
