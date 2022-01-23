@@ -1,0 +1,669 @@
+.cus_container {
+    max-width: 1260px;
+    margin: auto;
+    padding: 0 15px;
+}
+.cus2_container {
+
+    padding: 0 15px !important;
+}
+
+@media (max-width:1024px){
+    .cus_container {
+        max-width: 960px;
+        margin: auto;
+    } 
+}
+@media (max-width:768px){
+    .cus_container {
+        max-width: 700px;
+        margin: auto;
+    } 
+}
+section {
+    overflow: hidden;
+}
+
+/* top header  */
+
+.topheader {
+    background: #373737;
+    padding: 10px 0;
+}
+
+/* middel header */
+.middleheader {
+    padding: 6px 0;
+}
+.search_form {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+input#search {
+    height: 40px;
+    width: 87%;
+    border: 1px solid #ff6a00;
+    border-radius: 3px;
+    margin-right: 7px;
+}
+
+input#search:focus {
+    outline: none;
+    border: 1px solid #c8641d;
+}
+
+button.search_btn {
+    border: 0;
+    background: 0;
+    font-size: 25px;
+}
+
+
+/* main menu  */
+
+ul.main_nav {
+    display: flex;
+}
+
+.bottomheader {
+    background: #C12729;
+}
+
+ul.main_nav li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+li.dropdown {
+    position: relative;
+}
+
+ul.dropdownItem {
+    position: absolute;
+    top: 42px;
+    display: none;
+}
+
+ul.main_nav li:first-child a {
+
+    border-left: 1px dotted;
+
+}
+ul.main_nav li a {
+    padding: 10px 21px;
+    border-right: 1px dotted;
+    transition: all 0.4s;
+}
+
+ul.main_nav li a:hover {
+    background: #961d1f;
+}
+ul.main_nav li a.active {
+    background: #961d1f;
+}
+
+
+@media(min-width:960px){
+    li.dropdown:hover .dropdownItem {
+    display: block;
+    background: #c12729;
+    width: max-content;
+    z-index: 9;
+}
+}
+
+
+
+ul.dropdownItem li:first-child a {
+
+    border-top: 1px dotted white !important;
+}
+ul.dropdownItem li a {
+    border: 0 !important;
+    border-bottom: 1px dotted white !important;
+}
+.mobilenav {
+   display: none;
+}
+.show_dropdown {
+    display: block !important;
+    background: #c12729;
+    width: max-content;
+    z-index: 9;
+}
+@media (max-width:960px){
+    .mobilenav {
+        display: block;
+     }
+
+    ul.main_nav {
+        display: none;
+     
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .mobilenav {
+        font-size: 28px;
+        color: white;
+    }
+    .mobileNav {
+        display: flex !important;
+    }
+
+    ul.dropdownItem {
+        position: unset !important;
+        top: 42px;
+        display: none;
+        width: 100% !important;
+    }
+
+}
+
+
+
+/* side bar */
+
+.sidebar {
+    background: #E6F5FA;
+}
+
+
+
+ul.sidebarmenu li a {
+    color: #c12729;
+    font-weight: 600;
+    padding: 7px 17px;
+    display: block;
+    box-shadow: -5px 0px 8px -1px #9c9c9c;
+    text-decoration: none;
+    transition: all 0.4s;
+    font-size: 21px;
+}
+
+ul.sidebarmenu li a:hover {
+    background: #b5cfd8;
+}
+
+ul.sidebar_dropdownList {
+    display: none;
+}
+
+li.sidebar_dropdown {
+    position: relative;
+}
+
+li.sidebar_dropdown:hover .sidebar_dropdownList {
+    position: absolute;
+    display: block !important;
+    z-index: 999;
+    left: 100%;
+    top: 0;
+    width: max-content;
+    background: #e6f5fa;
+}
+
+
+
+
+/* hero slider  */
+
+section.hero_area {
+    overflow: hidden;
+}
+
+
+/* committee section  */
+.committeeBox {
+    background: #e4e5e6;
+    padding: 13px 0;
+}
+.committeeDetails {
+    background: white;
+    padding: 15px 8px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: 6px solid #c12729;
+}
+
+.committeeDetails h6 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.committeeDetails p {
+    font-size: 14px;
+    padding: 5px 0px 0px 14px;
+}
+.committeeMore {
+    background: black;
+    height: 100%;
+    font-size: 25px;
+    padding: 7px 15px;
+   
+}.committeeMore a {
+ 
+    color: white;
+    text-decoration: none;
+}
+h4.committeeTitlw {
+    font-size: 19px;
+    font-weight: 700;
+    color: #c12729;
+}
+
+
+
+
+
+/* about us .html  */
+
+.about_head {
+    position: absolute;
+    background: white;
+    z-index: 999999;
+    top: 40%;
+    left: 39px;
+    width: 300px;
+    padding: 15px 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom: 5px solid #c12729;
+}
+
+h5.about_title {
+    font-weight: 600;
+}
+
+p.about_sort {
+    font-size: 14px;
+}
+
+
+.about p::first-letter {
+    font-size: 43px;
+    float: left;
+    margin-right: 12px;
+    margin-top: -9px;
+}
+
+.about p {
+    font-size: 14px;
+    text-align: justify;
+}
+
+.ourMission h6 {
+    color: red;
+    font-weight: 600;
+    margin: 19px 0px;
+    margin-top: 54px;
+}
+
+
+
+
+
+
+/* committee .html  */
+
+.committee ul li {
+    line-height: 2;
+    color: #747474;
+}
+.card_head {
+    padding: 0 !important;
+}
+.collapseBtn {
+    padding: 7px 15px;
+    text-decoration: none !important;
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+    background: linear-gradient(45deg, #adcbef, #adcbef52);
+}
+
+.collapseBtn span:last-child {
+    background: linear-gradient(151deg, #125782, #15567f52);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50%;
+}
+.collapseBtn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.committeeBio {
+    width: 64%;
+    padding: 10px 18px;
+    margin: 0 auto;
+    border: 3px solid white;
+    border-radius: 3px;
+    background: #f0f0f0;
+}
+
+#card-body {
+    background: #e6f5fa;
+}
+#card {
+    margin: 13px 0px;
+}
+
+ul.pagination {
+    float: right;
+}
+
+ul.pagination li a {
+    padding: 7px 11px;
+    background: #5a5ccd;
+    margin: 0px 2px;
+    color: white;
+      text-decoration: none;
+      transition:all 0.5s;
+}
+ul.pagination li a:hover{
+    ackground: #6061aa !important;
+}
+
+li.paginate_button.active a {
+    background: #3537ce;
+}
+
+li#myTable_previous {}
+
+.disabled a {
+    background: grey !important;
+    cursor: no-drop;
+    text-decoration: none;
+}
+
+
+/* gallary html  */
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .rows > .imgcolumn {
+    padding: 0 8px;
+  }
+  
+  .rows:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .imgcolumn {
+      float: left;
+      width: 25%;
+      margin-top: 20px;
+  }
+  
+  /* The Modal (background) */
+  .modals {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .mySlides {
+    display: none;
+  }
+  
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prevButton,
+  .nextButton {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .nextButton {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prevButton:hover,
+  .nextButton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  img {
+    margin-bottom: -4px;
+  }
+  
+  .caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+  
+  img.hover-shadow {
+    transition: 0.3s;
+  }
+  
+  .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+
+  h5.gallaryTitle {
+    font-size: 22px;
+    color: #c12729;
+    margin-top: 26px;
+}
+
+/* contact us  */
+.terms {
+    margin: 22px 0px;
+    padding: 13px 17px;
+    border-left: 1px solid #908f8f;
+}
+
+.terms2 {
+    padding: 24px 17px;
+    margin: 1px 31px;
+    background: #e7e8e9;
+    border-left: 2px solid #bebebe;
+}
+
+
+
+/* member  */
+
+.memberForm {
+    padding: 15px 40px;
+    margin-top: 20px;
+}
+thead.memberTableHead tr {
+    background: #5A5CCD;
+    color: white;
+}
+
+
+h6.membername {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #747474;
+}
+
+p.memberPoaition {
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #747474;
+}
+.memberAddress li {
+    color: #545454;
+    line-height: 2.5;
+    font-weight: 500;
+}
+
+.memberAddress li:first-child {
+    font-size: 20px;
+}
+
+
+/* footer  */
+
+footer.footer {
+    background: #171A29;
+    padding: 40px 0px;
+}
+.f_address ul li {
+    line-height: 2.3;
+}
+
+h4.f_title {
+    color: white;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+h4.f_title:after {
+    position: absolute;
+    content: '';
+    width: 59%;
+    height: 3px;
+    background: #c12529;
+    left: 0;
+    bottom: -17px;
+}
+
+
+
+ul.footerMenu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 6px 0px;
+}
+
+ul.footerMenu li a:hover {
+    color: #dcd4d4;
+}
+
+input#newsletter {
+    width: 85%;
+    height: 53px;
+    border: 1px solid #b4b4b4;
+    border-radius: 0px;
+    margin-right: 0px;
+    border-right: 0 !important;
+}
+
+input#newsletter:focus {
+    outline: none;
+}
+
+button.newsletterBtn {
+    background: transparent;
+    border: 0 !important;
+    background: #c12529;
+    color: white;
+    padding: 0 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.f_social ul li a {
+    color: white;
+    background: #c12529;
+    margin: 10px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 21px;
+    text-decoration: none;
+}
+
+.f_social ul li a:hover {
+    background: red;
+}
