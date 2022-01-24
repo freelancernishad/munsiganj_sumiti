@@ -1,27 +1,53 @@
 @extends('layouts.master')
 @section('content')
+
+<style>
+
+.select2-selection {
+  -webkit-box-shadow: 0;
+  box-shadow: 0;
+  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+  color: #555555;
+  font-size: 14px;
+  outline: 0;
+  min-height: 38px;
+  text-align: left;
+}
+
+.select2-selection__rendered {
+  margin: 5px;
+}
+
+.select2-selection__arrow {
+  margin: 5px;
+}
+</style>
+
+
     <main>
         <section class="hero_area">
             <div class="row p-0">
                 <div class="col-md-3">
                     <x-sidebar />
 
-                    <?php 
+                    <?php
 
 
                     $adl = $adl[0]->image;
                     $adl = json_decode($adl);
-                    
+
                     foreach($adl as $adllist){
-                    
+
                     ?>
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adllist->name) }}" alt="" />
-                    
-                    <?php 
+
+                    <?php
                     }
-                    
-                    
-                    
+
+
+
                     ?>
                 </div>
                 <div class="col-md-9">
@@ -30,31 +56,53 @@
                             <h6>Member</h6>
                             <form action="{{ route('memberList_submit') }}" method="post" class="row">
                                @csrf
-<div class="col-md-5">
+
+
+
+                    {{-- <div class="col-md-5">
                                 <select id="districtid" onchange="changedistrict()" class="form-control">
                                     <option value="">জেলা</option>
 
-                                    @foreach ($districts as $dList)
-                                        
-                                   
+
+
+                                </select>
+                                <input type="hidden" name="district" id='district'>
+                            </div> --}}
+
+
+
+                            <div class="col-md-3">
+                              
+                                <input type="text" name="memberId" id='memberId' placeholder="Enter Member ID" class="form-control">
+                            </div>
+                          <div class="col-md-1">
+                              
+                              OR
+                            </div>
+
+
+                            <div class="col-md-3">
+                              
+                                <input type="text" name="memberName" id='memberName' placeholder="Enter Member Name" class="form-control">
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <select id="upszilaid" onchange="changethana()" class="form-control" required>
+                                    <option value="">উপজেলা</option>
+                                    @foreach ($Thana as $dList)
+
+
 
                                     <option value="{{ $dList->id }}">{{ $dList->bn_name }}</option>
 
                                     @endforeach
-
-                                </select>
-                                <input type="hidden" name="district" id='district'>
-                            </div>
-                            <div class="col-md-5">
-                                <select id="upszilaid" onchange="changethana()" class="form-control">
-                                    <option value="">উপজেলা</option>
-                        
                                 </select>
 
                                 <input type="hidden" name="upszila" id='upszila'>
                             </div>
 
-                                <button type="submit" class="memberSearch btn btn-outline-info col-md-2">Search</button>
+                                <button type="submit" id="memberBtin" class="memberSearch btn btn-outline-info col-md-2">Search</button>
                             </form>
                         </div>
                         <div class="membertable">
@@ -74,7 +122,7 @@
                                 @foreach ($rows as $row)
 
                                     <tr>
-                                        <td>{{ $i++ }}</td>
+                                        <td>{{ $row->memberId }}</td>
                                         <td>
                                             <img style="max-width:100px" src="{{ $row->image }}" alt="">
                                             <h6 class="membername"> {{ $row->name }}</h6>
@@ -104,7 +152,7 @@
                                     @endforeach
 
 
-                                 
+
                                 </tbody>
                             </table>
                         </div>
@@ -135,7 +183,7 @@ $(document).ready( function () {
                           _token: '<?php echo csrf_token(); ?>'
                       },
                       success: function(data) {
-            
+
 
                         var data = data.split(',,,');
                         var district = $('#district').val(data[0]);
@@ -148,7 +196,7 @@ $(document).ready( function () {
                           }
                           thana.html('<option value="">উপজেলা</option>' + option)
 
-                     
+
 
                       }
                   });
@@ -159,7 +207,9 @@ $(document).ready( function () {
 
               function changethana() {
                   var thana = $('#upszilaid').val();
-          
+
+                var memberBtin = document.getElementById('memberBtin');
+                memberBtin.disabled=true;
                   $.ajax({
                       type: 'POST',
                       url: '/getunioun',
@@ -168,38 +218,41 @@ $(document).ready( function () {
                           _token: '<?php echo csrf_token(); ?>'
                       },
                       success: function(data) {
+                          var data = data.split(',,,');
 
-                        var data = data.split(',,,');
-                  
+                          console.log(data)
                         var thana = $('#upszila').val(data[0]);
-                     
-                     
-                    
+                        memberBtin.disabled=false;
+
+
                       }
                   });
-              } 
+              }
 
               $(document).ready(function() {
-    $('#districtid').select2();
-    // $('#upszilaid').select2();
+
+     $('#upszilaid').select2();
 });
 
- $('#districtid').val('{{ $district }}');
- $('#district').val('{{ $district }}');
+//  $('#districtid').val('{{ $district }}');
+//  $('#district').val('{{ $district }}');
 
- setTimeout(function(){
-    changedistrict();
-}, 500);
-
-
- setTimeout(function(){
-  
-    $('#upszilaid').val('{{ $upszila }}');
-    $('#upszila').val('{{ $upszila }}');
-    changethana();
-}, 1000);//wait 2 seconds
+//  setTimeout(function(){
+//     changedistrict();
+// }, 500);
 
 
+//  setTimeout(function(){
+
+//     $('#upszilaid').val('{{ $upszila }}');
+//     $('#upszila').val('{{ $upszila }}');
+//     changethana();
+// }, 1000);//wait 2 seconds
+$('#memberId').val('{{ $memberId }}');    
+$('#memberName').val('{{ $memberName }}');    
+$('#upszilaid').val('{{ $upszila }}');    
+$('#upszila').val('{{ $upszila }}');
+changethana();
 
 
 

@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\District;
 use App\Models\Thana;
+use Illuminate\Support\Str;
+
+                
 class MemberController extends Controller
 {
 
@@ -40,12 +43,28 @@ class MemberController extends Controller
      */
     public function create()
     {
+        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+       // generate a pin based on 2 * 7 digits + a random character
+        $pin = mt_rand(10000, 99999)
+            . $characters[rand(0, strlen($characters) - 1)];
+        
+        // shuffle the result
+        $string = str_shuffle($pin);
+
 
         $data['datas'] = Division::all();
         $Table =  DB::getSchemaBuilder()->getColumnListing('members');
         $row = [];
         foreach ($Table as $rowname) {
-            $row[$rowname] = '';
+
+            if($rowname=='memberId'){
+                $row[$rowname] = $string;
+            }else{
+                $row[$rowname] = '';
+            }
+
+
+            
         };
         $rows[] = $row;
         $object = json_decode(json_encode($rows));

@@ -92,7 +92,7 @@ class frontendController extends Controller
         $data['adr'] =   DB::table('ads')->where($whr)->get();
 
 
-  
+
 
         return view('register_gide', $data);
     }
@@ -105,6 +105,15 @@ class frontendController extends Controller
         $data['adl'] =   DB::table('ads')->where($whl)->get();
         $data['rows'] = member::orderBy('id', 'DESC')->get();
         $data['districts'] = District::orderBy('bn_name', 'ASC')->get();
+        $data['Thana'] = Thana::orderBy('bn_name', 'ASC')->get();
+
+
+
+
+        $data['memberName'] = '';
+        $data['memberId'] = '';
+
+
 
         $data['district'] = '';
         $data['upszila'] = '';
@@ -243,33 +252,85 @@ class frontendController extends Controller
 
     public function memberList_submit(Request $r)
     {
-        $district = $r->district;
+        // $district = $r->district;
         $upszila = $r->upszila;
 
-        return redirect("member/".$district.'/'.$upszila);
+
+        $memberId = $r->memberId;
+        $memberName = $r->memberName;
+
+        $member = $memberId;
+
+
+        if($memberId==''){
+            $member = $memberName;
+        }else{
+            $member = $memberId;
+
+        }
+
+
+
+        return redirect("member/".$member.'/'.$upszila);
     }
 
 
 
-    public function member_search($district,$upszila)
+    public function member_search($name,$upszila)
     {
         $whl = [
             'page' => 'Member',
             'position' => 'Left',
         ];
         $data['adl'] =   DB::table('ads')->where($whl)->get();
-        $whdata = [
-            'pr_dist'=>$district,
+
+
+
+        $wh1 = [
             'pr_thana'=>$upszila,
+            'memberId'=>$name,
         ];
-        $data['rows'] = member::where($whdata)->orderBy('id', 'DESC')->get();
+        $wh2 = [
+            'pr_thana'=>$upszila,
+            'name'=>$name,
+        ];
 
-        $data['districts'] = District::orderBy('bn_name', 'ASC')->get();
+        $namess= '';
+        $memberIdss= '';
+        
+         $count1 = member::where($wh1)->count();
 
-        $districts = District::where('bn_name',$district)->orderBy('bn_name', 'ASC')->get();
+        $count2 = member::where($wh2)->count();
+
+
+            if($count1>0){
+                $data['rows'] = member::where($wh1) 
+                ->orderBy('id', 'DESC')->get();
+
+                $memberIdss= $name;
+
+            }else if($count2>0){
+                $data['rows'] = member::where($wh2) 
+                ->orderBy('id', 'DESC')->get();
+
+                $namess= $name;
+
+            }else{
+                $data['rows'] = member::where($wh2) 
+                ->orderBy('id', 'DESC')->get();
+            }
+        
+
+        $data['Thana'] = Thana::orderBy('bn_name', 'ASC')->get();
+
+    
         $upszila = Thana::where('bn_name',$upszila)->get();
 
-        $data['district'] = $districts[0]->id;
+       
+        $data['memberName'] = $namess;
+        $data['memberId'] = $memberIdss;
+
+        $data['district'] ='';
         $data['upszila'] = $upszila[0]->id;
 
         return view('member', $data);
