@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\AdController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\frontendController;
 use App\Http\Controllers\countryApiController;
+use App\Http\Controllers\BlogCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,9 +61,18 @@ Route::get('register-gide',[frontendController::class, 'register_gide'])->name('
 
 Route::get('register',[frontendController::class, 'register'])->name('member.form');
 Route::get('contact',[frontendController::class, 'contact'])->name('contact');
+
+
 Route::get('blogs',[frontendController::class, 'blogs'])->name('blogs');
 Route::get('blogs/{category}',[frontendController::class, 'blogs_category'])->name('blogs_category');
 Route::get('blogs/single/{id}',[frontendController::class, 'blogs_single'])->name('blogs_single');
+
+Route::resources([
+	'blog/comment' => BlogCommentController::class,
+
+
+]);
+
 Route::post('member/register',[frontendController::class, 'store'])->name('memeber.register');
 
 

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class CategoryController extends Controller
 {
 
-    
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -22,7 +22,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-                      
+
         $data['rows'] = category::orderBy('id','DESC')
         ->get();
 
@@ -44,7 +44,7 @@ class CategoryController extends Controller
         $rows[] = $row;
         $object = json_decode(json_encode($rows));
         $data['rows'] = $object;
-     
+
         return view('admin/category.add', $data);
     }
 
@@ -103,7 +103,7 @@ class CategoryController extends Controller
 
 
         $data['rows'] = DB::table('categories')->where('id',$id)->get();
-        
+
             return view('admin/category.add',$data);
     }
 
@@ -134,7 +134,7 @@ class CategoryController extends Controller
 
     public function checkCategory($category)
     {
- 
+
 
        echo  $data['count'] = DB::table('categories')->where('name',$category)->count();
 

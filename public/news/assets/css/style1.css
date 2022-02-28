@@ -1,0 +1,213 @@
+@font-face {
+    font-family: 'SolaimanLipiNormal';
+    src: url('fonts/solaiman-lipi.eot');
+    src: url('fonts/solaiman-lipi.eot') format('embedded-opentype'),
+         url('fonts/solaiman-lipi.woff') format('woff'),
+         url('fonts/solaiman-lipi.ttf') format('truetype'),
+         url('fonts/solaiman-lipi.svg#SolaimanLipiNormal') format('svg');
+	
+	font-weight:normal;font-style:normal;
+}
+
+
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+}
+
+a:hover { text-decoration: none }
+.full_images{
+    width:100% !important;
+    height:auto;
+}
+/* Remove Chrome Input Field's Unwanted Yellow Background Color */
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+.full_website{
+    background-color: #EFF5FF;
+}
+
+.date_social{
+    margin: 5px 0px;
+	color:#FFFFFF;
+	padding-top:5px;
+}
+.social{
+    text-align: right;
+    font-size: 22px;
+    
+}
+.logo{
+    padding:10px;
+}
+.logo img{
+    width:100%;
+    height:auto;
+}
+.bannar{
+	padding:10px 20px;
+}
+.bannar img{
+        width:100%;
+    height:auto;
+}
+.header{
+    border-bottom: 2px solid #0272CA;
+}
+.leadnews{
+	font-family: SolaimanLipiNormal;
+	
+}
+.leadnews img{
+	margin-bottom:10px;
+	background:#EEEEEE;
+	border-radius: 10px 0px 10px 0px;
+
+
+}
+.heading_01{
+    font-size: 20px;
+    line-height: 22px;
+    margin-top: 0px;
+	color:#074097;
+
+}
+.tab-content{
+	overflow: scroll;
+	height: 300px;
+    overflow-x: hidden;
+}
+.tab-content-single{
+    overflow: scroll;
+    height: 380px;
+    overflow-x: hidden;
+}
+.images_title{
+    overflow: hidden;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #CFD3D5;
+    padding-bottom: 6px;
+}
+.images_title img{
+    float: left;
+    width: 25%;
+    margin-right:15px;
+	
+}
+.heading_02{
+    font-size: 19px;
+    line-height: 20px;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.heading_02 a{
+    color: #074097;
+	
+}
+
+.heading_02 a:hover{
+    color:cadetblue;
+}
+.big_images img{
+    margin-bottom: 10px;
+	border-radius: 13px 0px 13px 0px;
+}
+.heading_03{
+    font-size: 17px;
+    line-height: 20px;
+    margin-top: 0px;
+    font-weight: 500;
+}
+
+.heading_03 a{
+    color: #000000;
+}
+
+.heading_03 a:hover{
+    color:#5675B9;
+}
+.catagory_title{
+    background-color: #022569; 
+    padding: 10px;
+    border-radius: 5px 5px 0px 0px;
+    margin-top: 5px;
+}
+.catagory_title a{
+	 color: #FFFFFF;
+}
+.heading_title{
+    overflow: hidden;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #CFD3D5;
+    padding-bottom: 6px;
+	
+}
+.internetional{
+	background:#E4E4E4;
+}
+.big-images-02{
+	background:#EEEEEE;
+}
+.title-banner{
+	margin-bottom:10px;
+}
+.video-gellary{
+	padding-right:16px;
+	padding-left:16px;
+	
+}
+.photo-gallery{
+	padding-right:16px;
+	padding-left:16px;
+	
+}
+.footer-04{
+	background:#0990C3;
+	padding: 1%;
+	color:#fff;	
+}
+.footer {
+    
+	color:#036383;
+	background: #A6A6A6;
+    color: #000000;
+    padding: 1%;   
+}
+.copyright{
+    font-size: 16px;
+}
+.design{
+    text-align: right;
+    font-size: 16px;
+}
+.design a{
+    color: forestgreen;
+}
+.design a:hover{
+    color:firebrick;
+}

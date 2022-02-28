@@ -9,7 +9,7 @@ class BlogController extends Controller
 {
 
 
-   
+
 
     public function __construct()
     {
@@ -23,7 +23,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-            
+
         $data['rows'] = blog::orderBy('id','DESC')
         ->get();
 
@@ -49,7 +49,7 @@ class BlogController extends Controller
         $rows[] = $row;
         $object = json_decode(json_encode($rows));
         $data['rows'] = $object;
-     
+
         return view('admin/blog.add', $data);
     }
 
@@ -76,6 +76,9 @@ class BlogController extends Controller
             }
         }
         if ($id == '') {
+
+            $random  = sprintf("%06d", mt_rand(1, 999999));
+$data['postid'] = $random;
             DB::table('blogs')->insert($data);
             $request->session()->flash('msg', 'Data Inserted Succcessfully');
             return redirect(route('blog.index'));
@@ -109,12 +112,12 @@ class BlogController extends Controller
     public function edit(blog $blog)
     {
         $data['categoryList'] = DB::table('categories')->orderBy('id','DESC')->get();
-                     
+
     $id = $blog->id;
 
 
     $data['rows'] = DB::table('blogs')->where('id',$id)->get();
-    
+
         return view('admin/blog.add',$data);
     }
 

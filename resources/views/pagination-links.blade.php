@@ -37,57 +37,88 @@ li.w-16.px-3.py-1.text-center.rounded.border.shadow.bg-white:hover {
 
 </style>
 
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="post-nav">
+
+
+
+
+
+
+
 @if ($paginator->hasPages())
-    
-<ul class="pagination d-flex justify-content-between">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul class="pager">
 
     @if ($paginator->onFirstPage())
-    <li class="w-16 px-2 py-1 text-center rounded border bg-gray-200" style="background: rgb(153, 153, 153);color:white"  >Previous</li>
+
 
     @else
-    <li class="w-16 px-2 py-1 text-center rounded border shadow bg-white" wire:click='previousPage'>Previous</li>
+    <li wire:click='previousPage'><a href="javascript:void(0)" title="previous"><i class="fas fa-backward fa-fw" aria-hidden="true"></i>
+    </a></li>
 
     @endif
-   
+
 
 
 @foreach ($elements as $element)
-<div class="d-flex">
+
 
 @if (is_array($element))
-    
+
 @foreach ($element as $page=>$url)
-    
+
 
 
     @if ($page == $paginator->currentPage())
-    <li class='mx-2 w-10 py-1 px-2 text-center rounded border shadow bg-blue-300' style="background: blue;color:white" wire:click='gotoPage({{ $page }})'>{{ $page }}</li>
+    <li class='active' wire:click='gotoPage({{ $page }})'> <span class="active">{{ $page }}</span> </li>
     @else
-    <li class='mx-2 w-10 py-1 px-2 text-center rounded border shadow bg-white' wire:click='gotoPage({{ $page }})'>{{ $page }}</li>
+    <li wire:click='gotoPage({{ $page }})'><a href="javascript:void(0)">{{ $page }}</a></li>
     @endif
     @endforeach
 
     @endif
 
-</div>
+
 
 
 @endforeach
 
 
-       
+
 
 
     @if ($paginator->hasMorePages())
-    <li class="w-16 px-3 py-1 text-center rounded border shadow bg-white" wire:click='nextPage'>Next</li>
+    <li wire:click='nextPage'><a href="javascript:void(0)" title="next"><i class="fa fa-forward" aria-hidden="true"></i>
+    </a></li>
     @else
-    <li class="w-16 px-3 py-1 text-center rounded border bg-gray-200" style="background: rgb(153, 153, 153);color:white"  >Next</li>
+
     @endif
-   
-       
+
+
 
 
 
 </ul>
 
 @endif
+
+</div>
+</div>
+</div>

@@ -1,0 +1,225 @@
+/*
+Theme Name: dailysavvataralo
+Theme URI: https://dailysavvataralo.com/
+Author:  Subrata Deb Nath
+Author URI: https://subrata6630.github.io/
+Description: Devs Newspaper  brings your site to life with immersive featured images and subtle animations. With a focus on News sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats and on any device.
+Version: 1.0
+License: GNU General paid License v2 or later
+License URI: #
+Text Domain: popularnews
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+This theme, like WordPress, is licensed under the Sbtechbd Technology.
+Use it to make something cool, have fun.
+*/
+.headin-padding{
+	padding:20px;
+}
+.full_images img{
+    width:100% !important;
+    height:auto !important;
+}
+.video iframe{
+	width:100% !important;
+	height:auto !important;
+}
+.ads img{
+	margin-bottom:7px;
+}
+.mar{
+	margin-bottom:10px;
+}
+.archive_details{
+    border-bottom: 2px solid #737070;
+    border-left: 5px solid #8C0303;
+    margin-bottom: 15px;
+    padding: 25px;
+}
+.archive_img{
+    float: left;
+    width: 20%;
+    margin-right: 20px;
+}
+.caption{
+    margin-top: -10px;
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: black;
+    opacity: .4;
+    color: white;
+}
+.caption h3{
+    opacity: 10;
+}
+.sin-image img{
+	width:100%;
+	height:auto;
+}
+.exclusive{
+	height:210px;
+}
+footer {
+	padding-top:20px;
+	
+}
+.footer-04{
+	padding-top:10px;
+	padding-bottom:10px;
+	
+}
+.text{
+	padding:5px;
+}
+
+.morenews{
+    font-size: 16px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+.morenews a{
+    color: forestgreen
+}
+
+/**==================================
+    Scrool Section start
+ ==================================**/ 
+
+.scrrol_section{
+    background: #fff;
+}
+.scrool{
+    margin-top:10px;     
+}
+
+.scrool_2{
+    padding:5px;
+    font-size:16px;
+    color:#000;
+}
+.scrool_2 a{
+    font-size:16px;
+    color:#000;
+}
+
+/* =========================================================
+Comments
+ ========================================================= */
+.comment-respond,
+.entry-pings,
+.entry-comments {
+    color: #444;
+    padding: 20px 45px 40px 45px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    border-left: 4px solid #444;
+}
+.entry-comments h3{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.comment-respond h3,
+.entry-pings h3{
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+.comment-respond {
+	padding-bottom: 5%;
+	margin: 20px 1px 20px 1px;
+        border-left: none !important;
+}
+.comment-header {
+	color: #adaeb3;
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+.comment-header cite a {
+	border: none;
+	font-style: normal;
+	font-size: 16px;
+	font-weight: bold;
+}
+.comment-header .comment-meta a {
+	border: none;
+	color: #adaeb3;
+}
+li.comment {
+	background-color: #fff;
+	border-right: none;
+}
+.comment-content {
+	clear: both;
+	overflow: hidden;
+}
+.comment-list li {
+	font-size: 14px;
+	padding: 20px 30px 20px 50px;
+}
+.comment-list .children {
+	margin-top: 40px;
+	border: 1px solid #ccc;
+}
+.comment-list li li {
+	background-color: #f5f5f6;
+}
+.comment-list li li li {
+	background-color: #fff;
+}
+.comment-respond textarea,
+.comment-respond input[type="email"],
+.comment-respond input[type="text"],
+.comment-respond input[type="url"] {
+	width: 100%;
+	background : #F1EDEE;
+}
+.comment-respond input{
+    background: #E8E4E5;
+}
+.comment-respond label {
+	display: block;
+	margin-right: 12px;
+}
+.entry-comments .comment-author {
+	margin-bottom: 0;
+	position: relative;
+}
+.entry-comments .comment-author img {
+	border-radius: 50%;
+	border: 5px solid #fff;
+	left: -80px;
+	top: -5px;
+	position: absolute;
+	width: 60px;
+}
+.entry-pings .reply {
+	display: none;
+}
+.bypostauthor {
+}
+.form-allowed-tags {
+	background-color: #f5f5f5;
+	font-size: 16px;
+	padding: 24px;
+}
+.comment-reply-link{
+    cursor: pointer;
+    background-color: #444;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding: 4px 10px 4px;
+    text-transform: uppercase;
+    width: auto;
+}
+.comment-reply-link:hover{
+    color: #fff;
+}
+.comment-notes{
+    display:none;   
+}

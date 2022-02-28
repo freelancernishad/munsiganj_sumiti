@@ -204,7 +204,7 @@ class frontendController extends Controller
         $data['cate'] = $cate;
         $data['categories'] = DB::table('categories')->orderBy('name', 'ASC')->get();
         // $data['posts'] = DB::table('blogs')->orderBy('id','DESC')->get();
-        return view('blogs', $data);
+        return view('News.index', $data);
     }
     public function blogs_category($category)
     {
@@ -297,36 +297,36 @@ class frontendController extends Controller
 
         $namess= '';
         $memberIdss= '';
-        
+
          $count1 = member::where($wh1)->count();
 
         $count2 = member::where($wh2)->count();
 
 
             if($count1>0){
-                $data['rows'] = member::where($wh1) 
+                $data['rows'] = member::where($wh1)
                 ->orderBy('id', 'DESC')->get();
 
                 $memberIdss= $name;
 
             }else if($count2>0){
-                $data['rows'] = member::where($wh2) 
+                $data['rows'] = member::where($wh2)
                 ->orderBy('id', 'DESC')->get();
 
                 $namess= $name;
 
             }else{
-                $data['rows'] = member::where($wh2) 
+                $data['rows'] = member::where($wh2)
                 ->orderBy('id', 'DESC')->get();
             }
-        
+
 
         $data['Thana'] = Thana::orderBy('bn_name', 'ASC')->get();
 
-    
+
         $upszila = Thana::where('bn_name',$upszila)->get();
 
-       
+
         $data['memberName'] = $namess;
         $data['memberId'] = $memberIdss;
 
