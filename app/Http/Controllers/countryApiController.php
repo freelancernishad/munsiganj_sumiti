@@ -15,33 +15,33 @@ class countryApiController extends Controller
 
  echo $data = District::where('division_id',$id)->get();
 
-    }   
-    
+    }
+
     public function getthana(Request $r)
     {
         $id =  $r->input('id');
 
         $District = District::where('id',$id)->get();
-echo $District[0]->bn_name;
+echo $District[0]->name;
 echo ',,,';
 
  echo $data = Thana::where('district_id',$id)->get();
 
     }
-  
-    
+
+
     public function getunioun(Request $r)
     {
         $id =  $r->input('id');
 
         $Thana = Thana::where('id',$id)->get();
-echo $Thana[0]->bn_name;
+echo $Thana[0]->name;
 echo ',,,';
 
  echo $data = Union::where('upazila_id',$id)->get();
 
     }
-    
+
     public function gotoUnion(Request $r)
     {
 
@@ -49,6 +49,6 @@ echo ',,,';
 
          $name =  $r->input('id');
         $Union = Union::where('id',$name)->get();
- echo $Union[0]->bn_name;
+ echo $Union[0]->name;
     }
 }

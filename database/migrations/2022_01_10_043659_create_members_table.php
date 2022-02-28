@@ -20,6 +20,7 @@ class CreateMembersTable extends Migration
             $table->string('age')->nullable();
             $table->string('dob')->nullable();
             $table->string('father_name')->nullable();
+            $table->string('Spouse_name')->nullable();
             $table->string('education')->nullable();
             $table->string('occupation')->nullable();
             $table->string('pr_vill')->nullable();
@@ -30,10 +31,13 @@ class CreateMembersTable extends Migration
             $table->string('p_post')->nullable();
             $table->string('p_thana')->nullable();
             $table->string('p_dist')->nullable();
+            $table->string('Present_address')->nullable();
             $table->string('phoneNumber')->nullable();
+            $table->string('phoneNumber2')->nullable();
             $table->string('email')->nullable();
             $table->string('website')->nullable();
             $table->string('pesahgot_address')->nullable();
+            $table->string('blood_group')->nullable();
             $table->string('samagik_unoyon')->nullable();
             $table->string('hobby')->nullable();
             $table->string('fee')->nullable();

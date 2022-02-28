@@ -3,7 +3,7 @@
 
 @section('container')
 
-     	  
+
             <div class="page-title">
               <div class="title_left">
                 <h3>Manage Members</h3>
@@ -12,7 +12,7 @@
               <div class="title_right">
                 <div class="col-md-5 col-sm-5  form-group pull-right top_search">
                   <div class="input-group">
-            
+
                   </div>
                 </div>
               </div>
@@ -21,13 +21,13 @@
             <div class="row">
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
-                
+
                   <div class="x_content">
                     <br />
 
 
 @foreach ($rows as $row)
-  
+
 
 
 
@@ -42,7 +42,7 @@
               {{--  col-md-6 start  --}}
               <div class="col-md-12">
                 <div class="form-group">
-                  <label>ছবি</label>
+                  <label>Memeber Image</label>
 
 
 
@@ -59,9 +59,9 @@
 <div class="col-md-5 mb-3"></div>
 
 
-                
 
-				
+
+
 
 
 
@@ -71,8 +71,8 @@
               {{--  col-md-6 start  --}}
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>নাম</label>
-                  <input type="text" class="form-control" name="name" id="name" value="{{ $row->name }}">
+                  <label>Name</label>
+                  <input type="text" class="form-control" name="name" id="name" value="{{ $row->name }}" required>
                 </div>
 
               </div>
@@ -81,19 +81,8 @@
               {{--  col-md-6 start  --}}
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>বয়স</label>
-                  <input type="text" class="form-control" name="age" id="age" value="{{ $row->age }}">
-                </div>
-
-              </div>
-
-
-
-              {{--  col-md-6 start  --}}
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>জন্ম তারিখ</label>
-                  <input type="date" class="form-control" name="dob" id="dob" value="{{ $row->dob }}">
+                  <label>Age</label>
+                  <input type="text" class="form-control" name="age" id="age" value="{{ $row->age }}" required>
                 </div>
 
               </div>
@@ -103,8 +92,8 @@
               {{--  col-md-6 start  --}}
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>পিতার/স্বামীর নাম</label>
-                  <input type="text" class="form-control" name="father_name" id="father_name" value="{{ $row->father_name }}">
+                  <label>Date of birth</label>
+                  <input type="date" class="form-control" name="dob" id="dob" value="{{ $row->dob }}" required>
                 </div>
 
               </div>
@@ -114,8 +103,18 @@
               {{--  col-md-6 start  --}}
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>শিক্ষাগত যোগ্যতা</label>
-                  <input type="text" class="form-control" name="education" id="education" value="{{ $row->education }}">
+                  <label>Father's Name</label>
+                  <input type="text" class="form-control" name="father_name" id="father_name" value="{{ $row->father_name }}" required>
+                </div>
+
+              </div>
+
+
+              {{--  col-md-6 start  --}}
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Spouse Name</label>
+                  <input type="text" class="form-control" name="Spouse_name" id="Spouse_name" value="{{ $row->Spouse_name }}" required>
                 </div>
 
               </div>
@@ -125,8 +124,8 @@
               {{--  col-md-6 start  --}}
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>পেশা</label>
-                  <input type="text" class="form-control" name="occupation" id="occupation" value="{{ $row->occupation }}">
+                  <label>Educational Qualifications</label>
+                  <input type="text" class="form-control" name="education" id="education" value="{{ $row->education }}" required>
                 </div>
 
               </div>
@@ -136,50 +135,81 @@
               {{--  col-md-6 start  --}}
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>ফোন নাম্বর</label>
-                  <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" value="{{ $row->phoneNumber }}">
+                  <label>Occupation</label>
+                  <input type="text" class="form-control" name="occupation" id="occupation" value="{{ $row->occupation }}" required>
                 </div>
 
               </div>
 
-      
+
+
+              {{--  col-md-6 start  --}}
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Contact Number 1</label>
+                  <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" value="{{ $row->phoneNumber }}" required>
+                </div>
+
+              </div>
+
+
+              {{--  col-md-6 start  --}}
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Contact Number 2</label>
+                  <input type="text" class="form-control" name="phoneNumber2" id="phoneNumber2" value="{{ $row->phoneNumber2 }}" required>
+                </div>
+
+              </div>
+
+
                     {{--  col-md-6 start  --}}
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>ইমেইল</label>
-                        <input type="text" class="form-control" name="email" id="email" value="{{ $row->email }}">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="email" id="email" value="{{ $row->email }}" required>
                       </div>
-      
+
                     </div>
-      
-      
-      
+
+
+
                     {{--  col-md-6 start  --}}
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label>ওয়েবসাইট</label>
-                        <input type="text" class="form-control" name="website" id="website" value="{{ $row->phoneNumber }}">
+                        <label>Website</label>
+                        <input type="text" class="form-control" name="website" id="website" value="{{ $row->website }}">
                       </div>
-      
+
                     </div>
-      
+
 
 
               {{--  col-md-6 start  --}}
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>পেশাগত ঠিকানা</label>
-                  <input type="text" class="form-control" name="pesahgot_address" id="pesahgot_address" value="{{ $row->pesahgot_address }}">
+                  <label>Professional address</label>
+                  <input type="text" class="form-control" name="pesahgot_address" id="pesahgot_address" value="{{ $row->pesahgot_address }}" required>
+                </div>
+
+              </div>
+
+  {{--  col-md-6 start  --}}
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Blood group</label>
+                  <input type="text" class="form-control" name="blood_group" id="blood_group" value="{{ $row->blood_group }}" required>
                 </div>
 
               </div>
 
 
 
+
               {{--  col-md-6 start  --}}
-              <div class="col-md-6">
+              <div class="col-md-6 d-none">
                 <div class="form-group">
-                  <label>সামজিক উন্নয়ন পূর্ব অভিজ্ঞতা (যদি থাকে)</label>
+                  <label>Related social working details (optional)</label>
                   <input type="text" class="form-control" name="samagik_unoyon" id="samagik_unoyon" value="{{ $row->samagik_unoyon }}">
                 </div>
 
@@ -189,7 +219,7 @@
 
 
               {{--  col-md-6 start  --}}
-              <div class="col-md-6">
+              <div class="col-md-6 d-none">
                 <div class="form-group">
                   <label>বিশেষ সখ (যদি থাকে)</label>
                   <input type="text" class="form-control" name="hobby" id="hobby" value="{{ $row->hobby }}">
@@ -201,8 +231,8 @@
               {{--  col-md-6 start  --}}
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>সদস্য হওয়ার নির্দিষ্ট চাঁদা</label>
-                  <input type="text" class="form-control" name="fee" id="fee" value="{{ $row->fee }}">
+                  <label>Membership Fee</label>
+                  <input type="text" class="form-control" name="fee" id="fee" value="{{ $row->fee }}" required>
                 </div>
 
               </div>
@@ -210,16 +240,16 @@
 
 
               <div class="col-md-12">
-                <h3>স্থায়ী ঠিকানা</h3>
+                <h3>Permanent address</h3>
             </div>
             {{-- col-md-6 start --}}
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>জেলা</label>
+                    <label>District</label>
                     <select id="districtid1" onchange="changedistrict(1)" class="form-control">
-                        <option value="">জেলা</option>
+                        <option value="">District</option>
                         @foreach ($districts as $dList)
-                            <option value="{{ $dList->id }}">{{ $dList->bn_name }}</option>
+                            <option value="{{ $dList->id }}">{{ $dList->name }}</option>
                         @endforeach
                     </select>
                     <input type="hidden" class="form-control" name="pr_dist" id="pr_dist1"
@@ -229,9 +259,9 @@
             {{-- col-md-6 start --}}
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>থানা/উপজেলা</label>
+                    <label>Thana/Upazila</label>
                     <select id="upszilaid1" onchange="changethana(1)" class="form-control">
-                        <option value="">উপজেলা</option>
+                        <option value="">Thana/Upazila</option>
                     </select>
                     <input type="hidden" class="form-control" name="pr_thana" id="pr_thana1"
                         value="{{ $row->pr_thana }}">
@@ -240,9 +270,9 @@
             {{-- col-md-6 start --}}
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>ডাকঘর</label>
+                    <label>Union</label>
                     <select id="unionid1" onchange="changeunioun(1)" class="form-control">
-                        <option value="">ডাকঘর</option>
+                        <option value="">Union</option>
                     </select>
                     <input type="hidden" class="form-control" name="pr_post" id="pr_post1"
                         value="{{ $row->pr_post }}">
@@ -251,21 +281,31 @@
             {{-- col-md-6 start --}}
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>গ্রাম</label>
+                    <label>Village</label>
                     <input type="text" class="form-control" name="pr_vill" id="pr_vill"
-                        value="{{ $row->pr_vill }}">
+                        value="{{ $row->pr_vill }}" required>
                 </div>
             </div>
             <div class="col-md-12">
-                <h3>বর্তমান ঠিকানা  </h3>
-                <h5><input style="width: 32px;
+                <h3>Present address  </h3>
+                <h5 style="display:none" ><input style="width: 32px;
                   height: 19px;" onclick="sameAddress()" type="checkbox" id="same_Address"> <label for="same_Address">একই ঠিকানা হলে টিক দিন</label></h5>
             </div>
 
 
 
+            {{-- col-md-6 start --}}
+            <div class="col-md-12">
+                <div class="form-group">
+ <textarea name="Present_address" id="Present_address" class="form-control"  cols="30" rows="4" style="resize:none" required>{{ $row->Present_address }}</textarea>
+                </div>
+            </div>
+
+
+
+
 {{-- col-md-6 start --}}
-<div class="col-md-6">
+<div class="col-md-6 d-none">
 <div class="form-group">
 <label>জেলা</label>
 
@@ -284,7 +324,7 @@ value="{{ $row->p_dist }}">
 </div>
 
             {{-- col-md-6 start --}}
-            <div class="col-md-6">
+            <div class="col-md-6 d-none">
               <div class="form-group">
                 <label>থানা/উপজেলা</label>
                   <select id="upszilaid2" onchange="changethana(2)" class="form-control">
@@ -296,9 +336,9 @@ value="{{ $row->p_dist }}">
                       value="{{ $row->p_thana }}">
               </div>
           </div>
-   
+
             {{-- col-md-6 start --}}
-        <div class="col-md-6">
+        <div class="col-md-6 d-none">
               <div class="form-group">
                 <label>ডাকঘর</label>
                 <select id="unionid2" onchange="changeunioun(2)" class="form-control">
@@ -312,7 +352,7 @@ value="{{ $row->p_dist }}">
           </div>
 
             {{-- col-md-6 start --}}
-            <div class="col-md-6">
+            <div class="col-md-6 d-none">
                 <div class="form-group">
                     <label>গ্রাম</label>
                     <input type="text" class="form-control" name="p_vill" id="p_vill"
@@ -324,20 +364,20 @@ value="{{ $row->p_dist }}">
 
             </div>
 
-						
-                 
-					  
-					
 
-			   
-					
-               
-         
-             
+
+
+
+
+
+
+
+
+
                       <div class="ln_solid"></div>
                       <div class="item form-group">
                         <div class="col-md-6 col-sm-6 offset-md-3">
-                      
+
                           <button type="submit" id="submitBtn" class="btn btn-success">Submit</button>
                         </div>
                       </div>
@@ -358,6 +398,10 @@ value="{{ $row->p_dist }}">
 
 
             <script>
+@if($row->id=='')
+$('#districtid1').val(48);
+changedistrict(1);
+@endif
               //getthana
               function changedistrict(id) {
                   var district = $('#districtid'+id).val();
@@ -377,13 +421,13 @@ value="{{ $row->p_dist }}">
                           //console.log(obj)
                           var option = '';
                           for (var i = 0; i < length; i++) {
-                              option += '<option value="' + obj[i].id + '">' + obj[i].bn_name + '</option>';
+                              option += '<option value="' + obj[i].id + '">' + obj[i].name + '</option>';
                           }
-                          thana.html('<option value="">উপজেলা</option>' + option)
+                          thana.html('<option value="">Thana/Upazila</option>' + option)
                       }
                   });
               }
-      
+
               function changethana(id) {
                   var thana = $('#upszilaid'+id).val();
                   var union = $('#unionid'+id);
@@ -402,9 +446,9 @@ value="{{ $row->p_dist }}">
                           //console.log(obj)
                           var option = '';
                           for (var i = 0; i < length; i++) {
-                              option += '<option value="' + obj[i].id + '">' + obj[i].bn_name + '</option>';
+                              option += '<option value="' + obj[i].id + '">' + obj[i].name + '</option>';
                           }
-                          union.html('<option value="">ডাকঘর</option>' + option)
+                          union.html('<option value="">Union</option>' + option)
                       }
                   });
               }
@@ -424,15 +468,15 @@ value="{{ $row->p_dist }}">
                       }
                   });
               }
-      
-      
-      
-      
+
+
+
+
       function sameAddress(){
 
 
 
-      
+
         var same_Address = document.getElementById('same_Address');
         var districtid1 = document.getElementById('districtid1');
         var districtid2 = document.getElementById('districtid2');
@@ -444,44 +488,44 @@ value="{{ $row->p_dist }}">
         var submitBtn = document.getElementById('submitBtn');
         submitBtn.disabled=true;
         if (same_Address.checked == true){
-      
+
           districtid2.value = districtid1.value;
           changedistrict(2);
-          setTimeout(function(){  
+          setTimeout(function(){
             upszilaid2.value = upszilaid1.value;
-            
+
             changethana(2);
-      
+
       setTimeout(function(){
-      
+
         unionid2.value = unionid1.value;
-      
+
         changeunioun(2)
         submitBtn.disabled=false;
       }, 700);
       p_vill.value = pr_vill.value;
-      
-      
-    
+
+
+
       }, 1000);
-      
-      
-          
-      
-      
+
+
+
+
+
         } else {
           districtid2.value = '';
           upszilaid2.value = '';
           unionid2.value = '';
           p_vill.value = '';
           submitBtn.disabled=false;
-      
+
         }
-      
+
       }
-      
-      
-      
+
+
+
           </script>
 
 

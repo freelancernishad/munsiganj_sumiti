@@ -45,7 +45,7 @@
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $row->name }}</td>
                                         <td>{{ $row->dob }}</td>
-                                        <td>{{ $row->p_vill }} ,{{ $row->p_post }} ,{{ $row->p_thana }} ,{{ $row->p_dist }}</td>
+                                        <td>{{ $row->Present_address }}</td>
                                         <td>{{ date("Y-m-d h:i:s A", strtotime($row->created_at)) }} </td>
                                         <td><img width="100%" src="{{ $row->image }}" alt="" /></td>
                                         <td>
