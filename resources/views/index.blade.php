@@ -1,12 +1,56 @@
 @extends('layouts.master')
 @section('content')
+
+
+<style>
+
+.owl-nav {
+    display: none;
+}
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+    background: 0 0;
+    color: inherit;
+    border: 0;
+    padding: 0!important;
+    font: inherit;
+    width: 10px;
+    height: 10px;
+    background: gray;
+    margin: 3px;
+    border-radius: 10px;
+}
+
+.owl-dots {
+    text-align: center;
+    padding: 2px 0px 9px 7px;
+}
+
+button.owl-dot.active {
+    background: #e8292c;
+}
+
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-family: swiper-icons;
+    font-size: 30px !important;
+    text-transform: none!important;
+    letter-spacing: 0;
+    text-transform: none;
+    font-variant: initial;
+    line-height: 1;
+    font-weight: 700 !important;
+    color: black !important;
+}
+
+</style>
+
     <main>
         <section class="hero_area">
             <div class="row p-0">
-                <div class="col-md-3" style="background: #e6f5fa00">
+                <div class="col-md-3" style="background: #e6f5fa00;width:200px !important" >
                     <x-sidebar />
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-9" style="    margin-top: 15px;">
                     <div class="owl-carousel">
 
                         @foreach ($brand as $brandList)
@@ -24,16 +68,16 @@
                     <?php
 
 
-                    $adtop = $adtop[0]->image;
-                    $adtop = json_decode($adtop);
+                    // $adtop = $adtop[0]->image;
+                    // $adtop = json_decode($adtop);
 
-                    foreach($adtop as $adtoplist){
+                    // foreach($adtop as $adtoplist){
 
                     ?>
-                    <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adtoplist->name) }}" alt="" />
+                   
 
                     <?php
-                    }
+                    //}
 
 
 

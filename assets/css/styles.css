@@ -64,7 +64,7 @@ button.search_btn {
     border-bottom-right-radius: 13px;
     padding: 3px 6px 3px 6px;
     border-left: 0 !important;
-    background: #ff0000;
+    background: #d02804;
     color: white;
 }
 
@@ -76,12 +76,12 @@ ul.main_nav {
 }
 
 .bottomheader {
-    background: #ffffff;
+    background: #d02804;
     border-bottom: 1px solid #00a928ab;
 }
 
 ul.main_nav li a {
-    color: #363535;
+    color: #ffffff;
     text-decoration: none;
     display: block;
 }
@@ -103,18 +103,18 @@ ul.main_nav li a {
     padding: 10px 21px;
     /* border-right: 1px dotted; */
     transition: all 0.4s;
-    font-weight: 500;
-    border-top: 3px solid #ff000000;
+    font-weight: 600;
+    border-top: 3px solid #d0280400;
 }
 
 ul.main_nav li a:hover {
-    background: #fefefe00;
-    color: red;
+    background: #dbdbdb;
+    color: #d02804;
     border-top: 3px solid #a4a4a4;
 }
 ul.main_nav li a.active {
-    background: #961d1f00;
-    color: red;
+    background: #dbdbdb;
+    color: #d02804;
     border-top: 3px solid #a4a4a4;
 }
 
@@ -182,26 +182,29 @@ ul.dropdownItem li a {
 /* side bar */
 
 .sidebar {
-    background: #0ca829;
+    background: repeating-linear-gradient(90deg, #badaff, transparent 378px);
 }
 
 
 
 ul.sidebarmenu li a {
-    color: #ffffff;
+    color: #d02804;
     font-weight: 600;
     padding: 7px 17px;
     display: block;
     /* box-shadow: -5px 0px 8px -1px #9c9c9c; */
     text-decoration: none;
     transition: all 0.4s;
-    font-size: 21px;
-    border-bottom: 1px solid #6a6a6a94;
+    font-size: 16px;
+    border-bottom: 1px solid #d0280494;
+    border-radius: 6px;
+    border-bottom-right-radius: 15px;
 }
 
 ul.sidebarmenu li a:hover {
-    background: #007814;
+    background: #d02804;
     transform: translateX(10px);
+    color: white;
 }
 
 ul.sidebar_dropdownList {
@@ -219,7 +222,7 @@ li.sidebar_dropdown:hover .sidebar_dropdownList {
     left: 315px;
     top: 0px;
     width: max-content;
-    background: #2d9237;
+    background: #d9fec8;
 }
 
 
@@ -687,24 +690,29 @@ form.d-flex.w-100.search_form {
 }
 
 a.memberReBtn {
-    background: #ff0000;
-    height: 30px;
-    margin-top: 6px;
+    background: #d02804;
+    height: 35px;
+    margin-top: 7px;
     padding: 4px 8px;
     margin-left: 10px;
     color: white;
     border-radius: 14px;
     text-decoration: none;
-    border: 1px solid red;
+    border: 2px solid white;
+    font-weight: 600;
+    box-shadow: 0px 0px 8px 2px white;
 }
 
 a.memberReBtn:hover {
-    background: #720e0e00;
-    border: 1px solid #8c8c8c;
-    color: #8c8c8c;
+    background: #0da92c;
+    border: 2px solid #ffffff;
+    color: #ffffff;
 }
 .text-primary {
-    color: #ff0000!important;
+    color: #d02804!important;
     font-size: 19px;
     font-weight: 700;
+}
+ul.dropdownItem li a {
+    color: red;
 }

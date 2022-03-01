@@ -6,7 +6,7 @@
         </div>
         <div class="bottomheader">
             <div class="cus_container">
-                <nav class="nav">
+                <nav class="nav" style="    justify-content: center;">
                     <div class="mobilenav">
                         <i onclick="mobileNav()" class="fas fa-bars"></i>
                     </div>
@@ -37,12 +37,14 @@
 
 
                     </ul>
-                    <form action="{{ url('blogs') }}" class="d-flex w-100 search_form">
+
+
+                    {{-- <form action="" class="d-flex w-100 search_form">
                         <input type="text" id="search" class="w-90" name="search" />
                         <button type="submit" class="search_btn">
                             <i class="fal fa-search"></i>
                         </button>
-                    </form>
+                    </form> --}}
 
 
                     <a href="{{ url('register') }}" class="memberReBtn" >Apply For Membership</a>

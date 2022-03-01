@@ -94,7 +94,7 @@
                     </div>
 
 
-                    <div class="col-md-6">
+                    <div class="col-md-9">
 
                         <?php
 
@@ -120,15 +120,15 @@
 
 
 
-
+{{--
                     <div class="col-md-3">
-                        <form action="{{ url('blogs') }}" class="d-flex w-100 search_form">
+                        <form action="" class="d-flex w-100 search_form">
                             <input type="text" id="search" class="w-90" name="search" />
                             <button type="submit" class="search_btn">
                                 <i class="fal fa-search"></i>
                             </button>
                         </form>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
