@@ -88,7 +88,7 @@
                 <div class="row">
                     <div class="col-md-3" style="font-size: 14px">
 
-<img width="200px" src="{{ asset(env('FILE_PATH').'logo/'.$settings[0]->logo) }}" style="    padding: 23px 0;" alt="LOGO">
+<img width="300px" src="{{ asset(env('FILE_PATH').'logo/'.$settings[0]->logo) }}" style="    padding: 8px 0;" alt="LOGO">
 
 
                     </div>
