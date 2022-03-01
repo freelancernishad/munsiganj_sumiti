@@ -46,7 +46,7 @@
 <div class="row">
 <div class="col-md-9">
     <div class="ourMission">
-        <h6>Website Committee</h6>
+        <h6>Committee</h6>
     </div>
     <div class="committee">
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus, lorem at porta tincidunt, tortor orci mollis turpis, porta feugiat mi mi aliquet justo. Maecenas tincidunt massa a nisi rutrum molestie. Morbi id molestie enim. Nam semper lacinia convallis. Vivamus nisl purus, mattis sit amet lectus nec, fermentum malesuada erat. Quisque condimentum, tellus a pretium aliquam, felis justo ultrices nisl, eget tincidunt dui sapien sit amet dolor. Donec placerat nunc at risus malesuada elementum. Etiam nisl est, tincidunt ac eros non, sollicitudin vehicula lorem.
@@ -166,6 +166,6 @@ $i++;
                 ?>
             </div>
         </section>
-       
+
     </main>
     @endsection
