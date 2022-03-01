@@ -267,20 +267,17 @@ button.owl-dot.active {
                     <div style="line-height: 1.5;">
                         <div style="line-height: 1.5;">
                             <div style="line-height: 1.5;"><span style="font-size: 18px; font-family: latoR;">1.
-                                    Subsidized Rental and other Facilities.</span></div>
+                                    ..............................</span></div>
                             <div style="line-height: 1.5;"><span style="font-size: 18px; font-family: latoR;">2.
-                                    National Exhibition&nbsp;and Conference.</span></div>
-                            <div style="line-height: 1.5;"><span style="font-size: 18px; font-family: latoR;">3. Joining
-                                    International Exhibition and Conferences.</span></div>
-                            <div><span style="font-size: 18px; font-family: latoR;">4. Training&nbsp;Facility for
-                                    Employees.</span></div>
-                            <div><span style="font-size: 18px; font-family: latoR;">5. Seminars and Workshops.</span>
+                                ..............................</span></div>
+                            <div style="line-height: 1.5;"><span style="font-size: 18px; font-family: latoR;">3. 
+                                ..............................</span></div>
+                            <div><span style="font-size: 18px; font-family: latoR;">4. ...............................</span></div>
+                            <div><span style="font-size: 18px; font-family: latoR;">5. ...............................</span>
                             </div>
-                            <div><span style="font-size: 18px; font-family: latoR;">6. Market Analysis.</span></div>
-                            <div><span style="font-size: 18px; font-family: latoR;">7. Ensure Government&nbsp;Facilities
-                                    for Business.</span></div>
-                            <div><span style="font-size: 18px; font-family: latoR;">8. Support on 'Made in
-                                    Bangladesh'.</span></div>
+                            <div><span style="font-size: 18px; font-family: latoR;">6. ...............................</span></div>
+                            <div><span style="font-size: 18px; font-family: latoR;">7. ...............................</span></div>
+                            <div><span style="font-size: 18px; font-family: latoR;">8. ...............................</span></div>
                         </div>
                         <div style="line-height: 1.5;">
                             <div></div>
