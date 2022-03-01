@@ -220,6 +220,7 @@ $member = member::where('status','Active')->get();
         $data['cate'] = $cate;
         $data['categories'] = DB::table('categories')->orderBy('name', 'ASC')->get();
         // $data['posts'] = DB::table('blogs')->orderBy('id','DESC')->get();
+        $data['settings'] = DB::table('settings')->get();
         return view('News.index', $data);
     }
     public function blogs_category($category)

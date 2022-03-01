@@ -304,7 +304,7 @@
 
         <div class="row logo_banner">
             <div class="col-md-4 logo">
-                <a href=""><img src="https://dailysavvataralo.com/wp-content/uploads/2021/09/logo.jpeg" alt=""
+                <a href=""><img src="{{ asset(env('FILE_PATH').'logo/'.$settings[0]->logo) }}" alt=""
                         width="100%" /></a>
             </div>
             <div class="col-md-8 bannar">
