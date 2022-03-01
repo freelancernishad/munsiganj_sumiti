@@ -94,7 +94,7 @@
 
 
 
-                                    <option value="{{ $dList->id }}">{{ $dList->bn_name }}</option>
+                                    <option value="{{ $dList->id }}">{{ $dList->name }}</option>
 
                                     @endforeach
                                 </select>

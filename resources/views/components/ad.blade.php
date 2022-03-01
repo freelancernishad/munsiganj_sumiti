@@ -58,7 +58,10 @@
     overflow-y: auto;
     background: #00000085;
 }
-
+li.select2-results__option.select2-results__option--selectable {
+    width: 100% !important;
+    display: block;
+}
 </style>
 <livewire:styles />
 
