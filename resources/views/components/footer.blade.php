@@ -109,7 +109,7 @@ if (url == url ) {
 <div id="uploadimageModal" class="modal" role="dialog">
 <div class="modal-dialog">
  <div class="modal-content">
-     
+
        <div class="modal-body">
          <div class="row">
       <div class="col-md-8 text-center">
@@ -123,7 +123,7 @@ if (url == url ) {
     </div>
    </div>
        </div>
- 
+
     </div>
    </div>
   </div>
@@ -134,7 +134,7 @@ if (url == url ) {
 
    <script src="{{ asset('admin_asset/js/jquery.dataTables.min.js') }}"></script>
   <script src="{{ asset('admin_asset/js/dataTables.bootstrap.min.js') }}"></script>
-  <script src="{{ asset('admin_asset/js/dataTables.buttons.min.js') }}"></script> 
+  <script src="{{ asset('admin_asset/js/dataTables.buttons.min.js') }}"></script>
 
 <script>
 
@@ -153,14 +153,14 @@ height: 350
 
 
 
-$('#images').on('change', function () { 
+$('#images').on('change', function () {
 var reader = new FileReader();
 reader.onload = function (e) {
 $image_crop.croppie('bind', {
 url: e.target.result
 }).then(function(){
 console.log('jQuery bind complete');
-});			
+});
 }
 reader.readAsDataURL(this.files[0]);
 $('#uploadimageModal').modal('show');
@@ -177,11 +177,25 @@ $("#image").val(response);
 $("#imagepreview").attr("src",response);
 
 $('#uploadimageModal').modal('hide');
-});	
+});
 }
 
 
     </script>
+
+    <!-- fontawesome -->
+    <script src="{{ asset('newassets/js/all.min.js') }}"
+        integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="{{ asset('newassets/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Mix it up -->
+    <script src="{{ asset('newassets/js/mixitup.min.js') }}"></script>
+    <!-- main css -->
+    <script src="{{ asset('newassets/js/script.js') }}"></script>
+
+    <script src="{{ asset('newassets/js/custom.js') }}"></script>
+
 <livewire:scripts />
 
 

@@ -33,7 +33,20 @@
                         </li>
                         <li><a class="mainNanLink" href="{{ url('blogs') }}">Blog</a></li>
                         <li><a class="mainNanLink" href="{{ url('contact') }}">Contact</a></li>
+
+
+
                     </ul>
+                    <form action="{{ url('blogs') }}" class="d-flex w-100 search_form">
+                        <input type="text" id="search" class="w-90" name="search" />
+                        <button type="submit" class="search_btn">
+                            <i class="fal fa-search"></i>
+                        </button>
+                    </form>
+
+
+                    <a href="{{ url('register') }}" class="memberReBtn" >Apply For Membership</a>
+
                 </nav>
             </div>
         </div>
@@ -44,3 +57,4 @@
     @yield('content')
 
   <x-footer />
+

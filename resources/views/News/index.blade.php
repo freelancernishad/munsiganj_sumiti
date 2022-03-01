@@ -318,7 +318,20 @@
 
 
 
+
+
+
+
+
+
+
 <livewire:blog-page>
+
+
+
+
+
+
 
 <!-- Section 19 (footer) #################################-->
 <footer>

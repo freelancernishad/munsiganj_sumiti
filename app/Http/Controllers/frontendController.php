@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
 use App\Models\gallery;
 use App\Models\District;
 use App\Models\Thana;
+use App\Models\blog;
+use App\Models\BlogComment;
+use App\Models\PostRead;
+
 class frontendController extends Controller
 {
     public function index()
@@ -23,7 +27,8 @@ class frontendController extends Controller
         $data['adbottom'] =   DB::table('ads')->where($whb)->get();
         $data['brand'] =   DB::table('brandsliders')->orderBy('id', 'DESC')->get();
         $data['main'] =   DB::table('mainsliders')->orderBy('id', 'DESC')->get();
-        return view('index', $data);
+        $latest4 = blog::orderBy('id', 'desc')->take(4)->get();
+        return view('index', $data,compact('latest4'));
     }
     public function about_us()
     {
@@ -96,7 +101,7 @@ class frontendController extends Controller
 
         return view('register_gide', $data);
     }
-    public function member()
+    public function member(Request $request)
     {
         $whl = [
             'page' => 'Member',
@@ -118,7 +123,18 @@ class frontendController extends Controller
         $data['district'] = '';
         $data['upszila'] = '';
 
-        return view('member', $data);
+         $memberid = $request->memberid;
+if($memberid==''){
+    return view('member', $data);
+}else{
+
+    $data['single'] = member::where('memberId', $memberid)->get();
+
+    return view('membersingle', $data);
+}
+
+
+
     }
     public function Committee()
     {
@@ -189,8 +205,8 @@ class frontendController extends Controller
         $data['rows'] = $object;
 
         $data['districts'] = District::orderBy('bn_name', 'ASC')->get();
-
-        return view('register', $data);
+$member = member::where('status','Active')->get();
+        return view('register', $data,compact('member'));
     }
     public function blogs(Request $r)
     {

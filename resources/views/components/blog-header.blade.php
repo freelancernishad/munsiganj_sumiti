@@ -23,7 +23,7 @@
                                 <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                     id="menu-item-19"
                                     class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-19 active">
-                                    <a title="হোম" wire:click="categoryfun('')" href="javascript:void(0)">হোম</a>
+                                    <a title="হোম"  href="{{ url('blogs') }}">হোম</a>
                                 </li>
 
 
@@ -33,7 +33,7 @@
                                 <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                     id="menu-item-21"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21"><a
-                                        title="{{ $catMenuList->name }}"  href="javascript:void(0)" wire:click="categoryfun('{{ $catMenuList->name }}')" >{{ $catMenuList->name }}</a>
+                                        title="{{ $catMenuList->name }}"  href="{{ url('blogs?category='.$catMenuList->name) }}"  >{{ $catMenuList->name }}</a>
                                 </li>
                                 @endforeach
 

@@ -5,13 +5,13 @@ use App\Http\Controllers\Controller;
 
 use App\Models\member;
 use App\Models\Division;
-use Illuminate\Http\Request; 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\District;
 use App\Models\Thana;
 use Illuminate\Support\Str;
 
-                
+
 class MemberController extends Controller
 {
 
@@ -47,7 +47,7 @@ class MemberController extends Controller
        // generate a pin based on 2 * 7 digits + a random character
         $pin = mt_rand(10000, 99999)
             . $characters[rand(0, strlen($characters) - 1)];
-        
+
         // shuffle the result
         $string = str_shuffle($pin);
 
@@ -64,13 +64,14 @@ class MemberController extends Controller
             }
 
 
-            
+
         };
         $rows[] = $row;
         $object = json_decode(json_encode($rows));
         $data['rows'] = $object;
         $data['districts'] = District::orderBy('bn_name', 'ASC')->get();
-        return view('admin/members.add', $data);
+        $member = member::where('status','Active')->get();
+        return view('admin/members.add', $data,compact('member'));
 
     }
 

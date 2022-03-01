@@ -7,28 +7,28 @@
         <section class="hero_area">
             <div class="row p-0">
                 <div class="col-md-3" style="background: #e6f5fa">
-              
+
                     <x-sidebar />
 
 
-               
 
-                    <?php 
+
+                    <?php
 
 
                     $adl = $adl[0]->image;
                     $adl = json_decode($adl);
-                    
+
                     foreach($adl as $adllist){
-                    
+
                     ?>
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adllist->name) }}" alt="" />
-                    
-                    <?php 
+
+                    <?php
                     }
-                    
-                    
-                    
+
+
+
                     ?>
 
                 </div>
@@ -39,35 +39,34 @@
 
 
 
-                    <?php 
+                    <?php
 
 
                     $adtop = $adtop[0]->image;
                     $adtop = json_decode($adtop);
-                    
+
                     foreach($adtop as $adtoplist){
-                    
+
                     ?>
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adtoplist->name) }}" alt="" />
-                    
-                    <?php 
+
+                    <?php
                     }
-                    
-                    
-                    
+
+
+
                     ?>
-          
-<div class="about_header position-relative mt-3">
-
-<img width="100%" src="assets/img/about.jpg" alt="">
-
-<div class="about_head">
-<h5 class="about_title">About Us</h5>
-<p class="about_sort">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae tenetur non temporibus</p>
-</div>
 
 
-</div>
+          <div class="text-center page-banner"
+          style="background-image:url(https://bcs.org.bd/theme/newassets/images/background/authentication_bg.png);">
+          <div class="banner-color p-5 text-center">
+
+              <h1>About</h1>
+
+
+          </div> <!-- /.banner-color -->
+      </div> <!-- /.banner -->
 
 
 
@@ -76,47 +75,43 @@
 <div class="row">
 <div class="col-md-9">
 
-    <div class="about">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus, lorem at porta tincidunt, tortor orci mollis turpis, porta feugiat mi mi aliquet justo. Maecenas tincidunt massa a nisi rutrum molestie. Morbi id molestie enim. Nam semper lacinia convallis. Vivamus nisl purus, mattis sit amet lectus nec, fermentum malesuada erat. Quisque condimentum, tellus a pretium aliquam, felis justo ultrices nisl, eget tincidunt dui sapien sit amet dolor. Donec placerat nunc at risus malesuada elementum. Etiam nisl est, tincidunt ac eros non, sollicitudin vehicula lorem.
+    <div class="page-content">
+        <div class="page-body event-page mb-2">
+            <p
+                style="margin: 0in 0in 7.5pt; text-align: justify; line-height: 16.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante nisi, gravida eget nibh ut, euismod vestibulum enim. Donec quis sapien in neque mollis sodales in eget libero. Nulla eu dolor malesuada, interdum dolor sed, condimentum lectus. Vestibulum dolor turpis, egestas non tempor nec, tincidunt non massa. Etiam feugiat arcu pharetra nunc hendrerit, a blandit nibh pellentesque. Morbi sodales nibh et accumsan consequat. Phasellus posuere, nisl eget dignissim molestie, nulla velit congue massa, sed dapibus neque tortor non libero. Praesent ac tortor malesuada elit mattis mollis nec in nisl.
 
-    Donec quam augue, vulputate ac massa non, placerat porttitor felis. Quisque mollis odio non dolor vestibulum iaculis. Proin fringilla metus at augue luctus consequat. Cras id nibh scelerisque, dapibus neque a, efficitur ante. Donec tincidunt efficitur ex, a blandit lorem porttitor sed. Nullam tempor lectus vitae enim ultrices dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi nec accumsan dolor. In porta rhoncus arcu, et lobortis odio elementum quis. Mauris pretium dui eu consectetur condimentum. Phasellus bibendum tincidunt maximus.</p>
+                Duis elementum augue diam, tincidunt suscipit sem congue ac. Aenean et gravida metus, ac dignissim enim. Etiam vitae metus tincidunt, tincidunt erat sed, posuere nunc. Mauris porttitor ligula nec erat vestibulum tempor. Praesent id orci tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In scelerisque purus eros, id feugiat lacus semper sodales. Aliquam erat volutpat. Maecenas tempus eros sed dui fermentum tempus. Sed sit amet consectetur ante. Integer id dignissim quam.
 
-    </div>
+                Vestibulum vitae rutrum risus. Donec metus metus, aliquet at sem eu, suscipit eleifend nunc. Mauris pharetra ex nec magna placerat sollicitudin. Nulla eget urna volutpat, varius nibh vitae, fringilla mi. Nullam bibendum erat quis massa viverra tristique. Ut id nulla vestibulum, tempus enim eu, pulvinar lectus. Ut facilisis faucibus lectus, eget pellentesque mauris gravida a. Fusce efficitur cursus ligula, sed pellentesque neque consectetur quis. Suspendisse auctor augue sed quam sodales lobortis. Donec convallis sapien quis lorem venenatis tincidunt. Donec mauris elit, dignissim at arcu id, pellentesque ullamcorper tellus. Sed luctus orci at justo congue, posuere viverra ligula tristique. Etiam commodo vel diam at laoreet. Sed ac leo eget tellus sollicitudin pulvinar eu vel nunc. Etiam consequat molestie leo, vitae dignissim mauris efficitur a.
+                </p>
+
+        </div>
+    </div> <!-- /.content -->
 
 
-
-<div class="ourMission">
-    <h6>Our Mission</h6>
-</div>
-
-    <div class="about">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus, lorem at porta tincidunt, tortor orci mollis turpis, porta feugiat mi mi aliquet justo. Maecenas tincidunt massa a nisi rutrum molestie. Morbi id molestie enim. Nam semper lacinia convallis. Vivamus nisl purus, mattis sit amet lectus nec, fermentum malesuada erat. Quisque condimentum, tellus a pretium aliquam, felis justo ultrices nisl, eget tincidunt dui sapien sit amet dolor. Donec placerat nunc at risus malesuada elementum. Etiam nisl est, tincidunt ac eros non, sollicitudin vehicula lorem.
-
-    Donec quam augue, vulputate ac massa non, placerat porttitor felis. Quisque mollis odio non dolor vestibulum iaculis. Proin fringilla metus at augue luctus consequat. Cras id nibh scelerisque, dapibus neque a, efficitur ante. Donec tincidunt efficitur ex, a blandit lorem porttitor sed. Nullam tempor lectus vitae enim ultrices dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi nec accumsan dolor. In porta rhoncus arcu, et lobortis odio elementum quis. Mauris pretium dui eu consectetur condimentum. Phasellus bibendum tincidunt maximus.</p>
-
-    </div>
 
 
 
 </div>
 <div class="col-md-3">
-    
-    <?php 
+
+    <?php
 
 
     $adr = $adr[0]->image;
     $adr = json_decode($adr);
-    
+
     foreach($adr as $adrlist){
-    
+
     ?>
     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adrlist->name) }}" alt="" />
-    
-    <?php 
+
+    <?php
     }
-    
-    
-    
+
+
+
     ?>
 
 </div>
@@ -138,24 +133,24 @@
             <div class="row">
 
 
-                <?php 
+                <?php
 
 
                 $adbottom = $adbottom[0]->image;
                 $adbottom = json_decode($adbottom);
-                
+
                 foreach($adbottom as $adbottomlist){
-                
+
                 ?>
-              
+
                 <div class="col-md-6 mt-3">
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adbottomlist->name) }}" alt="" />
                 </div>
-                <?php 
+                <?php
                 }
-                
-                
-                
+
+
+
                 ?>
             </div>
         </section>

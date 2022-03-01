@@ -72,17 +72,17 @@
 
 
                             <div class="col-md-3">
-                              
+
                                 <input type="text" name="memberId" id='memberId' placeholder="Enter Member ID" class="form-control">
                             </div>
                           <div class="col-md-1">
-                              
+
                               OR
                             </div>
 
 
                             <div class="col-md-3">
-                              
+
                                 <input type="text" name="memberName" id='memberName' placeholder="Enter Member Name" class="form-control">
                             </div>
 
@@ -125,28 +125,49 @@
                                         <td>{{ $row->memberId }}</td>
                                         <td>
                                             <img style="max-width:100px" src="{{ $row->image }}" alt="">
-                                            <h6 class="membername"> {{ $row->name }}</h6>
+                                            <h6 class="membername"> <a href="{{ url('member?memberid='.$row->memberId) }}">{{ $row->name }}</a></h6>
                                             <p class="memberPoaition">{{ $row->education }}</p>
                                         </td>
                                         <td>
-                                            <ul class="list-unstyled memberAddress">
-                                                <li class="">
-                                                    <i class="fas fa-map-marker-alt"></i>
-                                                    &nbsp; {{ $row->p_vill }} ,{{ $row->p_post }} ,{{ $row->p_thana }} ,{{ $row->p_dist }}
-                                                </li>
-                                                <li class="">
-                                                    <i class="fas fa-envelope"></i>
-                                                    &nbsp; {{ $row->email }}
-                                                </li>
-                                                <li class="">
-                                                    <i class="fas fa-phone-alt"></i>
-                                                    &nbsp; {{ $row->phoneNumber }}
-                                                </li>
-                                                <li class="">
-                                                    <i class="fas fa-globe-americas"></i>
-                                                    &nbsp; {{ $row->website }}
-                                                </li>
-                                            </ul>
+
+
+                                            <table witdh="100%" border="0">
+<tr>
+    <td>
+
+        <ul class="list-unstyled memberAddress">
+            <li class="">
+                <i class="fas fa-map-marker-alt"></i>
+                &nbsp; {{ $row->Present_address }}
+            </li>
+            <li class="">
+                <i class="fas fa-envelope"></i>
+                &nbsp; {{ $row->email }}
+            </li>
+            <li class="">
+                <i class="fas fa-phone-alt"></i>
+                &nbsp; {{ $row->phoneNumber }}
+            </li>
+            <li class="">
+                <i class="fas fa-globe-americas"></i>
+                &nbsp; {{ $row->website }}
+            </li>
+        </ul>
+
+    </td>
+    <td>
+        {!! QrCode::size(100)->generate(url('member?memberid='.$row->memberId)); !!}
+
+    </td>
+</tr>
+
+                                            </table>
+
+
+
+
+
+
                                         </td>
                                     </tr>
                                     @endforeach
@@ -248,9 +269,9 @@ $(document).ready( function () {
 //     $('#upszila').val('{{ $upszila }}');
 //     changethana();
 // }, 1000);//wait 2 seconds
-$('#memberId').val('{{ $memberId }}');    
-$('#memberName').val('{{ $memberName }}');    
-$('#upszilaid').val('{{ $upszila }}');    
+$('#memberId').val('{{ $memberId }}');
+$('#memberName').val('{{ $memberName }}');
+$('#upszilaid').val('{{ $upszila }}');
 $('#upszila').val('{{ $upszila }}');
 changethana();
 
