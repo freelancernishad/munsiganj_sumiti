@@ -166,50 +166,6 @@ $i++;
                 ?>
             </div>
         </section>
-        <section class="committeeSeciton">
-            <div class="row">
-                <div class="col-md-9 mt-3 committeeBox">
-                    <div class="cus_container">
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <h4 class="committeeTitlw">Executive Committee</h4>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="d-flex">
-                                    <img width="120px" src="assets/img/committee.png" alt="" />
-                                    <div class="committeeDetails">
-                                        <h6>Committee Name</h6>
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Maiores et perspiciatis architecto,
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="d-flex">
-                                    <img width="120px" src="assets/img/committee.png" alt="" />
-                                    <div class="committeeDetails">
-                                        <h6>Committee Name</h6>
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Maiores et perspiciatis architecto,
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="committeeMore">
-                                    <a href="#"> More Details >> </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-3">
-                    <img width="100%" src="assets/img/ad.png" alt="" />
-                </div>
-            </div>
-        </section>
+       
     </main>
     @endsection

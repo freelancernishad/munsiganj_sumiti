@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="f_logo text-white">
-                    <img width="100px" src="{{ asset(env('FILE_PATH').'logo/'.$settings[0]->logo) }}" style="    padding: 23px 0;" alt="LOGO">
+                    <img width="288px" src="{{ asset(env('FILE_PATH').'logo/'.$settings[0]->logo) }}" style="    padding: 10px 0;" alt="LOGO">
                     <div class="f_address">
                         <ul class="list-unstyled">
                             <li class="text-white">

@@ -42,6 +42,10 @@ button.owl-dot.active {
     color: black !important;
 }
 
+.committeeMore a:hover {
+    color: #bebbbb;
+}
+
 </style>
 
     <main>
@@ -348,23 +352,6 @@ button.owl-dot.active {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <section class="committeeSeciton">
             <div class="row">
                 <div class="col-md-9 mt-3 committeeBox">
@@ -377,29 +364,33 @@ button.owl-dot.active {
                                 <div class="d-flex">
                                     <img width="120px" src="assets/img/committee.png" alt="" />
                                     <div class="committeeDetails">
-                                        <h6>Committee Name</h6>
+                                        <h6>অধ্যাপক ডাঃ মনিরুজ্জামান ভূইয়া</h6>
                                         <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Maiores et perspiciatis architecto,
+                                            সভাপতি
+                                        </p>
+                                         <p>
+                                            মুন্সীগঞ্জ জেলার শ্রীনগর উপজেলার দামলা গ্রামে জন্ম গ্রহণ করেন.....
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-5">
                                 <div class="d-flex">
-                                    <img width="120px" src="assets/img/committee.png" alt="" />
+                                    <img width="120px" src="assets/img/WhatsApp Image 2022-03-01 at 6.32.57 PM.jpeg" alt="" />
                                     <div class="committeeDetails">
-                                        <h6>Committee Name</h6>
+                                        <h6>ডাঃ মোঃ জাহাঙ্গীর আলম</h6>
                                         <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Maiores et perspiciatis architecto,
+                                            মহাসচিব
+                                        </p>
+                                        <p>
+                                            মুন্সীগঞ্জের রামপাল উচ্চ বিদ্যালয় থেকে এস,এস,সি, ঢাকা কলেজ ......
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="committeeMore">
-                                    <a href="#"> More Details >> </a>
+                                    <a href="{{ url('/Committee') }}"> More Details >> </a>
                                 </div>
                             </div>
                         </div>
