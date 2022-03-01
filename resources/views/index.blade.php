@@ -104,7 +104,7 @@
                                     <div class="col-xl-9">
                                         <div class="counter-content">
                                             <h5>Total Member</h5>
-                                            <p>2143</p>
+                                            <p>6000</p>
                                         </div>
                                         <!-- /.counter-content -->
                                     </div>
@@ -123,7 +123,7 @@
                                     </div>
                                     <div class="col-xl-9">
                                         <div class="counter-content">
-                                            <h5>Central Member</h5>
+                                            <h5>Central Committee</h5>
                                             <p>1800</p>
                                         </div>
                                         <!-- /.counter-content -->
@@ -142,7 +142,7 @@
                                     </div>
                                     <div class="col-xl-9">
                                         <div class="counter-content">
-                                            <h5>Branch Member</h5>
+                                            <h5>Global Committee</h5>
                                             <p>343</p>
                                         </div>
                                         <!-- /.counter-content -->
@@ -240,14 +240,14 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 text-center">
-                    <a class="" href=""><img
+                    <a class="" href="{{ url('register') }}"><img
                             class=""
                             src="https://bcs.org.bd/theme/assets/images/member/member.png.gif" alt=""></a>
                 </div>
             </div>
         </div>
 
-       
+
 
         <!-- news room -->
         <div class="news-room" style="background-image: url(https://bcs.org.bd/theme/assets/images/news/bg-news.png);">
