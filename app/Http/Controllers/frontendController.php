@@ -338,10 +338,10 @@ $member = member::where('status','Active')->get();
             }
 
 
-        $data['Thana'] = Thana::orderBy('bn_name', 'ASC')->get();
+        $data['Thana'] = Thana::orderBy('name', 'ASC')->get();
 
 
-        $upszila = Thana::where('bn_name',$upszila)->get();
+        $upszila = Thana::where('name',$upszila)->get();
 
 
         $data['memberName'] = $namess;
