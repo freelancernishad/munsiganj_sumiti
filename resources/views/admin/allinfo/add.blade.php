@@ -3,7 +3,7 @@
 
 @section('container')
 
-     	  
+
             <div class="page-title">
               <div class="title_left">
                 <h3>Manage Info</h3>
@@ -12,7 +12,7 @@
               <div class="title_right">
                 <div class="col-md-5 col-sm-5  form-group pull-right top_search">
                   <div class="input-group">
-               
+
                   </div>
                 </div>
               </div>
@@ -21,13 +21,13 @@
             <div class="row">
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
-                
+
                   <div class="x_content">
                     <br />
 
 
 @foreach ($rows as $row)
-  
+
 
 
 
@@ -35,15 +35,15 @@
 						@csrf
 						<input type="hidden" name="id" id="id" value="{{ $row->id }}">
 						<input type="hidden" name="infoid" id="infoid" value="{{ $row->infoid }}">
-				
+
 
             <div class="row">
 
-           
 
-                
 
-				
+
+
+
 
 
 
@@ -59,6 +59,7 @@
                       <option value="">Select</option>
                       <option>Historical Info</option>
                       <option>District Info</option>
+                      <option>Education details</option>
                       <option>High School</option>
                       <option>Collage Univercity</option>
                       <option>Madrasa</option>
@@ -70,6 +71,8 @@
                       <option>Cultural Info</option>
                       <option>Tourism</option>
                       <option>Local Language</option>
+                      <option>Vhaban Hostel</option>
+                      <option>Probashi</option>
                    </select>
 
 
@@ -99,7 +102,7 @@
 
 <textarea name="description" id="bio" cols="30" class="form-control" rows="10">{{ $row->description }}</textarea>
 
-                
+
                 </div>
 
               </div>
@@ -132,20 +135,20 @@
 
             </div>
 
-						
-                 
-					  
-					
 
-			   
-					
-               
-         
-             
+
+
+
+
+
+
+
+
+
                       <div class="ln_solid"></div>
                       <div class="item form-group">
                         <div class="col-md-6 col-sm-6 offset-md-3">
-                      
+
                           <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                       </div>

@@ -5,42 +5,42 @@
             <div class="row p-0">
                 <div class="col-md-3" style="background: #e6f5fa">
                     <x-sidebar />
-                    <?php 
+                    <?php
 
 
                     $adl = $adl[0]->image;
                     $adl = json_decode($adl);
-                    
+
                     foreach($adl as $adllist){
-                    
+
                     ?>
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adllist->name) }}" alt="" />
-                    
-                    <?php 
+
+                    <?php
                     }
-                    
-                    
-                    
+
+
+
                     ?>
                 </div>
                 <div class="col-md-9">
-  
-                    <?php 
+
+                    <?php
 
 
                     $adtop = $adtop[0]->image;
                     $adtop = json_decode($adtop);
-                    
+
                     foreach($adtop as $adtoplist){
-                    
+
                     ?>
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adtoplist->name) }}" alt="" />
-                    
-                    <?php 
+
+                    <?php
                     }
-                    
-                    
-                    
+
+
+
                     ?>
 <section class="committeSection py-3 pl-3">
 <div class="row">
@@ -52,24 +52,25 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus, lorem at porta tincidunt, tortor orci mollis turpis, porta feugiat mi mi aliquet justo. Maecenas tincidunt massa a nisi rutrum molestie. Morbi id molestie enim. Nam semper lacinia convallis. Vivamus nisl purus, mattis sit amet lectus nec, fermentum malesuada erat. Quisque condimentum, tellus a pretium aliquam, felis justo ultrices nisl, eget tincidunt dui sapien sit amet dolor. Donec placerat nunc at risus malesuada elementum. Etiam nisl est, tincidunt ac eros non, sollicitudin vehicula lorem.
     Donec quam augue, vulputate ac massa non, placerat porttitor felis. Quisque mollis odio non dolor vestibulum iaculis. Proin fringilla metus at augue luctus consequat. Cras id nibh scelerisque, dapibus neque a, efficitur ante. Donec tincidunt efficitur ex, a blandit lorem porttitor sed. Nullam tempor lectus vitae enim ultrices dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi nec accumsan dolor. In porta rhoncus arcu, et lobortis odio elementum quis. Mauris pretium dui eu consectetur condimentum. Phasellus bibendum tincidunt maximus.</p>
     </div>
-<div class="ourMission">
-    <h6>Duties and Responsibilities</h6>
-</div>
-    <div class="committee">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus, lorem at porta tincidunt, tortor orci mollis turpis, </p>
-<ul>
-    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus, lorem at porta tincidunt,</li>
-    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus, lorem at porta tincidunt,</li>
-    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus, lorem at porta tincidunt,</li>
-    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus, lorem at porta tincidunt,</li>
-    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus, lorem at porta tincidunt,</li>
-</ul>
-    </div>
+
 </div>
 <div class="col-md-3">
     <img width="100%" src="assets/img/Ad1.png" alt="">
 </div>
 <div class="col-md-9 mt-5">
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="committeeTitle">
     <h6>COMMITTEE MEMBERS</h6>
     <p>Current membership and roles</p>
@@ -79,7 +80,7 @@
     $i = 1;
     @endphp
 @foreach ($rows as $row)
-<?php 
+<?php
     if($i==1){
         $expanded = 'true';
         $expanded_show = 'show';
@@ -110,30 +111,30 @@
         </div>
       </div>
     </div>
-    @php 
+    @php
 $i++;
 @endphp
     @endforeach
-   
+
   </div>
 </div>
 <div class="col-md-3 mt-5">
-    <?php 
+    <?php
 
 
     $adr = $adr[0]->image;
     $adr = json_decode($adr);
-    
+
     foreach($adr as $adrlist){
-    
+
     ?>
     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adrlist->name) }}" alt="" />
-    
-    <?php 
+
+    <?php
     }
-    
-    
-    
+
+
+
     ?>
 </div>
 </div>
@@ -143,25 +144,25 @@ $i++;
         </section>
         <section class="adsection">
             <div class="row">
-             
-                <?php 
+
+                <?php
 
 
                 $adbottom = $adbottom[0]->image;
                 $adbottom = json_decode($adbottom);
-                
+
                 foreach($adbottom as $adbottomlist){
-                
+
                 ?>
-              
+
                 <div class="col-md-6 mt-3">
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adbottomlist->name) }}" alt="" />
                 </div>
-                <?php 
+                <?php
                 }
-                
-                
-                
+
+
+
                 ?>
             </div>
         </section>
