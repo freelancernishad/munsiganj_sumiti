@@ -158,7 +158,7 @@ if($memberid==''){
         $data['adbottom'] =   DB::table('ads')->where($whb)->get();
         $data['adl'] =   DB::table('ads')->where($whl)->get();
         $data['adr'] =   DB::table('ads')->where($whr)->get();
-        $data['rows'] = committee::orderBy('id', 'DESC')
+        $data['rows'] = committee::orderBy('id', 'ASC')
             ->get();
         return view('committee', $data);
     }
