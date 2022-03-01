@@ -74,7 +74,7 @@ button.owl-dot.active {
                     // foreach($adtop as $adtoplist){
 
                     ?>
-                   
+
 
                     <?php
                     //}
@@ -168,7 +168,7 @@ button.owl-dot.active {
                                     <div class="col-xl-9">
                                         <div class="counter-content">
                                             <h5>Central Committee</h5>
-                                            <p>1800</p>
+                                            <p>41</p>
                                         </div>
                                         <!-- /.counter-content -->
                                     </div>
@@ -187,7 +187,7 @@ button.owl-dot.active {
                                     <div class="col-xl-9">
                                         <div class="counter-content">
                                             <h5>Global Committee</h5>
-                                            <p>343</p>
+                                            <p>20</p>
                                         </div>
                                         <!-- /.counter-content -->
                                     </div>
