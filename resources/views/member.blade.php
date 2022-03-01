@@ -133,7 +133,7 @@
 
                                             <table witdh="100%" border="0">
 <tr>
-    <td  style="    padding: 0 10px;">
+    <td width="80%" style="    padding: 0 10px;">
 
         <ul class="list-unstyled memberAddress">
             <li class="">
