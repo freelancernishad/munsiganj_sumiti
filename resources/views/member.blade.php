@@ -110,7 +110,7 @@
                                 <thead class="memberTableHead">
                                     <tr>
                                         <th>MID</th>
-                                        <th>NAME OF THE FIRM</th>
+                                        <th>IMAGE</th>
                                         <th>CONTACT INFORMATION</th>
                                     </tr>
                                 </thead>
@@ -125,17 +125,21 @@
                                         <td>{{ $row->memberId }}</td>
                                         <td>
                                             <img style="max-width:100px" src="{{ $row->image }}" alt="">
-                                            <h6 class="membername"> <a href="{{ url('member?memberid='.$row->memberId) }}">{{ $row->name }}</a></h6>
-                                            <p class="memberPoaition">{{ $row->education }}</p>
+
+
                                         </td>
-                                        <td>
+                                        <td style="    padding: 0 10px;">
 
 
                                             <table witdh="100%" border="0">
 <tr>
-    <td>
+    <td  style="    padding: 0 10px;">
 
         <ul class="list-unstyled memberAddress">
+            <li class="">
+             <h6 class="membername"> <a href="{{ url('member?memberid='.$row->memberId) }}">{{ $row->name }}</a></h6>
+            </li>
+
             <li class="">
                 <i class="fas fa-map-marker-alt"></i>
                 &nbsp; {{ $row->Present_address }}
