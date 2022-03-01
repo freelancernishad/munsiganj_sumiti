@@ -401,7 +401,7 @@ value="{{ $row->p_dist }}">
                 <div class="form-group">
 
 
-                    <select name="Reference" id="Reference" class="form-control" required>
+                    <select name="Reference" id="Reference" class="form-control">
 
                         <option value=""></option>
 
