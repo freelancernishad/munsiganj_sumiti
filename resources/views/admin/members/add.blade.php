@@ -34,7 +34,7 @@
          <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method='post' action="{{ route('members.store')}}" enctype="multipart/form-data">
 						@csrf
 						<input type="hidden" name="id" id="id" value="{{ $row->id }}">
-						<input type="hidden" name="memberId" id="memberId" value="{{ $row->memberId }}">
+
 						<input type="hidden" name="status" id="status" value="{{ $row->status }}">
 
             <div class="row">
@@ -63,6 +63,21 @@
 
 
 
+
+
+
+
+
+              {{--  col-md-6 start  --}}
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Member Id</label>
+                  <input type="text" class="form-control" name="memberId" id="memberId" value="{{ $row->memberId }}" >
+
+
+                </div>
+
+              </div>
 
 
 
