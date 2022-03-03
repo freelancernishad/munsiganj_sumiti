@@ -194,8 +194,7 @@ if($memberid==''){
         $data['rows'] = committee::orderBy('id', 'ASC')
             ->get();
 
-        $data['country'] = GlobalCommittee::distinct()->select('country')->orderBy('id', 'ASC')
-            ->get();
+        $data['country'] = GlobalCommittee::distinct()->select('country')->get();
 
 
 
