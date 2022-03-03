@@ -10,7 +10,7 @@ use App\Models\Thana;
 use App\Models\blog;
 use App\Models\BlogComment;
 use App\Models\PostRead;
-
+use App\Models\GlobalCommittee;
 class frontendController extends Controller
 {
     public function index()
@@ -136,6 +136,10 @@ if($memberid==''){
 
 
     }
+
+
+
+
     public function Committee()
     {
         $wht = [
@@ -162,6 +166,46 @@ if($memberid==''){
             ->get();
         return view('committee', $data);
     }
+
+
+
+    public function golobalCommittee()
+    {
+        $wht = [
+            'page' => 'Central Committee',
+            'position' => 'top',
+        ];
+        $whb = [
+            'page' => 'Central Committee',
+            'position' => 'Bottom',
+        ];
+        $whl = [
+            'page' => 'Central Committee',
+            'position' => 'Left',
+        ];
+        $whr = [
+            'page' => 'Central Committee',
+            'position' => 'Right',
+        ];
+        $data['adtop'] =   DB::table('ads')->where($wht)->get();
+        $data['adbottom'] =   DB::table('ads')->where($whb)->get();
+        $data['adl'] =   DB::table('ads')->where($whl)->get();
+        $data['adr'] =   DB::table('ads')->where($whr)->get();
+        $data['rows'] = committee::orderBy('id', 'ASC')
+            ->get();
+
+        $data['country'] = GlobalCommittee::distinct()->select('country')->orderBy('id', 'ASC')
+            ->get();
+
+
+
+
+        return view('golobalCommittee', $data);
+    }
+
+
+
+
     public function Gallery()
     {
         $whb = [

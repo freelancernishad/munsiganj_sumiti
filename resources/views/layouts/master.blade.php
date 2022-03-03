@@ -19,7 +19,7 @@
                             <a class="mainNanLink" href="JavaScript:void(0)">Committee &nbsp; <i class="fal fa-angle-down"></i></a>
                             <ul class="dropdownItem list-unstyled" id="1">
                                 <li><a class="mainNanLink" href="{{ url('Committee') }}">Central Committee</a></li>
-                                <li><a class="mainNanLink" href="#">Global Committee</a></li>
+                                <li><a class="mainNanLink" href="{{ route('golobalCommitteelist') }}">Global Committee</a></li>
                             </ul>
                         </li>
                         <li><a class="mainNanLink" href="{{ url('gallery') }}">Gallery</a></li>

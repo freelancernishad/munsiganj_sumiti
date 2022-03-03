@@ -17,3 +17,37 @@ function int_en_to_bn($number)
 
     return str_replace($en_digits, $bn_digits, $number);
 }
+
+
+
+    function allcountry(){
+
+        $filedata = file_get_contents('assets/by-code.json');
+     return   $details = json_decode($filedata);
+
+
+
+    }
+
+
+    function allcountryflag($country){
+
+
+
+        $filedata = file_get_contents('assets/by-code.json');
+        $details = json_decode($filedata);
+
+
+
+     foreach($details as $list=>$value){
+
+if($country== $value->name){
+    return $value->image;
+}
+
+
+    }
+
+
+
+    }

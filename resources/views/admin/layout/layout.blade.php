@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	  
+
     <title>@yield('page_title') </title>
- 
+
     <!-- Bootstrap -->
-	
+
     <link href="{{ asset('admin_asset/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://kit-pro.fontawesome.com/releases/v5.15.2/css/pro.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
     <link href="{{ asset('admin_asset/css/daterangepicker.css') }}" rel="stylesheet">
 
     <!-- Datatables -->
-    
+
 	<link href="{{ asset('admin_asset/css/dataTables.bootstrap.min.css') }}" rel="stylesheet" >
     <link href="{{ asset('admin_asset/css/buttons.bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin_asset/css/fixedHeader.bootstrap.min.css') }}" rel="stylesheet">
@@ -77,7 +77,7 @@
             <form action="" id="demo-form2"></form>
             <div class="clearfix"></div>
 
-            <!-- menu profile quick info 
+            <!-- menu profile quick info
             <div class="profile clearfix">
               <div class="profile_pic">
                 <img src="{{ asset('admin_asset/images/img.jpg')}}" alt="..." class="img-circle profile_img">
@@ -94,12 +94,13 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-               
+
                 <ul class="nav side-menu">
                   <li><a href="{{ route('brandslider.index') }}" ><i class="fas fa-home"></i> Brand Slider </span></a></li>
                   <li><a href="{{ route('mainslider.index') }}" ><i class="fas fa-home"></i> Main Slider </span></a></li>
                   <li><a href="{{ route('members.index') }}" ><i class="fas fa-home"></i> Members </span></a></li>
                   <li><a href="{{ route('committee.index') }}" ><i class="fas fa-home"></i> Committee </span></a></li>
+                  <li><a href="{{ route('globalcommittee.index') }}" ><i class="fas fa-home"></i> Global Committee </span></a></li>
                   <li><a href="{{ route('gallery.index') }}" ><i class="fas fa-home"></i> Gallery </span></a></li>
                   <li><a href="{{ route('allinfo.index') }}" ><i class="fas fa-home"></i> Info </span></a></li>
                   <li><a href="{{ route('category.index') }}" ><i class="fas fa-home"></i> Category </span></a></li>
@@ -108,7 +109,7 @@
                   <li><a href="{{ route('setting.index') }}" ><i class="fas fa-home"></i> Settings </span></a></li>
 		            </ul>
               </div>
-             
+
 
             </div>
             <!-- /sidebar menu -->
@@ -144,12 +145,12 @@
 
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                      <img src="{{ asset('admin_asset/images/img.jpg') }}" alt=""> {{ Auth::user()->name }} 
+                      <img src="{{ asset('admin_asset/images/img.jpg') }}" alt=""> {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                       {{-- <a class="dropdown-item"  href="javascript:;"> Profile</a> --}}
-                  
-      
+
+
 
                       <a class="dropdown-item" href="{{ route('logout') }}"
                       onclick="event.preventDefault();
@@ -168,8 +169,8 @@
                   </li>
 
 
-  
-                
+
+
                 </ul>
               </nav>
             </div>
@@ -179,12 +180,12 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
-    
-            
+
+
 			@section('container')
 			@show()
-			
-			
+
+
           </div>
         </div>
         <!-- /page content -->
@@ -232,14 +233,14 @@
     <script src="{{ asset('admin_asset/js/jquery.autocomplete.min.js') }}"></script>
     <!-- starrr -->
     <script src="{{ asset('admin_asset/js/starrr.js') }}"></script>
-	
-	
+
+
 	 <!-- Datatables -->
     <script src="{{ asset('admin_asset/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('admin_asset/js/dataTables.bootstrap.min.js') }}"></script>
     <script src="{{ asset('admin_asset/js/dataTables.buttons.min.js') }}"></script>
 
-    
+
     <script src="{{ asset('admin_asset/js/buttons.bootstrap.min.js') }}"></script>
     <script src="{{ asset('admin_asset/js/buttons.flash.min.js') }}"></script>
     <script src="{{ asset('admin_asset/js/buttons.html5.min.js') }}"></script>
@@ -253,14 +254,14 @@
     <script src="{{ asset('admin_asset/js/pdfmake.min.js') }}"></script>
     <script src="{{ asset('admin_asset/js/vfs_fonts.js') }}"></script>
 
-	
-	
-	
-	
+
+
+
+
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('admin_asset/js/custom.min.js') }}"></script>
-	
-	
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
@@ -274,22 +275,22 @@ $(document).ready(function() {
 
 
   $('#bio').summernote({
-  
+
     //fontNames: gArrayFonts,
         tabsize: 2,
         height: 200
-  
-  });  
+
+  });
   $('#textArea2').summernote({
-  
+
 
         tabsize: 2,
         height: 200
-  
+
   });
 });
 </script>
-	
+
 
 
 
@@ -297,18 +298,18 @@ $(document).ready(function() {
 <div id="uploadimageModal" class="modal" role="dialog">
   <div class="modal-dialog modal-lg">
    <div class="modal-content">
-       
+
          <div class="modal-body">
            <div class="row">
         <div class="col-md-8 text-center">
           <div id="upload-image"></div>
-      
+
         </div>
         <div class="col-md-4" style="padding-top:30px;">
          <br />
          <br />
          <br/>
- 
+
       </div>
      </div>
 
@@ -331,9 +332,9 @@ $(document).ready(function() {
 
 
 
- 
 
- 
+
+
 // $image_crop = $('#upload-image1').croppie({
 // enableExif: true,
 // viewport: {
@@ -347,7 +348,7 @@ $(document).ready(function() {
 // }
 // });
 
- 
+
 // $image_crop = $('#upload-image2').croppie({
 // enableExif: true,
 // viewport: {
@@ -409,15 +410,15 @@ $(document).ready(function() {
 //                 // enableOrientation: true,
 //                 // enableExif: true
 //              });
-//     $.getImage(e.target, croppie); 
+//     $.getImage(e.target, croppie);
 // });
 
 // $.getImage = function(input, croppie) {
 //         if (input.files && input.files[0]) {
 //             var reader = new FileReader();
-//             reader.onload = function(e) {  
+//             reader.onload = function(e) {
 //                 croppie.bind({
-                
+
 //                     url: e.target.result,
 //                 });
 //             }
@@ -442,18 +443,18 @@ var imageW,imageH,frameW,frameH;
 
 
 
-$('#memberImage , #committeeImage , #galleryImage , #infoImage , #brandsliderImage , #mainsliderImage , #blogImage , #categoryImage').on('change', function () { 
+$('#memberImage , #committeeImage , #galleryImage , #infoImage , #brandsliderImage , #mainsliderImage , #blogImage , #categoryImage').on('change', function () {
   $('#upload-image').croppie('destroy');
   if($(this).is('#memberImage')){
     imageW = 200;
-    imageH = 250;    
+    imageH = 250;
     frameW = 300;
     frameH = 350;
-  }  
-  
+  }
+
   if($(this).is('#committeeImage')){
     imageW = 200;
-    imageH = 250;    
+    imageH = 250;
     frameW = 300;
     frameH = 350;
   }
@@ -461,39 +462,39 @@ $('#memberImage , #committeeImage , #galleryImage , #infoImage , #brandsliderIma
 
   if($(this).is('#galleryImage')){
     imageW = 600;
-    imageH = 400;    
+    imageH = 400;
     frameW = 650;
     frameH = 450;
   }
 
   if($(this).is('#infoImage')){
     imageW = 600;
-    imageH = 200;    
+    imageH = 200;
     frameW = 650;
     frameH = 450;
   }
 
   if($(this).is('#brandsliderImage')){
     imageW = 200;
-    imageH = 135;    
+    imageH = 135;
     frameW = 350;
     frameH = 250;
   }
   if($(this).is('#mainsliderImage')){
     imageW = 1000;
-    imageH = 500;    
+    imageH = 500;
     frameW = 1050;
     frameH = 550;
   }
   if($(this).is('#blogImage')){
     imageW = 1000;
-    imageH = 500;    
+    imageH = 500;
     frameW = 1050;
     frameH = 550;
   }
   if($(this).is('#categoryImage')){
     imageW = 200;
-    imageH = 150;    
+    imageH = 150;
     frameW = 250;
     frameH = 200;
   }
@@ -519,7 +520,7 @@ $image_crop.croppie('bind', {
 url: e.target.result
 }).then(function(){
 console.log('jQuery bind complete');
-});			
+});
 }
 reader.readAsDataURL(this.files[0]);
 $('#uploadimageModal').modal('show');
@@ -542,12 +543,12 @@ $("#imagepreview").attr("src",response);
 
 $('#uploadimageModal').modal('hide');
 
-});	
+});
 }
 
 
     </script>
-    
+
 
   </body>
 </html>

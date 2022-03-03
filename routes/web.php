@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\frontendController;
 use App\Http\Controllers\countryApiController;
 use App\Http\Controllers\BlogCommentController;
+use App\Http\Controllers\GlobalCommitteeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,7 @@ Route::get('/about-us',[frontendController::class, 'about_us'])->name('about_us'
 
 Route::get('info/{title}',[frontendController::class, 'info_details'])->name('info_details');
 Route::get('Committee',[frontendController::class, 'Committee'])->name('Committeelist');
+Route::get('golobal/Committee',[frontendController::class, 'golobalCommittee'])->name('golobalCommitteelist');
 Route::get('gallery',[frontendController::class, 'Gallery'])->name('Gallerylist');
 
 
@@ -101,6 +103,7 @@ Route::resources([
 	'admin/mainslider' => MainsliderController::class,
 	'admin/members' => MemberController::class,
 	'admin/committee' => CommitteeController::class,
+	'admin/globalcommittee' => GlobalCommitteeController::class,
 	'admin/gallery' => GalleryController::class,
 	'admin/category' => CategoryController::class,
 	'admin/blog' => BlogController::class,
