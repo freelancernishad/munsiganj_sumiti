@@ -10,6 +10,8 @@ use App\Models\Thana;
 use App\Models\blog;
 use App\Models\BlogComment;
 use App\Models\PostRead;
+
+use App\Models\MemberShipPament;
 use App\Models\GlobalCommittee;
 class frontendController extends Controller
 {
@@ -231,26 +233,7 @@ if($memberid==''){
             return redirect()->back();
         }
     }
-    public function register()
-    {
-        $whl = [
-            'page' => 'Registration',
-            'position' => 'Left',
-        ];
-        $data['adl'] =   DB::table('ads')->where($whl)->get();
-        $Table =  DB::getSchemaBuilder()->getColumnListing('members');
-        $row = [];
-        foreach ($Table as $rowname) {
-            $row[$rowname] = '';
-        };
-        $rows[] = $row;
-        $object = json_decode(json_encode($rows));
-        $data['rows'] = $object;
 
-        $data['districts'] = District::orderBy('bn_name', 'ASC')->get();
-$member = member::where('status','Active')->get();
-        return view('register', $data,compact('member'));
-    }
     public function blogs(Request $r)
     {
         $post = '';
@@ -279,32 +262,122 @@ $member = member::where('status','Active')->get();
         $data['posts'] = DB::table('blogs')->where('id', $id)->get();
         return view('singleBlog', $data);
     }
+
+
+
+
+    public function register(Request $request)
+    {
+
+        $step = $request->step;
+
+if($step==''){
+    $data['step'] = 1;
+}else{
+
+    $data['step'] = $request->step;
+    $data['id'] = $request->id;
+
+    if($step==2 || $step==3){
+        $insert = DB::table('members')->where('id',$request->id)->first();
+        //   print_r($insert);
+         echo $Pending = $insert->status;
+if($Pending=='Active'){
+
+
+    return redirect("/register")->with(["icon" => "error","iconstatus" => "failed","msg" => "You are already an active member"]);
+}elseif($Pending=='Pending'){
+
+
+    return redirect("/register")->with(["icon" => "error","iconstatus" => "failed","msg" => "You are already Registered.Wait for Active"]);
+}
+
+
+    }
+
+}
+
+
+        $whl = [
+            'page' => 'Registration',
+            'position' => 'Left',
+        ];
+        $data['adl'] =   DB::table('ads')->where($whl)->get();
+        $Table =  DB::getSchemaBuilder()->getColumnListing('members');
+        $row = [];
+        foreach ($Table as $rowname) {
+            $row[$rowname] = '';
+        };
+        $rows[] = $row;
+        $object = json_decode(json_encode($rows));
+        $data['rows'] = $object;
+
+        $data['districts'] = District::orderBy('bn_name', 'ASC')->get();
+$member = member::where('status','Active')->get();
+        return view('register', $data,compact('member'));
+    }
+
     public function store(Request $request)
     {
         // echo'<pre>';
         // print_r($request->all());
+
         $id = $request->id;
+        $step = $request->step;
         $status = $request->status;
+
+if($step==4){
+
+
+    $data = [];
+    $inputData = $request->all();
+    foreach ($inputData as $key => $value) {
+        if ($key == 'id' || $key == '_token' || $key == 'status') {
+         } else {
+            $data[$key] = $value;
+        }
+    }
+    $datas['updated_at'] = date("Y-m-d H:i:s");
+$datas['status'] = 'Pending';
+    DB::table('members')->where('id', $id)->update($datas);
+
+    MemberShipPament::create($data);
+
+
+     return redirect("/register")->with(["icon" => "success","iconstatus" => "failed","msg" => "Registration successfully completed"]);
+    //  echo'<pre>';
+    //     print_r($request->all());
+}else{
+
+
+
         $data = [];
         $inputData = $request->all();
         foreach ($inputData as $key => $value) {
-            if ($key == 'id' || $key == '_token') {
-            } else if ($key == 'status') {
-                $data[$key] = 'Pending';
-            } else {
+            if ($key == 'id' || $key == '_token' || $key == 'step') {
+             } else {
                 $data[$key] = $value;
             }
         }
         if ($id == '') {
-            DB::table('members')->insert($data);
-            $request->session()->flash('msg', 'Data Inserted Succcessfully');
-            return redirect(route('member.form'));
+           DB::table('members')->insert($data);
+            $insert = DB::table('members')->latest('id')->first();
+         $insertid = $insert->id;
+            return redirect("/register?step=$step&id=$insertid");
         } else {
             $data['updated_at'] = date("Y-m-d H:i:s");
             DB::table('members')->where('id', $id)->update($data);
-            $request->session()->flash('msg', 'Data Updated Succcessfully');
-            return redirect(route('member.form'));
+            // $request->session()->flash('msg', 'Data Updated Succcessfully');
+            $insert = DB::table('members')->latest('id')->first();
+            //   print_r($insert);
+            $insertid = $insert->id;
+            return redirect("/register?step=$step&id=$insertid");
         }
+
+
+    }
+
+
     }
 
 
