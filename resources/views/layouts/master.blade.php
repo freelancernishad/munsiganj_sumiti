@@ -4,7 +4,7 @@
     <x-ad />
 
         </div>
-        <div class="bottomheader">
+        <div class="bottomheader" id="myHeader">
             <div class="cus_container">
                 <nav class="nav" style="    justify-content: center;">
                     <div class="mobilenav">

@@ -270,7 +270,7 @@ button.owl-dot.active {
                                     ..............................</span></div>
                             <div style="line-height: 1.5;"><span style="font-size: 18px; font-family: latoR;">2.
                                 ..............................</span></div>
-                            <div style="line-height: 1.5;"><span style="font-size: 18px; font-family: latoR;">3. 
+                            <div style="line-height: 1.5;"><span style="font-size: 18px; font-family: latoR;">3.
                                 ..............................</span></div>
                             <div><span style="font-size: 18px; font-family: latoR;">4. ...............................</span></div>
                             <div><span style="font-size: 18px; font-family: latoR;">5. ...............................</span>
@@ -308,21 +308,16 @@ button.owl-dot.active {
 
 
 
-                            <div class="col-lg-6 news-box mx-auto mt-5">
+                            <div class="col-lg-3 news-box mx-auto mt-5">
                                 <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="news-img">
-                                            <img class="news-img1"
-                                                src="uploads/page_logo/page_banner_rsz_1raw_4336___1640620230.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7">
+
+                                    <div class="col-md-12">
                                         <div class="news-content">
                                             <h5 class="mb-4">{{ $latest4List->title }}</h5>
                                             <p>
+                                                {{Str::limit($latest4List->short_description, 80)}}
 
 
-                                                {{ $latest4List->short_description }}
                                             </p>
                                             <a href="{{ url('blogs?blog='.$latest4List->postid) }}" class="btn rounded-pill mt-4">Read
                                                 More →</a>

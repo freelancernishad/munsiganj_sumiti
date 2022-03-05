@@ -68,6 +68,14 @@ li.select2-results__option.select2-results__option--selectable {
     margin: 19px 0px;
     margin-top: 2px !important;
 }
+
+.sticky {
+    z-index: 999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 </style>
 <livewire:styles />
 

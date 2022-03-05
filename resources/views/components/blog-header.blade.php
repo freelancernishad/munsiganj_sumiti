@@ -20,6 +20,7 @@
                             <ul id="menu-menu" class="nav navbar-nav">
 
 
+
                                 <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                     id="menu-item-19"
                                     class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-19 active">
@@ -36,6 +37,12 @@
                                         title="{{ $catMenuList->name }}"  href="{{ url('blogs?category='.$catMenuList->name) }}"  >{{ $catMenuList->name }}</a>
                                 </li>
                                 @endforeach
+
+                                <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
+                                    id="menu-item-19"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-19">
+                                    <a title="হোম"  href="{{ url('/') }}">Back to main page</a>
+                                </li>
 
 
                             </ul>
