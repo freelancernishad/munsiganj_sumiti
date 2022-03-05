@@ -44,7 +44,7 @@ function int_en_to_bn($number)
      foreach($details as $list=>$value){
 
 if($country== $value->name){
-    return $value->image;
+    return $value->flag;
 }
 
 

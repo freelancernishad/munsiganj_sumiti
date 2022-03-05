@@ -171,7 +171,7 @@ if($memberid==''){
 
 
 
-    public function golobalCommittee()
+    public function golobalCommittee(Request $request)
     {
         $wht = [
             'page' => 'Central Committee',
@@ -193,15 +193,23 @@ if($memberid==''){
         $data['adbottom'] =   DB::table('ads')->where($whb)->get();
         $data['adl'] =   DB::table('ads')->where($whl)->get();
         $data['adr'] =   DB::table('ads')->where($whr)->get();
-        $data['rows'] = committee::orderBy('id', 'ASC')
-            ->get();
+        $data['rows'] = committee::orderBy('id', 'ASC')->get();
 
         $data['country'] = GlobalCommittee::distinct()->select('country')->get();
 
+        if($request->view==''){
+            return view('golobalCommittee', $data);
+        }else{
+
+            $data['rowsingle'] = GlobalCommittee::where('id',$request->view)->get();
+
+            return view('golobalCommitteeView', $data);
+        }
 
 
 
-        return view('golobalCommittee', $data);
+
+
     }
 
 

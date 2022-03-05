@@ -1,5 +1,45 @@
 @extends('layouts.master')
 @section('content')
+
+<style>
+
+div.icon-area {
+    background: #ff000000;
+    border: 0 !important;
+}
+
+div.icon-area img {
+    width: 72px;
+    box-shadow: 0px 0px 15px 8px #00000059;
+    border-radius: 50%;
+}
+
+li.nav-item.mb-4 p {
+    font-size: 17px;
+    margin-top: 28px;
+    font-weight: 600;
+    color: #d02804;
+    text-align: center;
+}
+
+.committee-area.section-padding-top {
+    background: #e6f5fa;
+}
+
+.section-header h2 {
+    font-family: "Mulish";
+    font-weight: 800;
+    font-size: 36px;
+    color: #d02804;
+}
+.committee-content {
+    color: #d02833;
+}
+div#all-tab {
+    background: linear-gradient(176deg, #496e2d, #d80027 99px);
+}
+</style>
+
     <main>
         <section class="hero_area">
             <div class="row p-0">
@@ -74,65 +114,55 @@
                 <ul class="justify-content-around justify-content-between nav nav-pills" role="tablist">
 
 
-                    <?php $i = 0; ?>
+
+
+
+                    <li class="nav-item mb-4" role="presentation" style="    width: 100%;">
+
+                        <div class="icon-area active" data-bs-toggle="pill" data-bs-target="#all"
+                            type="button" id="all-tab" role="tab" aria-controls="all" aria-selected="true">
+                           <img width="40px" src="" alt="">
+                        </div>
+                    <p>All</p>
+
+
+                    </li>
+
 @foreach ($country as $countryList)
 
-
-@if($i==0)
 <li class="nav-item mb-4" role="presentation">
-    <div class="icon-area  active " data-bs-toggle="pill" data-bs-target="#{{ $countryList->country }}"
+    <div class="icon-area " data-bs-toggle="pill" data-bs-target="#{{ $countryList->country }}"
         type="button" id="{{ $countryList->country }}-tab" role="tab" aria-controls="{{ $countryList->country }}" aria-selected="true">
        <img width="40px" src="{{ allcountryflag($countryList->country) }}" alt="">
     </div>
-    <button class="nav-link  active " data-bs-toggle="pill" data-bs-target="#{{ $countryList->country }}"
-        type="button" id="{{ $countryList->country }}-tab" role="tab" aria-controls="{{ $countryList->country }}"
-        aria-selected="true">{{ $countryList->country }}</button>
+<p>{{ $countryList->country }}</p>
 </li>
-@else
 
-<li class="nav-item mb-4" role="presentation">
-    <div class="icon-area" data-bs-toggle="pill" data-bs-target="#{{ $countryList->country }}"
-        type="button" id="{{ $countryList->country }}-tab" role="tab" aria-controls="{{ $countryList->country }}" aria-selected="true">
-       <img width="40px" src="{{ allcountryflag($countryList->country) }}" alt="">
-    </div>
-    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#{{ $countryList->country }}"
-        type="button" id="{{ $countryList->country }}-tab" role="tab" aria-controls="{{ $countryList->country }}"
-        aria-selected="true">{{ $countryList->country }}</button>
-</li>
-                    @endif
-
-                    <?php $i++ ?>
-
-                    @endforeach
+ @endforeach
 
 
 
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
 
-<?php $j = 0; ?>
-                    @foreach ($country as $countryList)
-
-<?php
-
-$PDO = \DB::connection()->getPdo();
-$QUERY = $PDO->prepare("SELECT * FROM `global_committees` WHERE `country`='$countryList->country'");
-$QUERY->execute();
-$global_committees=$QUERY->fetchAll(PDO::FETCH_OBJ);
 
 
+                    <?php
+                    $PDO = \DB::connection()->getPdo();
+                    $QUERY = $PDO->prepare("SELECT * FROM `global_committees`");
+                    $QUERY->execute();
+                    $all=$QUERY->fetchAll(PDO::FETCH_OBJ);
+                    ?>
 
 
-?>
-                    @if($j==0)
-                    <div class="tab-pane fade show  active " id="{{ $countryList->country }}" role="tabpanel"
-                        aria-labelledby="{{ $countryList->country }}-tab">
+                    <div class="tab-pane fade show  active " id="all"  role="tabpanel"
+                        aria-labelledby="all-tab">
                         <div class="committee-member-area">
                             <div class="row justify-content-center">
 
 
-                         @foreach ($global_committees as $global_committeesList)
-                                <div class="col committee-member-box">
+                         @foreach ($all as $global_committeesList)
+                                <div class="col committee-member-box" onclick="viewdatas('{{ url('/golobal/Committee?view='.$global_committeesList->id) }}')">
                                     <div class="committee-memeber">
                                         <div class="committee-member-img mb-3">
                                             <img src="{{ $global_committeesList->image }}"
@@ -152,37 +182,41 @@ $global_committees=$QUERY->fetchAll(PDO::FETCH_OBJ);
                         <!-- /.committee-member-area -->
                     </div>
 
-@else
-<div class="tab-pane" id="{{ $countryList->country }}" role="tabpanel"
-    aria-labelledby="{{ $countryList->country }}-tab">
-    <div class="committee-member-area">
-        <div class="row justify-content-center">
+                    @foreach ($country as $countryList)
 
-            @foreach ($global_committees as $global_committeesList)
-            <div class="col committee-member-box">
-                <div class="committee-memeber">
-                    <div class="committee-member-img mb-3">
-                        <img src="{{ $global_committeesList->image }}"
-                            alt="">
+<?php
+$PDO = \DB::connection()->getPdo();
+$QUERY = $PDO->prepare("SELECT * FROM `global_committees` WHERE `country`='$countryList->country'");
+$QUERY->execute();
+$global_committees=$QUERY->fetchAll(PDO::FETCH_OBJ);
+?>
+
+                    <div class="tab-pane" id="{{ $countryList->country }}" role="tabpanel"
+                        aria-labelledby="{{ $countryList->country }}-tab">
+                        <div class="committee-member-area">
+                            <div class="row justify-content-center">
+
+
+                         @foreach ($global_committees as $global_committeesList)
+                                <div class="col committee-member-box"  onclick="viewdatas('{{ url('/golobal/Committee?view='.$global_committeesList->id) }}')">
+                                    <div class="committee-memeber">
+                                        <div class="committee-member-img mb-3">
+                                            <img src="{{ $global_committeesList->image }}"
+                                                alt="">
+                                        </div>
+                                        <div class="committee-content">
+                                            <h6>{{ $global_committeesList->name }}</h6>
+                                            <p class="mt-2"> - President</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @endforeach
+
+                            </div>
+                        </div>
+                        <!-- /.committee-member-area -->
                     </div>
-                    <div class="committee-content">
-                        <h6>{{ $global_committeesList->name }}</h6>
-                        <p class="mt-2"> - President</p>
-                    </div>
-                </div>
-            </div>
-
-            @endforeach
-
-
-        </div>
-    </div>
-    <!-- /.committee-member-area -->
-</div>
-@endif
-
-
-                    <?php $j++ ?>
                     @endforeach
 
 
