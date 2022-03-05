@@ -79,11 +79,7 @@
         <div class="page-body event-page mb-2">
             <p
                 style="margin: 0in 0in 7.5pt; text-align: justify; line-height: 16.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante nisi, gravida eget nibh ut, euismod vestibulum enim. Donec quis sapien in neque mollis sodales in eget libero. Nulla eu dolor malesuada, interdum dolor sed, condimentum lectus. Vestibulum dolor turpis, egestas non tempor nec, tincidunt non massa. Etiam feugiat arcu pharetra nunc hendrerit, a blandit nibh pellentesque. Morbi sodales nibh et accumsan consequat. Phasellus posuere, nisl eget dignissim molestie, nulla velit congue massa, sed dapibus neque tortor non libero. Praesent ac tortor malesuada elit mattis mollis nec in nisl.
-
-                Duis elementum augue diam, tincidunt suscipit sem congue ac. Aenean et gravida metus, ac dignissim enim. Etiam vitae metus tincidunt, tincidunt erat sed, posuere nunc. Mauris porttitor ligula nec erat vestibulum tempor. Praesent id orci tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In scelerisque purus eros, id feugiat lacus semper sodales. Aliquam erat volutpat. Maecenas tempus eros sed dui fermentum tempus. Sed sit amet consectetur ante. Integer id dignissim quam.
-
-                Vestibulum vitae rutrum risus. Donec metus metus, aliquet at sem eu, suscipit eleifend nunc. Mauris pharetra ex nec magna placerat sollicitudin. Nulla eget urna volutpat, varius nibh vitae, fringilla mi. Nullam bibendum erat quis massa viverra tristique. Ut id nulla vestibulum, tempus enim eu, pulvinar lectus. Ut facilisis faucibus lectus, eget pellentesque mauris gravida a. Fusce efficitur cursus ligula, sed pellentesque neque consectetur quis. Suspendisse auctor augue sed quam sodales lobortis. Donec convallis sapien quis lorem venenatis tincidunt. Donec mauris elit, dignissim at arcu id, pellentesque ullamcorper tellus. Sed luctus orci at justo congue, posuere viverra ligula tristique. Etiam commodo vel diam at laoreet. Sed ac leo eget tellus sollicitudin pulvinar eu vel nunc. Etiam consequat molestie leo, vitae dignissim mauris efficitur a.
+                {{ settings()[0]->About }}
                 </p>
 
         </div>
@@ -154,7 +150,7 @@
                 ?>
             </div>
         </section>
-      
+
     </main>
 
     @endsection

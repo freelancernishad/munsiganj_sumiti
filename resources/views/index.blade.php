@@ -124,10 +124,8 @@ button.owl-dot.active {
                     <div class="col-xl-8 ">
                         <div class="description">
                             <p>
-                                Bangladesh Computer Samity (BCS) is the
-                                apex ICT business and trade industry association of Bangladesh. It represents
-                                the industry that comprises of distributors, dealers, resellers of computer and
-                                allied products, locally assembled computer vendo
+                                {{Str::limit(settings()[0]->About, 200)}}
+
                                 <a href="{{ url('/about-us') }}">Read More</a>
                             </p>
                         </div>

@@ -62,6 +62,17 @@
       {{--  col-md-6 start  --}}
       <div class="col-md-12">
         <div class="form-group">
+          <label>About</label>
+          <textarea name="About" id="About" cols="30" rows="3" class="form-control" style="resize:none">{{ $row->About }}</textarea>
+        </div>
+
+      </div>
+
+
+
+      {{--  col-md-6 start  --}}
+      <div class="col-md-12">
+        <div class="form-group">
           <label>Address</label>
           <textarea name="address" id="address" cols="30" rows="3" class="form-control" style="resize:none">{{ $row->address }}</textarea>
         </div>
