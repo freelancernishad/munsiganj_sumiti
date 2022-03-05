@@ -53,8 +53,14 @@ $data['status'] = $status;
 elseif($status=='trxView'){
 
 
+    $count = MemberShipPament::where('memberid',$request->id)->count();
+if($count>0){
     $data['rows'] = MemberShipPament::where('memberid',$request->id)->orderBy('id','DESC')->get();
     return view('admin/members.trx',$data);
+}else{
+    return '<h1 style="text-align:center;color:red" >No Transition Found</h1>';
+}
+
 
             }
 
