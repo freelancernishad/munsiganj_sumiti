@@ -44,23 +44,18 @@
                     ?>
 <section class="committeSection py-3 pl-3">
 <div class="row">
-<div class="col-md-9">
+
+
+<div class="col-md-9 ">
+
+
+
     <div class="ourMission">
         <h6>Committee</h6>
     </div>
     <div class="committee">
 <p>{{ settings()[0]->committee }}</p>
     </div>
-
-</div>
-<div class="col-md-3">
-    <img width="100%" src="assets/img/Ad1.png" alt="">
-</div>
-<div class="col-md-9 mt-5">
-
-
-
-
 
 
 
@@ -117,7 +112,7 @@ $i++;
 
   </div>
 </div>
-<div class="col-md-3 mt-5">
+<div class="col-md-3">
     <?php
 
 

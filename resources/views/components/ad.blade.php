@@ -62,6 +62,12 @@ li.select2-results__option.select2-results__option--selectable {
     width: 100% !important;
     display: block;
 }
+.ourMission h6 {
+    color: red;
+    font-weight: 600;
+    margin: 19px 0px;
+    margin-top: 2px !important;
+}
 </style>
 <livewire:styles />
 
