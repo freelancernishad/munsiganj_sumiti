@@ -35,7 +35,7 @@
 						@csrf
 						<input type="hidden" name="id" id="id" value="{{ $row->id }}">
 
-						<input type="hidden" name="status" id="status" value="{{ $row->status }}">
+					
 
             <div class="row">
 
