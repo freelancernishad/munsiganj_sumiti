@@ -138,6 +138,8 @@ if($count>0){
             }
         }
         if ($id == '') {
+            $datas['status'] = 'Active';
+
             DB::table('members')->insert($data);
             $request->session()->flash('msg', 'Data Inserted Succcessfully');
             return redirect(route('members.index'));
