@@ -138,7 +138,7 @@ if($count>0){
             }
         }
         if ($id == '') {
-            $datas['status'] = 'Active';
+            $data['status'] = 'Active';
 
             DB::table('members')->insert($data);
             $request->session()->flash('msg', 'Data Inserted Succcessfully');
