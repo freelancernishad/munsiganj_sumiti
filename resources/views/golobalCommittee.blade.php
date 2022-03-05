@@ -48,6 +48,20 @@
 
 <div class="col-md-12 mt-5">
 
+    <div class="ourMission">
+        <h6>Global Committee</h6>
+    </div>
+    <div class="committee">
+<p>{{ settings()[0]->globalcommittee }}</p>
+    </div>
+
+
+
+
+
+
+
+
  <!-- Committee area start -->
  <div class="committee-area  section-padding-top">
     <div class="committee-shape"></div>

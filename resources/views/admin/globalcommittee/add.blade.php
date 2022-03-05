@@ -362,6 +362,10 @@
                 </div>
               </div>
             </div>
-
+<script>
+          $(document).ready(function() {
+    $('#country').select2();
+});
+</script>
 
 @endsection

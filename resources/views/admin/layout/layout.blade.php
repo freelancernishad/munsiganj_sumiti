@@ -98,7 +98,24 @@
                 <ul class="nav side-menu">
                   <li><a href="{{ route('brandslider.index') }}" ><i class="fas fa-home"></i> Brand Slider </span></a></li>
                   <li><a href="{{ route('mainslider.index') }}" ><i class="fas fa-home"></i> Main Slider </span></a></li>
-                  <li><a href="{{ route('members.index') }}" ><i class="fas fa-home"></i> Members </span></a></li>
+
+
+
+
+                  <li><a><i class="fas fa-home"></i> Members <span class="fas fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                    <li><a href="{{ url('/admin/members?status=active') }}">Active Members</a></li>
+                    <li><a href="{{ url('/admin/members?status=pending') }}">Pending Members</a></li>
+                    <li><a href="{{ url('/admin/members?status=unpaid') }}">Unpaid Members</a></li>
+                    </ul>
+                    </li>
+
+
+
+
+
+
+
                   <li><a href="{{ route('committee.index') }}" ><i class="fas fa-home"></i> Committee </span></a></li>
                   <li><a href="{{ route('globalcommittee.index') }}" ><i class="fas fa-home"></i> Global Committee </span></a></li>
                   <li><a href="{{ route('gallery.index') }}" ><i class="fas fa-home"></i> Gallery </span></a></li>

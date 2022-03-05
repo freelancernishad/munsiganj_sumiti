@@ -1,4 +1,6 @@
 <?php
+
+use Illuminate\Support\Facades\DB;
 function month_en_to_bn($month)
 {
 
@@ -50,4 +52,12 @@ if($country== $value->name){
 
 
 
+    }
+
+
+
+
+    function settings(){
+
+return DB::table('settings')->get();
     }

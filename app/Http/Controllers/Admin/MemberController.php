@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\District;
 use App\Models\Thana;
 use Illuminate\Support\Str;
-
+use App\Models\MemberShipPament;
 
 class MemberController extends Controller
 {
@@ -27,11 +27,45 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
-       $data['rows'] = member::orderBy('id','DESC')
-        ->get();
+        $status = $request->status;
+
+$data['status'] = $status;
+
+        if($status==''){
+            return redirect('/admin/members?status=active');
+        }else{
+            if($status=='active'){
+                $data['rows'] = member::where('status','Active')->orderBy('id','DESC')->get();
+            }elseif($status=='pending'){
+                $data['rows'] = member::where('status','Pending')->orderBy('id','DESC')->get();
+            }elseif($status=='unpaid'){
+                $data['rows'] = member::where('status','Unpaid')->orderBy('id','DESC')->get();
+            }elseif($status=='approve'){
+
+
+                member::where('id',$request->id)->update(['status'=>'Active']);
+                return redirect()->back();
+
+            }
+elseif($status=='trxView'){
+
+
+    $data['rows'] = MemberShipPament::where('memberid',$request->id)->orderBy('id','DESC')->get();
+    return view('admin/members.trx',$data);
+
+            }
+
+
+        }
+
+
+
+
+
+
 
         return view('admin/members.list',$data);
     }

@@ -281,7 +281,7 @@ if($step==''){
     if($step==2 || $step==3){
         $insert = DB::table('members')->where('id',$request->id)->first();
         //   print_r($insert);
-         echo $Pending = $insert->status;
+          $Pending = $insert->status;
 if($Pending=='Active'){
 
 
@@ -344,7 +344,7 @@ $datas['status'] = 'Pending';
     MemberShipPament::create($data);
 
 
-     return redirect("/register")->with(["icon" => "success","iconstatus" => "failed","msg" => "Registration successfully completed"]);
+     return redirect("/register")->with(["icon" => "success","iconstatus" => "Success","msg" => "Registration successfully completed"]);
     //  echo'<pre>';
     //     print_r($request->all());
 }else{

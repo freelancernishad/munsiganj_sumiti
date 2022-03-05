@@ -49,8 +49,7 @@
         <h6>Committee</h6>
     </div>
     <div class="committee">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus, lorem at porta tincidunt, tortor orci mollis turpis, porta feugiat mi mi aliquet justo. Maecenas tincidunt massa a nisi rutrum molestie. Morbi id molestie enim. Nam semper lacinia convallis. Vivamus nisl purus, mattis sit amet lectus nec, fermentum malesuada erat. Quisque condimentum, tellus a pretium aliquam, felis justo ultrices nisl, eget tincidunt dui sapien sit amet dolor. Donec placerat nunc at risus malesuada elementum. Etiam nisl est, tincidunt ac eros non, sollicitudin vehicula lorem.
-    Donec quam augue, vulputate ac massa non, placerat porttitor felis. Quisque mollis odio non dolor vestibulum iaculis. Proin fringilla metus at augue luctus consequat. Cras id nibh scelerisque, dapibus neque a, efficitur ante. Donec tincidunt efficitur ex, a blandit lorem porttitor sed. Nullam tempor lectus vitae enim ultrices dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi nec accumsan dolor. In porta rhoncus arcu, et lobortis odio elementum quis. Mauris pretium dui eu consectetur condimentum. Phasellus bibendum tincidunt maximus.</p>
+<p>{{ settings()[0]->committee }}</p>
     </div>
 
 </div>
