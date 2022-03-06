@@ -67,7 +67,7 @@
                                 <div class="col-md-4"></div>
 
 
-                                <div class="col-md-6 mt-3"><b>Reference Id : </b> {{ $singleList->Reference }}</div>
+                                <div class="col-md-6 mt-3"><b>Membership Id : </b> {{ $singleList->memberId }}</div>
 
                                 <div class="col-md-6 mt-3"><b>Name : </b> {{ $singleList->name }}</div>
                                 <div class="col-md-6 mt-3"><b>Age : </b> {{ $singleList->age }}</div>
@@ -92,11 +92,11 @@
 
                                 <div class="col-md-6 mt-3"><b>Blood group : </b> {{ $singleList->blood_group }}</div>
                                 <div class="col-md-6 mt-3"><b>National ID NO. : </b> {{ $singleList->nid }}</div>
-                                <div class="col-md-6 mt-3"><b>Membership Fee : </b> {{ $singleList->fee }}</div>
+                                <div class="col-md-6 mt-3"><b></div>
 
 
 
-                                <div class="col-md-6 mt-3"><b>Permanent address : </b> {{ $singleList->pr_dist }}, {{ $singleList->pr_thana }}, {{ $singleList->pr_post }}, {{ $singleList->pr_vill }}</div>
+                                <div class="col-md-6 mt-3"><b>Permanent address : </b> District: {{ $singleList->pr_dist }}, Thana: {{ $singleList->pr_thana }}, Union: {{ $singleList->pr_post }}, Village: {{ $singleList->pr_vill }}</div>
                                 <div class="col-md-6 mt-3"><b>Present address : </b> {{ $singleList->Present_address }}</div>
 
 

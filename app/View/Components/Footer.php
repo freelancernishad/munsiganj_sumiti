@@ -33,6 +33,7 @@ class Footer extends Component
             'month'=>date('F'),
         ];
      $data['monthVisitor'] = Visitor::where($monthVisitor)->count();
+     $data['TotalVisitor'] = Visitor::count();
 
         $yearVisitor = [
             'year'=>date('Y'),

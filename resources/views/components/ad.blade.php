@@ -100,7 +100,19 @@ li.select2-results__option.select2-results__option--selectable {
                         <div class="ml-3 text-white" style="font-size: 14px">
                             <i class="far fa-envelope"></i> {{ $settings[0]->email }}
                         </div>
+
+                        <div class="ml-3 text-white" style="font-size: 14px">
+
+<?php
+    $urlfull = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+
+    ?>
+
+                           <a style="color: white;background: #d02804;padding: 10px 4px;" href="https://www.facebook.com/sharer/sharer.php?u={{ $urlfull }}"> <i class="fas fa-share-alt fa-fw"></i> Share This page</a>
+                        </div>
                     </div>
+
+
                 </div>
             </div>
         </div>

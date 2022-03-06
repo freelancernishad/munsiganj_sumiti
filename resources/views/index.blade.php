@@ -126,32 +126,46 @@ button.owl-dot.active {
                         <div class="swiper-button-next"></div>
                         <div class="swiper-scrollbar"></div>
                     </div>
+
+
+
+
+                    <div class="about-us-area section-padding-top" style="    padding-top: 30px !important;  ">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-4">
+                                    <div class="heading mb-4">
+                                        <h5>About Us</h5>
+                                    </div>
+                                </div>
+                                <div class="col-xl-8 ">
+                                    <div class="description">
+                                        <p>
+                                            {{Str::limit(settings()[0]->About, 200)}}
+
+                                            <a href="{{ url('/about-us') }}">Read More</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- /.row-->
+                        </div> <!-- /.container-->
+                    </div> <!-- /.about-->
+
+
+
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </section>
 
 
-
-        <div class="about-us-area section-padding-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4">
-                        <div class="heading mb-4">
-                            <h5>About Us</h5>
-                        </div>
-                    </div>
-                    <div class="col-xl-8 ">
-                        <div class="description">
-                            <p>
-                                {{Str::limit(settings()[0]->About, 200)}}
-
-                                <a href="{{ url('/about-us') }}">Read More</a>
-                            </p>
-                        </div>
-                    </div>
-                </div> <!-- /.row-->
-            </div> <!-- /.container-->
-        </div> <!-- /.about-->
 
 
         <div class="counter-area section-padding-top">

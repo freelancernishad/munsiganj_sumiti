@@ -49,10 +49,9 @@
                 <h4 class="f_title">Others</h4>
 
 
-<h5>Visitor</h5>
-<h6>Today : {{ $dateVisitor }}</h6>
-<h6>This Month : {{ $monthVisitor }}</h6>
-<h6>This Year : {{ $yearVisitor }}</h6>
+<h5>Visitor :  {{ $TotalVisitor }}</h5>
+
+
 
                 {{-- <form action="" class="d-flex w-100">
                     <input type="text" namr="newsletter" id="newsletter" />
