@@ -49,6 +49,28 @@
               {{--  col-md-6 start  --}}
               <div class="col-md-12">
                 <div class="form-group">
+                  <label>Title</label>
+                  <input type="text" class="form-control" name="title" id="title" value="{{ $row->title }}" >
+                </div>
+
+              </div>
+
+
+
+              {{--  col-md-6 start  --}}
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Link</label>
+                  <input type="text" class="form-control" name="link" id="link" value="{{ $row->link }}" >
+                </div>
+
+              </div>
+
+
+
+              {{--  col-md-6 start  --}}
+              <div class="col-md-12">
+                <div class="form-group">
                   <label>Youtube Iframe</label>
                   <input type="text" class="form-control" name="iframe" id="iframe" value="{{ $row->iframe }}" >
 

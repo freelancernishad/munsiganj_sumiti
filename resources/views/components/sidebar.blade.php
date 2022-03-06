@@ -39,6 +39,8 @@
 
                         <div class="ifameVideo">
 {!! video()->iframe !!}
+<h3 style="text-align: center"><a href="{{  video()->link  }}">{{  video()->title  }}</a></h3>
+
 
 
 
