@@ -434,6 +434,9 @@
                                     </div>
                                 </div>
 
+                                <div class="col-sm-12">
+                                    <input type="checkbox" id="agree" required> <label for="agree">Accept </label>
+                                 </div>
                                 <button type="submit" class="btn btn-primary w-25 mx-auto mt-3" type="submit">Next</button>
                             </form>
                         @endforeach
@@ -461,6 +464,7 @@
                                 </select>
                             </div>
                         </div>
+
 
                                 <div class="col-sm-12 text-center">
                                 <button type="submit" class="btn btn-primary w-25 mx-auto mt-3" type="submit">Next</button>
@@ -522,6 +526,12 @@
                             </div>
                         </div>
 
+
+
+
+                                <div class="col-sm-12 text-center">
+                                    <div class="g-recaptcha"  data-sitekey="6LfAdg4cAAAAAK5hoa2KyrA6ZlMAeiEIc3YE_1x4"></div>
+                            </div>
 
 
 

@@ -15,6 +15,7 @@ use App\Http\Controllers\frontendController;
 use App\Http\Controllers\countryApiController;
 use App\Http\Controllers\BlogCommentController;
 use App\Http\Controllers\GlobalCommitteeController;
+use App\Http\Controllers\VideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,6 +110,7 @@ Route::resources([
 	'admin/blog' => BlogController::class,
 	'admin/allinfo' => AllinfoController::class,
 	'admin/ad' => AdController::class,
+	'admin/video' => VideoController::class,
 	'admin/setting' => SettingController::class,
 
 ]);

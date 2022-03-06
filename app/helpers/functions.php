@@ -61,3 +61,10 @@ if($country== $value->name){
 
 return DB::table('settings')->get();
     }
+
+
+
+    function video(){
+        return DB::table('videos')->orderBy('id', 'desc')->first();
+
+    }

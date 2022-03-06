@@ -30,6 +30,15 @@ class frontendController extends Controller
         $data['brand'] =   DB::table('brandsliders')->orderBy('id', 'DESC')->get();
         $data['main'] =   DB::table('mainsliders')->orderBy('id', 'DESC')->get();
         $latest4 = blog::orderBy('id', 'desc')->take(4)->get();
+
+        $data['memberCount'] = member::where('status','Active')->count();
+        $data['membercommittee'] = committee::count();
+        $data['memberGlobalCommittee'] = GlobalCommittee::count();
+        $data['committee'] = committee::orderBy('id', 'ASC')->take(2)->get();;
+
+
+
+
         return view('index', $data,compact('latest4'));
     }
     public function about_us()
@@ -105,12 +114,19 @@ class frontendController extends Controller
     }
     public function member(Request $request)
     {
+
+
+
+
+
+
+
         $whl = [
             'page' => 'Member',
             'position' => 'Left',
         ];
         $data['adl'] =   DB::table('ads')->where($whl)->get();
-        $data['rows'] = member::orderBy('id', 'DESC')->get();
+        $data['rows'] = member::where('status','Active')->orderBy('id', 'DESC')->get();
         $data['districts'] = District::orderBy('bn_name', 'ASC')->get();
         $data['Thana'] = Thana::orderBy('bn_name', 'ASC')->get();
 
@@ -124,6 +140,14 @@ class frontendController extends Controller
 
         $data['district'] = '';
         $data['upszila'] = '';
+
+        if($request->Blode!=''){
+            $data['rows'] = member::where(['status'=>'Active','blood_group'=>$request->Blode])->orderBy('id', 'DESC')->get();
+        }
+
+
+
+
 
          $memberid = $request->memberid;
 if($memberid==''){
@@ -336,23 +360,37 @@ $member = member::where('status','Active')->get();
 
 if($step==4){
 
+    $secretKey = '6LfAdg4cAAAAALom1OeVCZsyt6gP23bsh9UQ-PE3';
+    $ip = $_SERVER['REMOTE_ADDR'];
+   $response = $_POST['g-recaptcha-response'];
+    $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$response&remoteip=$ip";
+     $fire =  file_get_contents($url);
+     $data = json_decode($fire);
 
-    $data = [];
-    $inputData = $request->all();
-    foreach ($inputData as $key => $value) {
-        if ($key == 'id' || $key == '_token' || $key == 'status') {
-         } else {
-            $data[$key] = $value;
+
+     if($data->success==1){
+
+        $data = [];
+        $inputData = $request->all();
+        foreach ($inputData as $key => $value) {
+            if ($key == 'id' || $key == '_token' || $key == 'status') {
+             } else {
+                $data[$key] = $value;
+            }
         }
-    }
-    $datas['updated_at'] = date("Y-m-d H:i:s");
-$datas['status'] = 'Pending';
-    DB::table('members')->where('id', $id)->update($datas);
+        $datas['updated_at'] = date("Y-m-d H:i:s");
+    $datas['status'] = 'Pending';
+        DB::table('members')->where('id', $id)->update($datas);
 
-    MemberShipPament::create($data);
+        MemberShipPament::create($data);
 
 
-     return redirect("/register")->with(["icon" => "success","iconstatus" => "Success","msg" => "Registration successfully completed"]);
+         return redirect("/register")->with(["icon" => "success","iconstatus" => "Success","msg" => "Registration successfully completed!Please wait for President and Secretary aproval"]);
+     }else{
+
+        return redirect()->back()->with(["icon" => "error","iconstatus" => "Error","msg" => "Please check captcha"]);
+     }
+
     //  echo'<pre>';
     //     print_r($request->all());
 }else{
@@ -430,10 +468,13 @@ $datas['status'] = 'Pending';
         $wh1 = [
             'pr_thana'=>$upszila,
             'memberId'=>$name,
+            'status'=>'Active',
+
         ];
         $wh2 = [
             'pr_thana'=>$upszila,
             'name'=>$name,
+            'status'=>'Active',
         ];
 
         $namess= '';

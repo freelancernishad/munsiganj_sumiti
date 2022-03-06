@@ -150,7 +150,7 @@ button.owl-dot.active {
                                     <div class="col-xl-9">
                                         <div class="counter-content">
                                             <h5>Total Member</h5>
-                                            <p>6000</p>
+                                            <p>{{ $memberCount }}</p>
                                         </div>
                                         <!-- /.counter-content -->
                                     </div>
@@ -170,7 +170,7 @@ button.owl-dot.active {
                                     <div class="col-xl-9">
                                         <div class="counter-content">
                                             <h5>Central Committee</h5>
-                                            <p>41</p>
+                                            <p>{{ $membercommittee }}</p>
                                         </div>
                                         <!-- /.counter-content -->
                                     </div>
@@ -189,7 +189,7 @@ button.owl-dot.active {
                                     <div class="col-xl-9">
                                         <div class="counter-content">
                                             <h5>Global Committee</h5>
-                                            <p>20</p>
+                                            <p>{{ $memberGlobalCommittee }}</p>
                                         </div>
                                         <!-- /.counter-content -->
                                     </div>
@@ -350,34 +350,27 @@ button.owl-dot.active {
                             <div class="col-md-12 text-center">
                                 <h4 class="committeeTitlw">Executive Committee</h4>
                             </div>
-                            <div class="col-md-5">
+
+
+@foreach ($committee as $committeeList)
+
+                         <div class="col-md-5">
                                 <div class="d-flex">
-                                    <img width="120px" src="assets/img/committee.png" alt="" />
+                                    <img width="120px" src="{{ $committeeList->image }}" alt="" />
                                     <div class="committeeDetails">
-                                        <h6>অধ্যাপক ডাঃ মনিরুজ্জামান ভূইয়া</h6>
-                                        <p>
-                                            সভাপতি
-                                        </p>
+                                        <h6>{{ $committeeList->name }}</h6>
+
                                          <p>
-                                            মুন্সীগঞ্জ জেলার শ্রীনগর উপজেলার দামলা গ্রামে জন্ম গ্রহণ করেন.....
+                                            {{Str::limit($committeeList->bio, 100)}}
+
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-5">
-                                <div class="d-flex">
-                                    <img width="120px" src="assets/img/WhatsApp Image 2022-03-01 at 6.32.57 PM.jpeg" alt="" />
-                                    <div class="committeeDetails">
-                                        <h6>ডাঃ মোঃ জাহাঙ্গীর আলম</h6>
-                                        <p>
-                                            মহাসচিব
-                                        </p>
-                                        <p>
-                                            মুন্সীগঞ্জের রামপাল উচ্চ বিদ্যালয় থেকে এস,এস,সি, ঢাকা কলেজ ......
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+
+                            @endforeach
+
+
                             <div class="col-md-2">
                                 <div class="committeeMore">
                                     <a href="{{ url('/Committee') }}"> More Details >> </a>

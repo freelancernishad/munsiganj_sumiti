@@ -105,13 +105,41 @@
                                 <button type="submit" id="memberBtin" class="memberSearch btn btn-outline-info col-md-2">Search</button>
                             </form>
                         </div>
+
+                        <div class="memberForm">
+                            <h6>Blode Group</h6>
+                            <form action="" method="get" class="row">
+
+
+                            <div class="col-md-3">
+
+                                <select class="form-control" name="Blode" id="Blode" required>
+                                    <option value="">Select Blood Group</option>
+                                    <option>A+</option>
+                                    <option>A-</option>
+                                    <option>B+</option>
+                                    <option>B-</option>
+                                    <option>AB+</option>
+                                    <option>AB-</option>
+                                    <option>O+</option>
+                                    <option>O-</option>
+                                </select>
+
+
+                            </div>
+
+
+                                <button type="submit" id="memberBtin" class="memberSearch btn btn-outline-info col-md-2">Search</button>
+                            </form>
+                        </div>
                         <div class="membertable">
                             <table class="table table-bordered" id="myTable">
-                                <thead class="memberTableHead">
+                                <thead class="memberTableHead" style="    background: #bcdbff;
+                                color: #010101;">
                                     <tr>
                                         <th>MID</th>
-                                        <th>IMAGE</th>
-                                        <th>CONTACT INFORMATION</th>
+                                        <th>PHOTO</th>
+                                        <th>MEMBER INFORMATION</th>
                                     </tr>
                                 </thead>
                                 <tbody class="memberTablebody">
@@ -123,7 +151,7 @@
 
                                     <tr>
                                         <td>{{ $row->memberId }}</td>
-                                        <td>
+                                        <td style="text-align: center;">
                                             <img style="max-width:100px" src="{{ $row->image }}" alt="">
 
 
@@ -133,7 +161,7 @@
 
                                             <table witdh="100%" border="0">
 <tr>
-    <td width="80%" style="    padding: 0 10px;">
+    <td width="90%" style="    padding: 0 10px;">
 
         <ul class="list-unstyled memberAddress">
             <li class="">
@@ -153,8 +181,8 @@
                 &nbsp; {{ $row->phoneNumber }}
             </li>
             <li class="">
-                <i class="fas fa-globe-americas"></i>
-                &nbsp; {{ $row->website }}
+                <i class="fas fa-tint fa-fw"></i>
+                &nbsp; {{ $row->blood_group }}
             </li>
         </ul>
 

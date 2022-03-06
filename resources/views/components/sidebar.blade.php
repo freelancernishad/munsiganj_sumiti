@@ -25,4 +25,13 @@
                             <li><a href="{{ url('info/Probashi') }}">Probashi</a></li>
 
                         </ul>
+
+
+                        <div class="ifameVideo">
+{!! video()->iframe !!}
+
+
+
+                        </div>
+
                     </div>

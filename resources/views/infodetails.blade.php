@@ -1,20 +1,40 @@
 @extends('layouts.master')
 @section('content')
+
+<style>
+
+.about_head {
+    position: absolute;
+    background: #00000052;
+    z-index: 999999;
+    top: 40%;
+    left: 39px;
+    width: 300px;
+    padding: 15px 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom: 5px solid #c12729;
+    color: white;
+}
+
+</style>
+
+
     <main>
         <section class="hero_area">
             <div class="row p-0">
                 <div class="col-md-3" style="background: #e6f5fa">
                     <x-sidebar />
-              
+
                 </div>
                 <div class="col-md-9">
 
 
 @foreach ($infoDetails as $list)
-    
 
 
-             
+
+
                     <div class="about_header position-relative mt-3">
                         <img width="100%" src="{{ $list->image }}" alt="">
                         <div class="about_head">
@@ -28,8 +48,8 @@
                                 <div class="description">
                                     <p>{!! $list->description !!}</p>
                                 </div>
-                               
-                               
+
+
                             </div>
                       <div class="col-md-1"></div>
                         </div>
@@ -39,7 +59,7 @@
 
                 </div>
 
-               
+
 
             </div>
         </section>

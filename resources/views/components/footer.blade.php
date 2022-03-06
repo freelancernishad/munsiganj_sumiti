@@ -42,11 +42,18 @@
                 </ul>
             </div>
             <div class="col-md-4">
-                <h4 class="f_title">Newsletter</h4>
-                <form action="" class="d-flex w-100">
+                <h4 class="f_title">Others</h4>
+
+
+<h5>Visitor</h5>
+<h6>Today : {{ $dateVisitor }}</h6>
+<h6>This Month : {{ $monthVisitor }}</h6>
+<h6>This Year : {{ $yearVisitor }}</h6>
+
+                {{-- <form action="" class="d-flex w-100">
                     <input type="text" namr="newsletter" id="newsletter" />
                     <button type="submit" class="newsletterBtn">Send</button>
-                </form>
+                </form> --}}
                 <div class="f_social">
                     <ul class="list-unstyled d-flex">
                         <li>
@@ -216,6 +223,35 @@ $('#uploadimageModal').modal('hide');
   </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="dataModal2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modal_content2">
+
+                <div class="row">
+
+<div class="col-md-6"><h4>Contact us : 01909756552</h4></div>
+
+                </div>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
 function viewdatas(url){
 
@@ -229,6 +265,12 @@ function viewdatas(url){
         }
 
     });
+}
+
+function adcontact(){
+
+
+            $("#dataModal2").modal("show");
 }
 
 </script>

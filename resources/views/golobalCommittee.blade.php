@@ -16,10 +16,13 @@ div.icon-area img {
 
 li.nav-item.mb-4 p {
     font-size: 17px;
-    margin-top: 28px;
+    margin-top: 38px;
     font-weight: 600;
-    color: #d02804;
+    color: #ffffff;
     text-align: center;
+    background: #1666b4;
+    padding: 2px 10px;
+    border-radius: 10px;
 }
 
 .committee-area.section-padding-top {

@@ -57,6 +57,7 @@
     z-index: 1050;
     background: white !important;
 }
+
 	</style>
   {{--  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">  --}}
     <!-- jQuery -->
@@ -123,6 +124,7 @@
                   <li><a href="{{ route('category.index') }}" ><i class="fas fa-home"></i> Category </span></a></li>
                   <li><a href="{{ route('blog.index') }}" ><i class="fas fa-home"></i> Blogs </span></a></li>
                   <li><a href="{{ route('ad.index') }}" ><i class="fas fa-home"></i> Ad </span></a></li>
+                  <li><a href="{{ route('video.index') }}" ><i class="fas fa-home"></i> Video Ad </span></a></li>
                   <li><a href="{{ route('setting.index') }}" ><i class="fas fa-home"></i> Settings </span></a></li>
 		            </ul>
               </div>

@@ -75,7 +75,10 @@ li.select2-results__option.select2-results__option--selectable {
   top: 0;
   width: 100%;
 }
-
+.ifameVideo iframe {
+    width: 100% !important;
+    margin-top: 31px;
+}
 </style>
 <livewire:styles />
 
@@ -122,7 +125,7 @@ li.select2-results__option.select2-results__option--selectable {
                         foreach($ad as $adlist){
 
                         ?>
-                        <img width="100%" height="100px" src="{{ asset(env('FILE_PATH').'ad/'.$adlist->name) }}" alt="" />
+                        <img onClick="adcontact()" width="100%" height="100px" src="{{ asset(env('FILE_PATH').'ad/'.$adlist->name) }}" alt="" />
 
                         <?php
                         }
