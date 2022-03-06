@@ -168,8 +168,8 @@ button.owl-dot.active {
                                     </div>
                                     <div class="col-xl-9">
                                         <div class="counter-content">
-                                            <h5>Total Member</h5>
-                                            <p>{{ $memberCount }}</p>
+                                            <h5>Live Member</h5>
+                                            <p>5000</p>
                                         </div>
                                         <!-- /.counter-content -->
                                     </div>
