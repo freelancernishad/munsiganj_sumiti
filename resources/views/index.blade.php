@@ -313,7 +313,7 @@ button.owl-dot.active {
                                         <div class="news-content">
                                             <h5 class="mb-4">{{ $latest4List->title }}</h5>
                                             <p>
-                                                {{Str::limit($latest4List->short_description, 80)}}
+                                                {!! Str::limit($latest4List->short_description, 80)!!}
 
 
                                             </p>
@@ -361,7 +361,7 @@ button.owl-dot.active {
                                         <h6>{{ $committeeList->name }}</h6>
 
                                          <p>
-                                            {{Str::limit($committeeList->bio, 100)}}
+                                            {!! Str::limit($committeeList->bio, 100) !!}
 
                                         </p>
                                     </div>
