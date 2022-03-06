@@ -4,6 +4,16 @@
     <x-ad />
 
         </div>
+
+<style>
+a.memberReBtn.blood:hover {
+    background: red !important;
+    color: white !important;
+    border: 4px solid white !important;
+}
+
+</style>
+
         <div class="bottomheader" id="myHeader">
             <div class="cus_container">
                 <nav class="nav" style="    justify-content: center;">
@@ -48,6 +58,7 @@
 
 
                     <a href="{{ url('register') }}" class="memberReBtn" >Apply For Membership</a>
+                    <a href="{{ url('register') }}" class="memberReBtn blood" style="background: white;color: #d02804;border: 4px solid red;" ><i  class="fas fa-tint fa-fw"></i>click for Blood</a>
 
                 </nav>
             </div>

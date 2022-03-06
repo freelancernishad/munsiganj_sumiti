@@ -10,15 +10,15 @@
                     <img width="288px" src="{{ asset(env('FILE_PATH').'logo/'.$settings[0]->logo) }}" style="    padding: 10px 0;" alt="LOGO">
                     <div class="f_address">
                         <ul class="list-unstyled">
-                            <li class="text-white">
+                            <li class="text-white" style="    display: block;">
                                 <i style="color: #c12729" class="fas fa-map-marker-alt"></i>
                                 &nbsp; {{ $settings[0]->address }}
                             </li>
-                            <li class="text-white">
+                            <li class="text-white" style="    display: block;">
                                 <i style="color: #c12729" class="fas fa-envelope"></i>
                                 &nbsp; {{ $settings[0]->email }}
                             </li>
-                            <li class="text-white">
+                            <li class="text-white" style="    display: block;">
                                 <i style="color: #c12729" class="fas fa-phone-alt"></i>
                                 &nbsp; {{ $settings[0]->phone }}
                             </li>

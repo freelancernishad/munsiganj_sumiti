@@ -78,6 +78,7 @@ li.select2-results__option.select2-results__option--selectable {
 .ifameVideo iframe {
     width: 100% !important;
     margin-top: 31px;
+    height: 206px;
 }
 </style>
 <livewire:styles />

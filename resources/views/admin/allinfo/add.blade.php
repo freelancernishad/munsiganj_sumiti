@@ -58,6 +58,9 @@
                     <select name="title" id="title" class="form-control" onchange="getdataInfo()">
                       <option value="">Select</option>
                       <option>Historical Info</option>
+                      <option>Historical Place</option>
+                      <option>Historical Village</option>
+                      <option>Historical Profession</option>
                       <option>District Info</option>
                       <option>Education details</option>
                       <option>High School</option>
@@ -66,7 +69,8 @@
                       <option>Technical Institute</option>
                       <option>Agricaltural Info</option>
                       <option>Medical Info</option>
-                      <option>Prominent Personal</option>
+                      <option>Prominent Persons</option>
+                      <option>Parliamentary Persons Profile</option>
                       <option>Historical Place</option>
                       <option>Cultural Info</option>
                       <option>Tourism</option>

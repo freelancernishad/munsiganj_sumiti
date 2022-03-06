@@ -2,6 +2,13 @@
                     <div class="sidebar">
                         <ul class="sidebarmenu list-unstyled">
                             <li><a href="{{ url('info/Historical Info') }}">Historical Info</a></li>
+
+
+                            <li><a href="{{ url('info/Historical Place') }}">Historical Place</a></li><!--  new -->
+                            <li><a href="{{ url('info/Historical Village') }}">Historical Village</a></li><!--  new -->
+                            <li><a href="{{ url('info/Historical Profession') }}">Historical Profession</a></li><!--  new -->
+
+
                             <li><a href="{{ url('info/District Info') }}">District Info</a></li>
                             <li class="sidebar_dropdown" >
                                 <a href="#">Educational History &nbsp; <i class="fal fa-chevron-right"></i></a>
@@ -15,7 +22,10 @@
                             </li>
                             <li><a href="{{ url('info/Agricaltural Info') }}">Agricaltural Info</a></li>
                             <li><a href="{{ url('info/Medical Info') }}">Medical Info</a></li>
-                            <li><a href="{{ url('info/Prominent Personal') }}">Prominent Personal</a></li>
+
+                            <li><a href="{{ url('info/Prominent Persons') }}">Prominent Persons</a></li> <!--  chnage -->
+                            <li><a href="{{ url('info/Parliamentary Persons Profile') }}">Parliamentary Persons Profile</a></li> <!--  new -->
+
                             <li><a href="{{ url('info/Historical Place') }}">Historical Place</a></li>
                             <li><a href="{{ url('info/Cultural') }}">Cultural</a></li>
                             <li><a href="{{ url('info/Sports') }}">Sports</a></li>
