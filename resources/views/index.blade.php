@@ -45,7 +45,26 @@ button.owl-dot.active {
 .committeeMore a:hover {
     color: #bebbbb;
 }
+.NoticeSeciton {
+    background: #cbb105;
+    /* padding: 25px 0px; */
+    margin: 20px 0px;
+    margin-top: 30px !important;
+}
 
+.noticeHead {
+    background: #d02804;
+    color: white;
+    padding: 16px 19px;
+    font-size: 45px;
+}
+
+.noticwe {
+    font-size: 30px;
+    color: white;
+    display: flex;
+    width: 100%;
+}
 </style>
 
     <main>
@@ -382,6 +401,39 @@ button.owl-dot.active {
                 <div class="col-md-3 mt-3">
                     <img width="100%" src="assets/img/ad.png" alt="" />
                 </div>
+            </div>
+        </section>
+
+        <section class="NoticeSeciton">
+            <div class="d-flex align-items-center">
+
+
+
+
+
+
+                            <div class="noticeHead">Notice</div>
+
+
+                            <div class="noticwe">
+
+<marquee behavior="scroll" direction="" onMouseOver="this.stop()" onMouseOut="this.start()">
+<?php  $n = 1; ?>
+@foreach (notices() as $noticesList)
+   {{ $n }}=>: {{ $noticesList->dec }} &nbsp;
+    <?php  $n++; ?>
+@endforeach
+
+</marquee>
+
+
+
+                            </div>
+
+
+
+
+
             </div>
         </section>
     </main>

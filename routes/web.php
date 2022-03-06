@@ -16,6 +16,7 @@ use App\Http\Controllers\countryApiController;
 use App\Http\Controllers\BlogCommentController;
 use App\Http\Controllers\GlobalCommitteeController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\NoticeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,6 +112,7 @@ Route::resources([
 	'admin/allinfo' => AllinfoController::class,
 	'admin/ad' => AdController::class,
 	'admin/video' => VideoController::class,
+	'admin/notice' => NoticeController::class,
 	'admin/setting' => SettingController::class,
 
 ]);

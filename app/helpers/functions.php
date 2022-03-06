@@ -68,3 +68,9 @@ return DB::table('settings')->get();
         return DB::table('videos')->orderBy('id', 'desc')->first();
 
     }
+
+
+    function notices(){
+        return DB::table('notices')->orderBy('id', 'desc')->paginate(10);
+
+    }

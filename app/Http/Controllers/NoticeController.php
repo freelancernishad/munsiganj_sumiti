@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Video;
+use App\Models\notice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-class VideoController extends Controller
+class NoticeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class VideoController extends Controller
     public function index()
     {
 
-        $data['rows'] = Video::orderBy('id','DESC')->get();
+        $data['rows'] = notice::orderBy('id','DESC')->get();
 
-        return view('admin/video.list',$data);
+        return view('admin/notice.list',$data);
     }
 
     /**
@@ -27,8 +27,7 @@ class VideoController extends Controller
      */
     public function create()
     {
-
-        $Table =  DB::getSchemaBuilder()->getColumnListing('videos');
+        $Table =  DB::getSchemaBuilder()->getColumnListing('notices');
         $row = [];
         foreach ($Table as $rowname) {
                 $row[$rowname] = '';
@@ -37,7 +36,7 @@ class VideoController extends Controller
         $object = json_decode(json_encode($rows));
         $data['rows'] = $object;
 
-        return view('admin/video.add', $data);
+        return view('admin/notice.add', $data);
     }
 
     /**
@@ -48,6 +47,7 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
+
              // echo'<pre>';
         // print_r($request->all());
 
@@ -64,26 +64,26 @@ class VideoController extends Controller
         }
         if ($id == '') {
 
-            DB::table('videos')->insert($data);
+            DB::table('notices')->insert($data);
             $request->session()->flash('msg', 'Data Inserted Succcessfully');
-            return redirect(route('video.index'));
+            return redirect(route('notice.index'));
         } else {
 
  $data['updated_at'] = date("Y-m-d H:i:s");
 
-            DB::table('videos')->where('id', $id)->update($data);
+            DB::table('notices')->where('id', $id)->update($data);
             $request->session()->flash('msg', 'Data Updated Succcessfully');
-            return redirect(route('video.index'));
+            return redirect(route('notice.index'));
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Video  $video
+     * @param  \App\Models\notice  $notice
      * @return \Illuminate\Http\Response
      */
-    public function show(Video $video)
+    public function show(notice $notice)
     {
         //
     }
@@ -91,28 +91,24 @@ class VideoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Video  $video
+     * @param  \App\Models\notice  $notice
      * @return \Illuminate\Http\Response
      */
-    public function edit(Video $video)
+    public function edit(notice $notice)
     {
-
-    $id = $video->id;
-
-
-    $data['rows'] = DB::table('videos')->where('id',$id)->get();
-
-        return view('admin/video.add',$data);
+    $id = $notice->id;
+    $data['rows'] = DB::table('notices')->where('id',$id)->get();
+    return view('admin/notice.add',$data);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Video  $video
+     * @param  \App\Models\notice  $notice
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Video $video)
+    public function update(Request $request, notice $notice)
     {
         //
     }
@@ -120,12 +116,12 @@ class VideoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Video  $video
+     * @param  \App\Models\notice  $notice
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Video $video)
+    public function destroy(notice $notice)
     {
-        $video->delete();
+        $notice->delete();
         return redirect()->back();
     }
 }
