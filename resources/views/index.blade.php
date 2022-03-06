@@ -361,7 +361,7 @@ button.owl-dot.active {
                                         <h6>{{ $committeeList->name }}</h6>
 
                                          <p>
-                                            {!! Str::limit($committeeList->bio, 100) !!}
+
 
                                         </p>
                                     </div>
