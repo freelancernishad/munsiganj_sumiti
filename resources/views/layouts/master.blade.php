@@ -58,7 +58,7 @@ a.memberReBtn.blood:hover {
 
 
                     <a href="{{ url('register') }}" class="memberReBtn" >Apply For Membership</a>
-                    <a href="{{ url('register') }}" class="memberReBtn blood" style="background: white;color: #d02804;border: 4px solid red;" ><i  class="fas fa-tint fa-fw"></i>click for Blood</a>
+                    <a href="#" class="memberReBtn blood" style="background: white;color: #d02804;border: 4px solid red;" ><i  class="fas fa-tint fa-fw"></i>click for Blood</a>
 
                 </nav>
             </div>
