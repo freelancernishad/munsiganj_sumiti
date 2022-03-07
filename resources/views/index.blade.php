@@ -182,7 +182,7 @@ button.owl-dot.active {
                                     </div>
                                     <div class="col-xl-9">
                                         <div class="counter-content">
-                                            <h5>Live Member</h5>
+                                            <h5>LIVE MEMBER</h5>
                                             <p>5000</p>
                                         </div>
                                         <!-- /.counter-content -->
@@ -202,7 +202,7 @@ button.owl-dot.active {
                                     </div>
                                     <div class="col-xl-9">
                                         <div class="counter-content">
-                                            <h5>Central Committee</h5>
+                                            <h5>CENTRAL COMMITTEE MEMBER</h5>
                                             <p>{{ $membercommittee }}</p>
                                         </div>
                                         <!-- /.counter-content -->
@@ -221,7 +221,7 @@ button.owl-dot.active {
                                     </div>
                                     <div class="col-xl-9">
                                         <div class="counter-content">
-                                            <h5>Global Committee</h5>
+                                            <h5>GLOBAL COMMITTEE</h5>
                                             <p>{{ $memberGlobalCommittee }}</p>
                                         </div>
                                         <!-- /.counter-content -->
@@ -318,7 +318,7 @@ button.owl-dot.active {
                 <div class="col-lg-6 col-md-6 col-sm-12 text-center">
                     <a class="" href="{{ url('register') }}"><img
                             class=""
-                            src="https://bcs.org.bd/theme/assets/images/member/member.png.gif" alt=""></a>
+                            src="{{ asset('assets/img/WhatsApp Image 2022-03-07 at 1.07.43 PM.jpeg') }}" alt=""></a>
                 </div>
             </div>
         </div>

@@ -90,13 +90,22 @@
                             <div class="col-md-3">
                                 <select id="upszilaid" onchange="changethana()" class="form-control" required>
                                     <option value="">উপজেলা</option>
-                                    @foreach ($Thana as $dList)
+
+                                    <option value="370">Munshiganj Sadar</option>
+                                    <option value="371">Sreenagar</option>
+                                    <option value="372">Sirajdikhan</option>
+                                    <option value="373">Louhajanj</option>
+                                    <option value="374">Gajaria</option>
+                                    <option value="375">Tongibari</option>
 
 
 
-                                    <option value="{{ $dList->id }}">{{ $dList->name }}</option>
 
-                                    @endforeach
+
+
+
+
+
                                 </select>
 
                                 <input type="hidden" name="upszila" id='upszila'>
@@ -106,7 +115,7 @@
                             </form>
                         </div>
 
-                        <div class="memberForm">
+                        {{-- <div class="memberForm">
                             <h6>Blode Group</h6>
                             <form action="" method="get" class="row">
 
@@ -131,7 +140,7 @@
 
                                 <button type="submit" id="memberBtin" class="memberSearch btn btn-outline-info col-md-2">Search</button>
                             </form>
-                        </div>
+                        </div> --}}
                         <div class="membertable">
                             <table class="table table-bordered" id="myTable">
                                 <thead class="memberTableHead" style="    background: #bcdbff;
