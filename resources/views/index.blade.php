@@ -133,12 +133,12 @@ button.owl-dot.active {
                     <div class="about-us-area section-padding-top" style="    padding-top: 30px !important;  ">
                         <div class="container">
                             <div class="row">
-                                <div class="col-xl-4">
+                                <div class="col-xl-3">
                                     <div class="heading mb-4">
                                         <h5>About Us</h5>
                                     </div>
                                 </div>
-                                <div class="col-xl-8 ">
+                                <div class="col-xl-9 ">
                                     <div class="description">
                                         <p>
                                             {{Str::limit(settings()[0]->About, 200)}}
