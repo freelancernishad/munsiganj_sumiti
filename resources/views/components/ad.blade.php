@@ -80,6 +80,13 @@ li.select2-results__option.select2-results__option--selectable {
     margin-top: 31px;
     height: 206px;
 }
+
+body {
+    font-family: 'SolaimanLipi', Arial, sans-serif !important;
+}
+
+
+
 </style>
 <livewire:styles />
 
