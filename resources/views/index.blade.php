@@ -330,7 +330,7 @@ button.owl-dot.active {
             <div class="news-bg-color py-5">
                 <div class="container">
                     <div class="news-border py-3">
-                        <h4 class="text-center mt-2 mb-3">News Room</h4>
+                        <h4 class="text-center mt-2 mb-3">Blogs</h4>
                         <div class="row">
 
 
