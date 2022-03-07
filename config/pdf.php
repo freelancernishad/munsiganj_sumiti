@@ -13,6 +13,10 @@ return [
 	'Kalpurush' => [
 	'R' => "Kalpurush.ttf",
 	
+    ], 
+	'mitra' => [
+	'R' => "mitra.ttf",
+	
     ]
   	// ...add as many as you want.
   ]

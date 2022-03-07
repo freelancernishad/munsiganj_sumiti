@@ -46,7 +46,7 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.6/dist/sweetalert2.all.min.js"></script>
-	<link href="https://fonts.maateen.me/kalpurush/font.css" rel="stylesheet">
+    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
 <style>
 
 .modal-backdrop.show {
@@ -81,18 +81,18 @@ li.select2-results__option.select2-results__option--selectable {
     height: 206px;
 }
 
-body {
-    font-family: 'SolaimanLipi', sans-serif;
+@import url('https://fonts.maateen.me/charu-chandan-3d/font.css');
+
+p{
+   font-family: 'SolaimanLipi', sans-serif;
 }
-
-
 
 </style>
 <livewire:styles />
 
 </head>
 
-<body>
+<body style="font-family: 'SolaimanLipi', sans-serif;">
     <header class="herder">
         <div class="topheader">
             <div class="cus_container">

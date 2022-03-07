@@ -140,7 +140,7 @@ button.owl-dot.active {
                                 </div>
                                 <div class="col-xl-9 ">
                                     <div class="description">
-                                        <p>
+                                        <p style="font-family: 'SolaimanLipi', sans-serif;">
                                             {{Str::limit(settings()[0]->About, 200)}}
 
                                             <a href="{{ url('/about-us') }}">Read More</a>
