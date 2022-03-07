@@ -46,7 +46,7 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.6/dist/sweetalert2.all.min.js"></script>
-
+	<link href="https://fonts.maateen.me/kalpurush/font.css" rel="stylesheet">
 <style>
 
 .modal-backdrop.show {
@@ -82,7 +82,7 @@ li.select2-results__option.select2-results__option--selectable {
 }
 
 body {
-    font-family: 'SolaimanLipi', Arial, sans-serif !important;
+    font-family: 'SolaimanLipi', sans-serif;
 }
 
 
@@ -92,7 +92,7 @@ body {
 
 </head>
 
-<body style="font-family: Arial, Helvetica, sans-serif">
+<body>
     <header class="herder">
         <div class="topheader">
             <div class="cus_container">
