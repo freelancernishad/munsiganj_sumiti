@@ -461,7 +461,7 @@
                           <div class="col-md-12">
                             <div class="form-group">
                                 <label>Reference Id</label>
-                                <select name="Reference" id="Reference" class="form-control" required>
+                                <select name="Reference" id="Reference" class="form-control" onchange="referencechange(this.value)" required>
                                     <option value="">Reference Id</option>
                                     @foreach ($member as $memberList)
                                         <option value="{{ $memberList->memberId }}">
@@ -469,6 +469,11 @@
                                     @endforeach
                                 </select>
                             </div>
+                        </div>
+
+             {{-- col-md-6 start --}}
+                          <div class="col-md-12" id="referDetails">
+
                         </div>
 
 
@@ -498,8 +503,9 @@
                                     <option value="">Select Payment Method</option>
                                     <option value="Bank">Bank</option>
                                     <option value="Bkash">Bkash</option>
-                                    <option value="Roket">Roket</option>
-                                    <option value="Nogot">Nogot</option>
+                                    <option value="Rocket">Rocket</option>
+                                    <option value="Nogod">Nogod</option>
+                                    <option value="Upay">Upay</option>
 
                                 </select>
                             </div>
@@ -520,7 +526,7 @@
                           {{-- col-md-6 start --}}
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label>Name </label>
+                                <label>Bank Name </label>
                                 <input type="text" name="name" id="name" class="form-control">
                             </div>
                         </div>
@@ -530,7 +536,7 @@
                           {{-- col-md-6 start --}}
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label>Brance</label>
+                                <label>Branch</label>
                                 <input type="text" name="brance_name" id="brance_name" class="form-control">
                             </div>
                         </div>
@@ -578,7 +584,7 @@
                {{-- col-md-6 start --}}
                <div class="col-md-6">
                 <div class="form-group">
-                    <label>Slip Upload</label>
+                    <label>Deposit slip upload</label>
                     <input type="file" name="Slip_Upload" id="Slip_Upload" class="form-control">
                 </div>
             </div>
@@ -620,7 +626,7 @@
                           {{-- col-md-6 start --}}
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label>Transition Id (TRXID)</label>
+                                <label>Transaction ID (TRXID)</label>
                                 <input type="text" name="TRXID" id="TRXID" class="form-control">
                             </div>
                         </div>
@@ -718,6 +724,25 @@
                 success: function(data) {
                     console.log(data);
                     $('#pr_post' + id).val(data);
+                }
+            });
+        }
+        //   getunioun
+        function referencechange(refid) {
+
+// alert(id)
+
+
+
+            $.ajax({
+                type: 'get',
+                url: '/refdata?id='+refid,
+                success: function(data) {
+
+
+document.getElementById('referDetails').innerHTML=data;
+
+                    console.log(data);
                 }
             });
         }

@@ -10,9 +10,11 @@ use App\Models\Thana;
 use App\Models\blog;
 use App\Models\BlogComment;
 use App\Models\PostRead;
-
+use App\Models\ProminentPersons;
 use App\Models\MemberShipPament;
 use App\Models\GlobalCommittee;
+use App\Models\historyPlace;
+use App\Models\historyCategory;
 class frontendController extends Controller
 {
     public function index()
@@ -112,6 +114,32 @@ class frontendController extends Controller
 
         return view('register_gide', $data);
     }
+
+
+    public function refdata(Request $request)
+    {
+        $id = $request->id;
+        if($id==''){
+            echo "<h4 style='color:red'>No Data Found!</h4>";
+        }else{
+               $data =  member::where('memberId',$id)->get();
+
+
+
+        echo "
+            <h6 style='margin-top:10px' > <b> Name </b> : ".$data[0]->name." </h5>
+            <h6 style='margin-top:10px' > <b> Father Name</b> : ".$data[0]->father_name." </h5>
+            <h6 style='margin-top:10px' > <b> Address </b> : ".$data[0]->Present_address." </h5>
+
+
+        ";
+        }
+
+
+    }
+
+
+
     public function member(Request $request)
     {
 
@@ -307,6 +335,38 @@ if($memberid==''){
             ->get();
         return view('gallery', $data);
     }
+    public function HistoricalPlace(Request $request)
+    {
+
+        $singleData =  $request->i;
+        $data['singleData'] = $singleData;
+        if($singleData!=''){
+            $data['rows'] = historyPlace::where('id',$singleData)->get();
+        }
+        $data['rowsrel'] = historyCategory::where('parent','ঐতিহাসিক ধর্মীয় স্থাপনা সমূহ')->orderBy('id','ASC')->get();
+        $data['rowshis'] = historyCategory::where('parent','ঐতিহাসিক স্থাপনা ও স্থান সমূহ')->orderBy('id','ASC')->get();
+
+            return view('HistoricalPlace',$data);
+
+    }
+
+        public function ProminentPersons(Request $request)
+    {
+
+        $singleData =  $request->i;
+        $data['singleData'] = $singleData;
+        if($singleData!=''){
+            $data['rows'] = ProminentPersons::where('id',$singleData)->get();
+        }
+        $data['rowsMale'] = ProminentPersons::where('category','বিক্রামপুরের ব্যক্তিত্ব')->orderBy('id','ASC')->get();
+        $data['rowsFemale'] = ProminentPersons::where('category','বিক্রামপরের নারী ব্যক্তিত্ব')->orderBy('id','ASC')->get();
+
+            return view('ProminentPersons',$data);
+
+    }
+
+
+
     public function info_details($title)
     {
         $count = DB::table('allinfos')->where('title', $title)->count();

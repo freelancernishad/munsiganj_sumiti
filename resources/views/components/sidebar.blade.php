@@ -4,7 +4,7 @@
                             <li><a href="{{ url('info/Historical Info') }}">Historical Info</a></li>
 
 
-                            <li><a href="{{ url('info/Historical Place') }}">Historical Place</a></li><!--  new -->
+                            <li><a href="{{ url('HistoricalPlace') }}">Historical Place</a></li><!--  new -->
                             <li><a href="{{ url('info/Historical Village') }}">Historical Village</a></li><!--  new -->
                             <li><a href="{{ url('info/Historical Profession') }}">Historical Profession</a></li><!--  new -->
 
@@ -23,7 +23,7 @@
                             <li><a href="{{ url('info/Agricaltural Info') }}">Agricaltural Info</a></li>
                             <li><a href="{{ url('info/Medical Info') }}">Medical Info</a></li>
 
-                            <li><a href="{{ url('info/Prominent Persons') }}">Prominent Persons</a></li> <!--  chnage -->
+                            <li><a href="{{ url('ProminentPersons') }}">Prominent Persons</a></li> <!--  chnage -->
                             <li><a href="{{ url('info/Parliamentary Persons Profile') }}">Parliamentary Persons Profile</a></li> <!--  new -->
 
                             <li><a href="{{ url('info/Historical Place') }}">Historical Place</a></li>

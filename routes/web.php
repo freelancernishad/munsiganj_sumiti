@@ -16,6 +16,9 @@ use App\Http\Controllers\countryApiController;
 use App\Http\Controllers\BlogCommentController;
 use App\Http\Controllers\GlobalCommitteeController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\HistoryCategoryController;
+use App\Http\Controllers\HistoryPlaceController;
+use App\Http\Controllers\ProminentPersonsController;
 use App\Http\Controllers\NoticeController;
 
 /*
@@ -48,6 +51,8 @@ Route::get('/',[frontendController::class, 'index'])->name('homePage');
 Route::get('/about-us',[frontendController::class, 'about_us'])->name('about_us');
 
 
+Route::get('ProminentPersons',[frontendController::class, 'ProminentPersons'])->name('ProminentPersons');
+Route::get('HistoricalPlace',[frontendController::class, 'HistoricalPlace'])->name('HistoricalPlace');
 Route::get('info/{title}',[frontendController::class, 'info_details'])->name('info_details');
 Route::get('Committee',[frontendController::class, 'Committee'])->name('Committeelist');
 Route::get('golobal/Committee',[frontendController::class, 'golobalCommittee'])->name('golobalCommitteelist');
@@ -58,6 +63,7 @@ Route::get('gallery',[frontendController::class, 'Gallery'])->name('Gallerylist'
 
 Route::get('blood',[frontendController::class, 'blood'])->name('blood');
 Route::get('member',[frontendController::class, 'member'])->name('memberlist');
+Route::get('refdata',[frontendController::class, 'refdata'])->name('refdata');
 Route::post('member/submit',[frontendController::class, 'memberList_submit'])->name('memberList_submit');
 
 Route::get('member/{disteict}/{upozila}',[frontendController::class, 'member_search'])->name('memberlist_search');
@@ -114,6 +120,9 @@ Route::resources([
 	'admin/ad' => AdController::class,
 	'admin/video' => VideoController::class,
 	'admin/notice' => NoticeController::class,
+	'admin/HistoryCategory' => HistoryCategoryController::class,
+	'admin/HistoryPlace' => HistoryPlaceController::class,
+	'admin/ProminentPersons' => ProminentPersonsController::class,
 	'admin/setting' => SettingController::class,
 
 ]);
