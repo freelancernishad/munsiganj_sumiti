@@ -16,5 +16,12 @@ class MemberShipPament extends Model
         'number',
         'amount',
         'TRXID',
+        'name',
+        'brance_name',
+        'account_name',
+        'account_Number',
+        'Payment_Date',
+        'Slip_Upload',
+        'Emergency',
     ];
 }

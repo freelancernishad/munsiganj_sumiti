@@ -22,6 +22,14 @@ class CreateMemberShipPamentsTable extends Migration
             $table->string('amount')->nullable();
             $table->string('TRXID')->nullable();
 
+            $table->string('name')->nullable();
+            $table->string('brance_name')->nullable();
+            $table->string('account_name')->nullable();
+            $table->string('account_Number')->nullable();
+            $table->string('Payment_Date')->nullable();
+            $table->string('Slip_Upload')->nullable();
+            $table->string('Emergency')->nullable();
+
             $table->timestamps();
         });
     }

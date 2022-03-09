@@ -164,6 +164,58 @@ if($memberid==''){
     }
 
 
+    public function blood(Request $request)
+    {
+
+
+
+
+
+
+
+        $whl = [
+            'page' => 'Member',
+            'position' => 'Left',
+        ];
+        $data['adl'] =   DB::table('ads')->where($whl)->get();
+        $data['rows'] = member::where('status','Active')->orderBy('id', 'DESC')->get();
+        $data['districts'] = District::orderBy('bn_name', 'ASC')->get();
+        $data['Thana'] = Thana::orderBy('bn_name', 'ASC')->get();
+
+
+
+
+        $data['memberName'] = '';
+        $data['memberId'] = '';
+
+
+
+        $data['district'] = '';
+        $data['upszila'] = '';
+
+        if($request->Blode!=''){
+            $data['rows'] = member::where(['status'=>'Active','blood_group'=>$request->Blode])->orderBy('id', 'DESC')->get();
+        }
+
+
+
+
+
+         $memberid = $request->memberid;
+if($memberid==''){
+    return view('blood', $data);
+}else{
+
+    $data['single'] = member::where('memberId', $memberid)->get();
+
+    return view('membersingle', $data);
+}
+
+
+
+    }
+
+
 
 
     public function Committee()
@@ -301,6 +353,10 @@ if($memberid==''){
     public function register(Request $request)
     {
 
+
+
+
+
         $step = $request->step;
 
 if($step==''){
@@ -353,14 +409,16 @@ $member = member::where('status','Active')->get();
     {
         // echo'<pre>';
         // print_r($request->all());
-
+        // return $request->all();
         $id = $request->id;
         $step = $request->step;
         $status = $request->status;
 
+
+
 if($step==4){
 
-    $secretKey = '6LfAdg4cAAAAALom1OeVCZsyt6gP23bsh9UQ-PE3';
+    $secretKey = env('GOOGLE_CAPTCHA_SECRETEKEY');
     $ip = $_SERVER['REMOTE_ADDR'];
    $response = $_POST['g-recaptcha-response'];
     $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$response&remoteip=$ip";
@@ -373,7 +431,7 @@ if($step==4){
         $data = [];
         $inputData = $request->all();
         foreach ($inputData as $key => $value) {
-            if ($key == 'id' || $key == '_token' || $key == 'status') {
+            if ($key == 'id' || $key == '_token' || $key == 'status' || $key == 'g-recaptcha-response' || $key == 'Slip_Upload') {
              } else {
                 $data[$key] = $value;
             }
@@ -381,6 +439,18 @@ if($step==4){
         $datas['updated_at'] = date("Y-m-d H:i:s");
     $datas['status'] = 'Pending';
         DB::table('members')->where('id', $id)->update($datas);
+
+
+		if($request->hasfile('Slip_Upload'))	{
+			$image = $request->file('Slip_Upload');
+		$imageext = $image->extension();
+		$imagefile=time().'.'.$imageext;
+
+		$image->storeAs('/public/bankSlip/',$imagefile);
+			$data['Slip_Upload']=$imagefile;
+		}
+
+
 
         MemberShipPament::create($data);
 

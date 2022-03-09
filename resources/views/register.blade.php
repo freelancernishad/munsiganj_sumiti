@@ -30,7 +30,13 @@
             position: relative;
             top: 26px;
         }
+#bank{
+    display: none;
+}
 
+#mobleBank{
+    display: none;
+}
 
     </style>
 
@@ -337,9 +343,9 @@
                                         <select id="districtid1" onchange="changedistrict(1)" class="form-control"
                                             required>
                                             <option value="">District</option>
-                                            @foreach ($districts as $dList)
-                                                <option value="{{ $dList->id }}">{{ $dList->name }}</option>
-                                            @endforeach
+                                            {{-- @foreach ($districts as $dList) --}}
+                                                <option value="48">Munshiganj</option>
+                                            {{-- @endforeach --}}
                                         </select>
                                         <input type="hidden" class="form-control" name="pr_dist" id="pr_dist1"
                                             value="{{ $row->pr_dist }}">
@@ -488,8 +494,9 @@
                           <div class="col-md-6">
                             <div class="form-group">
                                 <label>Payment Method</label>
-                                <select name="method" id="method" class="form-control" required>
+                                <select name="method" id="method" class="form-control" onchange="bankDetail(this.value)" required>
                                     <option value="">Select Payment Method</option>
+                                    <option value="Bank">Bank</option>
                                     <option value="Bkash">Bkash</option>
                                     <option value="Roket">Roket</option>
                                     <option value="Nogot">Nogot</option>
@@ -498,7 +505,99 @@
                             </div>
                         </div>
 
+<div class="col-md-12 row" id="bank">
 
+
+
+
+                          {{-- col-md-6 start --}}
+                          <div class="col-md-12">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi fuga, nesciunt qui similique quod enim accusantium magni dolorem ut in illo, necessitatibus aperiam? Error quod officiis asperiores doloremque dolor?
+                        </div>
+
+
+
+                          {{-- col-md-6 start --}}
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Name </label>
+                                <input type="text" name="name" id="name" class="form-control">
+                            </div>
+                        </div>
+
+
+
+                          {{-- col-md-6 start --}}
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Brance</label>
+                                <input type="text" name="brance_name" id="brance_name" class="form-control">
+                            </div>
+                        </div>
+
+
+                          {{-- col-md-6 start --}}
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Account Name</label>
+                                <input type="text" name="account_name" id="account_name" class="form-control">
+                            </div>
+                        </div>
+
+
+
+                          {{-- col-md-6 start --}}
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Account Number</label>
+                                <input type="text" name="account_Number" id="account_Number" class="form-control">
+                            </div>
+                        </div>
+
+
+
+                          {{-- col-md-6 start --}}
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Amount </label>
+                                <input type="text" name="amount" id="amount1" class="form-control">
+                            </div>
+                        </div>
+
+
+
+
+                          {{-- col-md-6 start --}}
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Payment Date</label>
+                                <input type="date" name="Payment_Date" id="Payment_Date" class="form-control">
+                            </div>
+                        </div>
+
+               {{-- col-md-6 start --}}
+               <div class="col-md-6">
+                <div class="form-group">
+                    <label>Slip Upload</label>
+                    <input type="file" name="Slip_Upload" id="Slip_Upload" class="form-control">
+                </div>
+            </div>
+
+              {{-- col-md-6 start --}}
+               <div class="col-md-6">
+                <div class="form-group">
+                    <label>Emergency Contact Number</label>
+                    <input type="text" name="Emergency" id="Emergency" class="form-control">
+                </div>
+            </div>
+
+
+
+
+                    </div>
+
+
+<div class="col-md-12 row" id="mobleBank">
                           {{-- col-md-6 start --}}
                           <div class="col-md-6">
                             <div class="form-group">
@@ -513,7 +612,7 @@
                           <div class="col-md-6">
                             <div class="form-group">
                                 <label>Payment Amount</label>
-                                <input type="text" name="amount" id="amount" class="form-control">
+                                <input type="text" name="amount" id="amount2" class="form-control">
                             </div>
                         </div>
 
@@ -526,11 +625,11 @@
                             </div>
                         </div>
 
-
+                    </div>
 
 
                                 <div class="col-sm-12 text-center">
-                                    <div class="g-recaptcha"  data-sitekey="6LfAdg4cAAAAAK5hoa2KyrA6ZlMAeiEIc3YE_1x4"></div>
+                                    <div class="g-recaptcha"  data-sitekey="{{ env('GOOGLE_CAPTCHA_SITEKEY') }}"></div>
                             </div>
 
 
@@ -672,5 +771,30 @@
         $(document).ready(function() {
             $('#Reference').select2();
         });
+
+
+        function bankDetail(value){
+
+            var bank = document.getElementById('bank');
+            var mobleBank = document.getElementById('mobleBank');
+            var amount1 = document.getElementById('amount1');
+            var amount2 = document.getElementById('amount2');
+
+           if(value==''){
+            bank.style.display="none"
+            mobleBank.style.display="none"
+           }else if(value=='Bank'){
+            bank.style.display="flex"
+            mobleBank.style.display="none"
+            amount1.disabled = false
+            amount2.disabled = true
+           }else{
+            bank.style.display="none"
+            mobleBank.style.display="flex"
+            amount2.disabled = false
+            amount1.disabled = true
+           }
+        }
+
     </script>
 @endsection

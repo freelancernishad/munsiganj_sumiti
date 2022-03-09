@@ -56,6 +56,7 @@ Route::get('gallery',[frontendController::class, 'Gallery'])->name('Gallerylist'
 
 
 
+Route::get('blood',[frontendController::class, 'blood'])->name('blood');
 Route::get('member',[frontendController::class, 'member'])->name('memberlist');
 Route::post('member/submit',[frontendController::class, 'memberList_submit'])->name('memberList_submit');
 
