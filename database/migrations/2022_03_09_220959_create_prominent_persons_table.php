@@ -16,7 +16,7 @@ class CreateProminentPersonsTable extends Migration
         Schema::create('prominent_persons', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('info')->nullable();
+            $table->longText('info')->nullable();
             $table->string('category')->nullable();
             $table->timestamps();
         });

@@ -27,10 +27,10 @@
                     class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
 
                     sizes="(max-width: 400px) 100vw, 400px"></div>
-            <h3 class="heading_01"><a  wire:click="songleBlog('{{ $newslist->postid }}')" href="javascript:void(0)">{{ $newslist->title }}</a></h3><a wire:click="songleBlog('{{ $newslist->postid }}')" href="javascript:void(0)">
+            <h3 class="heading_01"><a href="{{ url('/blogs?blog='.$newslist->postid) }}">{{ $newslist->title }}</a></h3><a href="{{ url('/blogs?blog='.$newslist->postid) }}">
             </a>
-            <p><a  wire:click="songleBlog('{{ $newslist->postid }}')" href="javascript:void(0)">{{ $newslist->short_description }} </a><a
-                    href=" " class="readmore"></a> <span style="text-align:right"><a wire:click="songleBlog('{{ $newslist->postid }}')" href="javascript:void(0)">.....আরো
+            <p><a href="{{ url('/blogs?blog='.$newslist->postid) }}">{{ $newslist->short_description }} </a><a
+                    href=" " class="readmore"></a> <span style="text-align:right"><a href="{{ url('/blogs?blog='.$newslist->postid) }}">.....আরো
                         পড়ুন</a></span></p>
         </div>
 
@@ -69,7 +69,7 @@
 
 
                     <div class="images_title">
-                        <a wire:click="songleBlog('{{ $latestList->postid }}')" href="javascript:void(0)"><img width="400" height="225"
+                        <a href="{{ url('/blogs?blog='.$latestList->postid) }}"><img width="400" height="225"
                                 src="{{ $latestList->image }}"
                                 class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
                                 loading="lazy"></a>
@@ -119,9 +119,10 @@
 
         <div class="leadnews">
             <ol class="breadcrumb">
-                <li><a href="javascript:void(0)" wire:click="categoryfun('{{ $singleBlogList->category }}')"><i class="fa fa-home" aria-hidden="true"></i>
+                <li><a href="{{ url('blogs?category='.$singleBlogList->category) }}" ><i class="fa fa-home" aria-hidden="true"></i>
                     </a></li>
-                <li><a href="#" wire:click="categoryfun('{{ $singleBlogList->category }}')" ></a><a href="javascript:void(0)" wire:click="categoryfun('{{ $singleBlogList->category }}')" rel="category tag">{{ $singleBlogList->category }}</a></li>
+                <li><a href="{{ url('blogs?category='.$singleBlogList->category) }}"  > </a>
+                    <a href="{{ url('blogs?category='.$singleBlogList->category) }}" rel="category tag">{{ $singleBlogList->category }}</a></li>
                 <li class="active">{{ $singleBlogList->title }}</li>
 
             </ol>
@@ -137,7 +138,7 @@
 
 
 
-            <h3 class="heading_01" style="font-size:25px;"><a wire:click="songleBlog('{{ $singleBlogList->postid }}')" href="javascript:void(0)">{{ $singleBlogList->title }}</a></h3>
+            <h3 class="heading_01" style="font-size:25px;"><a href="{{ url('/blogs?blog='.$singleBlogList->postid) }}">{{ $singleBlogList->title }}</a></h3>
             <ol class="breadcrumb">
                 <li>আপডেট : {{ int_en_to_bn(month_en_to_bn(date("d F, Y", strtotime($singleBlogList->created_at)))) }} </li>
                 <li class="active"> {{ $readpost }} বার পঠিত</li>
@@ -308,7 +309,7 @@
 
 
                     <div class="images_title">
-                        <a wire:click="songleBlog('{{ $latestList->postid }}')" href="javascript:void(0)"><img width="400" height="225"
+                        <a href="{{ url('/blogs?blog='.$latestList->postid) }}"><img width="400" height="225"
                                 src="{{ $latestList->image }}"
                                 class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
                                 loading="lazy"></a>
@@ -366,18 +367,17 @@
 
 				<div class="leadnews">
 
-					<a
-                    wire:click="songleBlog('{{ $heroSectionList->postid }}')" href="javascript:void(0)"><img
+					<a href="{{ url('/blogs?blog='.$heroSectionList->postid) }}"><img
 							width="400" height="225"
 							src="{{ $heroSectionList->image }}"
 							class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
 							loading="lazy" /></a>
-					<h3 class="heading_01"><a
-                        wire:click="songleBlog('{{ $heroSectionList->postid }}')" href="javascript:void(0)">{{ $heroSectionList->title }}</a></h3>
-					<p>{{ $heroSectionList->short_description }} <a
-                        wire:click="songleBlog('{{ $heroSectionList->postid }}')" href="javascript:void(0)"
-							class='readmore'></a><span style="text-align:right"><a
-                                wire:click="songleBlog('{{ $heroSectionList->postid }}')" href="javascript:void(0)">.....আরো
+					<h3 class="heading_01">
+                        <a href="{{ url('/blogs?blog='.$heroSectionList->postid) }}">{{ $heroSectionList->title }}</a></h3>
+					<p>{{ $heroSectionList->short_description }}
+                        <a href="{{ url('/blogs?blog='.$heroSectionList->postid) }}"
+							class='readmore'></a><span style="text-align:right">
+                                <a href="{{ url('/blogs?blog='.$heroSectionList->postid) }}">.....আরো
 								পড়ুন</a></span></p>
 				</div>
                 @endforeach
@@ -403,11 +403,11 @@
 						<div role="tabpanel" class="tab-pane active" id="home">
                             @foreach ($latest as $latestList)
                             <div class="images_title">
-                                <a  wire:click="songleBlog('{{ $latestList->postid }}')" href="javascript:void(0)"><img width="400" height="225"
+                                <a href="{{ url('/blogs?blog='.$latestList->postid) }}"><img width="400" height="225"
                                         src="{{ $latestList->image }}"
                                         class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
                                         loading="lazy"></a>
-                                <h4 class="heading_02"><a  wire:click="songleBlog('{{ $latestList->postid }}')" href="javascript:void(0)">{{ $latestList->title }}</a></h4>
+                                <h4 class="heading_02"><a href="{{ url('/blogs?blog='.$latestList->postid) }}">{{ $latestList->title }}</a></h4>
                             </div>
                             @endforeach
 						</div>
@@ -450,14 +450,13 @@
 
 					<div class="col-md-4">
 						<div class="exclusive">
-							<a
-                            wire:click="songleBlog('{{ $latest7List->postid }}')" href="javascript:void(0)"><img
+							<a href="{{ url('/blogs?blog='.$latest7List->postid) }}"><img
 									width="400" height="225"
 									src="{{ $latest7List->image }}"
 									class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
 									loading="lazy" /></a>
-							<h3 class="heading_03"><a
-                                wire:click="songleBlog('{{ $latest7List->postid }}')" href="javascript:void(0)">{{ $latest7List->title }}</a></h3>
+							<h3 class="heading_03">
+                                <a href="{{ url('/blogs?blog='.$latest7List->postid) }}">{{ $latest7List->title }}</a></h3>
 						</div>
 					</div>
 
@@ -514,7 +513,7 @@
 
 
 				<h4 class="catagory_title"><a
-						href="javascript:void(0)" wire:click="categoryfun('জাতীয়')" ><i
+						href="{{ url('blogs?category=জাতীয়') }}" ><i
 							class="fa fa-bars"></i> জাতীয় </a></h4>
 				<div class="row">
 <?php
@@ -528,20 +527,18 @@
 
 					<div class="col-md-6">
 						<div class="leadnews">
-							<a
-                            wire:click="songleBlog('{{ $national1st->postid }}')" href="javascript:void(0)"><img
+							<a href="{{ url('/blogs?blog='.$national1st->postid) }}"><img
 									width="400" height="225"
 									src="{{ $national1st->image }}"
 									class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
 									loading="lazy"
 
 									sizes="(max-width: 400px) 100vw, 400px" /></a>
-							<h3 class="heading_01"><a
-                                wire:click="songleBlog('{{ $national1st->postid }}')" href="javascript:void(0)">{{ $national1st->title }}</a></h3>
+							<h3 class="heading_01"><a href="{{ url('/blogs?blog='.$national1st->postid) }}">{{ $national1st->title }}</a></h3>
 							<p>{{ $national1st->short_description }} <a
-									href=' '
+									href="{{ url('/blogs?blog='.$national1st->postid) }}"
 									class='readmore'></a><span style="text-align:right"><a
-                                        wire:click="songleBlog('{{ $national1st->postid }}')" href="javascript:void(0)">.....আরো
+                                         href="{{ url('blogs?category=জাতীয়') }}">.....আরো
 										পড়ুন</a></span></p>
 						</div>
 
@@ -565,14 +562,13 @@
 
 
                     <div class="images_title">
-						<a
-                        wire:click="songleBlog('{{ $nationallist->postid }}')" href="javascript:void(0)"><img
+						<a href="{{ url('/blogs?blog='.$nationallist->postid) }}"><img
 								width="400" height="225"
 								src="{{ $nationallist->image }}"
 								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
 								loading="lazy" /></a>
-						<h4 class="heading_02"><a
-                            wire:click="songleBlog('{{ $nationallist->postid }}')" href="javascript:void(0)">
+						<h4 class="heading_02">
+                            <a href="{{ url('/blogs?blog='.$nationallist->postid) }}">
                             {{ $nationallist->title }}</a></h4>
 					</div>
 
@@ -590,7 +586,7 @@
 
 					</div>
 					<div class="morenews"><a
-                        href="javascript:void(0)" wire:click="categoryfun('জাতীয়')" ><i
+                        href="{{ url('blogs?category=জাতীয়') }}"  ><i
 								class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
 							আরো সংবাদ..</a></div>
 				</div>
@@ -602,70 +598,30 @@
 				<div class="internetional">
 
 
-					<h4 class="catagory_title"><a
-							href=""><i
+					<h4 class="catagory_title">
+                        <a href="{{ url('blogs?category=আন্তর্জাতিক') }}"><i
 								class="fa fa-bars"></i> আন্তর্জাতিক</a></h4>
 
-					<div class="images_title">
-						<a
-							href=""><img
-								width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2022/02/FB_IMG_1645469105399-400x225.jpg"
-								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-								loading="lazy" /></a>
-						<h4 class="heading_02"><a
-								href="">
-								অস্ট্রিয়ায় বিক্রমপুর সমিতি উদ্যোগে মাতৃভাষা দিবসে শ্রদ্ধাঞ্জলি</a></h4>
-					</div>
+
+                                @foreach ($International as $InternationalList)
+
+
 
 
 					<div class="images_title">
 						<a
-							href=""><img
+							href="{{ url('/blogs?blog='.$InternationalList->postid) }}"><img
 								width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2022/01/Rasturant-400x225.jpg"
+								src="{{ $InternationalList->image }}"
 								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
 								loading="lazy" /></a>
 						<h4 class="heading_02"><a
-								href="">
-								টিকা ছাড়া রেস্টুরেন্টে খাওয়া যাবে না: স্বাস্থ্যমন্ত্রী</a></h4>
+								href="{{ url('/blogs?blog='.$InternationalList->postid) }}">
+								{{ $InternationalList->title }}</a></h4>
 					</div>
-
-
-					<div class="images_title">
-						<a
-							href=""><img
-								width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2022/01/soudi-n2342-400x225.jpg"
-								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-								loading="lazy" /></a>
-						<h4 class="heading_02"><a
-								href="">
-								সৌদি আরবে ব্যাপক তুষারপাত, হচ্ছে বৃষ্টিও</a></h4>
-					</div>
-
-
-					<div class="images_title">
-						<a href=""><img width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2021/12/115044348__115033548_gettyimages-1226314512-400x225.jpg"
-								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-								loading="lazy" /></a>
-						<h4 class="heading_02"><a href=""> </a></h4>
-					</div>
-
-
-					<div class="images_title">
-						<a href=""><img width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2021/11/aHR0cHM6Ly93d3cuZGFpbHlqYW5ha2FudGhhLmNvbS9jbG91ZC11cGxvYWRzL2RlZmF1bHQvYXJ0aWNsZS1pbWFnZXMvMjAyMTExLzE2MzU3NTgxOTlfMjQuanBn-400x225.jpg"
-								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-								loading="lazy" /></a>
-						<h4 class="heading_02"><a href=""> সহজেই জয় পেয়ে
-								স্বস্তিতে জাপানের নতুন প্রধানমন্ত্রী কিশিদা</a></h4>
-					</div>
-
-
+                    @endforeach
 					<div class="morenews"><a
-							href=""><i
+							href="{{ url('blogs?category=আন্তর্জাতিক') }}"><i
 								class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
 							আরো সংবাদ..</a></div>
 
@@ -700,134 +656,162 @@
 			</div>
 		</div>
 
-		<!-- Section 09 (top two div) #################################-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- Section 07 (top two div) #################################-->
+
 
 		<div class="row">
-			<!--cat 5 start  -->
+
+			<!--cat 3 start -->
 			<div class="col-md-8">
 
-				<h4 class="catagory_title"> <a
-						href=""><i
-							class="fa fa-bars"></i> রাজনীতি</a></h4>
-				<div class="row">
-					<div class="col-md-6">
 
+
+
+
+
+				<h4 class="catagory_title"><a
+						href="{{ url('blogs?category=রাজনীতি') }}" ><i
+							class="fa fa-bars"></i> রাজনীতি </a></h4>
+				<div class="row">
+<?php
+
+    $ni = 1;
+    ?>
+                    @foreach ($Politics as $Politics1st)
+@if($ni==1)
+
+
+
+					<div class="col-md-6">
 						<div class="leadnews">
-							<a
-								href=""><img
+							<a href="{{ url('/blogs?blog='.$Politics1st->postid) }}"><img
 									width="400" height="225"
-									src="https://dailysavvataralo.com/wp-content/uploads/2022/02/tika_khaleda-770x450-1-400x225.jpg"
+									src="{{ $Politics1st->image }}"
 									class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-									loading="lazy" /></a>
-							<h3 class="heading_01"><a
-									href="">কোভিড
-									টিকার বুস্টার ডোজ নিলেন খালেদা জিয়া</a></h3>
-							<p>করোনা টিকার বুস্টার ডোজ নিলেন বিএনপি চেয়ারপার্সন খালেদা জিয়া। বুধবার বিকাল পৌনে পাঁচটার
-								দিকে রাজধানীর মহাখালীতে শেখ রাসেল গ্যাস্ট্রোলিভার হাসপাতালে বুস্টার ডোজ হিসেবে ফাইজারের
-								টিকা <a
-									href=' '
+									loading="lazy"
+
+									sizes="(max-width: 400px) 100vw, 400px" /></a>
+							<h3 class="heading_01"><a href="{{ url('/blogs?blog='.$Politics1st->postid) }}">{{ $Politics1st->title }}</a></h3>
+							<p>{{ $Politics1st->short_description }} <a
+									href="{{ url('/blogs?blog='.$Politics1st->postid) }}"
 									class='readmore'></a><span style="text-align:right"><a
-										href="">.....আরো
+                                         href="{{ url('blogs?category=রাজনীতি') }}">.....আরো
 										পড়ুন</a></span></p>
 						</div>
 
 					</div>
+                    @endif
+                    <?php
+                    $ni++;
+                    ?>
+                    @endforeach
+
 					<div class="col-md-6">
 
 
-						<div class="images_title">
-							<a href=""><img width="276" height="182"
-									src="https://dailysavvataralo.com/wp-content/uploads/2022/02/images.jpg"
-									class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-									loading="lazy" /></a>
-							<h4 class="heading_02"><a href="">বাঙালী মাথা
-									উঁচু করে চলবে</a></h4>
-						</div>
+                        <?php
+
+                        $nii = 1;
+                        ?>
+                                        @foreach ($Politics as $Politicslist)
+                    @if($nii==1)
+                    @else
 
 
-						<div class="images_title">
-							<a
-								href=""><img
-									width="400" height="225"
-									src="https://dailysavvataralo.com/wp-content/uploads/2022/01/kader-e1607179027331-400x225.jpg"
-									class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-									loading="lazy" /></a>
-							<h4 class="heading_02"><a
-									href="">বিএনপির
-									সমাবেশে বাধা নয়, সরকার সহযোগিতা করছে: কাদের</a></h4>
-						</div>
-
-
-						<div class="heading_title">
-							<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-									href="">সব
-									ষড়যন্ত্র উপড়ে ফেলে আজ পদ্মাসেতু হয়েছে: তথ্যমন্ত্রী</a></h4>
-						</div>
-						<div class="heading_title">
-							<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-									href="">পদ
-									হারিয়ে তারেক রহমানকে ধন্যবাদ দিলেন তৈমুর</a></h4>
-						</div>
-						<div class="heading_title">
-							<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-									href="">শ্রীনগর
-									ছাত্রলীগের সভাপতি শাওন খান, সম্পাদক প্রিন্স</a></h4>
-						</div>
-						<div class="heading_title">
-							<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-									href="">আ.লীগের
-									ধর্ম বিষয়ক উপ-কমিটিতে সদস্য মিজান সরদার</a></h4>
-						</div>
-						<div class="morenews"><a
-								href=""><i
-									class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-								আরো সংবাদ..</a></div>
+                    <div class="images_title">
+						<a href="{{ url('/blogs?blog='.$Politicslist->postid) }}"><img
+								width="400" height="225"
+								src="{{ $Politicslist->image }}"
+								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
+								loading="lazy" /></a>
+						<h4 class="heading_02">
+                            <a href="{{ url('/blogs?blog='.$Politicslist->postid) }}">
+                            {{ $Politicslist->title }}</a></h4>
 					</div>
+
+
+
+                        @endif
+                        <?php
+                        $nii++;
+                        ?>
+                        @endforeach
+
+
+
+
+
+					</div>
+					<div class="morenews"><a
+                        href="{{ url('blogs?category=রাজনীতি') }}"  ><i
+								class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+							আরো সংবাদ..</a></div>
 				</div>
+				<!--cat 3 end -->
+
+				<!--cat 4 start -->
 			</div>
-			<!--cat 5 end  -->
-			<!--cat 6 start  -->
 			<div class="col-md-4">
-
-				<h4 class="catagory_title"> <a
-						href=""><i
-							class="fa fa-bars"></i> অর্থনীতি</a></h4>
+				<div class="internetional">
 
 
-				<div class="leadnews">
-					<a
-						href=""><img
-							width="400" height="225"
-							src="https://dailysavvataralo.com/wp-content/uploads/2021/10/porikolpona-minister-400x225.jpg"
-							class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-							loading="lazy" /></a>
+					<h4 class="catagory_title">
+                        <a href="{{ url('blogs?category=অর্থনীতি') }}"><i
+								class="fa fa-bars"></i> অর্থনীতি</a></h4>
+
+
+                                @foreach ($Economy as $EconomyList)
+
+
+
+
+					<div class="images_title">
+						<a
+							href="{{ url('/blogs?blog='.$EconomyList->postid) }}"><img
+								width="400" height="225"
+								src="{{ $EconomyList->image }}"
+								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
+								loading="lazy" /></a>
+						<h4 class="heading_02"><a
+								href="{{ url('/blogs?blog='.$EconomyList->postid) }}">
+								{{ $EconomyList->title }}</a></h4>
+					</div>
+                    @endforeach
+					<div class="morenews"><a
+							href="{{ url('blogs?category=অর্থনীতি') }}"><i
+								class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+							আরো সংবাদ..</a></div>
+
 				</div>
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">নারী
-							শিক্ষায় পিছিয়ে আছি আমরা: পরিকল্পনামন্ত্রী</a></h4>
-				</div>
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">রাসেলের
-							রিমান্ড নামঞ্জুর, জেলগেটে জিজ্ঞাসাবাদের নির্দেশ</a></h4>
-				</div>
 
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">নির্বাচন
-							: ১৬০ ইউপি ও ৯ পৌরসভায় ভোটগ্রহণ শুরু</a></h4>
-				</div>
-
-
-				<div class="morenews"><a
-						href=""><i
-							class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-						আরো সংবাদ..</a></div>
-
+				<!--cat 4 end  -->
 			</div>
-			<!--cat 6 end  -->
 		</div>
+
+
+
+
+
+
+
+
+
 
 		<!-- Section 10 (top add here) #################################-->
 		<div class="row ads">
@@ -850,162 +834,235 @@
 
 		<div class="row">
 			<!-- cat 7 start -->
+
+
+
 			<div class="col-md-4">
 				<h4 class="catagory_title"> <a
-						href=""><i
+						href="{{ url('blogs?category=শিল্প-সাহিত্য') }}"><i
 							class="fa fa-bars"></i> শিল্প-সাহিত্য</a></h4>
+
+
+                            <?php
+
+                            $ni = 1;
+                            ?>
+                    @foreach ($Art_literature as $Art_literature1st)
+                        @if($ni==1)
+
+
+
 
 				<div class="leadnews">
 					<a
-						href=""><img
+						href="{{ url('/blogs?blog='.$Art_literature1st->postid) }}"><img
 							width="400" height="225"
-							src="https://dailysavvataralo.com/wp-content/uploads/2021/10/Taliban-1-400x225.jpg"
+							src="{{ $Art_literature1st->image }}"
 							class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
 							loading="lazy" /></a>
 				</div>
 				<div class="heading_title">
 					<h4 class="heading_02"> <a
-							href="">ভয়ে
-							মাটিতে পুঁতে ফেলছেন আঁকা ছবি আফগান চিত্রশিল্পী</a></h4>
+							href="{{ url('/blogs?blog='.$Art_literature1st->postid) }}">{{ $Art_literature1st->title }}</a></h4>
 				</div>
 
+                                            @endif
+                                            <?php
+                                            $ni++;
+                                            ?>
+                                            @endforeach
 
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">আজীবন
-							সম্মাননা পেলেন কিংবদন্তী শিল্পী রুনা লায়লা</a></h4>
-				</div>
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">একুশে
-							পদক প্রাপ্ত সঙ্গীত শিল্পী জুলহাসউদ্দীন আহমেদ না ফেরার দেশে</a></h4>
-				</div>
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">কাঠের বাইসাইকেল তৈরি করে তাক লাগালেন
-							কাঠমিস্ত্রি</a></h4>
-				</div>
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">নির্বাচন
-							: ১৬০ ইউপি ও ৯ পৌরসভায় ভোটগ্রহণ শুরু</a></h4>
-				</div>
 
-				<div class="morenews"><a
-						href=""><i
+
+
+                                                <?php
+
+                                                $nii = 1;
+                                                ?>
+                                    @foreach ($Art_literature as $Art_literaturelist)
+                                            @if($nii==1)
+                                            @else
+
+
+                                            <div class="heading_title">
+                                                <h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
+                                                    href="{{ url('/blogs?blog='.$Art_literaturelist->postid) }}">{{ $Art_literaturelist->title }}</a></h4>
+                                            </div>
+
+                                                @endif
+                                                <?php
+                                                $nii++;
+                                                ?>
+                                                @endforeach
+
+
+
+
+			        	<div class="morenews"><a
+						href="{{ url('blogs?category=শিল্প-সাহিত্য') }}"><i
 							class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
 						আরো সংবাদ..</a></div>
 
 
 			</div>
 			<!-- cat 7 end -->
-			<!-- cat 8 start -->
+
+
+
+
+
+
 			<div class="col-md-4">
-
-
 				<h4 class="catagory_title"> <a
-						href=""><i
+						href="{{ url('blogs?category=খেলাধুলা') }}"><i
 							class="fa fa-bars"></i> খেলাধুলা</a></h4>
 
-				<div class="leadnews">
-					<a href=""><img width="400" height="225"
-							src="https://dailysavvataralo.com/wp-content/uploads/2022/02/fads7723-400x225.jpg"
-							class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy"
-							srcset="https://dailysavvataralo.com/wp-content/uploads/2022/02/fads7723-400x225.jpg 400w, https://dailysavvataralo.com/wp-content/uploads/2022/02/fads7723-300x168.jpg 300w, https://dailysavvataralo.com/wp-content/uploads/2022/02/fads7723-768x431.jpg 768w, https://dailysavvataralo.com/wp-content/uploads/2022/02/fads7723.jpg 860w"
-							sizes="(max-width: 400px) 100vw, 400px" /></a>
-				</div>
-				<div class="heading_title">
-					<h4 class="heading_02"><a href="">টাইগারদের অবিশ্বাস্য
-							জয়</a></h4>
-				</div>
 
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">টস হেরে বোলিংয়ে বাংলাদেশ</a></h4>
-				</div>
+                            <?php
 
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">আফগানিস্তানের বিপক্ষে স্কোয়াড ঘোষণা
-							করেছে বাংলাদেশ</a></h4>
-				</div>
-
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">এবার সেমিফাইনাল রোমাঞ্চের অপেক্ষা</a>
-					</h4>
-				</div>
-
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">লিভারপুলের
-							অজেয় পথচলা থামাল ওয়েস্ট হ্যাম</a></h4>
-				</div>
+                            $ni = 1;
+                            ?>
+                    @foreach ($Art_literature as $Art_literature1st)
+                        @if($ni==1)
 
 
-				<div class="morenews"><a
-						href=""><i
-							class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-						আরো সংবাদ..</a></div>
-			</div>
-
-			<!-- cat 8 end -->
-			<!-- cat 9 start -->
-			<div class="col-md-4">
-
-				<h4 class="catagory_title"> <a
-						href=""><i
-							class="fa fa-bars"></i> বিনোদন</a></h4>
 
 
 				<div class="leadnews">
 					<a
-						href=""><img
+						href="{{ url('/blogs?blog='.$Art_literature1st->postid) }}"><img
 							width="400" height="225"
-							src="https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-400x225.jpg"
-							class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy"
-							srcset="https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-400x225.jpg 400w, https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-300x169.jpg 300w, https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-1024x576.jpg 1024w, https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-768x432.jpg 768w, https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-1536x863.jpg 1536w, https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-2048x1151.jpg 2048w"
-							sizes="(max-width: 400px) 100vw, 400px" /></a>
+							src="{{ $Art_literature1st->image }}"
+							class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
+							loading="lazy" /></a>
 				</div>
 				<div class="heading_title">
-					<h4 class="heading_02"><a
-							href="">নতুন
-							গানে দুই সহোদর</a></h4>
+					<h4 class="heading_02"> <a
+							href="{{ url('/blogs?blog='.$Art_literature1st->postid) }}">{{ $Art_literature1st->title }}</a></h4>
 				</div>
 
-
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">মুন্সীগঞ্জে
-							অনিয়মিত সাহিত্য ও সাংস্কৃতিক গোষ্ঠির নতুন কমিটি</a></h4>
-				</div>
-
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">সংগীত
-							জগতে নতুন কিছু কাজ করতে চাই আমি&#8221;</a></h4>
-				</div>
-
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">ওভিসি
-							পরিচালনা দিয়ে আনিছ সিকদারের নতুন বছরের যাত্রা শুরু</a></h4>
-				</div>
-
-				<div class="heading_title">
-					<h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
-							href="">মুন্সীগঞ্জে
-							নতুন নাট্যদল বিক্রমপুর থিয়েটারের আত্মপ্রকাশ</a></h4>
-				</div>
+                                            @endif
+                                            <?php
+                                            $ni++;
+                                            ?>
+                                            @endforeach
 
 
-				<div class="morenews"><a
-						href=""><i
+
+
+                                                <?php
+
+                                                $nii = 1;
+                                                ?>
+                                    @foreach ($Art_literature as $Art_literaturelist)
+                                            @if($nii==1)
+                                            @else
+
+
+                                            <div class="heading_title">
+                                                <h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
+                                                    href="{{ url('/blogs?blog='.$Art_literaturelist->postid) }}">{{ $Art_literaturelist->title }}</a></h4>
+                                            </div>
+
+                                                @endif
+                                                <?php
+                                                $nii++;
+                                                ?>
+                                                @endforeach
+
+
+
+
+			        	<div class="morenews"><a
+						href="{{ url('blogs?category=খেলাধুলা') }}"><i
 							class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
 						আরো সংবাদ..</a></div>
 
+
 			</div>
-			<!-- cat 9 end -->
+			<!-- cat 7 end -->
+
+
+
+
+
+
+			<div class="col-md-4">
+				<h4 class="catagory_title"> <a
+						href="{{ url('blogs?category=বিনোদন') }}"><i
+							class="fa fa-bars"></i> বিনোদন</a></h4>
+
+
+                            <?php
+
+                            $ni = 1;
+                            ?>
+                    @foreach ($Art_literature as $Art_literature1st)
+                        @if($ni==1)
+
+
+
+
+				<div class="leadnews">
+					<a
+						href="{{ url('/blogs?blog='.$Art_literature1st->postid) }}"><img
+							width="400" height="225"
+							src="{{ $Art_literature1st->image }}"
+							class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
+							loading="lazy" /></a>
+				</div>
+				<div class="heading_title">
+					<h4 class="heading_02"> <a
+							href="{{ url('/blogs?blog='.$Art_literature1st->postid) }}">{{ $Art_literature1st->title }}</a></h4>
+				</div>
+
+                                            @endif
+                                            <?php
+                                            $ni++;
+                                            ?>
+                                            @endforeach
+
+
+
+
+                                                <?php
+
+                                                $nii = 1;
+                                                ?>
+                                    @foreach ($Art_literature as $Art_literaturelist)
+                                            @if($nii==1)
+                                            @else
+
+
+                                            <div class="heading_title">
+                                                <h4 class="heading_02"><i class="fa fa-arrow-right" aria-hidden="true"></i> <a
+                                                    href="{{ url('/blogs?blog='.$Art_literaturelist->postid) }}">{{ $Art_literaturelist->title }}</a></h4>
+                                            </div>
+
+                                                @endif
+                                                <?php
+                                                $nii++;
+                                                ?>
+                                                @endforeach
+
+
+
+
+			        	<div class="morenews"><a
+						href="{{ url('blogs?category=বিনোদন') }}"><i
+							class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+						আরো সংবাদ..</a></div>
+
+
+			</div>
+			<!-- cat 7 end -->
+
+
+
+
+
+
+
 		</div>
 
 		<!-- Section 12 (top add here) #################################-->
@@ -1026,338 +1083,8 @@
 			</div>
 		</div>
 
-		<!-- Section 13 (top six div) #################################-->
 
 
-		<div class="row">
-			<div class="col-md-12">
-				<!-- cat 10 start  -->
-				<div class="big-images-02">
-					<h4 class="catagory_title"> <a
-							href=""><i
-								class="fa fa-bars"></i>শিল্প-সাহিত্য</a></h4>
-					<div class="row">
-
-
-						<div class="col-md-2">
-							<div class="big_images">
-								<a
-									href=""><img
-										width="400" height="225"
-										src="https://dailysavvataralo.com/wp-content/uploads/2021/10/Taliban-1-400x225.jpg"
-										class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-										loading="lazy" /></a>
-								<h3 class="heading_03"><a
-										href="">ভয়ে
-										মাটিতে পুঁতে ফেলছেন আঁকা ছবি আফগান চিত্রশিল্পী</a></h3>
-							</div>
-						</div>
-
-
-						<div class="col-md-2">
-							<div class="big_images">
-								<a
-									href=""><img
-										width="400" height="225"
-										src="https://dailysavvataralo.com/wp-content/uploads/2021/10/124836image-365536-1605595714-400x225.jpg"
-										class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-										loading="lazy" /></a>
-								<h3 class="heading_03"><a
-										href="">আজীবন
-										সম্মাননা পেলেন কিংবদন্তী শিল্পী রুনা লায়লা</a></h3>
-							</div>
-						</div>
-
-
-						<div class="col-md-2">
-							<div class="big_images">
-								<a
-									href=""><img
-										width="400" height="225"
-										src="https://dailysavvataralo.com/wp-content/uploads/2021/09/IMG_20210924_215535-400x225.jpg"
-										class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-										loading="lazy"
-										srcset="https://dailysavvataralo.com/wp-content/uploads/2021/09/IMG_20210924_215535-400x225.jpg 400w, https://dailysavvataralo.com/wp-content/uploads/2021/09/IMG_20210924_215535-300x169.jpg 300w, https://dailysavvataralo.com/wp-content/uploads/2021/09/IMG_20210924_215535-1024x575.jpg 1024w, https://dailysavvataralo.com/wp-content/uploads/2021/09/IMG_20210924_215535-768x432.jpg 768w, https://dailysavvataralo.com/wp-content/uploads/2021/09/IMG_20210924_215535.jpg 1050w"
-										sizes="(max-width: 400px) 100vw, 400px" /></a>
-								<h3 class="heading_03"><a
-										href="">একুশে
-										পদক প্রাপ্ত সঙ্গীত শিল্পী জুলহাসউদ্দীন আহমেদ না ফেরার দেশে</a></h3>
-							</div>
-						</div>
-
-
-						<div class="col-md-2">
-							<div class="big_images">
-								<a href=""><img width="400" height="225"
-										src="https://dailysavvataralo.com/wp-content/uploads/2021/09/61-2109181712-400x225.jpg"
-										class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-										loading="lazy" /></a>
-								<h3 class="heading_03"><a href="">কাঠের
-										বাইসাইকেল তৈরি করে তাক লাগালেন কাঠমিস্ত্রি</a></h3>
-							</div>
-						</div>
-
-
-						<div class="col-md-2">
-							<div class="big_images">
-								<a
-									href=""><img
-										width="400" height="225"
-										src="https://dailysavvataralo.com/wp-content/uploads/2021/09/160-UP-and-9-upzila-Election-400x225.jpg"
-										class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-										loading="lazy" /></a>
-								<h3 class="heading_03"><a
-										href="">নির্বাচন
-										: ১৬০ ইউপি ও ৯ পৌরসভায় ভোটগ্রহণ শুরু</a></h3>
-							</div>
-						</div>
-
-
-						<div class="col-md-2">
-							<div class="big_images">
-								<a
-									href=""><img
-										width="400" height="225"
-										src="https://dailysavvataralo.com/wp-content/uploads/2021/09/PSG-win-2-1-Olympique-Lyon-400x225.jpg"
-										class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-										loading="lazy" /></a>
-								<h3 class="heading_03"><a
-										href="">নেইমার-ইকার্দির
-										গোলে পিএসজির জয়</a></h3>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-			<!-- cat 10 end  -->
-		</div>
-
-		<!-- Section 14 (top three div) #################################-->
-
-		<div class="row">
-			<!-- cat 11 start  -->
-			<div class="col-md-12">
-
-				<h4 class="catagory_title"> <a
-						href=""><i
-							class="fa fa-bars"></i> খেলাধুলা</a></h4>
-			</div>
-			<div class="col-md-5">
-
-
-				<div class="leadnews">
-					<a href="">
-						<div class="full_images"><img width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2022/02/fads7723-400x225.jpg"
-								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-								loading="lazy"
-								srcset="https://dailysavvataralo.com/wp-content/uploads/2022/02/fads7723-400x225.jpg 400w, https://dailysavvataralo.com/wp-content/uploads/2022/02/fads7723-300x168.jpg 300w, https://dailysavvataralo.com/wp-content/uploads/2022/02/fads7723-768x431.jpg 768w, https://dailysavvataralo.com/wp-content/uploads/2022/02/fads7723.jpg 860w"
-								sizes="(max-width: 400px) 100vw, 400px" /></div>
-					</a>
-					<h3 class="heading_01"><a href="">টাইগারদের অবিশ্বাস্য
-							জয়</a></h3>
-					<p>হয়তো থেমে গেছে বঙ্গোপসাগরে জলের তর্জন-গর্জন! কারণ সাগরিকার ২২ গজের শক্ত মাটিতে টাইগারদের গর্জনে
-						উঠে গেছে ঢেউ। এমন ঘটনা আরব্য রজনীর রূপকথাতেই হয়তো সম্ভবপর হতে পারে। আফিফ হোসেন ধ্রুব আর মেহেদি
-						হাসান মিরাজ রেকর্ড বুক তোলপাড় করা ঘটনার জন্ম দিয়েছেন <a
-							href=' ' class='readmore'></a><span
-							style="text-align:right"><a href="">.....আরো
-								পড়ুন</a></span></p>
-				</div>
-
-			</div>
-			<div class="col-md-3">
-
-				<div class="big_images">
-					<a href=""><img width="400" height="225"
-							src="https://dailysavvataralo.com/wp-content/uploads/2022/02/aHR0cHM6Ly93d3cuZGFpbHlqYW5ha2FudGhhLmNvbS9jbG91ZC11cGxvYWRzL2RlZmF1bHQvYXJ0aWNsZS1pbWFnZXMvMjAyMjAyLzE2NDU1OTY0NzhfMDEucG5n-400x225.jpg"
-							class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-							loading="lazy" /></a>
-					<h3 class="heading_03"><a href="">টস হেরে বোলিংয়ে
-							বাংলাদেশ</a></h3>
-				</div>
-
-				<div class="big_images">
-					<a href=""><img width="400" height="225"
-							src="https://dailysavvataralo.com/wp-content/uploads/2022/02/aHR0cHM6Ly93d3cuZGFpbHlqYW5ha2FudGhhLmNvbS9jbG91ZC11cGxvYWRzL2RlZmF1bHQvYXJ0aWNsZS1pbWFnZXMvMjAyMjAyLzE2NDQ4NDU5MzNfNjQuanBn-400x225.jpg"
-							class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-							loading="lazy" /></a>
-					<h3 class="heading_03"><a href="">আফগানিস্তানের বিপক্ষে
-							স্কোয়াড ঘোষণা করেছে বাংলাদেশ</a></h3>
-				</div>
-
-			</div>
-			<div class="col-md-4">
-				<div class="internetional">
-
-
-					<div class="images_title">
-						<a href=""><img width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2021/11/aHR0cHM6Ly93d3cuZGFpbHlqYW5ha2FudGhhLmNvbS9jbG91ZC11cGxvYWRzL2RlZmF1bHQvYXJ0aWNsZS1pbWFnZXMvMjAyMTExLzE2MzYzOTU2ODZfc3AtMS5naWY-400x225.jpg"
-								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-								loading="lazy" /></a>
-						<h4 class="heading_02"><a href="">এবার সেমিফাইনাল
-								রোমাঞ্চের অপেক্ষা</a></h4>
-					</div>
-
-
-					<div class="images_title">
-						<a
-							href=""><img
-								width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2021/11/aHR0cHM6Ly93d3cuZGFpbHlqYW5ha2FudGhhLmNvbS9jbG91ZC11cGxvYWRzL2RlZmF1bHQvYXJ0aWNsZS1pbWFnZXMvMjAyMTExLzE2MzYzNTY2MzZfMTcuanBn-400x225.jpg"
-								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-								loading="lazy" /></a>
-						<h4 class="heading_02"><a
-								href="">লিভারপুলের
-								অজেয় পথচলা থামাল ওয়েস্ট হ্যাম</a></h4>
-					</div>
-
-
-					<div class="images_title">
-						<a
-							href=""><img
-								width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2021/10/riyad-291021-01-400x225.jpg"
-								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-								loading="lazy" /></a>
-						<h4 class="heading_02"><a
-								href="">আমার
-								দোষ, শেষ বলে পারিনি: মাহমুদউল্লাহ</a></h4>
-					</div>
-
-
-					<div class="images_title">
-						<a
-							href=""><img
-								width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2021/10/pakistan-291021-02-400x225.jpg"
-								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-								loading="lazy" /></a>
-						<h4 class="heading_02"><a
-								href="">আসিফের
-								শেষের ঝড়ে আফগানিস্তানকে হারাল পাকিস্তান</a></h4>
-					</div>
-
-
-					<div class="images_title">
-						<a
-							href=""><img
-								width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2021/10/asif-301021-01-400x225.jpg"
-								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-								loading="lazy" /></a>
-						<h4 class="heading_02"><a
-								href="">এক
-								ওভারে ২৫ নেওয়ার আত্মবিশ্বাস ছিল আসিফের</a></h4>
-					</div>
-
-
-					<div class="morenews"><a
-							href=""><i
-								class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-							আরো সংবাদ..</a></div>
-
-
-				</div>
-			</div>
-		</div>
-		<!-- cat 11 end  -->
-		<!-- Section 15 (top three div) #################################-->
-		<!-- cat 12 start  -->
-		<div class="row">
-			<div class="col-md-12">
-
-
-				<h4 class="catagory_title"> <a
-						href=""><i
-							class="fa fa-bars"></i> বিনোদন</a></h4>
-
-			</div>
-			<div class="col-md-6">
-
-				<div class="leadnews">
-					<a
-						href="">
-						<div class="full_images"><img width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-400x225.jpg"
-								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-								loading="lazy"
-								srcset="https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-400x225.jpg 400w, https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-300x169.jpg 300w, https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-1024x576.jpg 1024w, https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-768x432.jpg 768w, https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-1536x863.jpg 1536w, https://dailysavvataralo.com/wp-content/uploads/2022/02/InShot_20220225_110458238-2048x1151.jpg 2048w"
-								sizes="(max-width: 400px) 100vw, 400px" /></div>
-					</a>
-					<h3 class="heading_01"><a
-							href="">নতুন
-							গানে দুই সহোদর</a></h3>
-					<p>&nbsp; বিনোদন প্রতিবেদক : অনলাইন প্লাটফর্মে অচিরেই প্রকাশিত হচ্ছে দুই সহোদর রেজাউল করিম এবং
-						দিদারুল করিমের নতুন আধুনিক এবং ফোক <a
-							href=' '
-							class='readmore'></a><span style="text-align:right"><a
-								href="">.....আরো
-								পড়ুন</a></span></p>
-				</div>
-
-			</div>
-			<div class="col-md-3">
-
-				<div class="big_images">
-					<a
-						href="">
-						<div class="full_images"><img width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2022/02/Polish_20220222_103045961-400x225.jpg"
-								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-								loading="lazy"
-								srcset="https://dailysavvataralo.com/wp-content/uploads/2022/02/Polish_20220222_103045961-400x225.jpg 400w, https://dailysavvataralo.com/wp-content/uploads/2022/02/Polish_20220222_103045961-300x168.jpg 300w"
-								sizes="(max-width: 400px) 100vw, 400px" /></div>
-					</a>
-					<h3 class="heading_03"><a
-							href="">মুন্সীগঞ্জে
-							অনিয়মিত সাহিত্য ও সাংস্কৃতিক গোষ্ঠির নতুন কমিটি</a></h3>
-				</div>
-				<div class="big_images">
-					<a
-						href="">
-						<div class="full_images"><img width="400" height="225"
-								src="https://dailysavvataralo.com/wp-content/uploads/2022/02/Gallery_1645119249339-400x225.jpeg"
-								class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt=""
-								loading="lazy" /></div>
-					</a>
-					<h3 class="heading_03"><a
-							href="">সংগীত
-							জগতে নতুন কিছু কাজ করতে চাই আমি&#8221;</a></h3>
-				</div>
-			</div>
-			<div class="col-md-3">
-
-				<div class="big_images">
-					<a
-						href=""><img
-							width="400" height="225"
-							src="https://dailysavvataralo.com/wp-content/uploads/2022/01/IMG-20220129-WA0008-400x225.jpg"
-							class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy"
-							srcset="https://dailysavvataralo.com/wp-content/uploads/2022/01/IMG-20220129-WA0008-400x225.jpg 400w, https://dailysavvataralo.com/wp-content/uploads/2022/01/IMG-20220129-WA0008-300x169.jpg 300w, https://dailysavvataralo.com/wp-content/uploads/2022/01/IMG-20220129-WA0008-1024x576.jpg 1024w, https://dailysavvataralo.com/wp-content/uploads/2022/01/IMG-20220129-WA0008-768x432.jpg 768w, https://dailysavvataralo.com/wp-content/uploads/2022/01/IMG-20220129-WA0008.jpg 1280w"
-							sizes="(max-width: 400px) 100vw, 400px" /></a>
-					<h3 class="heading_03"><a
-							href="">ওভিসি
-							পরিচালনা দিয়ে আনিছ সিকদারের নতুন বছরের যাত্রা শুরু</a></h3>
-				</div>
-
-				<div class="big_images">
-					<a
-						href=""><img
-							width="400" height="225"
-							src="https://dailysavvataralo.com/wp-content/uploads/2021/12/IMG_20211222_155516-400x225.jpg"
-							class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy"
-							srcset="https://dailysavvataralo.com/wp-content/uploads/2021/12/IMG_20211222_155516-400x225.jpg 400w, https://dailysavvataralo.com/wp-content/uploads/2021/12/IMG_20211222_155516-300x169.jpg 300w, https://dailysavvataralo.com/wp-content/uploads/2021/12/IMG_20211222_155516-1024x576.jpg 1024w, https://dailysavvataralo.com/wp-content/uploads/2021/12/IMG_20211222_155516-768x432.jpg 768w, https://dailysavvataralo.com/wp-content/uploads/2021/12/IMG_20211222_155516-1536x864.jpg 1536w, https://dailysavvataralo.com/wp-content/uploads/2021/12/IMG_20211222_155516-2048x1152.jpg 2048w"
-							sizes="(max-width: 400px) 100vw, 400px" /></a>
-					<h3 class="heading_03"><a
-							href="">মুন্সীগঞ্জে
-							নতুন নাট্যদল বিক্রমপুর থিয়েটারের আত্মপ্রকাশ</a></h3>
-				</div>
-
-			</div>
-		</div>
-		<!-- cat 12 end -->
 
 
 

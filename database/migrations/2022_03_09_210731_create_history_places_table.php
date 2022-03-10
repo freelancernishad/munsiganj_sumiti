@@ -16,7 +16,7 @@ class CreateHistoryPlacesTable extends Migration
         Schema::create('history_places', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('info')->nullable();
+            $table->longText('info')->nullable();
             $table->string('category')->nullable();
             $table->string('parentCategory')->nullable();
             $table->timestamps();

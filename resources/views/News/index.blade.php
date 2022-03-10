@@ -338,7 +338,7 @@
     <div class="footer-04">
         <div class="row">
             <div class="col-md-3">
-                <a href=""><img src="https://dailysavvataralo.com/wp-content/uploads/2021/09/logo.jpeg" alt="images"
+                <a href=""><img src="{{ asset(env('FILE_PATH').'logo/'.$settings[0]->logo) }}" alt="images"
                         width="100%" height="100%" /></a>
             </div>
             <div class="col-md-4 text">
@@ -347,9 +347,9 @@
                     সভ্যতার আলো: </span>
             </div>
             <div class="col-md-4 text">
-                শামীম প্রিন্টিং প্রেস থেকে মুদ্রণ এবং মুন্সীগঞ্জের মানিকপুর থেকে সম্পাদক কর্তৃক প্রকাশিত।
-                মোবাইলঃ ০১৯৭১-২৩৪৩১১, ০১৭১২-৯১৫৪৫১
-                ই-মেইল: savvataralo@gmail.com, </div>
+                {{ $settings[0]->address }}
+                মোবাইলঃ {{ $settings[0]->phone }}
+                ই-মেইল: {{ $settings[0]->email }} </div>
         </div>
     </div>
     <div class="footer">
