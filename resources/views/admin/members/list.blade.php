@@ -48,7 +48,7 @@
                                         <td>{{ $row->dob }}</td>
                                         <td>{{ $row->Present_address }}</td>
                                         <td>{{ date("Y-m-d h:i:s A", strtotime($row->created_at)) }} </td>
-                                        <td><img width="100%" src="{{ $row->image }}" alt="" /></td>
+                                        <td><img width="100%" src="{{ asset($row->image) }}" alt="" /></td>
                                         <td>
                                             <a href="javascript:void(0)" onclick="viewdata('{{ url('/admin/members?id='.$row->id.'&status=trxView') }}')" class="btn btn-info">view Transition</a>
                                             @if($status=='pending')

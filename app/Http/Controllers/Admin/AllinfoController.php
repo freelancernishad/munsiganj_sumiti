@@ -23,7 +23,7 @@ class AllinfoController extends Controller
      */
     public function index()
     {
-              
+
         $data['rows'] = allinfo::orderBy('id','DESC')
         ->get();
 
@@ -45,7 +45,7 @@ class AllinfoController extends Controller
         $rows[] = $row;
         $object = json_decode(json_encode($rows));
         $data['rows'] = $object;
-     
+
         return view('admin/allinfo.add', $data);
     }
 
@@ -62,15 +62,48 @@ class AllinfoController extends Controller
 
 
         $id = $request->id;
-  
+
         $data = [];
         $inputData = $request->all();
         foreach ($inputData as $key => $value) {
-            if ($key == 'id' || $key == '_token') {
+            if ($key == 'id' || $key == '_token' || $key == 'image') {
             } else {
                 $data[$key] = $value;
             }
         }
+
+
+
+
+
+
+        $arrayFile =  $request->image;
+        $imaagedata =  explode(',',$arrayFile);
+        $coutnarray = count($imaagedata);
+        if($coutnarray==2)	{
+            $imaagedata = $imaagedata[1];
+            $imageid = uniqid();
+            $imaagedata = base64_decode($imaagedata);
+            $NewsImage ="$imageid.jpg";
+            $im = imagecreatefromstring($imaagedata);
+            if ($im !== false) {
+            header('Content-Type: image/png');
+            // imagepng($im);
+            // $path = asset('images');
+            imagejpeg($im,"images/".$NewsImage,20);
+            //imagedestroy($im);
+            }
+            else {
+            echo 'An error occurred.';
+            }
+            $data['image'] = 'images/'.$NewsImage;
+
+            }
+
+
+
+
+
         if ($id == '') {
             DB::table('allinfos')->insert($data);
             $request->session()->flash('msg', 'Data Inserted Succcessfully');
@@ -106,12 +139,12 @@ class AllinfoController extends Controller
      */
     public function edit(allinfo $allinfo)
     {
-              
+
      $id = $allinfo->id;
 
 
     $data['rows'] = DB::table('allinfos')->where('id',$id)->get();
-    
+
         return view('admin/allinfo.add',$data);
     }
 
@@ -144,35 +177,35 @@ class AllinfoController extends Controller
 
     public function alldata($title)
     {
-  
+
 
      $count = DB::table('allinfos')->where('title',$title)->count();
      if($count>0){
         $data = DB::table('allinfos')->where('title',$title)->get();
 
      echo  $data['0']->id;
-     echo ',,,';     
-     
+     echo ',,,';
+
      echo  $data['0']->infoid;
-     echo ',,,';           
+     echo ',,,';
 
-    
+
      echo  $data['0']->short_description;
-     echo ',,,';           
+     echo ',,,';
 
-    
+
      echo  $data['0']->description;
-     echo ',,,';           
+     echo ',,,';
 
-     
+
      echo  $data['0']->image;
-     echo ',,,';           
- 
+     echo ',,,';
+
      }else{
          echo 0 ;
      }
-     
- 
+
+
 
 
     }

@@ -649,4 +649,101 @@ if($step==4){
     }
 
 
+
+
+
+
+
+
+
+    function getdata()
+    {
+
+        $str ="INSERT INTO `committees` (`committeeId`, `name`, `age`, `dob`, `father_name`, `education`, `occupation`, `bio`, `pr_vill`, `pr_post`, `pr_thana`, `pr_dist`, `p_vill`, `p_post`, `p_thana`, `p_dist`, `phoneNumber`, `email`, `website`, `pesahgot_address`, `samagik_unoyon`, `hobby`, `image`, `status`, `created_at`, `updated_at`) VALUES";
+
+
+          $alldata = DB::table('committees')->get();
+
+            foreach($alldata as $row){
+
+
+                $id = $row->id;
+                $committeeId = $row->committeeId;
+                $name = $row->name;
+                $age = $row->age;
+                $dob = $row->dob;
+                $father_name = $row->father_name;
+                $education = $row->education;
+                $occupation = $row->occupation;
+                $bio = $row->bio;
+                $pr_vill = $row->pr_vill;
+                $pr_post = $row->pr_post;
+                $pr_thana = $row->pr_thana;
+                $pr_dist = $row->pr_dist;
+                $p_vill = $row->p_vill;
+                $p_post = $row->p_post;
+                $p_thana = $row->p_thana;
+                $p_dist = $row->p_dist;
+                $phoneNumber = $row->phoneNumber;
+                $email = $row->email;
+                $website = $row->website;
+                $pesahgot_address = $row->pesahgot_address;
+                $samagik_unoyon = $row->samagik_unoyon;
+                $hobby = $row->hobby;
+
+                $status = $row->status;
+                $created_at = $row->created_at;
+                $updated_at = $row->updated_at;
+
+
+                $arrayFile  = $row->image;
+                if($arrayFile!=''){
+
+
+                $StudentID  = $row->StudentID;
+                $imaagedata =  explode(',',$arrayFile);
+                $imaagedata = $imaagedata[1];
+
+                $imaagedata = base64_decode($imaagedata);
+                $NewsImage ="$id.jpg";
+                $im = imagecreatefromstring($imaagedata);
+                if ($im !== false) {
+                header('Content-Type: image/png');
+                // imagepng($im);
+                // $path = asset('images');
+                imagejpeg($im,"images/".$NewsImage,80);
+
+
+                //imagedestroy($im);
+                }
+                else {
+                //echo 'An error occurred.';
+                }
+            }
+
+
+                $str .="('$committeeId', '$name', '$age', '$dob', '$father_name', '$education', '$occupation', '$bio', '$pr_vill', '$pr_post', '$pr_thana', '$pr_dist', '$p_vill', '$p_post', '$p_thana', '$p_dist', '$phoneNumber', '$email', '$website', '$pesahgot_address', '$samagik_unoyon', '$hobby', '$NewsImage', '$status', '$created_at', '$updated_at'),";
+            }
+
+
+
+
+
+            $handle = fopen('students.sql','w+');
+            fwrite($handle,$str);
+            fclose($handle);
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
 }

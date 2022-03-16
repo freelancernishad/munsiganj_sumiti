@@ -12,7 +12,7 @@
         </div>
     </div>
 
- 
+
 
 
     <div class="col-md-12 col-sm-12 ">
@@ -25,7 +25,7 @@
                                 style="width:100%">
                                 <thead>
                                     <tr>
-                             
+
                                         <th width="2%">SL</th>
                                         <th width="20%">Title</th>
                                         <th width="10%">Image</th>
@@ -37,24 +37,24 @@
     $i = 1;
     @endphp
                                     @foreach ($rows as $row)
-                                        
+
                                     <tr>
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $row->title }}</td>
-                        
-                                        <td><img width="100%" src="{{ $row->image }}" alt="" /></td>
+
+                                        <td><img width="100%" src="{{ asset($row->image) }}" alt="" /></td>
                                         <td>
                                             <a href="{{ route('brandslider.edit', ['brandslider' => $row->id]) }}" class="btn btn-info">Edit</a>
 
 
                                             <form method="post" action="{{ route('brandslider.destroy', ['brandslider' => $row->id]) }}">
                                                 @csrf
-                                                @method('delete')   
+                                                @method('delete')
                                                 <button type="submit" class="btn btn-danger">Delete</button>
                                             </form>
 
 
-                                            
+
                                         </td>
                                     </tr>
                                     @endforeach

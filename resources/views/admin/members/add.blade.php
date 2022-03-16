@@ -35,7 +35,7 @@
 						@csrf
 						<input type="hidden" name="id" id="id" value="{{ $row->id }}">
 
-					
+
 
             <div class="row">
 
@@ -420,9 +420,7 @@ value="{{ $row->p_dist }}">
 
                         <option value=""></option>
 
-                            @foreach ($member as $memberList)
-                            <option value="{{ $memberList->memberId }}">Member Id: {{ $memberList->memberId }} . Name: {{ $memberList->name }} . Father Name: {{ $memberList->father_name }}</option>
-                            @endforeach
+                         
 
 
 

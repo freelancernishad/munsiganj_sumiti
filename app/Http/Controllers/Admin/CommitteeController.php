@@ -24,7 +24,7 @@ class CommitteeController extends Controller
      */
     public function index()
     {
-       
+
         $data['rows'] = committee::orderBy('id','DESC')
         ->get();
 
@@ -46,7 +46,7 @@ class CommitteeController extends Controller
         $rows[] = $row;
         $object = json_decode(json_encode($rows));
         $data['rows'] = $object;
-     
+
         return view('admin/committee.add', $data);
     }
 
@@ -67,11 +67,40 @@ class CommitteeController extends Controller
         $data = [];
         $inputData = $request->all();
         foreach ($inputData as $key => $value) {
-            if ($key == 'id' || $key == '_token') {
+            if ($key == 'id' || $key == '_token' || $key == 'image') {
             } else {
                 $data[$key] = $value;
             }
         }
+
+
+
+
+
+
+        $arrayFile =  $request->image;
+        $imaagedata =  explode(',',$arrayFile);
+        $coutnarray = count($imaagedata);
+        if($coutnarray==2)	{
+            $imaagedata = $imaagedata[1];
+            $imageid = uniqid();
+            $imaagedata = base64_decode($imaagedata);
+            $NewsImage ="$imageid.jpg";
+            $im = imagecreatefromstring($imaagedata);
+            if ($im !== false) {
+            header('Content-Type: image/png');
+            // imagepng($im);
+            // $path = asset('images');
+            imagejpeg($im,"images/".$NewsImage,20);
+            //imagedestroy($im);
+            }
+            else {
+            echo 'An error occurred.';
+            }
+            $data['image'] = 'images/'.$NewsImage;
+
+            }
+
         if ($id == '') {
             DB::table('committees')->insert($data);
             $request->session()->flash('msg', 'Data Inserted Succcessfully');
@@ -109,12 +138,12 @@ class CommitteeController extends Controller
      */
     public function edit(committee $committee)
     {
-       
+
     $id = $committee->id;
 
 
     $data['rows'] = DB::table('committees')->where('id',$id)->get();
-    
+
         return view('admin/committee.add',$data);
     }
 
