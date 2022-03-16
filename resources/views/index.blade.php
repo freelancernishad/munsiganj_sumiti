@@ -426,7 +426,7 @@ button.owl-dot.active {
 
 
 
-                            <div class="noticeHead">Notice</div>
+                            <div class="noticeHead">Notice <i class="fas fa-bell fa-fw" style="font-size:25px"></i></div>
 
 
                             <div class="noticwe">

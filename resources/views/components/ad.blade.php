@@ -80,6 +80,31 @@ li.select2-results__option.select2-results__option--selectable {
     margin-top: 31px;
     height: 206px;
 }
+.noticeHead {
+
+    position: relative;
+
+}
+
+.noticeHead:after {
+    content: '';
+    /* background: red; */
+    top: 21px;
+    right: -16px;
+    position: absolute;
+    border-top: 19px solid #cbb105;
+    border-left: 43px solid transparent;
+    border-bottom: 37px solid transparent;
+    border-right: 45px solid #cbb10500;
+    transform: rotate(450deg);
+}
+.noticeHead {
+    background: #d02804;
+    color: white;
+    padding: 16px 19px;
+    font-size: 36px !important;
+    width: 292px;
+}
 
 @import url('https://fonts.maateen.me/charu-chandan-3d/font.css');
 
