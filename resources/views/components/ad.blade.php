@@ -105,6 +105,9 @@ li.select2-results__option.select2-results__option--selectable {
     font-size: 36px !important;
     width: 292px;
 }
+.show_dropdown {
+    background: #fdfafa !important;
+}
 
 @import url('https://fonts.maateen.me/charu-chandan-3d/font.css');
 
