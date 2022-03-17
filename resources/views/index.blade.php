@@ -385,7 +385,7 @@ button.owl-dot.active {
 
         <section class="committeeSeciton">
             <div class="row">
-                <div class="col-md-9 mt-3 committeeBox">
+                <div class="col-md-12 mt-3 committeeBox">
                     <div class="cus_container">
                         <div class="row">
                             <div class="col-md-12 text-center">
@@ -420,9 +420,9 @@ button.owl-dot.active {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 mt-3">
+                {{-- <div class="col-md-3 mt-3">
                     <img width="100%" src="assets/img/ad.png" alt="" />
-                </div>
+                </div> --}}
             </div>
         </section>
 
