@@ -36,14 +36,17 @@
 
 
                     $adl = $adl[0]->image;
+                    if($adl!=''){
                     $adl = json_decode($adl);
 
                     foreach($adl as $adllist){
 
                     ?>
+                  <a target="_blank" href="{{ $adllist->url  }}">
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adllist->name) }}" alt="" />
-
+                </a>
                     <?php
+                    }
                     }
 
 

@@ -17,14 +17,17 @@
 
 
                     $adl = $adl[0]->image;
+                    if($adl!=''){
                     $adl = json_decode($adl);
 
                     foreach($adl as $adllist){
 
                     ?>
+                  <a target="_blank" href="{{ $adllist->url  }}">
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adllist->name) }}" alt="" />
-
+                </a>
                     <?php
+                    }
                     }
 
 
@@ -43,14 +46,17 @@
 
 
                     $adtop = $adtop[0]->image;
+                    if($adtop!=''){
                     $adtop = json_decode($adtop);
 
                     foreach($adtop as $adtoplist){
 
                     ?>
+                              <a target="_blank" href="{{ $adtoplist->url  }}">
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adtoplist->name) }}" alt="" />
-
+                </a>
                     <?php
+                    }
                     }
 
 
@@ -96,14 +102,17 @@
 
 
     $adr = $adr[0]->image;
+    if($adr!=''){
     $adr = json_decode($adr);
 
     foreach($adr as $adrlist){
 
     ?>
+             <a target="_blank" href="{{ $adrlist->url  }}">
     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adrlist->name) }}" alt="" />
-
+</a>
     <?php
+    }
     }
 
 
@@ -133,6 +142,7 @@
 
 
                 $adbottom = $adbottom[0]->image;
+                if($adbottom!=''){
                 $adbottom = json_decode($adbottom);
 
                 foreach($adbottom as $adbottomlist){
@@ -140,9 +150,12 @@
                 ?>
 
                 <div class="col-md-6 mt-3">
+                    <a target="_blank" href="{{ $adbottomlist->url  }}">
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adbottomlist->name) }}" alt="" />
+                </a>
                 </div>
                 <?php
+                }
                 }
 
 

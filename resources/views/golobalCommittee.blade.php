@@ -52,14 +52,17 @@ div#all-tab {
 
 
                     $adl = $adl[0]->image;
+                    if($adl!=''){
                     $adl = json_decode($adl);
 
                     foreach($adl as $adllist){
 
                     ?>
+                  <a target="_blank" href="{{ $adllist->url  }}">
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adllist->name) }}" alt="" />
-
+                </a>
                     <?php
+                    }
                     }
 
 
@@ -68,18 +71,22 @@ div#all-tab {
                 </div>
                 <div class="col-md-9">
 
+
                     <?php
 
 
                     $adtop = $adtop[0]->image;
+                    if($adtop!=''){
                     $adtop = json_decode($adtop);
 
                     foreach($adtop as $adtoplist){
 
                     ?>
+                              <a target="_blank" href="{{ $adtoplist->url  }}">
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adtoplist->name) }}" alt="" />
-
+                </a>
                     <?php
+                    }
                     }
 
 
@@ -253,6 +260,7 @@ $global_committees=$QUERY->fetchAll(PDO::FETCH_OBJ);
 
 
                 $adbottom = $adbottom[0]->image;
+                if($adbottom!=''){
                 $adbottom = json_decode($adbottom);
 
                 foreach($adbottom as $adbottomlist){
@@ -260,9 +268,12 @@ $global_committees=$QUERY->fetchAll(PDO::FETCH_OBJ);
                 ?>
 
                 <div class="col-md-6 mt-3">
+                    <a target="_blank" href="{{ $adbottomlist->url  }}">
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adbottomlist->name) }}" alt="" />
+                </a>
                 </div>
                 <?php
+                }
                 }
 
 

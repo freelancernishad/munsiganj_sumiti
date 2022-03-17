@@ -20,7 +20,7 @@ class AdController extends Controller
      */
     public function index()
     {
-              
+
         $data['rows'] = ad::orderBy('id','DESC')
         ->get();
 
@@ -42,7 +42,7 @@ class AdController extends Controller
         $rows[] = $row;
         $object = json_decode(json_encode($rows));
         $data['rows'] = $object;
-     
+
         return view('admin/ad.add', $data);
     }
 
@@ -58,57 +58,72 @@ class AdController extends Controller
         // print_r($request->all());
 
 
+       // dd($request->all());
 
- $imageCount = count($request->items);
+        $removeAd = $request->removeAd;
+            if($removeAd==''){
+                $imageCount = count($request->items);
 
-        for($i=0;$i<$imageCount;$i++){
+                for($i=0;$i<$imageCount;$i++){
 
-            if($request->hasfile('image'))	{
-                $image = $request->file('image')[$i];
-            $imagename = $image->getClientOriginalName();
-  
-            $imagefile= time().'_'.$imagename;
+                    if($request->hasfile('image'))	{
+                        $image = $request->file('image')[$i];
+                    $imagename = $image->getClientOriginalName();
 
-            $image->storeAs('/public/ad/',$imagefile);
-            $images[$i]=[
-                'name'=>$imagefile,
-            ];
+                    $imagefile= time().'_'.$imagename;
 
+                    $image->storeAs('/public/ad/',$imagefile);
+                    $images[$i]=[
+                        'name'=>$imagefile,
+                        'url'=> $request->url[$i],
+                    ];
+
+                    }
+                }
+                if($request->hasfile('image'))	{
+                    $images = json_encode($images);
+                }
+            }else{
+                $images = null;
             }
 
 
 
-                
 
 
 
-        }
-        if($request->hasfile('image'))	{
-
-$images = json_encode($images);
-
-        }
         $id = $request->id;
-  
+
         $data = [];
         $inputData = $request->all();
         foreach ($inputData as $key => $value) {
-            if ($key == 'id' || $key == '_token' || $key == 'items') {
-            
+            if ($key == 'id' || $key == '_token' || $key == 'items' || $key == 'url' || $key == 'removeAd') {
+
 
             }else if($key == 'image'){
 
                 if($request->hasfile('image'))	{
 
                 $data[$key]=$images;
+
+                }else{
+
+
+
                 }
             } else {
                 $data[$key] = $value;
             }
         }
 
-// print_r($data);
-// die();
+
+        if($removeAd==''){
+        }else{
+            $data['image'] = null;
+        }
+
+    //dd($data);
+
 
 
 
@@ -124,7 +139,7 @@ $wh=[
 
             if($countdata>0){
                 $data['updated_at'] = date("Y-m-d H:i:s");
-            
+
                 DB::table('ads')->where('id', $id)->update($data);
                 $request->session()->flash('msg', 'Data Updated Succcessfully');
                 return redirect(route('ad.index'));
@@ -135,7 +150,7 @@ $wh=[
             }
 
 
-           
+
         } else {
 
  $data['updated_at'] = date("Y-m-d H:i:s");
@@ -167,12 +182,12 @@ $wh=[
      */
     public function edit(ad $ad)
     {
-              
+
      $id = $ad->id;
 
 
     $data['rows'] = DB::table('ads')->where('id',$id)->get();
-    
+
         return view('admin/ad.add',$data);
     }
 

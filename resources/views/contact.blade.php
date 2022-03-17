@@ -8,22 +8,25 @@
                 <div class="col-md-3" style="background: #e6f5fa">
                     <x-sidebar />
 
-                    <?php 
+                    <?php
 
 
                     $adl = $adl[0]->image;
+                    if($adl!=''){
                     $adl = json_decode($adl);
-                    
+
                     foreach($adl as $adllist){
-                    
+
                     ?>
+                  <a target="_blank" href="{{ $adllist->url  }}">
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adllist->name) }}" alt="" />
-                    
-                    <?php 
+                </a>
+                    <?php
                     }
-                    
-                    
-                    
+                    }
+
+
+
                     ?>
 
                 </div>
@@ -34,23 +37,25 @@
 
 
 
-
-                    <?php 
+                    <?php
 
 
                     $adtop = $adtop[0]->image;
+                    if($adtop!=''){
                     $adtop = json_decode($adtop);
-                    
+
                     foreach($adtop as $adtoplist){
-                    
+
                     ?>
+                              <a target="_blank" href="{{ $adtoplist->url  }}">
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adtoplist->name) }}" alt="" />
-                    
-                    <?php 
+                </a>
+                    <?php
                     }
-                    
-                    
-                    
+                    }
+
+
+
                     ?>
 
 <section class="committeSection py-3 pl-3">
@@ -145,22 +150,25 @@
 
 </div>
 <div class="col-md-3">
-    <?php 
+    <?php
 
 
     $adr = $adr[0]->image;
+    if($adr!=''){
     $adr = json_decode($adr);
-    
+
     foreach($adr as $adrlist){
-    
+
     ?>
+             <a target="_blank" href="{{ $adrlist->url  }}">
     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adrlist->name) }}" alt="" />
-    
-    <?php 
+</a>
+    <?php
     }
-    
-    
-    
+    }
+
+
+
     ?>
 
 </div>
@@ -182,29 +190,33 @@
         <section class="adsection">
             <div class="row">
 
-                <?php 
+                <?php
 
 
                 $adbottom = $adbottom[0]->image;
+                if($adbottom!=''){
                 $adbottom = json_decode($adbottom);
-                
+
                 foreach($adbottom as $adbottomlist){
-                
+
                 ?>
-              
+
                 <div class="col-md-6 mt-3">
+                    <a target="_blank" href="{{ $adbottomlist->url  }}">
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adbottomlist->name) }}" alt="" />
+                </a>
                 </div>
-                <?php 
+                <?php
                 }
-                
-                
-                
+                }
+
+
+
                 ?>
-               
+
             </div>
         </section>
-    
+
     </main>
 
     @endsection

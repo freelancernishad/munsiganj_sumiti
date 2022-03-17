@@ -9,26 +9,29 @@
                 <div class="col-md-3">
                   <x-sidebar />
 
-                  <?php 
+                  <?php
 
 
                   $adl = $adl[0]->image;
+                  if($adl!=''){
                   $adl = json_decode($adl);
-                  
+
                   foreach($adl as $adllist){
-                  
+
                   ?>
+                <a target="_blank" href="{{ $adllist->url  }}">
                   <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adllist->name) }}" alt="" />
-                  
-                  <?php 
+              </a>
+                  <?php
                   }
-                  
-                  
-                  
+                  }
+
+
+
                   ?>
                 </div>
 
-   
+
                 <div class="col-md-7">
                       <div class="register-main  p-3">
                         <div class="register-guidline">
@@ -72,7 +75,7 @@
                               <h3 class="text-danger pl-2 mt-5">By Bank Transfer</h3>
                               <p class="muted pl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, voluptatibus fuga vero molestiae corrupti blanditiis adipisicing elit. Alias, voluptatibus fuga vero.</p>
                               <p class="muted pl-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, animi eveniet. Eos ipsam temporibus cupiditate deserunt commodi suscipit obcaecati. Ullam laborum iure nostrum optio reprehenderit!</p>
-                              
+
                               <p class="muted pl-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, animi eveniet. Eos ipsam temporibus cupiditate deserunt commodi suscipit obcaecati!</p>
 
 
@@ -83,27 +86,31 @@
                               <p class="muted pl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam mollitia atque, praesentium, cupiditate ipsam beatae, odit blanditiis aspernatur consequatur illo quos? Voluptatibus voluptatem eos placeat amet eveniet cum, quaerat reiciendis voluptatum corrupti quo repellendus illum laboriosam cupiditate assumenda expedita! Alias accusantium ad nam quos laboriosam enim similique in?</p>
                         </div>
 
-                        <?php 
+                        <?php
 
 
                         $adbottom = $adbottom[0]->image;
+                        if($adbottom!=''){
                         $adbottom = json_decode($adbottom);
-                        
+
                         foreach($adbottom as $adbottomlist){
-                        
+
                         ?>
 
-<img class="mt-5 small-ad" width="100%"  src="{{ asset(env('FILE_PATH').'ad/'.$adbottomlist->name) }}" alt="">
-             
-                        
-                        <?php 
+                        <div class="col-md-6 mt-3">
+                            <a target="_blank" href="{{ $adbottomlist->url  }}">
+                            <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adbottomlist->name) }}" alt="" />
+                        </a>
+                        </div>
+                        <?php
                         }
-                        
-                        
-                        
+                        }
+
+
+
                         ?>
 
-                       
+
                       </div>
                 </div>
 
@@ -112,23 +119,26 @@
 
 
                 <div class="col-md-2">
-                  <?php 
+                    <?php
 
 
-                  $adr = $adr[0]->image;
-                  $adr = json_decode($adr);
-                  
-                  foreach($adr as $adrlist){
-                  
-                  ?>
-                  <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adrlist->name) }}" alt="" />
-                  
-                  <?php 
-                  }
-                  
-                  
-                  
-                  ?>
+                    $adr = $adr[0]->image;
+                    if($adr!=''){
+                    $adr = json_decode($adr);
+
+                    foreach($adr as $adrlist){
+
+                    ?>
+                             <a target="_blank" href="{{ $adrlist->url  }}">
+                    <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adrlist->name) }}" alt="" />
+                </a>
+                    <?php
+                    }
+                    }
+
+
+
+                    ?>
                 </div>
 
             </div>

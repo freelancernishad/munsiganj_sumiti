@@ -165,14 +165,17 @@ p{
 
 
                         $ad = $ad[0]->image;
+                        if($ad!=''){
                         $ad = json_decode($ad);
-
+    //dd($ad);
                         foreach($ad as $adlist){
 
                         ?>
-                        <img onClick="adcontact()" width="100%" height="100px" src="{{ asset(env('FILE_PATH').'ad/'.$adlist->name) }}" alt="" />
-
+                        <a target="_blank" href="{{ $adlist->url  }}">
+                            <img  width="100%" height="100px" src="{{ asset(env('FILE_PATH').'ad/'.$adlist->name) }}" alt="" />
+                         </a>
                         <?php
+                        }
                         }
 
 

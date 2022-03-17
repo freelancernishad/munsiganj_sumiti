@@ -251,6 +251,10 @@ button.owl-dot.active {
 
 
                 $adbottom = $adbottom[0]->image;
+                if($adbottom!=''){
+
+
+
                 $adbottom = json_decode($adbottom);
 
                 foreach($adbottom as $adbottomlist){
@@ -258,11 +262,15 @@ button.owl-dot.active {
                 ?>
 
                 <div class="col-md-6 mt-3">
+
+
+                     <a target="_blank" href="{{ $adbottomlist->url  }}">
                     <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adbottomlist->name) }}" alt="" />
+                      </a>
                 </div>
                 <?php
                 }
-
+            }
 
 
                 ?>
@@ -434,7 +442,7 @@ button.owl-dot.active {
 <marquee behavior="scroll" direction="" onMouseOver="this.stop()" onMouseOut="this.start()">
 <?php  $n = 1; ?>
 @foreach (notices() as $noticesList)
-   {{ $n }}=>: {{ $noticesList->dec }} &nbsp;
+  * {{ $noticesList->dec }} &nbsp;
     <?php  $n++; ?>
 @endforeach
 
