@@ -101,6 +101,16 @@
       </div>
 
 
+      {{--  col-md-6 start  --}}
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Advertisement contact text</label>
+          <textarea name="Advertisement" id="Advertisement" cols="30" rows="3" class="form-control" style="resize:none">{{ $row->Advertisement }}</textarea>
+        </div>
+
+      </div>
+
+
 
              {{--  col-md-6 start  --}}
              <div class="col-md-6">

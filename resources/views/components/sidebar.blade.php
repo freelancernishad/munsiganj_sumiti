@@ -36,6 +36,20 @@
 
                         </ul>
 
+<style>
+    .adcontact {
+    margin: 11px 15px;
+    font-size: 20px;
+}
+</style>
+                        <div class="adcontact">
+<p>{{ settings()[0]->Advertisement }}</p>
+
+
+
+
+                        </div>
+
 
                         <div class="ifameVideo">
 {!! video()->iframe !!}
