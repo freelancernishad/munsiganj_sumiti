@@ -32,7 +32,7 @@
                 </div>
 
 
-                <div class="col-md-9">
+                <div class="col-md-9" style="margin-top:30px">
 
 
 
@@ -57,12 +57,33 @@
 
 
                     ?>
-
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.6985209818745!2d90.38206561434856!3d23.758127894399408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8a61e6a58b7%3A0x63f88aacab1d1a4!2s66%20Indira%20Rd%2C%20Dhaka%201215!5e0!3m2!1sen!2sbd!4v1648052810029!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" ></iframe>
 <section class="committeSection py-3 pl-3">
 <div class="row">
 <div class="col-md-9">
     <div class="contact_form">
-<h3>Contact Us</h3>
+
+
+        <h4>Contact Details</h4>
+
+        <div class="address" style="margin-top:10px;margin-bottom:20px">
+            <ul class="list-unstyled">
+                <li class="" style="    display: block;">
+                    <i style="color: #c12729" class="fas fa-map-marker-alt"></i>
+                    &nbsp; {{ settings()[0]->address }}
+                </li>
+                <li class="" style="    display: block;">
+                    <i style="color: #c12729" class="fas fa-envelope"></i>
+                    &nbsp; {{ settings()[0]->email }}
+                </li>
+                <li class="" style="    display: block;">
+                    <i style="color: #c12729" class="fas fa-phone-alt"></i>
+                    &nbsp; {{ settings()[0]->phone }}
+                </li>
+            </ul>
+
+        </div>
+
 
 <h4>Send an enquiry</h4>
 
@@ -134,16 +155,6 @@
 </form>
 
 
-<div class="terms">
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum placeat, blanditiis commodi dolore adipisci quidem, reiciendis quae quisquam laborum totam eos ipsa et assumenda ex rem quo excepturi ratione similique.</p>
-</div>
-
-
-<div class="terms2">
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum placeat, blanditiis commodi dolore adipisci quidem, reiciendis quae quisquam laborum totam eos ipsa et assumenda ex rem quo excepturi ratione similique.</p>
-</div>
 
 
 </div>

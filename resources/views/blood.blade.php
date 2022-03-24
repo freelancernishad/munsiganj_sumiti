@@ -74,6 +74,7 @@
                                     <option>AB-</option>
                                     <option>O+</option>
                                     <option>O-</option>
+                                    <option>NA</option>
                                 </select>
 
 
@@ -83,6 +84,12 @@
                                 <button type="submit" id="memberBtin" class="memberSearch btn btn-outline-info col-md-2">Search</button>
                             </form>
                         </div>
+
+
+                        @if($totalcount!='')
+                            {{ $totalcount }} Memeber Found
+                        @endif
+
                         <div class="membertable">
                             <table class="table table-bordered" id="myTable">
                                 <thead class="memberTableHead" style="    background: #bcdbff;

@@ -153,6 +153,72 @@ button.owl-dot.active {
 
 
 
+                    <div class="counter-area section-padding-top" style="    padding-top: 50px !important;padding-bottom: 30px !important;">
+                        <div class="container">
+                            <div class="counter-shado">
+                                <div class="row">
+                                    <div class="col-xl-4 mb-3">
+                                        <div class="counter">
+                                            <div class="row g-0">
+                                                <div class="col-xl-3">
+                                                    <div class="counter-icon">
+                                                        <i class="fas fa-users"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-9">
+                                                    <div class="counter-content">
+                                                        <h5>LIVE <br> MEMBER</h5>
+                                                        <p>5000</p>
+                                                    </div>
+                                                    <!-- /.counter-content -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /.counter -->
+                                    </div>
+
+                                    <div class="col-xl-4 mb-3">
+                                        <div class="counter">
+                                            <div class="row g-0">
+                                                <div class="col-xl-3">
+                                                    <div class="counter-icon">
+                                                        <i class="fas fa-users"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-9">
+                                                    <div class="counter-content">
+                                                        <h5>CENTRAL <br> COMMITTEE</h5>
+                                                        <p>{{ $membercommittee }}</p>
+                                                    </div>
+                                                    <!-- /.counter-content -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /.counter -->
+                                    </div>
+                                    <div class="col-xl-4 mb-3">
+                                        <div class="counter">
+                                            <div class="row g-0">
+                                                <div class="col-xl-3">
+                                                    <div class="counter-icon">
+                                                        <i class="fas fa-users"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-9">
+                                                    <div class="counter-content">
+                                                        <h5>GLOBAL <br> COMMITTEE</h5>
+                                                        <p>{{ $memberGlobalCommittee }}</p>
+                                                    </div>
+                                                    <!-- /.counter-content -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /.counter -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
 
@@ -168,72 +234,6 @@ button.owl-dot.active {
 
 
 
-        <div class="counter-area section-padding-top">
-            <div class="container">
-                <div class="counter-shado">
-                    <div class="row">
-                        <div class="col-xl-4 mb-3">
-                            <div class="counter">
-                                <div class="row g-0">
-                                    <div class="col-xl-3">
-                                        <div class="counter-icon">
-                                            <i class="fas fa-users"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-9">
-                                        <div class="counter-content">
-                                            <h5>LIVE MEMBER</h5>
-                                            <p>5000</p>
-                                        </div>
-                                        <!-- /.counter-content -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.counter -->
-                        </div>
-
-                        <div class="col-xl-4 mb-3">
-                            <div class="counter">
-                                <div class="row g-0">
-                                    <div class="col-xl-3">
-                                        <div class="counter-icon">
-                                            <i class="fas fa-users"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-9">
-                                        <div class="counter-content">
-                                            <h5>CENTRAL COMMITTEE MEMBER</h5>
-                                            <p>{{ $membercommittee }}</p>
-                                        </div>
-                                        <!-- /.counter-content -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.counter -->
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <div class="counter">
-                                <div class="row g-0">
-                                    <div class="col-xl-3">
-                                        <div class="counter-icon">
-                                            <i class="fas fa-users"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-9">
-                                        <div class="counter-content">
-                                            <h5>GLOBAL COMMITTEE</h5>
-                                            <p>{{ $memberGlobalCommittee }}</p>
-                                        </div>
-                                        <!-- /.counter-content -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.counter -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
 
@@ -326,7 +326,7 @@ button.owl-dot.active {
                 <div class="col-lg-6 col-md-6 col-sm-12 text-center">
                     <a class="" href="{{ url('register') }}"><img
                             class=""
-                            src="{{ asset('assets/img/WhatsApp Image 2022-03-07 at 1.07.43 PM.jpeg') }}" alt=""></a>
+                            src="{{ asset('assets/img/member.png.gif') }}" alt=""></a>
                 </div>
             </div>
         </div>
@@ -338,7 +338,7 @@ button.owl-dot.active {
             <div class="news-bg-color py-5">
                 <div class="container">
                     <div class="news-border py-3">
-                        <h4 class="text-center mt-2 mb-3">Blogs</h4>
+                        <h4 class="text-center mt-2 mb-3">News Room</h4>
                         <div class="row">
 
 
@@ -459,4 +459,23 @@ button.owl-dot.active {
             </div>
         </section>
     </main>
+
+
+@section('script')
+
+    @if(settings()[0]->popstatus=='On')
+    <script type='text/javascript'>
+$('#overlay').modal('show');
+$("#popupad").html(`
+{!! settings()[0]->popupcontent !!}
+`);
+
+// setTimeout(function() {
+//     $('#overlay').modal('hide');
+// }, 5000);
+    </script>
+
+@endif
+
+@endsection
 @endsection

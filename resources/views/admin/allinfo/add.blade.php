@@ -66,6 +66,7 @@
                       <option>High School</option>
                       <option>Collage Univercity</option>
                       <option>Madrasa</option>
+                      <option>Medical College</option>
                       <option>Technical Institute</option>
                       <option>Agricaltural Info</option>
                       <option>Medical Info</option>

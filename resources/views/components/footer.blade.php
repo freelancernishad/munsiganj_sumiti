@@ -276,6 +276,8 @@ function adcontact(){
             $("#dataModal2").modal("show");
 }
 
+
+
 </script>
 
 
@@ -294,6 +296,24 @@ function adcontact(){
     }
     </script>
 
+
+
+<div class="modal fade" id="overlay">
+    <div class="modal-dialog" style="    max-width: 753px;
+    overflow: hidden;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+        </div>
+        <div class="modal-body" id="popupad">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+@yield('script')
 
 
 <livewire:scripts />

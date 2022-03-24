@@ -179,6 +179,7 @@ class frontendController extends Controller
 
          $memberid = $request->memberid;
 if($memberid==''){
+    $data['totalcount'] = '';
     return view('member', $data);
 }else{
 
@@ -223,14 +224,23 @@ if($memberid==''){
 
         if($request->Blode!=''){
             $data['rows'] = member::where(['status'=>'Active','blood_group'=>$request->Blode])->orderBy('id', 'DESC')->get();
-        }
 
+    $data['totalcount'] = member::where(['status'=>'Active','blood_group'=>$request->Blode])->count();
+        }
+else {
+
+    $data['totalcount'] = '';
+}
 
 
 
 
          $memberid = $request->memberid;
 if($memberid==''){
+
+
+
+
     return view('blood', $data);
 }else{
 
@@ -268,8 +278,70 @@ if($memberid==''){
         $data['adbottom'] =   DB::table('ads')->where($whb)->get();
         $data['adl'] =   DB::table('ads')->where($whl)->get();
         $data['adr'] =   DB::table('ads')->where($whr)->get();
-        $data['rows'] = committee::orderBy('id', 'ASC')
+
+        $curentyear = date('Y');
+        $previousyear = $curentyear-1;
+
+        $wh = [
+           'session_start'=>$previousyear,
+           'session_end'=>$curentyear,
+        ];
+
+        $data['rows'] = committee::orderBy('id', 'ASC')->where($wh)
             ->get();
+
+
+        $data['type'] = '';
+
+
+
+
+
+        return view('committee', $data);
+    }
+
+
+
+
+    public function ExCommittee()
+    {
+        $wht = [
+            'page' => 'Central Committee',
+            'position' => 'top',
+        ];
+        $whb = [
+            'page' => 'Central Committee',
+            'position' => 'Bottom',
+        ];
+        $whl = [
+            'page' => 'Central Committee',
+            'position' => 'Left',
+        ];
+        $whr = [
+            'page' => 'Central Committee',
+            'position' => 'Right',
+        ];
+        $data['adtop'] =   DB::table('ads')->where($wht)->get();
+        $data['adbottom'] =   DB::table('ads')->where($whb)->get();
+        $data['adl'] =   DB::table('ads')->where($whl)->get();
+        $data['adr'] =   DB::table('ads')->where($whr)->get();
+
+
+        $curentyear = date('Y');
+        $previousyear = $curentyear-1;
+
+        $wh = [
+            'session_start','!=',$previousyear,
+            'session_end','!=',$curentyear,
+         ];
+
+        $data['rows'] = committee::orderBy('id', 'ASC')->where('session_start','!=',$previousyear,)->where('session_end','!=',$curentyear)
+            ->get();
+            $data['type'] = 'ex';
+
+
+
+
         return view('committee', $data);
     }
 
@@ -561,6 +633,8 @@ if($step==4){
 
     public function memberList_submit(Request $r)
     {
+
+       // dd($r->all());
         // $district = $r->district;
         $upszila = $r->upszila;
 
@@ -571,16 +645,23 @@ if($step==4){
         $member = $memberId;
 
 
-        if($memberId==''){
-            $member = $memberName;
-        }else{
-            $member = $memberId;
+         if($memberName!=''){
+            // $member = $memberId;
 
+            return redirect("member/".$memberName.'/'.$upszila);
+        }
+
+
+        if($memberId!=''){
+
+
+            return redirect("member/".$member.'/single');
+            // $member = $memberName;
         }
 
 
 
-        return redirect("member/".$member.'/'.$upszila);
+
     }
 
 
@@ -595,24 +676,40 @@ if($step==4){
 
 
 
-        $wh1 = [
-            'pr_thana'=>$upszila,
-            'memberId'=>$name,
-            'status'=>'Active',
 
-        ];
-        $wh2 = [
-            'pr_thana'=>$upszila,
-            'name'=>$name,
-            'status'=>'Active',
-        ];
 
-        $namess= '';
-        $memberIdss= '';
 
-         $count1 = member::where($wh1)->count();
 
-        $count2 = member::where($wh2)->count();
+            $wh1 = [
+                'memberId'=>$name,
+                'status'=>'Active',
+
+            ];
+
+
+            $namess= '';
+            $memberIdss= '';
+
+              $count1 = member::where($wh1)->count();
+
+
+
+
+            $wh2 = [
+                'pr_thana'=>$upszila,
+                'name'=>$name,
+                'status'=>'Active',
+            ];
+            $count2 = member::where($wh2)->count();
+
+
+
+
+
+
+
+
+
 
 
             if($count1>0){
@@ -636,15 +733,23 @@ if($step==4){
         $data['Thana'] = Thana::orderBy('name', 'ASC')->get();
 
 
-        $upszila = Thana::where('name',$upszila)->get();
+        $count = Thana::where('name',$upszila)->count();
+        if($count>0){
+
+            $upszila = Thana::where('name',$upszila)->get();
+            $data['upszila'] = $upszila[0]->id;
+        }else{
+            $data['upszila'] = '';
+
+        }
 
 
         $data['memberName'] = $namess;
         $data['memberId'] = $memberIdss;
 
         $data['district'] ='';
-        $data['upszila'] = $upszila[0]->id;
 
+        $data['totalcount'] = member::where($wh2)->count();
         return view('member', $data);
     }
 

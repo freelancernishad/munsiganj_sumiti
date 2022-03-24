@@ -17,6 +17,7 @@
                                     <li><a href="{{ url('info/High School') }}">High School</a></li>
                                     <li><a href="{{ url('info/Collage Univercity') }}">Collage/Univercity</a></li>
                                     <li><a href="{{ url('info/Madrasa') }}">Madrasa</a></li>
+                                    <li><a href="{{ url('info/Medical College') }}">Medical College</a></li>
                                     <li><a href="{{ url('info/Technical Institute') }}">Technical Institute</a></li>
                                 </ul>
                             </li>
@@ -43,7 +44,7 @@
 }
 </style>
                         <div class="adcontact">
-<p>{{ settings()[0]->Advertisement }}</p>
+<img width="100%" src="{{ asset(env('FILE_PATH').'logo/'.settings()[0]->Advertisement) }}" alt="">
 
 
 

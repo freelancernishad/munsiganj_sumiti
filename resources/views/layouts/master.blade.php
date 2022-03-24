@@ -30,6 +30,7 @@ a.memberReBtn.blood:hover {
                             <ul class="dropdownItem list-unstyled" id="1">
                                 <li><a class="mainNanLink" href="{{ url('Committee') }}">Central Committee</a></li>
                                 <li><a class="mainNanLink" href="{{ route('golobalCommitteelist') }}">Global Committee</a></li>
+                                <li><a class="mainNanLink" href="{{ route('ExCommitteelist') }}">Ex. Committee</a></li>
                             </ul>
                         </li>
                         <li><a class="mainNanLink" href="{{ url('gallery') }}">Gallery</a></li>
@@ -41,7 +42,7 @@ a.memberReBtn.blood:hover {
                                 <li><a class="mainNanLink" href="{{ url('register') }}">Registration</a></li>
                             </ul>
                         </li>
-                        <li><a class="mainNanLink" href="{{ url('blogs') }}">Blog</a></li>
+                        <li><a class="mainNanLink" href="{{ url('blogs') }}">News Room</a></li>
                         <li><a class="mainNanLink" href="{{ url('contact') }}">Contact</a></li>
 
 

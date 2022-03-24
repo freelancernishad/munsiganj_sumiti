@@ -57,7 +57,7 @@
 
                         <div class="membertable">
 
-
+<a href="{{ url()->previous() }}" class="btn btn-danger">Back</a>
 
                             @foreach ($single as $singleList)
 
@@ -72,7 +72,7 @@
                                 <div class="col-md-6 mt-3"><b>Membership Id : </b> {{ $singleList->memberId }}</div>
 
                                 <div class="col-md-6 mt-3"><b>Name : </b> {{ $singleList->name }}</div>
-                                <div class="col-md-6 mt-3"><b>Age : </b> {{ $singleList->age }}</div>
+                                <div class="col-md-6 mt-3 d-none"><b>Age : </b> {{ $singleList->age }}</div>
                                 <div class="col-md-6 mt-3"><b>Date of birth : </b> {{ $singleList->dob }}</div>
 
                                 <div class="col-md-6 mt-3"><b>Father's Name : </b> {{ $singleList->father_name }}</div>

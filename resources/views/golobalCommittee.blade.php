@@ -131,9 +131,10 @@ div#all-tab {
 
                         <div class="icon-area active" data-bs-toggle="pill" data-bs-target="#all"
                             type="button" id="all-tab" role="tab" aria-controls="all" aria-selected="true">
-                           <img width="40px" src="" alt="">
+                           <img width="40px" src="{{ asset('assets/img/1646132706_Logo.png') }}" alt="">
                         </div>
-                    <p>All</p>
+                    <p style="    width: 100px;
+                    margin: 36px auto 0px;">All</p>
 
 
                     </li>

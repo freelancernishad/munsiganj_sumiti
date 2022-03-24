@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>{{ $settings[0]->title }}</title>
+    <link rel="icon" href="{{ asset('assets/img/1646132706_Logo.png') }}" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}" />
@@ -116,11 +117,33 @@ p{
 }
 
 </style>
+
+
+
 <livewire:styles />
 
 </head>
 
 <body style="font-family: 'SolaimanLipi', sans-serif;">
+
+
+
+
+    <div class="modal fade" id="overlay">
+        <div class="modal-dialog" style="    max-width: 753px;
+        overflow: hidden;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+            </div>
+            <div class="modal-body" id="popupad">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
     <header class="herder">
         <div class="topheader">
             <div class="cus_container">

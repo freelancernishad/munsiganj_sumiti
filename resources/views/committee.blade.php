@@ -73,10 +73,30 @@
 
 
 <div class="committeeTitle">
-    <h6>COMMITTEE MEMBERS</h6>
-    <p>Current membership and roles</p>
+
+
+
+
+    <form action="">
+
+        <select name="session" id="session" class="form-control">
+
+            <option value="">Select</option>
+            <option>1993-1995</option>
+            <option>1990-1992</option>
+
+        </select>
+
+    </form>
+
 </div>
 <div class="accordion" id="accordionExample">
+
+
+
+
+
+
     @php
     $i = 1;
     @endphp

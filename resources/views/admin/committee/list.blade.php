@@ -12,7 +12,7 @@
         </div>
     </div>
 
- 
+
 
 
     <div class="col-md-12 col-sm-12 ">
@@ -25,7 +25,7 @@
                                 style="width:100%">
                                 <thead>
                                     <tr>
-                             
+
                                         <th width="2%">SL</th>
                                         <th width="20%">Name</th>
                                         <th width="20%">Date of Birth</th>
@@ -40,12 +40,35 @@
     $i = 1;
     @endphp
                                     @foreach ($rows as $row)
-                                        
+
+                                    @php
+                                        $session_start = $row->session_start;
+                                        $session_end = $row->session_end;
+
+                                    $curentyear = date('Y');
+                                    $previousyear = $curentyear-1;
+
+                                    @endphp
+                                    <?php
+
+                                    if($type==''){
+
+
+                                    ?>
+
+                                    @if ($session_start==$previousyear && $session_end==$curentyear)
+
+
+
+
+
+
                                     <tr>
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $row->name }}</td>
                                         <td>{{ $row->dob }}</td>
                                         <td>{{ $row->p_vill }} ,{{ $row->p_post }} ,{{ $row->p_thana }} ,{{ $row->p_dist }}</td>
+                                        <td>{{ $row->session_start }}-{{ $row->session_end }} </td>
                                         <td>{{ date("Y-m-d h:i:s A", strtotime($row->created_at)) }} </td>
                                         <td><img width="100%" src="{{ $row->image }}" alt="" /></td>
                                         <td>
@@ -54,14 +77,59 @@
 
                                             <form method="post" action="{{ route('committee.destroy', ['committee' => $row->id]) }}">
                                                 @csrf
-                                                @method('delete')   
+                                                @method('delete')
                                                 <button type="submit" class="btn btn-danger">Delete</button>
                                             </form>
 
 
-                                            
+
                                         </td>
                                     </tr>
+
+                                    @else
+
+
+                                    @endif
+<?php  }else{
+?>
+                                    @if ($session_start==$previousyear && $session_end==$curentyear)
+
+
+                                    @else
+
+
+
+
+
+                                    <tr>
+                                        <td>{{ $i++ }}</td>
+                                        <td>{{ $row->name }}</td>
+                                        <td>{{ $row->dob }}</td>
+                                        <td>{{ $row->p_vill }} ,{{ $row->p_post }} ,{{ $row->p_thana }} ,{{ $row->p_dist }}</td>
+                                        <td>{{ $row->session_start }}-{{ $row->session_end }} </td>
+                                        <td>{{ date("Y-m-d h:i:s A", strtotime($row->created_at)) }} </td>
+                                        <td><img width="100%" src="{{ $row->image }}" alt="" /></td>
+                                        <td>
+                                            <a href="{{ route('committee.edit', ['committee' => $row->id]) }}" class="btn btn-info">Edit</a>
+
+
+                                            <form method="post" action="{{ route('committee.destroy', ['committee' => $row->id]) }}">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+
+
+
+                                        </td>
+                                    </tr>
+
+
+                                    @endif
+<?php
+
+} ?>
+
                                     @endforeach
 
 

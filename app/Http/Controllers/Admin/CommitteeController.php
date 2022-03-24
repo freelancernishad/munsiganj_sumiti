@@ -22,14 +22,20 @@ class CommitteeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
+      $data['type'] = $request->d;
+
 
         $data['rows'] = committee::orderBy('id','DESC')
         ->get();
 
         return view('admin/committee.list',$data);
     }
+
+
+
 
     /**
      * Show the form for creating a new resource.

@@ -1,6 +1,10 @@
 @extends('layouts.master')
 @section('content')
     <style>
+                span.required {
+            color: red;
+            font-size: 20px;
+        }
         .register-main-form {
             background: #e6e8e7;
             border: 1px solid #b0b0b0;
@@ -68,6 +72,8 @@
             border: 2px solid #0d6efd !important;
             color: #0d6efd;
         }
+
+
                 </style>
 
                 <?php
@@ -116,7 +122,7 @@
                         <div class="d-flex mb-3 justify-content-center">
                             <div>
                                 <p id="step" class="first">1</p>
-                                <p>Company</p>
+                                <p>Personal Details</p>
                             </div>
                             <hr class="hr_1">
                             <div>
@@ -129,7 +135,7 @@
                                 <p>Payment</p>
                             </div>
                         </div>
-                        <p>To apply for membership please completed all questions</p>
+
 
 
                         @if ($step==1)
@@ -161,16 +167,16 @@
 
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mt-2">
-                                        <label>Name</label>
+                                        <label>Name <span class="required">*</span></label>
                                         <input type="text" name="name" id="name" value="{{ $row->name }}" required
                                             class="form-control">
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-12 d-none">
                                     <div class="mt-2">
                                         <label>Age</label>
-                                        <input type="text" name="age" id="age" value="{{ $row->age }}" required
+                                        <input type="text" name="age" id="age" value="{{ $row->age }}"
                                             class="form-control">
                                     </div>
                                 </div>
@@ -178,7 +184,7 @@
 
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mt-2">
-                                        <label>Birthday</label>
+                                        <label>Birthday <span class="required">*</span></label>
                                         <input type="date" name="dob" id="dob" value="{{ $row->dob }}" required
                                             class="form-control">
                                     </div>
@@ -197,7 +203,7 @@
 
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mt-2">
-                                        <label>Spouse Name</label>
+                                        <label>Spouse Name <span class="required">*</span></label>
                                         <input type="text" name="Spouse_name" id="Spouse_name"
                                             value="{{ $row->Spouse_name }}" required class="form-control">
                                     </div>
@@ -210,7 +216,7 @@
 
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mt-2">
-                                        <label>Educational Qualifications</label>
+                                        <label>Educational Qualifications <span class="required">*</span></label>
                                         <input type="text" name="education" id="education" value="{{ $row->education }}"
                                             required class="form-control">
                                     </div>
@@ -219,7 +225,7 @@
 
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mt-2">
-                                        <label>Occupation</label>
+                                        <label>Occupation <span class="required">*</span></label>
                                         <input type="text" name="occupation" id="occupation"
                                             value="{{ $row->occupation }}" required class="form-control">
                                     </div>
@@ -228,7 +234,7 @@
 
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mt-2">
-                                        <label>Contact Number 1</label>
+                                        <label>Contact Number 1 <span class="required">*</span></label>
                                         <input type="text" name="phoneNumber" id="phoneNumber"
                                             value="{{ $row->phoneNumber }}" required class="form-control">
                                     </div>
@@ -267,7 +273,7 @@
 
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mt-2">
-                                        <label>Professional address</label>
+                                        <label>Professional address <span class="required">*</span></label>
                                         <input type="text" id="pesahgot_address" value="{{ $row->pesahgot_address }}"
                                             required class="form-control">
                                     </div>
@@ -276,7 +282,7 @@
 
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mt-2">
-                                        <label>Blood group</label>
+                                        <label>Blood group <span class="required">*</span></label>
                                         <select class="form-control" name="blood_group" id="blood_group" required>
                                             <option value="">Select Blood Group</option>
                                             <option>A+</option>
@@ -287,6 +293,7 @@
                                             <option>AB-</option>
                                             <option>O+</option>
                                             <option>O-</option>
+                                            <option>NA</option>
                                         </select>
 
                                         <script>
@@ -305,8 +312,8 @@
 
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mt-2">
-                                        <label>National ID NO.</label>
-                                        <input type="text" name="nid" id="nid" value="{{ $row->nid }}" required
+                                        <label>National ID NO. <span class="required">*</span></label>
+                                        <input type="number" name="nid" id="nid" value="{{ $row->nid }}" required
                                             class="form-control">
                                     </div>
                                 </div>
@@ -350,7 +357,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label>District</label>
+                                        <label>District <span class="required">*</span></label>
                                         <select id="districtid1" onchange="changedistrict(1)" class="form-control"
                                             required>
                                             <option value="">District</option>
@@ -365,7 +372,7 @@
                                 {{-- col-md-6 start --}}
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label>Thana/Upazila</label>
+                                        <label>Thana/Upazila <span class="required">*</span></label>
                                         <select id="upszilaid1" onchange="changethana(1)" class="form-control" required>
                                             <option value="">Thana/Upazila</option>
                                         </select>
@@ -376,7 +383,7 @@
                                 {{-- col-md-6 start --}}
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label>Union</label>
+                                        <label>Union <span class="required">*</span></label>
                                         <select id="unionid1" onchange="changeunioun(1)" class="form-control" required>
                                             <option value="">Union</option>
                                         </select>
@@ -387,13 +394,13 @@
                                 {{-- col-md-6 start --}}
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label>Village</label>
+                                        <label>Village <span class="required">*</span></label>
                                         <input type="text" class="form-control" name="pr_vill" id="pr_vill"
                                             value="{{ $row->pr_vill }}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <h3>Present address </h3>
+                                    <h3>Present address  <span class="required">*</span></h3>
                                     <h5 style="display:none"><input style="width: 32px;
     height: 19px;" onclick="sameAddress()" type="checkbox" id="same_Address"> <label for="same_Address">একই ঠিকানা হলে টিক
                                             দিন</label></h5>
@@ -452,7 +459,7 @@
                                 </div>
 
                                 <div class="col-sm-12">
-                                    <input type="checkbox" id="agree" required> <label for="agree">Accept </label>
+                                    <input type="checkbox" id="agree" required> <label for="agree">Accept  <span class="required">*</span> </label>
                                  </div>
                                 <button type="submit" class="btn btn-primary w-25 mx-auto mt-3" type="submit">Next</button>
                             </form>
@@ -513,7 +520,7 @@
                                 <select name="method" id="method" class="form-control" onchange="bankDetail(this.value)" required>
                                     <option value="">Select Payment Method</option>
                                     <option value="Bank">Bank</option>
-                                    <option value="Bkash">Bkash</option>
+                                    <option value="bKash">bKash</option>
                                     <option value="Rocket">Rocket</option>
                                     <option value="Nogod">Nogod</option>
                                     <option value="Upay">Upay</option>
@@ -532,6 +539,23 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi fuga, nesciunt qui similique quod enim accusantium magni dolorem ut in illo, necessitatibus aperiam? Error quod officiis asperiores doloremque dolor?
                         </div>
 
+
+                          {{-- col-md-6 start --}}
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Account Name</label>
+                                <input type="text" name="account_name" id="account_name" class="form-control">
+                            </div>
+                        </div>
+
+
+                          {{-- col-md-6 start --}}
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Account Number</label>
+                                <input type="text" name="account_Number" id="account_Number" class="form-control">
+                            </div>
+                        </div>
 
 
                           {{-- col-md-6 start --}}
@@ -553,23 +577,16 @@
                         </div>
 
 
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Account Name</label>
-                                <input type="text" name="account_name" id="account_name" class="form-control">
-                            </div>
-                        </div>
-
 
 
                           {{-- col-md-6 start --}}
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label>Account Number</label>
-                                <input type="text" name="account_Number" id="account_Number" class="form-control">
+                                <label>Payment Date</label>
+                                <input type="date" name="Payment_Date" id="Payment_Date" class="form-control">
                             </div>
                         </div>
+
 
 
 
@@ -581,30 +598,20 @@
                             </div>
                         </div>
 
+              {{-- col-md-6 start --}}
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label>Emergency Contact Number</label>
+                    <input type="text" name="Emergency" id="Emergency" class="form-control">
+                </div>
+            </div>
 
-
-
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Payment Date</label>
-                                <input type="date" name="Payment_Date" id="Payment_Date" class="form-control">
-                            </div>
-                        </div>
 
                {{-- col-md-6 start --}}
                <div class="col-md-6">
                 <div class="form-group">
-                    <label>Deposit slip upload</label>
+                    <label>Upload Deposit Slip</label>
                     <input type="file" name="Slip_Upload" id="Slip_Upload" class="form-control">
-                </div>
-            </div>
-
-              {{-- col-md-6 start --}}
-               <div class="col-md-6">
-                <div class="form-group">
-                    <label>Emergency Contact Number</label>
-                    <input type="text" name="Emergency" id="Emergency" class="form-control">
                 </div>
             </div>
 
@@ -615,10 +622,18 @@
 
 
 <div class="col-md-12 row" id="mobleBank">
+
+
+           {{-- col-md-6 start --}}
+           <div class="col-md-12">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi fuga, nesciunt qui similique quod enim accusantium magni dolorem ut in illo, necessitatibus aperiam? Error quod officiis asperiores doloremque dolor?
+        </div>
+
+
                           {{-- col-md-6 start --}}
                           <div class="col-md-6">
                             <div class="form-group">
-                                <label>Payment Number</label>
+                                <label>Send from (Mobile no.)</label>
                                 <input type="text" name="number" id="number" class="form-control">
                             </div>
                         </div>

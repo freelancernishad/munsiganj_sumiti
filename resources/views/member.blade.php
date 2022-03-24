@@ -91,7 +91,7 @@
 
 
                             <div class="col-md-3">
-                                <select id="upszilaid" onchange="changethana()" class="form-control" required>
+                                <select id="upszilaid" onchange="changethana()" class="form-control">
                                     <option value="">উপজেলা</option>
 
                                     <option value="370">Munshiganj Sadar</option>
@@ -144,6 +144,9 @@
                                 <button type="submit" id="memberBtin" class="memberSearch btn btn-outline-info col-md-2">Search</button>
                             </form>
                         </div> --}}
+@if($totalcount!='')
+                        {{ $totalcount }} Memeber Found
+@endif
                         <div class="membertable">
                             <table class="table table-bordered" id="myTable">
                                 <thead class="memberTableHead" style="    background: #bcdbff;
@@ -274,7 +277,7 @@ $(document).ready( function () {
                   var thana = $('#upszilaid').val();
 
                 var memberBtin = document.getElementById('memberBtin');
-                memberBtin.disabled=true;
+              //  memberBtin.disabled=true;
                   $.ajax({
                       type: 'POST',
                       url: '/getunioun',
@@ -287,7 +290,7 @@ $(document).ready( function () {
 
                           console.log(data)
                         var thana = $('#upszila').val(data[0]);
-                        memberBtin.disabled=false;
+                      //  memberBtin.disabled=false;
 
 
                       }

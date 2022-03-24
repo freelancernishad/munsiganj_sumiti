@@ -102,10 +102,44 @@
 
 
       {{--  col-md-6 start  --}}
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Advertisement</label>
+
+          <input type="file" class="form-control" name="Advertisement" id="Advertisement">
+
+
+        </div>
+
+      </div>
+
+
+      {{--  col-md-6 start  --}}
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Popup Status</label>
+            <select name="popstatus" id="popstatus" class="form-control">
+                <option value="">Seelct</option>
+                <option>On</option>
+                <option>Off</option>
+
+            </select>
+
+
+            <script>
+
+                document.getElementById("popstatus").value="{{ $row->popstatus }}";
+            </script>
+        </div>
+
+      </div>
+
+
+      {{--  col-md-6 start  --}}
       <div class="col-md-12">
         <div class="form-group">
-          <label>Advertisement contact text</label>
-          <textarea name="Advertisement" id="Advertisement" cols="30" rows="3" class="form-control" style="resize:none">{{ $row->Advertisement }}</textarea>
+          <label>Popup Content</label>
+          <textarea name="popupcontent" id="bio" cols="30" rows="3" class="form-control" style="resize:none">{{ $row->popupcontent }}</textarea>
         </div>
 
       </div>

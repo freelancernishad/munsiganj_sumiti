@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class SettingController extends Controller
 {
-   
-   
+
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -23,15 +23,15 @@ class SettingController extends Controller
     {
 
 
-             
- 
+
+
 
 
         $count = DB::table('settings')->count();
 if($count>0){
     $data['rows'] = DB::table('settings')->get();
-        
- 
+
+
 }else{
        $Table =  DB::getSchemaBuilder()->getColumnListing('settings');
         $row = [];
@@ -41,7 +41,7 @@ if($count>0){
         $rows[] = $row;
         $object = json_decode(json_encode($rows));
         $data['rows'] = $object;
-     
+
     }
     return view('admin/setting.add', $data);
 
@@ -51,8 +51,8 @@ if($count>0){
 
 
 
-            
-     
+
+
     }
 
     /**
@@ -70,7 +70,7 @@ if($count>0){
         $rows[] = $row;
         $object = json_decode(json_encode($rows));
         $data['rows'] = $object;
-     
+
         return view('admin/setting.add', $data);
     }
 
@@ -82,12 +82,12 @@ if($count>0){
      */
     public function store(Request $request)
     {
-                      // echo'<pre>';
-        // print_r($request->all());
-
+//                      echo'<pre>';
+//          print_r($request->all());
+// die();
 
         $id = $request->id;
-  
+
 
 
 
@@ -95,7 +95,7 @@ if($count>0){
         $data = [];
         $inputData = $request->all();
         foreach ($inputData as $key => $value) {
-            if ($key == 'id' || $key == '_token' || $key == 'logo') {
+            if ($key == 'id' || $key == '_token' || $key == 'logo' || $key == 'files' || $key == 'Advertisement') {
             } else {
                 $data[$key] = $value;
             }
@@ -108,8 +108,18 @@ if($count>0){
         $imagefile= time().'_'.$imagename;
 
         $image->storeAs('/public/logo/',$imagefile);
-  
+
 $data['logo'] = $imagefile;
+        }
+
+        if($request->hasfile('Advertisement'))	{
+         $image = $request->file('Advertisement');
+        $imagename = $image->getClientOriginalName();
+        $imagefile= time().'_'.$imagename;
+
+        $image->storeAs('/public/logo/',$imagefile);
+
+$data['Advertisement'] = $imagefile;
         }
 
 
@@ -149,12 +159,12 @@ $data['logo'] = $imagefile;
      */
     public function edit(setting $setting)
     {
-             
+
     $id = $setting->id;
 
 
     $data['rows'] = DB::table('settings')->where('id',$id)->get();
-    
+
         return view('admin/setting.add',$data);
     }
 

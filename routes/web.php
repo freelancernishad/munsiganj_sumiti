@@ -55,6 +55,7 @@ Route::get('ProminentPersons',[frontendController::class, 'ProminentPersons'])->
 Route::get('HistoricalPlace',[frontendController::class, 'HistoricalPlace'])->name('HistoricalPlace');
 Route::get('info/{title}',[frontendController::class, 'info_details'])->name('info_details');
 Route::get('Committee',[frontendController::class, 'Committee'])->name('Committeelist');
+Route::get('ExCommittee',[frontendController::class, 'ExCommittee'])->name('ExCommitteelist');
 Route::get('golobal/Committee',[frontendController::class, 'golobalCommittee'])->name('golobalCommitteelist');
 Route::get('gallery',[frontendController::class, 'Gallery'])->name('Gallerylist');
 

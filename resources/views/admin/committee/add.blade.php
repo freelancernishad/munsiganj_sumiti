@@ -3,7 +3,7 @@
 
 @section('container')
 
-     	  
+
             <div class="page-title">
               <div class="title_left">
                 <h3>Manage Committee</h3>
@@ -12,7 +12,7 @@
               <div class="title_right">
                 <div class="col-md-5 col-sm-5  form-group pull-right top_search">
                   <div class="input-group">
-               
+
                   </div>
                 </div>
               </div>
@@ -21,13 +21,13 @@
             <div class="row">
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
-                
+
                   <div class="x_content">
                     <br />
 
 
 @foreach ($rows as $row)
-  
+
 
 
 
@@ -59,9 +59,9 @@
 <div class="col-md-5 mb-3"></div>
 
 
-                
 
-				
+
+
 
 
 
@@ -73,6 +73,36 @@
                 <div class="form-group">
                   <label>নাম</label>
                   <input type="text" class="form-control" name="name" id="name" value="{{ $row->name }}">
+                </div>
+
+              </div>
+
+
+              {{--  col-md-6 start  --}}
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>পদবি</label>
+                  <input type="text" class="form-control" name="Designation" id="Designation" value="{{ $row->Designation }}">
+                </div>
+
+              </div>
+
+
+              {{--  col-md-6 start  --}}
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>সেশন শুরু (বছর)</label>
+                  <input type="text" class="form-control" name="session_start" id="session_start" value="{{ $row->session_start }}">
+                </div>
+
+              </div>
+
+
+              {{--  col-md-6 start  --}}
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>সেশন শেষ (বছর)</label>
+                  <input type="text" class="form-control" name="session_end" id="session_end" value="{{ $row->session_end }}">
                 </div>
 
               </div>
@@ -140,7 +170,7 @@
 
 <textarea name="bio" id="bio" cols="30" class="form-control" rows="10">{{ $row->bio }}</textarea>
 
-                
+
                 </div>
 
               </div>
@@ -156,27 +186,27 @@
 
               </div>
 
-      
+
                     {{--  col-md-6 start  --}}
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>ইমেইল</label>
                         <input type="text" class="form-control" name="email" id="email" value="{{ $row->email }}">
                       </div>
-      
+
                     </div>
-      
-      
-      
+
+
+
                     {{--  col-md-6 start  --}}
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>ওয়েবসাইট</label>
                         <input type="text" class="form-control" name="website" id="website" value="{{ $row->phoneNumber }}">
                       </div>
-      
+
                     </div>
-      
+
 
 
               {{--  col-md-6 start  --}}
@@ -304,20 +334,20 @@
 
             </div>
 
-						
-                 
-					  
-					
 
-			   
-					
-               
-         
-             
+
+
+
+
+
+
+
+
+
                       <div class="ln_solid"></div>
                       <div class="item form-group">
                         <div class="col-md-6 col-sm-6 offset-md-3">
-                      
+
                           <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                       </div>
