@@ -76,7 +76,7 @@
 
 
 
-
+{{--
     <form action="">
 
         <select name="session" id="session" class="form-control">
@@ -87,7 +87,7 @@
 
         </select>
 
-    </form>
+    </form> --}}
 
 </div>
 <div class="accordion" id="accordionExample">
