@@ -72,23 +72,30 @@
 
 
 
-<div class="committeeTitle">
+<div class="committeeTitle mt-5 mb-5">
 
 
+    @if($type!='')
 
-{{--
-    <form action="">
-
+    <form action="" method="get">
+<div class="form-group">
+    <label for="">Previous Session</label>
         <select name="session" id="session" class="form-control">
 
             <option value="">Select</option>
-            <option>1993-1995</option>
-            <option>1990-1992</option>
+            @foreach ($years as $yearsrow)
+            <option>{{ $yearsrow->session_start }}</option>
+            @endforeach
 
         </select>
+    </div>
+<script>
+    document.getElementById('session').value="{{ $session }}";
+</script>
 
-    </form> --}}
-
+        <button type="submit" class="btn btn-danger mt-3">Search</button>
+    </form>
+@endif
 </div>
 <div class="accordion" id="accordionExample">
 

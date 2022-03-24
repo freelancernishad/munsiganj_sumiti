@@ -26,10 +26,20 @@ class CommitteeController extends Controller
     {
 
       $data['type'] = $request->d;
+      $type = $request->d;
 
-
-        $data['rows'] = committee::orderBy('id','DESC')
+      if($type==''){
+        $data['rows'] = committee::orderBy('id','DESC')->where('status','active')
         ->get();
+      }else{
+        $data['rows'] = committee::orderBy('id','DESC')->where('status','ex')
+        ->get();
+      }
+
+
+
+
+
 
         return view('admin/committee.list',$data);
     }
@@ -73,12 +83,13 @@ class CommitteeController extends Controller
         $data = [];
         $inputData = $request->all();
         foreach ($inputData as $key => $value) {
-            if ($key == 'id' || $key == '_token' || $key == 'image') {
+            if ($key == 'id' || $key == '_token' || $key == 'image' || $key == 'session_start') {
             } else {
                 $data[$key] = $value;
             }
         }
 
+$data['session_start'] = $request->session_start.'-'.$request->session_end;
 
 
 
@@ -108,6 +119,9 @@ class CommitteeController extends Controller
             }
 
         if ($id == '') {
+
+            $data['status'] = 'active';
+
             DB::table('committees')->insert($data);
             $request->session()->flash('msg', 'Data Inserted Succcessfully');
             return redirect(route('committee.index'));

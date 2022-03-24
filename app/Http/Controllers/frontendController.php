@@ -282,13 +282,11 @@ if($memberid==''){
         $curentyear = date('Y');
         $previousyear = $curentyear-1;
 
-        $wh = [
-           'session_start'=>$previousyear,
-           'session_end'=>$curentyear,
-        ];
 
-        $data['rows'] = committee::orderBy('id', 'ASC')->where($wh)
+
+        $data['rows'] = committee::orderBy('id', 'ASC')->where('status','active')
             ->get();
+
 
 
         $data['type'] = '';
@@ -303,7 +301,7 @@ if($memberid==''){
 
 
 
-    public function ExCommittee()
+    public function ExCommittee(Request $request)
     {
         $wht = [
             'page' => 'Central Committee',
@@ -335,9 +333,39 @@ if($memberid==''){
             'session_end','!=',$curentyear,
          ];
 
-        $data['rows'] = committee::orderBy('id', 'ASC')->where('session_start','!=',$previousyear,)->where('session_end','!=',$curentyear)
+
+         $session = $request->session;
+
+         if($session!=''){
+            $sessionlast = $request->session;
+         }else{
+
+            $count = committee::orderBy('session_start', 'DESC')->where('status','ex')->count();
+            if($count>0){
+                $dataget = committee::orderBy('session_start', 'DESC')->where('status','ex')->get();
+
+                $sessionlast = $dataget[0]->session_start;
+            }else{
+
+                $sessionlast = '';
+            }
+
+         }
+
+
+
+
+
+        $data['rows'] = committee::orderBy('id', 'ASC')->where(['status'=>'ex','session_start'=>$sessionlast])
             ->get();
+
+
+
             $data['type'] = 'ex';
+            $data['session'] = $sessionlast;
+
+            $data['years'] = committee::orderBy('session_start', 'DESC')->where('status','ex')->select('session_start')->distinct()
+            ->get();
 
 
 
