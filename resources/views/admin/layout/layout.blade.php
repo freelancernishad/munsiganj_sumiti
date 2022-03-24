@@ -130,6 +130,7 @@
                   <li><a href="{{ route('HistoryCategory.index') }}" ><i class="fas fa-home"></i> History Category </span></a></li>
                   <li><a href="{{ route('HistoryPlace.index') }}" ><i class="fas fa-home"></i> History Place </span></a></li>
                   <li><a href="{{ route('ProminentPersons.index') }}" ><i class="fas fa-home"></i> Prominent Persons </span></a></li>
+                  <li><a href="{{ route('Parliamentary_Person.index') }}" ><i class="fas fa-home"></i> Parliamentary Person </span></a></li>
                   <li><a href="{{ route('setting.index') }}" ><i class="fas fa-home"></i> Settings </span></a></li>
 		            </ul>
               </div>

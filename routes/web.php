@@ -19,6 +19,7 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\HistoryCategoryController;
 use App\Http\Controllers\HistoryPlaceController;
 use App\Http\Controllers\ProminentPersonsController;
+use App\Http\Controllers\ParliamentaryPersonController;
 use App\Http\Controllers\NoticeController;
 
 /*
@@ -52,6 +53,7 @@ Route::get('/about-us',[frontendController::class, 'about_us'])->name('about_us'
 
 
 Route::get('ProminentPersons',[frontendController::class, 'ProminentPersons'])->name('ProminentPersons');
+Route::get('ParliamentaryPersons',[frontendController::class, 'ParliamentaryPersons'])->name('ParliamentaryPersons');
 Route::get('HistoricalPlace',[frontendController::class, 'HistoricalPlace'])->name('HistoricalPlace');
 Route::get('info/{title}',[frontendController::class, 'info_details'])->name('info_details');
 Route::get('Committee',[frontendController::class, 'Committee'])->name('Committeelist');
@@ -124,6 +126,7 @@ Route::resources([
 	'admin/HistoryCategory' => HistoryCategoryController::class,
 	'admin/HistoryPlace' => HistoryPlaceController::class,
 	'admin/ProminentPersons' => ProminentPersonsController::class,
+	'admin/Parliamentary_Person' => ParliamentaryPersonController::class,
 	'admin/setting' => SettingController::class,
 
 ]);

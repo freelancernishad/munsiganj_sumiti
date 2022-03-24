@@ -15,6 +15,7 @@ use App\Models\MemberShipPament;
 use App\Models\GlobalCommittee;
 use App\Models\historyPlace;
 use App\Models\historyCategory;
+use App\Models\Parliamentary_Person;
 class frontendController extends Controller
 {
     public function index()
@@ -462,6 +463,21 @@ if($memberid==''){
         $data['rowsFemale'] = ProminentPersons::where('category','বিক্রামপরের নারী ব্যক্তিত্ব')->orderBy('id','ASC')->get();
 
             return view('ProminentPersons',$data);
+
+    }
+
+        public function ParliamentaryPersons(Request $request)
+    {
+
+        $singleData =  $request->i;
+        $data['singleData'] = $singleData;
+        if($singleData!=''){
+            $data['rows'] = Parliamentary_Person::where('id',$singleData)->get();
+        }
+        $data['rowsMale'] = Parliamentary_Person::where('category','Parliamentary Persons (Male)')->orderBy('id','ASC')->get();
+        $data['rowsFemale'] = Parliamentary_Person::where('category','Parliamentary Persons (Female)')->orderBy('id','ASC')->get();
+
+            return view('Parliamentary_Person',$data);
 
     }
 

@@ -25,7 +25,7 @@
                             <li><a href="{{ url('info/Medical Info') }}">Medical Info</a></li>
 
                             <li><a href="{{ url('ProminentPersons') }}">Prominent Persons</a></li> <!--  chnage -->
-                            <li><a href="{{ url('info/Parliamentary Persons Profile') }}">Parliamentary Persons Profile</a></li> <!--  new -->
+                            <li><a href="{{ url('ParliamentaryPersons') }}">Parliamentary Persons Profile</a></li> <!--  new -->
 
                             <li><a href="{{ url('info/Historical Place') }}">Historical Place</a></li>
                             <li><a href="{{ url('info/Cultural') }}">Cultural</a></li>
