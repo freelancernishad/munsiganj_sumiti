@@ -120,6 +120,7 @@
                   <li><a href="{{ route('committee.index') }}" ><i class="fas fa-home"></i> Committee </span></a></li>
                   <li><a href="{{ url('/admin/committee?d=ex') }}" ><i class="fas fa-home"></i> EX. Committee </span></a></li>
                   <li><a href="{{ route('globalcommittee.index') }}" ><i class="fas fa-home"></i> Global Committee </span></a></li>
+                  <li><a href="{{ route('gallery_category.index') }}" ><i class="fas fa-home"></i> Gallery Category </span></a></li>
                   <li><a href="{{ route('gallery.index') }}" ><i class="fas fa-home"></i> Gallery </span></a></li>
                   <li><a href="{{ route('allinfo.index') }}" ><i class="fas fa-home"></i> Info </span></a></li>
                   <li><a href="{{ route('category.index') }}" ><i class="fas fa-home"></i> Category </span></a></li>
@@ -346,6 +347,8 @@ $(document).ready(function() {
     </div>
 
     <script src="{{ asset('admin_asset/js/croppie.js') }}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 <script>
 
@@ -496,6 +499,56 @@ function viewdata(url){
         }
 
     });
+}
+
+
+
+
+function deletedata(url,idname,id) {
+
+Swal.fire({
+title: 'Are you sure?',
+text: "You won't be able to revert this!",
+icon: 'warning',
+showCancelButton: true,
+confirmButtonColor: '#3085d6',
+cancelButtonColor: '#d33',
+confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+if (result.isConfirmed) {
+
+
+$.ajax({
+    url: url,
+    method: "POST",
+    data:{ "_token": "{{ csrf_token() }}" ,"_method": "DELETE"},
+    success: function(data) {
+
+         console.log(data)
+         Swal.fire(
+    'Deleted!',
+    'Your file has been deleted.',
+    'success'
+    )
+
+
+    $('#'+idname+id).closest("tr").fadeOut(1000);
+
+    },
+});
+
+
+
+
+
+
+
+
+}
+})
+
+
+
 }
 
 </script>

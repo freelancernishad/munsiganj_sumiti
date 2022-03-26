@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\GalleryCategory;
 
 class GalleryController extends Controller
 {
@@ -48,7 +49,10 @@ class GalleryController extends Controller
         $object = json_decode(json_encode($rows));
         $data['rows'] = $object;
 
-        return view('admin/gallery.add', $data);
+        $category = GalleryCategory::orderBy('id','DESC')->get();
+
+
+        return view('admin/gallery.add',compact('category'), $data);
     }
 
     /**
@@ -133,10 +137,10 @@ class GalleryController extends Controller
     {
         $id = $gallery->id;
 
-
+        $category = GalleryCategory::orderBy('id','DESC')->get();
         $data['rows'] = DB::table('galleries')->where('id',$id)->get();
 
-            return view('admin/gallery.add',$data);
+            return view('admin/gallery.add',compact('category'),$data);
     }
 
     /**

@@ -16,6 +16,8 @@ use App\Models\GlobalCommittee;
 use App\Models\historyPlace;
 use App\Models\historyCategory;
 use App\Models\Parliamentary_Person;
+
+use App\Models\GalleryCategory;
 class frontendController extends Controller
 {
     public function index()
@@ -432,8 +434,8 @@ if($memberid==''){
         ];
         $data['adbottom'] =   DB::table('ads')->where($whb)->get();
         $data['adl'] =   DB::table('ads')->where($whl)->get();
-        $data['rows'] = gallery::orderBy('id', 'DESC')
-            ->get();
+        $data['rows'] = gallery::orderBy('id', 'DESC')->get();
+        $data['category'] = GalleryCategory::orderBy('id', 'DESC')->get();
         return view('gallery', $data);
     }
     public function HistoricalPlace(Request $request)

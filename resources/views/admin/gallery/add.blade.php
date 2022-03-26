@@ -3,7 +3,7 @@
 
 @section('container')
 
-     	  
+
             <div class="page-title">
               <div class="title_left">
                 <h3>Manage Gallery</h3>
@@ -12,7 +12,7 @@
               <div class="title_right">
                 <div class="col-md-5 col-sm-5  form-group pull-right top_search">
                   <div class="input-group">
-               
+
                   </div>
                 </div>
               </div>
@@ -21,13 +21,13 @@
             <div class="row">
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
-                
+
                   <div class="x_content">
                     <br />
 
 
 @foreach ($rows as $row)
-  
+
 
 
 
@@ -39,12 +39,12 @@
 
             <div class="row">
 
-   
 
 
-                
 
-				
+
+
+
 
 
 
@@ -56,6 +56,26 @@
                 <div class="form-group">
                   <label>Title</label>
                   <input type="text" class="form-control" name="title" id="title" value="{{ $row->title }}">
+                </div>
+
+              </div>
+
+              {{--  col-md-6 start  --}}
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Category</label>
+                    <select name="category" id="category" class="form-control">
+                        <option value="">Select</option>
+                        @foreach ($category as $rowcategory)
+                        <option>{{ $rowcategory->name }}</option>
+
+                        @endforeach
+                    </select>
+<script>
+    document.getElementById('category').value="{{ $row->category }}";
+</script>
+
+
                 </div>
 
               </div>
@@ -83,20 +103,20 @@
 
             </div>
 
-						
-                 
-					  
-					
 
-			   
-					
-               
-         
-             
+
+
+
+
+
+
+
+
+
                       <div class="ln_solid"></div>
                       <div class="item form-group">
                         <div class="col-md-6 col-sm-6 offset-md-3">
-                      
+
                           <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                       </div>

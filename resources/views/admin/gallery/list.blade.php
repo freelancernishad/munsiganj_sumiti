@@ -12,7 +12,7 @@
         </div>
     </div>
 
- 
+
 
 
     <div class="col-md-12 col-sm-12 ">
@@ -25,10 +25,11 @@
                                 style="width:100%">
                                 <thead>
                                     <tr>
-                             
+
                                         <th width="2%">SL</th>
                                         <th width="20%">Title</th>
-                               
+                                        <th width="20%">Category</th>
+
                                         <th width="10%">Image</th>
                                         <th width="18%">Action</th>
                                     </tr>
@@ -38,10 +39,11 @@
     $i = 1;
     @endphp
                                     @foreach ($rows as $row)
-                                        
+
                                     <tr>
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $row->title }}</td>
+                                        <td>{{ $row->category }}</td>
 
                                         <td><img width="100%" src="{{ $row->image }}" alt="" /></td>
                                         <td>
@@ -50,12 +52,12 @@
 
                                             <form method="post" action="{{ route('gallery.destroy', ['gallery' => $row->id]) }}">
                                                 @csrf
-                                                @method('delete')   
+                                                @method('delete')
                                                 <button type="submit" class="btn btn-danger">Delete</button>
                                             </form>
 
 
-                                            
+
                                         </td>
                                     </tr>
                                     @endforeach

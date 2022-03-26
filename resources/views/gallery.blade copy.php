@@ -1,14 +1,5 @@
 @extends('layouts.master')
 @section('content')
-
-<style>
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: #d02804 !important;
-
-}
-
-</style>
-
     <main>
         <section class="hero_area">
             <div class="row p-0">
@@ -29,102 +20,21 @@
                   ?>
                 </div>
                 <div class="col-md-9">
-                    <h5 class="gallaryTitle text-center">Photo Gallery</h5>
-
-
-
-
-
-
-
-<!-- RH: this is bootstrap 5 tabbed panel -->
-<ul class="nav nav-tabs justify-content-center mt-5 mb-5 border-0 customtab" id="myTab" role="tablist">
-
-<?php
-    $i = 0;
-    ?>
-    @foreach ($category as $rowcategory)
-
-
-<li class="nav-item" role="presentation">
-    <a class="nav-link  border-0 @if($i==0) active @endif" id="{{ $rowcategory->name }}-tab" data-bs-toggle="tab" href="#{{ $rowcategory->name }}" role="tab" aria-controls="{{ $rowcategory->name }}" aria-selected="true">{{ $rowcategory->name }}</a>
-  </li>
-
-
-
-    <?php
-    $i++;
-    ?>
-    @endforeach
-
-
-
-
-
-
-  </ul>
-
-
-
-
-
-  <div class="tab-content" id="myTabContent">
-
-
-    <?php
-    $i = 0;
-    ?>
-    @foreach ($category as $rowcategory)
-
-
-    <div class="tab-pane fade show @if($i==0) active @endif" id="{{ $rowcategory->name }}" role="tabpanel" aria-labelledby="{{ $rowcategory->name }}-tab">
-        <div class="rows">
-
-                <?php
-
-                $PDO = \DB::connection()->getPdo();
-                $QUERY = $PDO->prepare("SELECT * FROM `galleries` WHERE `category`='$rowcategory->name'");
-                $QUERY->execute();
-                $rowsg=$QUERY->fetchAll(PDO::FETCH_OBJ);
-
-                    ?>
-
-            @foreach ($rowsg as $row)
-                <div class="imgcolumn">
-                    <img src="{{ $row->image }}" style="width:100%"
-                        onclick="openModal();currentSlide({{ $row->id }})" class="hover-shadow cursor">
-                </div>
-            @endforeach
-
-        </div>
-    </div>
-
-
-    <?php
-    $i++;
-    ?>
-    @endforeach
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    <h5 class="gallaryTitle text-center">Gallery</h5>
+                    <div class="rows">
+                        @php
+                            $i = 1;
+                        @endphp
+                        @foreach ($rows as $row)
+                            <div class="imgcolumn">
+                                <img src="{{ $row->image }}" style="width:100%"
+                                    onclick="openModal();currentSlide({{ $i }})" class="hover-shadow cursor">
+                            </div>
+                            @php
+                                $i++;
+                            @endphp
+                        @endforeach
+                    </div>
                     <div id="myModal" class="modals">
                         <span class="close cursor" onclick="closeModal()">&times;</span>
                         <div class="modal-content">
@@ -174,17 +84,21 @@
         function openModal() {
             document.getElementById("myModal").style.display = "block";
         }
+
         function closeModal() {
             document.getElementById("myModal").style.display = "none";
         }
         var slideIndex = 1;
         showSlides(slideIndex);
+
         function plusSlides(n) {
             showSlides(slideIndex += n);
         }
+
         function currentSlide(n) {
             showSlides(slideIndex = n);
         }
+
         function showSlides(n) {
             var i;
             var slides = document.getElementsByClassName("mySlides");
