@@ -399,12 +399,19 @@
                                             value="{{ $row->pr_vill }}" required>
                                     </div>
                                 </div>
+
+
+
                                 <div class="col-md-12">
                                     <h3>Present address  <span class="required">*</span></h3>
                                     <h5 style="display:none"><input style="width: 32px;
     height: 19px;" onclick="sameAddress()" type="checkbox" id="same_Address"> <label for="same_Address">একই ঠিকানা হলে টিক
                                             দিন</label></h5>
                                 </div>
+
+
+
+
                                 {{-- col-md-6 start --}}
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -413,6 +420,33 @@
                                             required>{{ $row->Present_address }}</textarea>
                                     </div>
                                 </div>
+
+
+
+
+
+
+                                <div class="col-md-12">
+                                    <h3>Short Bio  </h3>
+
+                                </div>
+
+
+                                {{-- col-md-6 start --}}
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea name="bio" id="bio" class="form-control"
+                                            cols="30" rows="4" style="resize:none"
+                                            >{{ $row->bio }}</textarea>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
                                 {{-- col-md-6 start --}}
                                 <div class="col-md-6 d-none">
                                     <div class="form-group">

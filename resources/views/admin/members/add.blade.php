@@ -342,6 +342,21 @@ document.getElementById('blood_group').value="{{ $row->blood_group }}";
             </div>
 
 
+            <div class="col-md-12">
+                <h3>Short Bio  </h3>
+
+            </div>
+
+
+            {{-- col-md-6 start --}}
+            <div class="col-md-12">
+                <div class="form-group">
+                    <textarea name="bio" id="bio" class="form-control"
+                        cols="30" rows="4" style="resize:none"
+                        >{{ $row->bio }}</textarea>
+                </div>
+            </div>
+
 
 
 {{-- col-md-6 start --}}
@@ -420,7 +435,7 @@ value="{{ $row->p_dist }}">
 
                         <option value=""></option>
 
-                         
+
 
 
 
