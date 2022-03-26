@@ -119,6 +119,7 @@ main {
 
 
 
+                  <li><a href="{{ route('RegistrationGuideline.index') }}" ><i class="fas fa-home"></i> Registration Guideline </span></a></li>
                   <li><a href="{{ route('committee.index') }}" ><i class="fas fa-home"></i> Committee </span></a></li>
                   <li><a href="{{ url('/admin/committee?d=ex') }}" ><i class="fas fa-home"></i> EX. Committee </span></a></li>
                   <li><a href="{{ route('globalcommittee.index') }}" ><i class="fas fa-home"></i> Global Committee </span></a></li>

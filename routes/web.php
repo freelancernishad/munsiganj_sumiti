@@ -21,6 +21,7 @@ use App\Http\Controllers\HistoryPlaceController;
 use App\Http\Controllers\ProminentPersonsController;
 use App\Http\Controllers\ParliamentaryPersonController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\RegistrationGuidelineController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -77,6 +78,7 @@ Route::resources([
     'admin/brandslider' => BrandsliderController::class,
     'admin/mainslider' => MainsliderController::class,
     'admin/members' => MemberController::class,
+    'admin/RegistrationGuideline' => RegistrationGuidelineController::class,
     'admin/committee' => CommitteeController::class,
     'admin/globalcommittee' => GlobalCommitteeController::class,
     'admin/gallery_category' => GalleryCategoryController::class,

@@ -111,6 +111,7 @@ class frontendController extends Controller
         $data['adbottom'] =   DB::table('ads')->where($whb)->get();
         $data['adl'] =   DB::table('ads')->where($whl)->get();
         $data['adr'] =   DB::table('ads')->where($whr)->get();
+        $data['registration_guidelines'] =   DB::table('registration_guidelines')->get();
 
 
 
