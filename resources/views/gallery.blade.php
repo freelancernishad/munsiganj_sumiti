@@ -128,6 +128,7 @@
                     <div id="myModal" class="modals">
                         <span class="close cursor" onclick="closeModal()">&times;</span>
                         <div class="modal-content">
+
                             @php
                                 $i = 1;
                             @endphp
