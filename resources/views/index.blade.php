@@ -426,6 +426,72 @@ button.owl-dot.active {
             </div>
         </section>
 
+
+
+
+        <section class="NoticeSeciton">
+
+<style>
+.news {
+    width: 204px;
+    padding: 27px 0 !important;
+    font-size: 25px;
+}
+
+.news-scroll a {
+    text-decoration: none;
+    font-size: 25px;
+
+}
+
+.dot {
+    height: 6px;
+    width: 6px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 2px !important;
+    background-color: rgb(207, 23, 23);
+    border-radius: 50%;
+    display: inline-block
+}
+.d-flex.justify-content-between.align-items-center.breaking-news.bg-white {
+    background: #cbb105 !important;
+}
+</style>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-flex justify-content-between align-items-center breaking-news bg-white">
+                        <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 news"><span class="d-flex align-items-center">&nbsp;Notice <i class="fas fa-bell fa-fw" style="font-size:25px"></i></span></div>
+                        <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+
+
+                            <?php  $n = 1; ?>
+                            @foreach (notices() as $noticesList)
+                            <span class="dot"></span> <a href="#">{{ $noticesList->dec }} </a>  &nbsp;
+                                <?php  $n++; ?>
+                            @endforeach
+
+
+
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+{{--
+
         <section class="NoticeSeciton">
             <div class="d-flex align-items-center">
 
@@ -440,10 +506,10 @@ button.owl-dot.active {
                             <div class="noticwe">
 
 <marquee behavior="scroll" direction="" onMouseOver="this.stop()" onMouseOut="this.start()">
-<?php  $n = 1; ?>
+<?php  //$n = 1; ?>
 @foreach (notices() as $noticesList)
   * {{ $noticesList->dec }} &nbsp;
-    <?php  $n++; ?>
+    <?php  //$n++; ?>
 @endforeach
 
 </marquee>
@@ -457,7 +523,7 @@ button.owl-dot.active {
 
 
             </div>
-        </section>
+        </section> --}}
     </main>
 
 
