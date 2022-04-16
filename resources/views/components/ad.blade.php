@@ -115,7 +115,9 @@ li.select2-results__option.select2-results__option--selectable {
 p{
    font-family: 'SolaimanLipi', sans-serif;
 }
-
+footer.footer {
+    margin-top: 50px;
+}
 </style>
 
 
