@@ -1,0 +1,67 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 26, 2022 at 12:56 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `munsiganj_sumiti`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registration_guidelines`
+--
+
+CREATE TABLE `registration_guidelines` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `info` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `registration_guidelines`
+--
+
+INSERT INTO `registration_guidelines` (`id`, `info`, `created_at`, `updated_at`) VALUES
+(1, '<h3 class=\"text-danger\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; font-weight: 500; line-height: 1.2; font-size: 1.75rem; color: rgb(220, 53, 69) !important;\">Registration Guideline</h3><h3 style=\"text-align: center; \"><div class=\"register-guidline\" style=\"margin: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: SolaimanLipi, sans-serif; font-size: 16px; text-align: left;\"><p class=\"muted\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\">Lorem ipsum dolor sit amet consectetur adipisicing elit. At eos facilis placeat, nihil, sapiente, dolores consequatur mollitia similique officia minima magnam quos soluta dolorum sed?</p><p class=\"muted\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\"><br></p><p class=\"muted\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;\"><br></p></div></h3><h3 class=\"text-white back pl-2 rounded\" style=\"margin: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; background: linear-gradient(30deg, rgb(255, 11, 11), transparent);\">Registration Free Includes</h3><h3 style=\"text-align: center; \"><div class=\"register-include\" style=\"margin: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: SolaimanLipi, sans-serif; font-size: 16px; text-align: left;\"><li style=\"margin: 0px; padding: 0px 0px 0px 8px; list-style: none;\">#Lorem ipsum dolor sit amet.</li><li style=\"margin: 0px; padding: 0px 0px 0px 8px; list-style: none;\">#Lorem ipsum dolor sit amet.</li><li style=\"margin: 0px; padding: 0px 0px 0px 8px; list-style: none;\">#Lorem ipsum dolor sit amet.</li><li style=\"margin: 0px; padding: 0px 0px 0px 8px; list-style: none;\">#Lorem ipsum dolor sit amet.</li><li style=\"margin: 0px; padding: 0px 0px 0px 8px; list-style: none;\"><br></li><li style=\"margin: 0px; padding: 0px 0px 0px 8px; list-style: none;\"><br></li></div></h3><h3 class=\"text-white back pl-2 rounded\" style=\"margin: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; background: linear-gradient(30deg, rgb(255, 11, 11), transparent);\">Accompanying Person Free Includes</h3><h3 style=\"text-align: center; \"><div class=\"register-accompany mt-5\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: SolaimanLipi, sans-serif; font-size: 16px; text-align: left;\"><li style=\"margin: 0px; padding: 0px 0px 0px 8px; list-style: none;\">#Lorem ipsum dolor sit amet.</li><li style=\"margin: 0px; padding: 0px 0px 0px 8px; list-style: none;\">#Lorem ipsum dolor sit amet.</li><li style=\"margin: 0px; padding: 0px 0px 0px 8px; list-style: none;\">#Lorem ipsum dolor sit amet.</li><li style=\"margin: 0px; padding: 0px 0px 0px 8px; list-style: none;\">#Lorem ipsum dolor sit amet.</li><li style=\"margin: 0px; padding: 0px 0px 0px 8px; list-style: none;\"><br></li><li style=\"margin: 0px; padding: 0px 0px 0px 8px; list-style: none;\"><br></li></div></h3><h3 class=\"text-white back pl-2 rounded\" style=\"margin: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; background: linear-gradient(30deg, rgb(255, 11, 11), transparent);\">On-Site Registration</h3><h3 style=\"text-align: center; \"><div class=\"register-on-site mt-5\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: SolaimanLipi, sans-serif; font-size: 16px; text-align: left;\"><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam, tenetur.</p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\"><br></p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\"><br></p></div></h3><h3 class=\"text-white back pl-2 rounded\" style=\"margin: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; background: linear-gradient(30deg, rgb(255, 11, 11), transparent);\">Group Registration</h3><h3 style=\"text-align: center; \"><div class=\"register-on-site mt-5\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: SolaimanLipi, sans-serif; font-size: 16px; text-align: left;\"><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe eligendi aut,</p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore ipsam praesentium culpa ad? Laborum fugiat voluptate recusandae nostrum. Ex explicabo quos assumenda tempora illo?</p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe eligendi aut,</p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\"><br></p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\"><br></p></div></h3><h3 class=\"text-white pl-2 rounded back\" style=\"margin: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; background: linear-gradient(30deg, rgb(255, 11, 11), transparent);\">Socials</h3><h3 style=\"text-align: center; \"><div class=\"register-socials mt-5\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: SolaimanLipi, sans-serif; font-size: 16px; text-align: left;\"><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt molestias mollitia earum at quaerat, vero, ipsa neque culpa illo ex pariatur, tenetur eveniet sed reiciendis!</p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\"><br></p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\"><br></p></div></h3><h3 class=\"text-white back pl-2 rounded\" style=\"margin: 0px; background: linear-gradient(30deg, rgb(255, 11, 11), transparent); padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Confirmation</h3><h3 style=\"text-align: center; \"><div class=\"register-socials mt-5\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: SolaimanLipi, sans-serif; font-size: 16px; text-align: left;\"><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt molestias mollitia earum at quaerat, vero, ipsa neque culpa illo ex pariatur, tenetur eveniet sed reiciendis amet consectetur adipisicing elit ipsa neque culpa!</p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\"><br></p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\"><br></p></div></h3><h3 class=\"text-white back pl-2 rounded\" style=\"margin: 0px; background: linear-gradient(30deg, rgb(255, 11, 11), transparent); padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Payment</h3><h3 style=\"text-align: center; \"><div class=\"register-socials mt-5\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: SolaimanLipi, sans-serif; font-size: 16px; text-align: left;\"><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, quo?</p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\"><br></p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\"><br></p></div></h3><h3 class=\"text-white back pl-2 rounded\" style=\"margin: 0px; background: linear-gradient(30deg, rgb(255, 11, 11), transparent); padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">By Bank Transfer</h3><h3 style=\"text-align: center; \"><div class=\"register-socials mt-5\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: SolaimanLipi, sans-serif; font-size: 16px; text-align: left;\"><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, voluptatibus fuga vero molestiae corrupti blanditiis adipisicing elit. Alias, voluptatibus fuga vero.</p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, animi eveniet. Eos ipsam temporibus cupiditate deserunt commodi suscipit obcaecati. Ullam laborum iure nostrum optio reprehenderit!</p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, animi eveniet. Eos ipsam temporibus cupiditate deserunt commodi suscipit obcaecati!</p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\"><br></p><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\"><br></p></div></h3><h3 class=\"text-white back pl-2 rounded\" style=\"margin: 0px; background: linear-gradient(30deg, rgb(255, 11, 11), transparent); padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Online Payment By Credit/Debit Card</h3><h3 style=\"text-align: center; \"><div class=\"register-on-site mt-5\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: SolaimanLipi, sans-serif; font-size: 16px; text-align: left;\"><p class=\"muted pl-2\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam mollitia atque, praesentium, cupiditate ipsam beatae, odit blanditiis aspernatur consequatur illo quos? Voluptatibus voluptatem eos placeat amet eveniet cum, quaerat reiciendis voluptatum corrupti quo repellendus illum laboriosam cupiditate assumenda expedita! Alias accusantium ad nam quos laboriosam enim similique in?</p></div></h3>', NULL, '2022-03-26 11:55:40');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `registration_guidelines`
+--
+ALTER TABLE `registration_guidelines`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `registration_guidelines`
+--
+ALTER TABLE `registration_guidelines`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

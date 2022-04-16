@@ -20,6 +20,9 @@
             <div class="x_content">
                 <div class="row">
                     <div class="col-sm-12">
+                        @if($status=='active')
+                      <a href="{{ route('member.excel') }}" class="btn btn-danger float-right" >Download Excel Sheet</a>
+                      @endif
                         <div class="card-box table-responsive">
                             <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action"
                                 style="width:100%">

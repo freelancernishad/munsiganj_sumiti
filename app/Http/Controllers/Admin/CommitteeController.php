@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\committee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Exports\ExCommitteesExport;
+use App\Exports\ActiveCommitteesExport;
+use Maatwebsite\Excel\Facades\Excel;
 class CommitteeController extends Controller
 {
 
@@ -22,6 +25,23 @@ class CommitteeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function active_committees()
+    {
+
+        return Excel::download(new ActiveCommitteesExport, 'Active_committees.xlsx');
+    }
+
+
+    public function ex_committees()
+    {
+
+        return Excel::download(new ExCommitteesExport, 'EX_committees.xlsx');
+    }
+
+
+
     public function index(Request $request)
     {
 

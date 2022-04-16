@@ -11,7 +11,8 @@ use App\Models\District;
 use App\Models\Thana;
 use Illuminate\Support\Str;
 use App\Models\MemberShipPament;
-
+use App\Exports\MembersExport;
+use Maatwebsite\Excel\Facades\Excel;
 class MemberController extends Controller
 {
 
@@ -27,6 +28,14 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function excel()
+    {
+
+        return Excel::download(new MembersExport, 'Members.xlsx');
+    }
+
+
     public function index(Request $request)
     {
 

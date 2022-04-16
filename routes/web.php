@@ -74,6 +74,9 @@ Route::get('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'i
 Route::post('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin/get/alldata/{title}', [AllinfoController::class, 'alldata'])->name('alldata');
+Route::get('/admin/members/excel', [MemberController::class, 'excel'])->name('member.excel');
+Route::get('/admin/committee/active/excel', [CommitteeController::class, 'active_committees'])->name('active.committees.excel');
+Route::get('/admin/committee/ex/excel', [CommitteeController::class, 'ex_committees'])->name('ex.committees.excel');
 Route::resources([
     'admin/brandslider' => BrandsliderController::class,
     'admin/mainslider' => MainsliderController::class,
