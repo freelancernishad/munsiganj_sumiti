@@ -24,7 +24,7 @@
                                 <li itemscope="itemscope"
                                     id="menu-item-19"
                                     class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-19 active">
-                                    <a title="হোম"  href="{{ url('blogs') }}">হোম</a>
+                                    <a title="হোম"  href="{{ url('blogs') }}">মূল পাতা</a>
                                 </li>
 
 
