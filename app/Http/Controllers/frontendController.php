@@ -692,17 +692,32 @@ if($step==4){
         $member = $memberId;
 
 
-         if($memberName!=''){
-            // $member = $memberId;
+        //  if($memberName!=''){
+        //     // $member = $memberId;
 
-            return redirect("member/".$memberName.'/'.$upszila);
+        //     return redirect("member/".$memberName.'/'.$upszila);
+        // }
+
+
+        if($memberName!=''){
+
+
+            return redirect("member/".$memberName.'/single');
+            // $member = $memberName;
         }
-
 
         if($memberId!=''){
 
 
-            return redirect("member/".$member.'/single');
+            return redirect("member/".$memberId.'/single');
+            // $member = $memberName;
+        }
+
+
+        if($upszila!=''){
+
+
+            return redirect("member/".$upszila.'/single');
             // $member = $memberName;
         }
 
@@ -722,11 +737,6 @@ if($step==4){
         $data['adl'] =   DB::table('ads')->where($whl)->get();
 
 
-
-
-
-
-
             $wh1 = [
                 'memberId'=>$name,
                 'status'=>'Active',
@@ -743,11 +753,20 @@ if($step==4){
 
 
             $wh2 = [
-                'pr_thana'=>$upszila,
-                'name'=>$name,
+                // 'pr_thana'=>$upszila,
+                'pr_thana'=>$name,
                 'status'=>'Active',
             ];
             $count2 = member::where($wh2)->count();
+
+
+
+
+            $wh3 = [
+                'name'=>$name,
+                'status'=>'Active',
+            ];
+            $count3 = member::where($wh3)->count();
 
 
 
@@ -769,6 +788,12 @@ if($step==4){
                 $data['rows'] = member::where($wh2)
                 ->orderBy('id', 'DESC')->get();
 
+                $upszilass= $name;
+
+            }else if($count3>0){
+                $data['rows'] = member::where($wh3)
+                ->orderBy('id', 'DESC')->get();
+
                 $namess= $name;
 
             }else{
@@ -780,10 +805,10 @@ if($step==4){
         $data['Thana'] = Thana::orderBy('name', 'ASC')->get();
 
 
-        $count = Thana::where('name',$upszila)->count();
+        $count = Thana::where('name',$name)->count();
         if($count>0){
 
-            $upszila = Thana::where('name',$upszila)->get();
+            $upszila = Thana::where('name',$name)->get();
             $data['upszila'] = $upszila[0]->id;
         }else{
             $data['upszila'] = '';
