@@ -60,9 +60,9 @@
                       <option>Historical Info</option>
                       <option>Historical Place</option>
                       <option>Historical Village</option>
-                      <option>Historical Profession</option>
+                      <option>Local Professional Info</option>
                       <option>District Info</option>
-                      <option>Education details</option>
+                      <option>Educational History</option>
                       <option>High School</option>
                       <option>Collage Univercity</option>
                       <option>Madrasa</option>

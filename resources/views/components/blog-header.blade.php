@@ -31,11 +31,50 @@
                                 @foreach ($catMenu as $catMenuList)
 
 
+                                @if($catMenuList->parent=='')
+
                                 <li itemscope="itemscope"
                                     id="menu-item-21"
                                     class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21"><a
                                         title="{{ $catMenuList->name }}"  href="{{ url('blogs?category='.$catMenuList->name) }}"  >{{ $catMenuList->name }}</a>
                                 </li>
+                                @elseif($catMenuList->parent=='has')
+                                @php
+
+                                $PDO = \DB::connection()->getPdo();
+                                $QUERY = $PDO->prepare("SELECT * FROM `categories` WHERE `parent`='$catMenuList->name'");
+                                $QUERY->execute();
+                                $categores=$QUERY->fetchAll(PDO::FETCH_OBJ);
+                               // dd($categores);
+                                @endphp
+                                <li itemscope="itemscope"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-28 dropdown">
+                                    <a title="{{ $catMenuList->name }}" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="true">{{ $catMenuList->name }} <span class="caret"></span></a>
+                                    <ul role="menu" class=" dropdown-menu">
+
+
+
+                                        @foreach ($categores as $subcate)
+
+
+                                        <li itemscope="itemscope"  id="menu-item-29" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29"><a title="মুন্সীগঞ্জ" href="{{ url('blogs?category='.$subcate->name) }}">{{ $subcate->name }}</a></li>
+                                        @endforeach
+
+                                    </ul>
+                                    </li>
+
+
+
+
+
+
+
+
+                                @endif
+
+
+
+
+
                                 @endforeach
 
                                 <li itemscope="itemscope"
