@@ -364,7 +364,7 @@ if($memberid==''){
              $data['type'] = 'exs';
          }else{
 
-             $countdist = committee::orderBy('id', 'DESC')->select('session_start')->distinct()->where(['status'=>'ex'])->get();
+             $countdist = committee::orderBy('id', 'DESC')->where(['status'=>'ex'])->get();
             if($countdist>0){
 
                 $data['rows'] = committee::orderBy('id', 'DESC')->select('session_start')->distinct()->where(['status'=>'ex'])->get();
