@@ -110,6 +110,7 @@ main {
                     <li><a href="{{ url('/admin/members?status=active') }}">Active Members</a></li>
                     <li><a href="{{ url('/admin/members?status=pending') }}">Pending Members</a></li>
                     <li><a href="{{ url('/admin/members?status=unpaid') }}">Unpaid Members</a></li>
+                    <li><a href="{{ url('/admin/members?status=death') }}">Death Members</a></li>
                     </ul>
                     </li>
 

@@ -52,12 +52,14 @@ $data['status'] = $status;
                 $data['rows'] = member::where('status','Pending')->orderBy('id','DESC')->get();
             }elseif($status=='unpaid'){
                 $data['rows'] = member::where('status','Unpaid')->orderBy('id','DESC')->get();
+            }elseif($status=='death'){
+                $data['rows'] = member::where('status','death')->orderBy('id','DESC')->get();
             }elseif($status=='approve'){
-
-
                 member::where('id',$request->id)->update(['status'=>'Active']);
                 return redirect()->back();
-
+            }elseif($status=='deathapply'){
+                member::where('id',$request->id)->update(['status'=>'death']);
+                return redirect()->back();
             }
 elseif($status=='trxView'){
 

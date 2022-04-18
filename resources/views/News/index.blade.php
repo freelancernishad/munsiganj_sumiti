@@ -363,7 +363,7 @@
             </div>
         </div>
     </div>
-    <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style"
+    {{-- <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style"
         style="left:0px;top:100px;background-color:transparent"><a class="a2a_button_facebook"
             href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fdailysavvataralo.com%2F&amp;linkname=Dailysavvataralo"
             title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter"
@@ -388,7 +388,8 @@
             title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_print"
             href="https://www.addtoany.com/add_to/print?linkurl=https%3A%2F%2Fdailysavvataralo.com%2F&amp;linkname=Dailysavvataralo"
             title="Print" rel="nofollow noopener" target="_blank"></a><a
-            class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a></div>
+            class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
+        </div> --}}
 </footer>
 </div>
 

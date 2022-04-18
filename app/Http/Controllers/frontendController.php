@@ -358,14 +358,20 @@ if($memberid==''){
 
 
 
+         if($session!=''){
+            $sessionlast = $request->session;
+             $data['rows'] = committee::orderBy('id', 'ASC')->where(['status'=>'ex','session_start'=>$sessionlast])->get();
+             $data['type'] = 'exs';
+         }else{
+
+             $data['rows'] = committee::orderBy('id', 'DESC')->select('session_start')->distinct()->where(['status'=>'ex'])->get();
+             $data['type'] = 'ex';
+         }
 
 
-        $data['rows'] = committee::orderBy('id', 'ASC')->where(['status'=>'ex','session_start'=>$sessionlast])
-            ->get();
 
 
 
-            $data['type'] = 'ex';
             $data['session'] = $sessionlast;
 
             $data['years'] = committee::orderBy('session_start', 'DESC')->where('status','ex')->select('session_start')->distinct()

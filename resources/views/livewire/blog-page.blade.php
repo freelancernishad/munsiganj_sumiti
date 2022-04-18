@@ -146,9 +146,34 @@
             <p></p>
             <p>{!! $singleBlogList->description !!}</p>
             <p>&nbsp;</p>
-            <div class="addtoany_share_save_container addtoany_content addtoany_content_bottom">
-                <div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url=""
-                    data-a2a-title="টংগিবাড়ীতে শান্তিপূর্ণ শেষ হয়েছে গণটিকার ১ম ডোজ" style="line-height: 32px;"><a
+
+
+            @php
+
+            $books = json_decode($singleBlogList->books);
+
+           // dd($books);
+           $i = 1;
+        @endphp
+        @if ($books!=null)
+        <h3>Pdf Books</h3>
+<div class="row">
+        @foreach ($books as $book)
+    <div class="col-md-4">
+       <a target="_blank" href="{{ url(env('FILE_PATH').'book/'.$book->pdf) }}"><img src="{{ asset(env('FILE_PATH').'book/'.$book->cover) }}" alt=""></a>
+    </div>
+
+
+        @php
+        $i++;
+     @endphp
+         @endforeach
+        </div>
+
+         @endif
+            {{-- <div class="addtoany_share_save_container addtoany_content addtoany_content_bottom">
+                <div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="{{ url('/blogs?blog='.$singleBlogList->id) }}"
+                    data-a2a-title="{{ $singleBlogList->title }}" style="line-height: 32px;"><a
                         class="a2a_button_facebook" href="" title="Facebook" rel="nofollow noopener"
                         target="_blank"><span class="a2a_svg a2a_s__default a2a_s_facebook"
                             style="background-color: rgb(24, 119, 242);"><svg focusable="false" aria-hidden="true"
@@ -203,7 +228,7 @@
                                 </g>
                             </svg></span><span class="a2a_label a2a_localize"
                             data-a2a-localize="inner,Share">Share</span></a></div>
-            </div>
+            </div> --}}
             <p></p>
 
 
