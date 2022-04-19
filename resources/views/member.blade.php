@@ -308,6 +308,7 @@ function typingfun(disabled1,disabled2,disabled3) {
     document.getElementById(disabled2).value='';
     document.getElementById(disabled3).value='';
 }
+
 </script>
 
 @endsection

@@ -168,7 +168,7 @@ footer.footer {
 
     ?>
 
-                           <a style="color: white;background: #d02804;padding: 10px 4px;" href="https://www.facebook.com/sharer/sharer.php?u={{ $urlfull }}"> <i class="fas fa-share-alt fa-fw"></i> Share This page</a>
+                           <a target="_blank" style="color: white;background: #d02804;padding: 10px 4px;" href="https://www.facebook.com/sharer/sharer.php?u={{ $urlfull }}"> <i class="fas fa-share-alt fa-fw"></i> Share This page</a>
                         </div>
                     </div>
 
