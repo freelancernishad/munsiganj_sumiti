@@ -120,7 +120,7 @@
                                 <button type="submit" id="memberBtin" class="memberSearch btn btn-outline-info col-md-1">Search</button>
                             </form>
                         </div>
-{{ $totalcount }}
+
                     @if($totalcount!='')
                      {{ $totalcount }} Memeber Found
                     @endif
