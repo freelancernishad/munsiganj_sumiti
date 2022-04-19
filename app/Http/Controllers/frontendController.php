@@ -795,22 +795,23 @@ if($step==4){
                 ->orderBy('id', 'DESC')->get();
 
                 $memberIdss= $name;
-
+                $data['totalcount'] = member::where($wh1)->count();
             }else if($count2>0){
                 $data['rows'] = member::where($wh2)
                 ->orderBy('id', 'DESC')->get();
 
                 $upszilass= $name;
-
+                $data['totalcount'] = member::where($wh2)->count();
             }else if($count3>0){
                 $data['rows'] = member::where($wh3)
                 ->orderBy('id', 'DESC')->get();
 
                 $namess= $name;
-
+                $data['totalcount'] = member::where($wh3)->count();
             }else{
                 $data['rows'] = member::where($wh2)
                 ->orderBy('id', 'DESC')->get();
+                $data['totalcount'] = member::where($wh2)->count();
             }
 
 
@@ -833,7 +834,7 @@ if($step==4){
 
         $data['district'] ='';
 
-        $data['totalcount'] = member::where($wh2)->count();
+
         return view('member', $data);
     }
 
