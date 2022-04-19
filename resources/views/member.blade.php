@@ -120,36 +120,11 @@
                                 <button type="submit" id="memberBtin" class="memberSearch btn btn-outline-info col-md-1">Search</button>
                             </form>
                         </div>
+{{ $totalcount }}
+                    @if($totalcount!='')
+                     {{ $totalcount }} Memeber Found
+                    @endif
 
-                        {{-- <div class="memberForm">
-                            <h6>Blode Group</h6>
-                            <form action="" method="get" class="row">
-
-
-                            <div class="col-md-3">
-
-                                <select class="form-control" name="Blode" id="Blode" required>
-                                    <option value="">Select Blood Group</option>
-                                    <option>A+</option>
-                                    <option>A-</option>
-                                    <option>B+</option>
-                                    <option>B-</option>
-                                    <option>AB+</option>
-                                    <option>AB-</option>
-                                    <option>O+</option>
-                                    <option>O-</option>
-                                </select>
-
-
-                            </div>
-
-
-                                <button type="submit" id="memberBtin" class="memberSearch btn btn-outline-info col-md-2">Search</button>
-                            </form>
-                        </div> --}}
-@if($totalcount!='')
-                        {{ $totalcount }} Memeber Found
-@endif
                         <div class="membertable">
                             <table class="table table-bordered" id="myTable">
                                 <thead class="memberTableHead" style="    background: #bcdbff;

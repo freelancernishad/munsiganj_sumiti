@@ -230,8 +230,7 @@ if($memberid==''){
             $data['rows'] = member::where(['status'=>'Active','blood_group'=>$request->Blode])->orderBy('id', 'DESC')->get();
 
     $data['totalcount'] = member::where(['status'=>'Active','blood_group'=>$request->Blode])->count();
-        }
-else {
+        }else {
 
     $data['totalcount'] = '';
 }
