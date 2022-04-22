@@ -437,6 +437,11 @@ button.owl-dot.active {
     padding: 27px 0 !important;
     font-size: 25px;
 }
+.nab {
+    width: 159px;
+    padding: 27px 0 !important;
+    font-size: 25px;
+}
 
 .news-scroll a {
     text-decoration: none;
@@ -457,12 +462,79 @@ button.owl-dot.active {
 .d-flex.justify-content-between.align-items-center.breaking-news.bg-white {
     background: #cbb105 !important;
 }
+
+.d-flex.flex-row.flex-grow-1.flex-fill.justify-content-center.bg-danger.py-2.text-white.px-1.news, .d-flex.flex-row.flex-grow-1.flex-fill.justify-content-center.bg-danger.py-2.text-white.px-1.nab {
+    position: relative;
+    background: linear-gradient(to bottom, #d93015 , #ff4324);
+    border-radius: 6px;
+}
+marquee.news-scroll {border: 2px solid #da2e13;padding: 17px 0;}
+
+.d-flex.flex-row.flex-grow-1.flex-fill.justify-content-center.bg-danger.py-2.text-white.px-1.news:after {
+    position: absolute;
+    top: -6px;
+    right: -7px;
+    background: #da2e13;
+    width: 15px;
+    height: 6px;
+    content: '';
+    border-top-right-radius: 10px;
+}
+.d-flex.flex-row.flex-grow-1.flex-fill.justify-content-center.bg-danger.py-2.text-white.px-1.news:before {
+    position: absolute;
+    bottom: -6px;
+    right: -7px;
+    background: #b31a01;
+    width: 17px;
+    height: 6px;
+    content: '';
+    border-bottom-right-radius: 10px;
+}
+
+
+    .d-flex.justify-content-between.align-items-center.breaking-news.bg-white {
+    background: #ffffff !important;
+    /* margin: 0px; */
+}
+marquee.news-scroll {
+    border: 2px solid #da2e13;
+    border-left: 0;
+    border-right: 0;
+    padding: 25px 0;
+}
+.rainbowGradient {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0 6px 6px;
+    border-radius: 0px;
+    /* box-shadow: inset 0 0 3px 0px white, inset 0 0 0px 0px white; */
+    background: linear-gradient(to bottom, #da2e13 , #b31a01);
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+}
+.rainbowGradient2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 9px;
+    /* box-shadow: inset 0 0 3px 0px white, inset 0 0 0px 0px white; */
+    background: linear-gradient(to bottom, #da2e13 , #b31a01);
+    /* border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px; */
+}
+
 </style>
 
             <div class="row">
                 <div class="col-md-12">
                     <div class="d-flex justify-content-between align-items-center breaking-news bg-white">
+
+                        <div class="rainbowGradient">
                         <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 news"><span class="d-flex align-items-center">&nbsp;Notice <i class="fas fa-bell fa-fw" style="font-size:25px"></i></span></div>
+                    </div>
+
                         <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
 
 
@@ -475,6 +547,11 @@ button.owl-dot.active {
 
 
                         </marquee>
+
+                        <div class="rainbowGradient2">
+                            <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 nab"><span class="d-flex align-items-center">&nbsp;<i class="fas fa-caret-left fa-fw" style="font-size:25px"></i> <i class="fal fa-bars fa-fw" style="transform: rotate(90deg);;"></i><i class="fas fa-caret-right fa-fw" style="font-size:25px"></i></span></div>
+                        </div>
+
                     </div>
                 </div>
             </div>
