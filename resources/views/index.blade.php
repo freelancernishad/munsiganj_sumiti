@@ -595,11 +595,9 @@
                                                         <?php $n = 1; ?>
                                                         @foreach (notices() as $noticesList)
                                                         <li><span class="dot"></span>
-                                                            <a
-                                                                href="javascript:void(0)">{{ $noticesList->dec }}</a>
+                                                            <a  href="javascript:void(0)">{{ $noticesList->dec }}</a>
                                                         </li>
-                                                            <span class="dot"></span> <a href="#">{{ $noticesList->dec }} </a> &nbsp;
-                                                            <?php $n++; ?>
+
                                                         @endforeach
 
                                                 </ul>
