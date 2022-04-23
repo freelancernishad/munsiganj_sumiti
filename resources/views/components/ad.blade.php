@@ -167,8 +167,21 @@ footer.footer {
     $urlfull = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
     ?>
+<div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" style="color: white;background: #d02804;padding: 10px 4px;"  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-share-alt fa-fw"></i> Share This page
+    </a>
 
-                           <a target="_blank" style="color: white;background: #d02804;padding: 10px 4px;" href="https://www.facebook.com/sharer/sharer.php?u={{ $urlfull }}"> <i class="fas fa-share-alt fa-fw"></i> Share This page</a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a target="_blank" class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u={{ $urlfull }}">Share on Facebook</a>
+      <a target="_blank" class="dropdown-item" href="https://twitter.com/intent/tweet?url={{ $urlfull }}">Share on Twitter</a>
+      <a target="_blank" class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url={{ $urlfull }}">Share on Linkedin</a>
+
+    </div>
+  </div>
+
+
+
                         </div>
                     </div>
 
