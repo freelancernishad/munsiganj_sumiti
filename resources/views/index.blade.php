@@ -278,7 +278,7 @@
 
 .committeeTitle:after {content: '';position: absolute;background: #ffffff00;top: -3px;left: 42px;border: 3px solid black;width: 100%;height: 41px;border-left: 0;}
 .committeeTitle:before {content: '';position: absolute;bottom: -8px;left: 42px;width: 3px;height: 7px;background: black;}
-.executiveT.text-center {height: 59px;display: flex;justify-content: center;align-items: center;}
+.executiveT.text-center {height: 59px;display: flex;justify-content: center;align-items: center;    margin: 29px 0;}
 h4.committeeTitlea:after {content: '';position: absolute;top: -3px;left: 42px;width: 71px;height: 3px;background: #ffffff;z-index: 9;}
 
 h4.committeeTitlea:before {content: '';
@@ -295,6 +295,7 @@ h4.committeeTitlea:before {content: '';
     width: 150px;
     border: 3px solid silver;
     box-shadow: -12px -16px 0px 0px #d02804;
+    left: 30px;
 }
 
 
@@ -328,8 +329,8 @@ img.cImager {
     position: relative;
     text-align: right;
 }
-
-.committeeTitle:before {position: absolute;top: -18px;right: 0px;background: #d02804;color: white;font-size: 19px;padding: 4px 19px;border-top-left-radius: 7px;border-bottom-left-radius: 7px;}
+/*
+.committeeTitle:before {position: absolute;top: -18px;right: 0px;background: #d02804;color: white;font-size: 19px;padding: 4px 19px;border-top-left-radius: 7px;border-bottom-left-radius: 7px;} */
 
 .committeeDetailr h6 {font-size: 22px;}
 .committeeimager {position: relative;width: 266px;height: 150px;z-index: 999;left: -20px;}
@@ -358,7 +359,7 @@ img.cImager {position: absolute;}
                 @endphp
                 @foreach ($committee as $committeeList)
                 @if($i==0)
-                <div class="col-md-6">
+                <div class="col-md-6 mt-5">
                     <div class="d-flex">
                         <div class="committeeimage">
                             <img class="cImage" width="120px" src="{{ $committeeList->image }}" alt="" />
@@ -375,7 +376,7 @@ img.cImager {position: absolute;}
 
                     @else
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 mt-5">
                         <div class="d-flex">
 
                             <div class="committeeDetailr">
