@@ -166,6 +166,20 @@
               {{--  col-md-6 start  --}}
               <div class="col-md-12">
                 <div class="form-group">
+                  <label>সদস্যের ছোট বিবরণ </label>
+
+<textarea name="shortbio" id="shortbio" cols="30" class="form-control" rows="4">{{ $row->shortbio }}</textarea>
+
+
+                </div>
+
+              </div>
+
+
+
+              {{--  col-md-6 start  --}}
+              <div class="col-md-12">
+                <div class="form-group">
                   <label>সদস্যের বিবরণ </label>
 
 <textarea name="bio" id="bio" cols="30" class="form-control" rows="10">{{ $row->bio }}</textarea>
