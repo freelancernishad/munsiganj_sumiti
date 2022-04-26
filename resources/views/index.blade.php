@@ -307,7 +307,7 @@ h4.committeeTitlea:before {content: '';
 
 
 .committeeDetail h6 {font-size: 22px;}
-.committeeimage {position: relative;width: 266px;height: 150px;z-index: 999;}
+.committeeimage {position: relative;width: 266px;height: 150px;z-index: 9;}
 
 img.cImage {position: absolute;}
 
@@ -333,7 +333,7 @@ img.cImager {
 .committeeTitle:before {position: absolute;top: -18px;right: 0px;background: #d02804;color: white;font-size: 19px;padding: 4px 19px;border-top-left-radius: 7px;border-bottom-left-radius: 7px;} */
 
 .committeeDetailr h6 {font-size: 22px;}
-.committeeimager {position: relative;width: 266px;height: 150px;z-index: 999;left: -20px;}
+.committeeimager {position: relative;width: 266px;height: 150px;z-index: 9;left: -20px;}
 
 img.cImager {position: absolute;}
 

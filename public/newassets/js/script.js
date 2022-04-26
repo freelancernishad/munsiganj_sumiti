@@ -42,7 +42,7 @@
 
         }
     });
-    
+
     // exicutive-carousel
     var exicutiveCarousel = $('.exicutive-carousel');
     exicutiveCarousel.owlCarousel({

@@ -10,6 +10,10 @@
     <title>Dailysavvataralo</title>
 
     <link rel='stylesheet' id='wp-block-library-css' href='{{ asset('news/assets/css/style.min.css') }}' type='text/css' media='all' />
+
+
+
+
     <style id='global-styles-inline-css' type='text/css'>
     body {
         --wp--preset--color--black: #000000;
@@ -399,6 +403,18 @@
 <script type='text/javascript' src='{{ asset('news/assets/js/jquery.min.js') }}' id='jquery-core-js'></script>
 <script type='text/javascript' src='{{ asset('news/assets/js/jquery.liscroll.js') }}' id='liscroll-js'></script>
 <script type='text/javascript' src='{{ asset('news/assets/js/bootstrap.min.js') }}' id='bootstrap-js'></script>
+
+
+    <!-- fontawesome -->
+    {{-- <script src="{{ asset('newassets/js/all.min.js') }}"
+        integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+
+    {{-- <script src="{{ asset('newassets/js/bootstrap.bundle.min.js') }}"></script> --}}
+    <!-- Mix it up -->
+
+
+
 
 <script type="text/javascript">
     jQuery(function() {
