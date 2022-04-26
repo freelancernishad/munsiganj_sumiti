@@ -341,6 +341,90 @@ img.cImager {position: absolute;}
 
 .commTitler {position: absolute;top: -18px;right: -8px;background: #d02804;color: white;font-size: 19px;padding: 4px 19px;border-top-left-radius: 7px;border-bottom-left-radius: 7px;}
 
+
+
+a.allcommiittee {
+    border: 2px solid #e03318;
+    text-decoration: none;
+    padding: 10px 41px;
+    border-radius: 17px;
+    background: linear-gradient(90deg, #df3317 0%, transparent 16%, transparent 86%,#db3116 101%);
+    color: #d93015;
+    font-size: 20px;
+    font-weight: 700;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    position: relative;
+}
+
+.allcommiittee:after {
+    border-radius: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px;
+    /* background: linear-gradient(135deg, #21d4fd 25%, #b721ff 75%); */
+    /* background: -webkit-gradient(linear, left top, right top, from(#df3317), color-stop(16%, transparent), color-stop(86%, transparent),color-stop(101%, #db3116));
+    background: -o-linear-gradient(left, #df3317 0%, transparent 16%, transparent 86%,#db3116 101%);
+    background: linear-gradient(90deg, #df3317 0%, transparent 16%, transparent 86%,#db3116 101%); */
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    background: #d02804;
+    transition: all 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+    /* transform: translate(-25%, -25%); */
+    z-index: -1;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+}
+
+
+.allcommiittee:before{
+
+    border-radius: inherit;
+    display: block;
+    height: 100%;
+    width:100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 5px;
+    background: #d02804;
+    transition: all 0.5s;
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: -1;
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+
+.allcommiittee:hover:before{
+
+    transform: scaleX(0.5);
+    left: 0px;
+
+}
+.allcommiittee:hover:after{
+
+    transform: scaleX(0.5);
+    left: 0px;
+
+}
+
+.allcommiittee:hover{
+	/* -webkit-box-shadow: 0 0 35px rgba(0,0,0,0.3);
+	        box-shadow: 0 0 35px rgba(0,0,0,0.3); */
+            color: white;
+}
+
 </style>
 
     <section class="committeeSeciton">
@@ -401,7 +485,11 @@ img.cImager {position: absolute;}
                 @endforeach
 
 
+<div class="col-md-12 text-center mt-5 mb-5">
 
+    <a class="allcommiittee" href="{{ url('Committee') }}">Click for View All Committee Members</a>
+
+</div>
 
 
 

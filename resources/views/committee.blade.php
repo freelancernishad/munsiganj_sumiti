@@ -188,7 +188,7 @@ $committees=$QUERY->fetchAll(PDO::FETCH_OBJ);
       <div class="card-header card_head" id="heading{{ $i }}">
         <h2 class="mb-0">
           <button class="btn btn-link btn-block text-left d-flex justify-content-between collapseBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ $i }}" aria-expanded="false" aria-controls="collapse{{ $i }}">
-            <span>{{ $i }} . {{ $row->name }}</span>
+            <span>{{ $i }} . {{ $row->name }} ({{ $row->Designation }})</span>
             <span><i class="fas fa-chevron-down classcollapse"></i></span>
           </button>
         </h2>
@@ -200,7 +200,16 @@ $committees=$QUERY->fetchAll(PDO::FETCH_OBJ);
                     <img width="100%" src="{{ $row->image }}" alt="">
                 </div>
                 <div class="committeeBio">
-                    <p>{!! $row->bio !!}</p>
+
+                    <h6>জন্ম তারিখ : {{ $row->dob }}</h6>
+                    <h6>পিতার/স্বামীর নাম : {{ $row->father_name }}</h6>
+                    <h6>শিক্ষাগত যোগ্যতা : {{ $row->education }}</h6>
+                    <h6>পেশা : {{ $row->occupation }}</h6>
+                    <h6>বর্তমান ঠিকানা : {{ $row->p_dist }}, {{ $row->p_thana }}, {{ $row->p_post }}, {{ $row->pr_vill }}</h6>
+
+
+                    <p>
+                        সদস্যের বিবরণ :{!! $row->bio !!}</p>
                 </div>
             </div>
         </div>
