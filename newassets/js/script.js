@@ -42,7 +42,7 @@
 
         }
     });
-    
+
     // exicutive-carousel
     var exicutiveCarousel = $('.exicutive-carousel');
     exicutiveCarousel.owlCarousel({
@@ -151,7 +151,7 @@
     // burger menu show and hide start
     let breadcrumb = document.querySelector('.breadcrumb');
     let navContent = document.querySelector('.nav-content');
-    navContent.style.left = '-10000px';
+    // navContent.style.left = '-10000px';
     if (breadcrumb) {
         breadcrumb.addEventListener('click', (event) => {
             if (navContent.style.left == '-10000px') {
@@ -188,8 +188,8 @@
 
 
     // Set mixitup on shortable item
-    var containerEl = document.querySelector('.short-able-item');
-    var mixer = mixitup(containerEl);
+    // var containerEl = document.querySelector('.short-able-item');
+    // var mixer = mixitup(containerEl);
 
     $(window).on("scroll",function(scrollpos){
         if($(window).scrollTop() > 150){

@@ -204,7 +204,7 @@ $('#uploadimageModal').modal('hide');
     <!-- main css -->
     <script src="{{ asset('newassets/js/script.js') }}"></script>
 
-    <script src="{{ asset('newassets/js/custom.js') }}"></script>
+    {{-- <script src="{{ asset('newassets/js/custom.js') }}"></script> --}}
 
 <!-- Modal -->
 <div class="modal fade" id="dataModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
