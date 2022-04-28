@@ -9,6 +9,7 @@ class BlogComment extends Model
 {
     use HasFactory;
 
+
     protected $fillable = [
         'comment',
         'author',
