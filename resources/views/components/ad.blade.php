@@ -118,6 +118,37 @@ p{
 footer.footer {
     margin-top: 50px;
 }
+
+h5.proHead {
+    background: #ffbfbf;
+    padding: 12px 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: #3C1255;
+    font-weight: 600;
+}
+
+
+.proItem {
+    padding: 10px 17px;
+    align-items: center;
+    margin-top: 10px;
+    background: #E5E5E5;
+    border-radius: 10px;
+}
+.item1 {font-size: 16px;font-weight: 600;}
+
+.item2 h6 {font-size: 20px;font-weight: 600;color: #006792;}
+.item2 {
+    width: 70%;
+}
+
+a.details {background: #535353;padding: 4px 13px;border-radius: 8px;color: white;}
+
+a.details:hover {text-decoration: none;background: #EC0818;}
+
+
+
 </style>
 
 
