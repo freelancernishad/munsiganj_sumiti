@@ -194,17 +194,17 @@ $('#uploadimageModal').modal('hide');
     </script>
 
     <!-- fontawesome -->
-    <script src="{{ asset('newassets/js/all.min.js') }}"
+    {{-- <script src="{{ asset('newassets/js/all.min.js') }}"
         integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="{{ asset('newassets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('newassets/js/bootstrap.bundle.min.js') }}"></script> --}}
     <!-- Mix it up -->
     <script src="{{ asset('newassets/js/mixitup.min.js') }}"></script>
     <!-- main css -->
     <script src="{{ asset('newassets/js/script.js') }}"></script>
 
-    <script src="{{ asset('newassets/js/custom.js') }}"></script>
+    {{-- <script src="{{ asset('newassets/js/custom.js') }}"></script> --}}
 
 <!-- Modal -->
 <div class="modal fade" id="dataModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

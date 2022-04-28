@@ -94,7 +94,7 @@
 
 
               {{--  col-md-6 start  --}}
-              <div class="col-md-6">
+              <div class="col-md-6 d-none">
                 <div class="form-group">
                   <label>Age</label>
                   <input type="text" class="form-control" name="age" id="age" value="{{ $row->age }}" >
@@ -162,7 +162,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Contact Number 1</label>
-                  <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" value="{{ $row->phoneNumber }}" >
+                  <input type="number" class="form-control" name="phoneNumber" id="phoneNumber" value="{{ $row->phoneNumber }}" >
                 </div>
 
               </div>
@@ -172,7 +172,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Contact Number 2</label>
-                  <input type="text" class="form-control" name="phoneNumber2" id="phoneNumber2" value="{{ $row->phoneNumber2 }}" >
+                  <input type="number" class="form-control" name="phoneNumber2" id="phoneNumber2" value="{{ $row->phoneNumber2 }}" >
                 </div>
 
               </div>
@@ -223,6 +223,7 @@
                     <option>AB-</option>
                     <option>O+</option>
                     <option>O-</option>
+                    <option>NA</option>
 
                     </select>
 
@@ -240,7 +241,7 @@ document.getElementById('blood_group').value="{{ $row->blood_group }}";
               <div class="col-md-6">
                 <div class="form-group">
                   <label>National ID NO.</label>
-                  <input type="text" class="form-control" name="nid" id="nid" value="{{ $row->nid }}" >
+                  <input type="number" class="form-control" name="nid" id="nid" value="{{ $row->nid }}" >
                 </div>
 
               </div>

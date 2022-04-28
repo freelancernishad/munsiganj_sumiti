@@ -10,6 +10,10 @@
     <title>Dailysavvataralo</title>
 
     <link rel='stylesheet' id='wp-block-library-css' href='{{ asset('news/assets/css/style.min.css') }}' type='text/css' media='all' />
+
+
+
+
     <style id='global-styles-inline-css' type='text/css'>
     body {
         --wp--preset--color--black: #000000;
@@ -363,7 +367,7 @@
             </div>
         </div>
     </div>
-    <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style"
+    {{-- <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style"
         style="left:0px;top:100px;background-color:transparent"><a class="a2a_button_facebook"
             href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fdailysavvataralo.com%2F&amp;linkname=Dailysavvataralo"
             title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter"
@@ -388,7 +392,8 @@
             title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_print"
             href="https://www.addtoany.com/add_to/print?linkurl=https%3A%2F%2Fdailysavvataralo.com%2F&amp;linkname=Dailysavvataralo"
             title="Print" rel="nofollow noopener" target="_blank"></a><a
-            class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a></div>
+            class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a>
+        </div> --}}
 </footer>
 </div>
 
@@ -398,6 +403,18 @@
 <script type='text/javascript' src='{{ asset('news/assets/js/jquery.min.js') }}' id='jquery-core-js'></script>
 <script type='text/javascript' src='{{ asset('news/assets/js/jquery.liscroll.js') }}' id='liscroll-js'></script>
 <script type='text/javascript' src='{{ asset('news/assets/js/bootstrap.min.js') }}' id='bootstrap-js'></script>
+
+
+    <!-- fontawesome -->
+    {{-- <script src="{{ asset('newassets/js/all.min.js') }}"
+        integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+
+    {{-- <script src="{{ asset('newassets/js/bootstrap.bundle.min.js') }}"></script> --}}
+    <!-- Mix it up -->
+
+
+
 
 <script type="text/javascript">
     jQuery(function() {

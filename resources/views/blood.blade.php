@@ -58,7 +58,7 @@
 
 
                         <div class="memberForm">
-                            <h6>Blode Group</h6>
+                            {{-- <h6>Blood Group</h6> --}}
                             <form action="" method="get" class="row">
 
 

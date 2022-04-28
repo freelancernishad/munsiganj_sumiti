@@ -128,7 +128,23 @@
 
                 </div>
               </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Parliamentary Person Image</label>
 
+
+
+ <input class="form-control" type="file"  id="memberImage" >
+                  <input type="hidden" class="form-control" name="image" id="image" value="{{ $row->image }}">
+
+
+                </div>
+
+              </div>
+
+<div class="col-md-5 mb-3"></div>
+<div class="col-md-2 mb-3"><img width="100%" id="imagepreview" src="{{ $row->image }}" alt=""></div>
+<div class="col-md-5 mb-3"></div>
 
 
 

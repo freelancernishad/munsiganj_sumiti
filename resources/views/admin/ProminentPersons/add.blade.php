@@ -57,6 +57,40 @@
                 </div>
 
               </div>
+
+
+
+
+              {{--  col-md-6 start  --}}
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>জন্ম - মৃত্যু (সাল)</label>
+                  <input type="text" class="form-control" name="dm" id="dm" value="{{ $row->dm }}" required>
+
+
+
+                </div>
+
+              </div>
+
+
+
+
+              {{--  col-md-6 start  --}}
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Personal details</label>
+                  <input type="text" class="form-control" name="pd" id="pd" value="{{ $row->pd }}" required>
+
+
+
+                </div>
+
+              </div>
+
+
+
+
               {{--  col-md-6 start  --}}
               <div class="col-md-12">
                 <div class="form-group">

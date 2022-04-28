@@ -81,7 +81,32 @@ class ParliamentaryPersonController extends Controller
         $data['ps_history'] =$ps_history;
 
 
+        $arrayFile =  $request->image;
+        $imaagedata =  explode(',',$arrayFile);
+        $coutnarray = count($imaagedata);
+        if($coutnarray==2)	{
+            $imaagedata = $imaagedata[1];
+            $imageid = uniqid();
+            $imaagedata = base64_decode($imaagedata);
+            $NewsImage ="$imageid.jpg";
+            $im = imagecreatefromstring($imaagedata);
+            if ($im !== false) {
+            header('Content-Type: image/png');
+            // imagepng($im);
+            // $path = asset('images');
+            imagejpeg($im,"images/".$NewsImage,20);
+            //imagedestroy($im);
+            }
+            else {
+            echo 'An error occurred.';
+            }
+            $data['image'] = 'images/'.$NewsImage;
 
+            }
+
+
+
+            // return $data;
 
 
 

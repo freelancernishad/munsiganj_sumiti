@@ -20,6 +20,11 @@
             <div class="x_content">
                 <div class="row">
                     <div class="col-sm-12">
+                        @if($type=='')
+                        <a href="{{ route('active.committees.excel') }}" class="btn btn-danger float-right" >Download Excel Sheet</a>
+                        @elseif($type=='ex')
+                        <a href="{{ route('ex.committees.excel') }}" class="btn btn-danger float-right" >Download Excel Sheet</a>
+                        @endif
                         <div class="card-box table-responsive">
                             <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action"
                                 style="width:100%">
@@ -68,7 +73,7 @@
                                         </td>
                                     </tr>
 
-                                 
+
 
                                     @endforeach
 

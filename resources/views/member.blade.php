@@ -76,7 +76,7 @@
 
                             <div class="col-md-3">
 
-                                <input type="text" name="memberId" id='memberId' placeholder="Enter Member ID" class="form-control">
+                                <input type="text" name="memberId" id='memberId' onchange="typingfun('memberName','upszilaid','upszila')" placeholder="Enter Member ID" class="form-control">
                             </div>
                           <div class="col-md-1">
 
@@ -86,12 +86,15 @@
 
                             <div class="col-md-3">
 
-                                <input type="text" name="memberName" id='memberName' placeholder="Enter Member Name" class="form-control">
+                                <input type="text" name="memberName" id='memberName'  onchange="typingfun('memberId','upszilaid','upszila')" placeholder="Enter Member Name" class="form-control">
                             </div>
 
+                            <div class="col-md-1">
 
+                                OR
+                              </div>
                             <div class="col-md-3">
-                                <select id="upszilaid" onchange="changethana()" class="form-control">
+                                <select id="upszilaid" onchange="changethana('memberName','memberId')" style="width: 100%" class="form-control">
                                     <option value="">উপজেলা</option>
 
                                     <option value="370">Munshiganj Sadar</option>
@@ -114,39 +117,14 @@
                                 <input type="hidden" name="upszila" id='upszila'>
                             </div>
 
-                                <button type="submit" id="memberBtin" class="memberSearch btn btn-outline-info col-md-2">Search</button>
+                                <button type="submit" id="memberBtin" class="memberSearch btn btn-outline-info col-md-1">Search</button>
                             </form>
                         </div>
 
-                        {{-- <div class="memberForm">
-                            <h6>Blode Group</h6>
-                            <form action="" method="get" class="row">
+                    @if($totalcount!='')
+                     {{ $totalcount }} Memeber Found
+                    @endif
 
-
-                            <div class="col-md-3">
-
-                                <select class="form-control" name="Blode" id="Blode" required>
-                                    <option value="">Select Blood Group</option>
-                                    <option>A+</option>
-                                    <option>A-</option>
-                                    <option>B+</option>
-                                    <option>B-</option>
-                                    <option>AB+</option>
-                                    <option>AB-</option>
-                                    <option>O+</option>
-                                    <option>O-</option>
-                                </select>
-
-
-                            </div>
-
-
-                                <button type="submit" id="memberBtin" class="memberSearch btn btn-outline-info col-md-2">Search</button>
-                            </form>
-                        </div> --}}
-@if($totalcount!='')
-                        {{ $totalcount }} Memeber Found
-@endif
                         <div class="membertable">
                             <table class="table table-bordered" id="myTable">
                                 <thead class="memberTableHead" style="    background: #bcdbff;
@@ -273,7 +251,9 @@ $(document).ready( function () {
 
 
 
-              function changethana() {
+              function changethana(disabled1,disabled2) {
+                document.getElementById(disabled1).value='';
+    document.getElementById(disabled2).value='';
                   var thana = $('#upszilaid').val();
 
                 var memberBtin = document.getElementById('memberBtin');
@@ -320,9 +300,14 @@ $('#memberId').val('{{ $memberId }}');
 $('#memberName').val('{{ $memberName }}');
 $('#upszilaid').val('{{ $upszila }}');
 $('#upszila').val('{{ $upszila }}');
-changethana();
+changethana('memberName','memberId');
 
 
+function typingfun(disabled1,disabled2,disabled3) {
+    document.getElementById(disabled1).value='';
+    document.getElementById(disabled2).value='';
+    document.getElementById(disabled3).value='';
+}
 
 </script>
 

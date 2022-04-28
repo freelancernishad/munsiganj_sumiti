@@ -16,7 +16,16 @@
     border-bottom: 5px solid #c12729;
     color: white;
 }
+a.proItem:hover {
+    background: #ffbfbf;
+    text-decoration: none;
+}
 
+.item3 {width: 10%;}
+
+.item1 {width: 3%;}
+
+.item4 {width: 20%;}
 </style>
 
 
@@ -38,7 +47,7 @@
                             <p class="about_sort"></p>
                         </div>
                     </div>
-
+{{--
                         <table class="table table-bordered mt-5">
                             <thead class="table-dark">
                             <tr>
@@ -74,6 +83,65 @@
                             </tr>
                         </tbody>
                         </table>
+ --}}
+
+
+
+
+
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+
+                                <h5 class="proHead mt-3" style="background: #EC071A;color:white;">বিক্রামপুরের সংসদ সদস্যগণ</h5>
+
+
+                                <div class="prolist">
+
+                                    <?php $i=1; ?>
+                                    @foreach ($rowsMale as $rowsMaleLIst)
+                                    @php
+                                    $ps_history = $rowsMaleLIst->ps_history;
+                                    $ps_history = json_decode($ps_history);
+                                    rsort($ps_history);
+                            @endphp
+                                    <a href="{{ url('ParliamentaryPersons?i='.$rowsMaleLIst->id) }}" class="proItem d-flex justify-content-between">
+                                        <div class="item1">{{ int_en_to_bn(str_pad($i, 2, '0', STR_PAD_LEFT)) }}।</div>
+                                        <div class="item3"><img width="100px" src="{{ $rowsMaleLIst->image }}" alt=""></div>
+                                        <div class="item4">{{ $rowsMaleLIst->name }}</div>
+                                        <div class="item4">{{ $ps_history[0]->Positon }}</div>
+                                        <div class="item4">
+
+                                            {{ int_en_to_bn($ps_history[0]->Session_Start) }}-{{ int_en_to_bn($ps_history[0]->Session_End) }} সংসদ</div>
+
+                                    </a>
+
+
+                        <?php $i++; ?>
+                                    @endforeach
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
 @else
 
 @foreach ($rows as $row)
@@ -105,7 +173,7 @@
 <?php
     $ps_history = $row->ps_history;
     $ps_history = json_decode($ps_history);
-    rsort($ps_history); 
+    rsort($ps_history);
 
 ?>
 

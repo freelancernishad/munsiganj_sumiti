@@ -11,7 +11,8 @@ use App\Models\District;
 use App\Models\Thana;
 use Illuminate\Support\Str;
 use App\Models\MemberShipPament;
-
+use App\Exports\MembersExport;
+use Maatwebsite\Excel\Facades\Excel;
 class MemberController extends Controller
 {
 
@@ -27,6 +28,14 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function excel()
+    {
+
+        return Excel::download(new MembersExport, 'Members.xlsx');
+    }
+
+
     public function index(Request $request)
     {
 
@@ -43,12 +52,14 @@ $data['status'] = $status;
                 $data['rows'] = member::where('status','Pending')->orderBy('id','DESC')->get();
             }elseif($status=='unpaid'){
                 $data['rows'] = member::where('status','Unpaid')->orderBy('id','DESC')->get();
+            }elseif($status=='death'){
+                $data['rows'] = member::where('status','death')->orderBy('id','DESC')->get();
             }elseif($status=='approve'){
-
-
                 member::where('id',$request->id)->update(['status'=>'Active']);
                 return redirect()->back();
-
+            }elseif($status=='deathapply'){
+                member::where('id',$request->id)->update(['status'=>'death']);
+                return redirect()->back();
             }
 elseif($status=='trxView'){
 

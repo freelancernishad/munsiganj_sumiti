@@ -20,6 +20,9 @@
             <div class="x_content">
                 <div class="row">
                     <div class="col-sm-12">
+                        @if($status=='active')
+                      <a href="{{ route('member.excel') }}" class="btn btn-danger float-right" >Download Excel Sheet</a>
+                      @endif
                         <div class="card-box table-responsive">
                             <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action"
                                 style="width:100%">
@@ -51,10 +54,12 @@
                                         <td><img width="100%" src="{{ asset($row->image) }}" alt="" /></td>
                                         <td>
                                             <a href="javascript:void(0)" onclick="viewdata('{{ url('/admin/members?id='.$row->id.'&status=trxView') }}')" class="btn btn-info">view Transition</a>
+
                                             @if($status=='pending')
                                             <a href="{{ url('/admin/members?id='.$row->id.'&status=approve') }}" class="btn btn-info">Approve</a>
 
                                             @endif
+
 
 
 
@@ -72,6 +77,11 @@
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-danger">Delete</button>
                                             </form>
+                                            @if($status=='active')
+                                            <a href="{{ url('/admin/members?id='.$row->id.'&status=deathapply') }}" class="btn btn-danger">Death</a>
+
+                                            @endif
+
                                         </td>
                                     </tr>
                                     @endforeach

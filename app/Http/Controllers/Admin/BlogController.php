@@ -62,7 +62,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
                             // echo'<pre>';
-        // print_r($request->all());
+       //  dd($request->all());
 
 
         $id = $request->id;
@@ -70,14 +70,51 @@ class BlogController extends Controller
         $data = [];
         $inputData = $request->all();
         foreach ($inputData as $key => $value) {
-            if ($key == 'id' || $key == '_token' || $key == 'image') {
+            if ($key == 'id' || $key == '_token' || $key == 'image' || $key == 'pdf' || $key == 'cover' || $key == 'items') {
             } else {
                 $data[$key] = $value;
             }
         }
+        $imageCount = count($request->items);
+
+        for($i=0;$i<$imageCount;$i++){
+
+            if($request->hasfile('pdf') && $request->hasfile('cover') )	{
+
+            $pdf = $request->file('pdf')[$i];
+            $pdfname = $pdf->getClientOriginalName();
+            $pdffile= time().'_'.$pdfname;
+            $pdf->storeAs('/public/book/',$pdffile);
+
+
+            $cover = $request->file('cover')[$i];
+            $covername = $cover->getClientOriginalName();
+            $coverfile= time().'_'.$covername;
+            $cover->storeAs('/public/book/',$coverfile);
+
+
+            $books[$i]=[
+                'items'=>$request->items[$i],
+                'pdf'=>$pdffile,
+                'cover'=> $coverfile,
+            ];
+
+            }
 
 
 
+
+
+
+        }
+        if($request->hasfile('pdf') && $request->hasfile('cover'))	{
+            $books = json_encode($books);
+            $data['books'] = $books;
+        }
+
+
+
+// dd($data);
 
         $arrayFile =  $request->image;
         $imaagedata =  explode(',',$arrayFile);

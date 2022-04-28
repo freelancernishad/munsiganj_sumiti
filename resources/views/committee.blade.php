@@ -1,5 +1,15 @@
 @extends('layouts.master')
 @section('content')
+
+<style>
+
+h3.sessionyear {
+    background: rebeccapurple;
+    color: white;
+    padding: 6px 10px;
+}
+</style>
+
     <main>
         <section class="hero_area">
             <div class="row p-0">
@@ -117,11 +127,68 @@
         $expanded_show = '';
     }
 ?>
+
+
+    @if ($type=='ex')
+
+    @php
+
+        $PDO = \DB::connection()->getPdo();
+$QUERY = $PDO->prepare("SELECT * FROM `committees` WHERE `session_start`='$row->session_start'");
+$QUERY->execute();
+$committees=$QUERY->fetchAll(PDO::FETCH_OBJ);
+
+    @endphp
+
+
+
+   <h3 class="sessionyear" >Session: {{ $row->session_start }}</h2>
+    @foreach ($committees as $committee)
+
+    <?php
+    if($loop->index==$row->session_start.'0'){
+        $expanded = 'true';
+        $expanded_show = 'show';
+    }else{
+        $expanded = 'false';
+        $expanded_show = '';
+    }
+?>
+
+    <div class="card" id="card">
+        <div class="card-header card_head" id="heading{{ $row->session_start.$loop->index }}">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left d-flex justify-content-between collapseBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ $row->session_start.$loop->index }}" aria-expanded="false" aria-controls="collapse{{ $row->session_start.$loop->index }}">
+              <span>{{ $loop->index+1 }} . {{ $committee->name }}</span>
+              <span><i class="fas fa-chevron-down classcollapse"></i></span>
+            </button>
+          </h2>
+        </div>
+        <div id="collapse{{ $row->session_start.$loop->index }}" class="collapse {{ $expanded_show }}" aria-labelledby="heading1" data-parent="#accordionExample">
+          <div class="card-body" id="card-body">
+              <div class="d-flex">
+                  <div class="committeeImg">
+                      <img width="100%" src="{{ $committee->image }}" alt="">
+                  </div>
+                  <div class="committeeBio">
+                      <p>{!! $committee->bio !!}</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      @endforeach
+
+
+
+        @else
+
+
     <div class="card" id="card">
       <div class="card-header card_head" id="heading{{ $i }}">
         <h2 class="mb-0">
           <button class="btn btn-link btn-block text-left d-flex justify-content-between collapseBtn collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ $i }}" aria-expanded="false" aria-controls="collapse{{ $i }}">
-            <span>{{ $i }} . {{ $row->name }}</span>
+            <span>{{ $i }} . {{ $row->name }} ({{ $row->Designation }})</span>
             <span><i class="fas fa-chevron-down classcollapse"></i></span>
           </button>
         </h2>
@@ -133,12 +200,24 @@
                     <img width="100%" src="{{ $row->image }}" alt="">
                 </div>
                 <div class="committeeBio">
-                    <p>{!! $row->bio !!}</p>
+
+                    <h6>জন্ম তারিখ : {{ $row->dob }}</h6>
+                    <h6>পিতার/স্বামীর নাম : {{ $row->father_name }}</h6>
+                    <h6>শিক্ষাগত যোগ্যতা : {{ $row->education }}</h6>
+                    <h6>পেশা : {{ $row->occupation }}</h6>
+                    <h6>বর্তমান ঠিকানা : {{ $row->p_dist }}, {{ $row->p_thana }}, {{ $row->p_post }}, {{ $row->pr_vill }}</h6>
+
+
+                    <p>
+                        সদস্যের বিবরণ :{!! $row->bio !!}</p>
                 </div>
             </div>
         </div>
       </div>
     </div>
+    @endif
+
+
     @php
 $i++;
 @endphp
