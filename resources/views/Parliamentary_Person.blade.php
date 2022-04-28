@@ -166,7 +166,7 @@ a.proItem:hover {
                 <thead>
                     <tr>
                         <th>Session</th>
-                        <th>Position</th>
+                        <th>আসন</th>
                     </tr>
                 </thead>
                 <tbody>
