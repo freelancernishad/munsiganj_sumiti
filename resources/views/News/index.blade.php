@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ asset('news/assets/css/style.css') }}" media="all" />
 
-    <title>Dailysavvataralo</title>
+    <title>{{ $settings[0]->title }}</title>
 
     <link rel='stylesheet' id='wp-block-library-css' href='{{ asset('news/assets/css/style.min.css') }}' type='text/css' media='all' />
 
@@ -285,8 +285,21 @@
                         <div class="col-md-6 date">
                             <i class="fa fa-calendar-o "></i>
 
+                            <x-bangladate />
 
-                            আজ ২৭শে ফেব্রুয়ারি, ২০২২ খ্রিস্টাব্দ, ১৪ই ফাল্গুন, ১৪২৮ বঙ্গাব্দ
+                        <?php
+                        $orgDate = date('Y-m-d');
+                            echo   $newDate = 'আজ '. date("d F Y", strtotime($orgDate)) .' খ্রিস্টাব্দ, ';
+                            $time = time();
+                            $Bdate = BDdate($time);
+                            echo $Bdate .' বঙ্গাব্দ';
+
+                            ?>
+
+
+
+
+                            {{-- আজ ২৭শে ফেব্রুয়ারি, ২০২২ খ্রিস্টাব্দ, ১৪ই ফাল্গুন, ১৪২৮ বঙ্গাব্দrf --}}
 
                         </div>
 
@@ -346,23 +359,21 @@
                         width="100%" height="100%" /></a>
             </div>
             <div class="col-md-4 text">
-                <span
-                    style="color: #050505; font-family: system-ui, -apple-system, system-ui, '.SFNSText-Regular', sans-serif; font-size: 15px;">দৈনিক
-                    সভ্যতার আলো: </span>
+
             </div>
             <div class="col-md-4 text">
                 {{ $settings[0]->address }}
-                মোবাইলঃ {{ $settings[0]->phone }}
+                মোবাইলঃ {{ $settings[0]->phone }} <br>
                 ই-মেইল: {{ $settings[0]->email }} </div>
         </div>
     </div>
     <div class="footer">
         <div class="row">
             <div class="col-md-6">
-                <div class="copyright">All rights reserved. © 2021 dailysavvataralo</div>
+                <div class="copyright">All rights reserved. © 2021 {{ $settings[0]->title }}</div>
             </div>
             <div class="col-md-6">
-                <div class="design">Developed by <a href="https://sbtechbd.github.io/">Sbtechbd Technology</a>
+                <div class="design">Developed by <a href="https://softlabltd.com/">Softlabinc</a>
                 </div>
             </div>
         </div>
