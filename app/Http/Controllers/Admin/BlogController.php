@@ -1,10 +1,10 @@
 <?php
 namespace App\Http\Controllers\Admin;
-use App\Http\Controllers\Controller;
-
 use App\Models\blog;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 class BlogController extends Controller
 {
 
@@ -75,7 +75,13 @@ class BlogController extends Controller
                 $data[$key] = $value;
             }
         }
-        $imageCount = count($request->items);
+        if($request->items!=''){
+
+            $imageCount = count($request->items);
+        }else{
+            $imageCount = 0;
+
+        }
 
         for($i=0;$i<$imageCount;$i++){
 
