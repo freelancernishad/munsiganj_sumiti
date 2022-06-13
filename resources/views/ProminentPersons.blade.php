@@ -24,7 +24,7 @@
     <main>
         <section class="hero_area">
             <div class="row p-0">
-                <div class="col-md-3" style="background: #e6f5fa">
+                <div class="col-md-3 sidebarmobile" style="">
                     <x-sidebar />
 
                 </div>

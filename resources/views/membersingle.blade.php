@@ -29,7 +29,7 @@
     <main>
         <section class="hero_area">
             <div class="row p-0">
-                <div class="col-md-3">
+                <div class="col-md-3 sidebarmobile">
                     <x-sidebar />
                     <?php
 

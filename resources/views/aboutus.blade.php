@@ -1,12 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-
-
     <main>
         <section class="hero_area">
             <div class="row p-0">
-                <div class="col-md-3" style="background: #e6f5fa">
+                <div class="col-md-3 sidebarmobile">
 
                     <x-sidebar />
 
@@ -23,9 +21,9 @@
                     foreach($adl as $adllist){
 
                     ?>
-                  <a target="_blank" href="{{ $adllist->url  }}">
-                    <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adllist->name) }}" alt="" />
-                </a>
+                    <a target="_blank" href="{{ $adllist->url }}">
+                        <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adllist->name) }}" alt="" />
+                    </a>
                     <?php
                     }
                     }
@@ -52,9 +50,9 @@
                     foreach($adtop as $adtoplist){
 
                     ?>
-                              <a target="_blank" href="{{ $adtoplist->url  }}">
-                    <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adtoplist->name) }}" alt="" />
-                </a>
+                    <a target="_blank" href="{{ $adtoplist->url }}">
+                        <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adtoplist->name) }}" alt="" />
+                    </a>
                     <?php
                     }
                     }
@@ -64,41 +62,41 @@
                     ?>
 
 
-          <div class="text-center page-banner"
-          style="background-image:url(https://bcs.org.bd/theme/newassets/images/background/authentication_bg.png);">
-          <div class="banner-color p-5 text-center">
+                    <div class="text-center page-banner"
+                        style="background-image:url(https://bcs.org.bd/theme/newassets/images/background/authentication_bg.png);">
+                        <div class="banner-color p-5 text-center">
 
-              <h1>About</h1>
-
-
-          </div> <!-- /.banner-color -->
-      </div> <!-- /.banner -->
+                            <h1>About</h1>
 
 
-
-
-<section class="aboutSection py-3 pl-5">
-<div class="row">
-<div class="col-md-9">
-
-    <div class="page-content">
-        <div class="page-body event-page mb-2">
-            <p
-                style="margin: 0in 0in 7.5pt; text-align: justify; line-height: 16.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
-                {{ settings()[0]->About }}
-                </p>
-
-        </div>
-    </div> <!-- /.content -->
+                        </div> <!-- /.banner-color -->
+                    </div> <!-- /.banner -->
 
 
 
 
+                    <section class="aboutSection py-3 pl-5">
+                        <div class="row">
+                            <div class="col-md-9">
 
-</div>
-<div class="col-md-3">
+                                <div class="page-content">
+                                    <div class="page-body event-page mb-2">
+                                        <p
+                                            style="margin: 0in 0in 7.5pt; text-align: justify; line-height: 16.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                                            {{ settings()[0]->About }}
+                                        </p>
 
-    <?php
+                                    </div>
+                                </div> <!-- /.content -->
+
+
+
+
+
+                            </div>
+                            <div class="col-md-3">
+
+                                <?php
 
 
     $adr = $adr[0]->image;
@@ -108,10 +106,10 @@
     foreach($adr as $adrlist){
 
     ?>
-             <a target="_blank" href="{{ $adrlist->url  }}">
-    <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adrlist->name) }}" alt="" />
-</a>
-    <?php
+                                <a target="_blank" href="{{ $adrlist->url }}">
+                                    <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adrlist->name) }}" alt="" />
+                                </a>
+                                <?php
     }
     }
 
@@ -119,11 +117,11 @@
 
     ?>
 
-</div>
+                            </div>
 
-</div>
+                        </div>
 
-</section>
+                    </section>
 
 
 
@@ -150,9 +148,9 @@
                 ?>
 
                 <div class="col-md-6 mt-3">
-                    <a target="_blank" href="{{ $adbottomlist->url  }}">
-                    <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adbottomlist->name) }}" alt="" />
-                </a>
+                    <a target="_blank" href="{{ $adbottomlist->url }}">
+                        <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adbottomlist->name) }}" alt="" />
+                    </a>
                 </div>
                 <?php
                 }
@@ -165,5 +163,4 @@
         </section>
 
     </main>
-
-    @endsection
+@endsection

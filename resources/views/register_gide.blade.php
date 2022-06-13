@@ -1,15 +1,13 @@
-
 @extends('layouts.master')
 
 @section('content')
-
     <main>
         <section class="hero_area">
             <div class="row p-0">
-                <div class="col-md-3">
-                  <x-sidebar />
+                <div class="col-md-3 sidebarmobile">
+                    <x-sidebar />
 
-                  <?php
+                    <?php
 
 
                   $adl = $adl[0]->image;
@@ -19,10 +17,10 @@
                   foreach($adl as $adllist){
 
                   ?>
-                <a target="_blank" href="{{ $adllist->url  }}">
-                  <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adllist->name) }}" alt="" />
-              </a>
-                  <?php
+                    <a target="_blank" href="{{ $adllist->url }}">
+                        <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adllist->name) }}" alt="" />
+                    </a>
+                    <?php
                   }
                   }
 
@@ -33,13 +31,13 @@
 
 
                 <div class="col-md-7">
-                      <div class="register-main  p-3">
+                    <div class="register-main  p-3">
 
 
 
-                      @foreach ($registration_guidelines as $item)
-                          {!! $item->info !!}
-                      @endforeach
+                        @foreach ($registration_guidelines as $item)
+                            {!! $item->info !!}
+                        @endforeach
 
                         <?php
 
@@ -53,9 +51,9 @@
                         ?>
 
                         <div class="col-md-6 mt-3">
-                            <a target="_blank" href="{{ $adbottomlist->url  }}">
-                            <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adbottomlist->name) }}" alt="" />
-                        </a>
+                            <a target="_blank" href="{{ $adbottomlist->url }}">
+                                <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adbottomlist->name) }}" alt="" />
+                            </a>
                         </div>
                         <?php
                         }
@@ -66,7 +64,7 @@
                         ?>
 
 
-                      </div>
+                    </div>
                 </div>
 
 
@@ -84,9 +82,9 @@
                     foreach($adr as $adrlist){
 
                     ?>
-                             <a target="_blank" href="{{ $adrlist->url  }}">
-                    <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adrlist->name) }}" alt="" />
-                </a>
+                    <a target="_blank" href="{{ $adrlist->url }}">
+                        <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adrlist->name) }}" alt="" />
+                    </a>
                     <?php
                     }
                     }
@@ -100,6 +98,5 @@
         </section>
 
 
- </main>
-
- @endsection
+    </main>
+@endsection
