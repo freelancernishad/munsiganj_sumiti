@@ -49,6 +49,18 @@ mobileNav.toggleClass('mobileNav');
 }
 
 
+function sidebarNav(){
+var sidebarNav = $('#sidebarNav');
+
+var side_icon = $('#side_icon');
+
+
+side_icon.toggleClass('fa-arrow-right');
+side_icon.toggleClass('fa-arrow-left');
+sidebarNav.toggleClass('sidebarNav');
+}
+
+
 
 function submenuShow(id){
 
