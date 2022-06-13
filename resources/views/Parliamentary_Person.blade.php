@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<<<<<<< HEAD
+
     <style>
         .about_head {
             position: absolute;
@@ -33,41 +33,12 @@
             width: 20%;
         }
     </style>
-=======
-
-<style>
-
-.about_head {
-    position: absolute;
-    background: #00000052;
-    z-index: 999999;
-    top: 40%;
-    left: 39px;
-    width: 300px;
-    padding: 15px 15px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom: 5px solid #c12729;
-    color: white;
-}
-a.proItem:hover {
-    background: #ffbfbf;
-    text-decoration: none;
-}
-
-.item3 {width: 10%;}
-
-.item1 {width: 3%;}
-
-.item4 {width: 20%;}
-</style>
->>>>>>> 9adf561b74dde63020d582e74b4bace22197ebc0
 
 
     <main>
         <section class="hero_area">
             <div class="row p-0">
-                <div class="col-md-3  sidebarmobile" style="">
+                <div class="col-md-3" style="background: #e6f5fa">
                     <x-sidebar />
 
                 </div>
@@ -82,14 +53,7 @@ a.proItem:hover {
                                 <p class="about_sort"></p>
                             </div>
                         </div>
-<<<<<<< HEAD
-                </div>
-                {{-- <table class="table table-bordered mt-5">
-=======
-                    </div>
-{{--
-                        <table class="table table-bordered mt-5">
->>>>>>> 9adf561b74dde63020d582e74b4bace22197ebc0
+                        {{-- <table class="table table-bordered mt-5">
                             <thead class="table-dark">
                             <tr>
                                 <td width="50%" >Parliamentary Persons (Male)</td>
@@ -123,150 +87,12 @@ a.proItem:hover {
                                 </td>
                             </tr>
                         </tbody>
-<<<<<<< HEAD
                         </table> --}}
-=======
-                        </table>
- --}}
->>>>>>> 9adf561b74dde63020d582e74b4bace22197ebc0
 
 
 
 
 
-
-<<<<<<< HEAD
-                <div class="row">
-
-                    <div class="col-md-12">
-
-                        <h5 class="proHead mt-3" style="background: #EC071A;color:white;">বিক্রামপুরের সংসদ সদস্যগণ</h5>
-
-=======
-                        <div class="row">
-
-                            <div class="col-md-12">
-
-                                <h5 class="proHead mt-3" style="background: #EC071A;color:white;">বিক্রামপুরের সংসদ সদস্যগণ</h5>
-
-
-                                <div class="prolist">
-
-                                    <?php $i=1; ?>
-                                    @foreach ($rowsMale as $rowsMaleLIst)
-                                    @php
-                                    $ps_history = $rowsMaleLIst->ps_history;
-                                    $ps_history = json_decode($ps_history);
-                                    rsort($ps_history);
-                            @endphp
-                                    <a href="{{ url('ParliamentaryPersons?i='.$rowsMaleLIst->id) }}" class="proItem d-flex justify-content-between">
-                                        <div class="item1">{{ int_en_to_bn(str_pad($i, 2, '0', STR_PAD_LEFT)) }}।</div>
-                                        <div class="item3"><img width="100px" src="{{ $rowsMaleLIst->image }}" alt=""></div>
-                                        <div class="item4">{{ $rowsMaleLIst->name }}</div>
-                                        <div class="item4">{{ $ps_history[0]->Positon }}</div>
-                                        <div class="item4">
-
-                                            {{ int_en_to_bn($ps_history[0]->Session_Start) }}-{{ int_en_to_bn($ps_history[0]->Session_End) }} সংসদ</div>
-
-                                    </a>
-
-
-                        <?php $i++; ?>
-                                    @endforeach
-
-                                </div>
-
-                            </div>
-
-
-
-
-
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-@else
->>>>>>> 9adf561b74dde63020d582e74b4bace22197ebc0
-
-                        <div class="prolist">
-
-                            <?php $i = 1; ?>
-                            @foreach ($rowsMale as $rowsMaleLIst)
-                                @php
-                                    $ps_history = $rowsMaleLIst->ps_history;
-                                    $ps_history = json_decode($ps_history);
-                                    rsort($ps_history);
-                                @endphp
-                                <a href="{{ url('ParliamentaryPersons?i=' . $rowsMaleLIst->id) }}"
-                                    class="proItem d-flex justify-content-between">
-                                    <div class="item1">{{ int_en_to_bn(str_pad($i, 2, '0', STR_PAD_LEFT)) }}।
-                                    </div>
-                                    <div class="item3"><img width="100px" src="{{ $rowsMaleLIst->image }}"
-                                            alt=""></div>
-                                    <div class="item4">{{ $rowsMaleLIst->name }}</div>
-                                    <div class="item4">{{ $ps_history[0]->Positon }}</div>
-                                    <div class="item4">
-
-                                        {{ int_en_to_bn($ps_history[0]->Session_Start) }}-{{ int_en_to_bn($ps_history[0]->Session_End) }}
-                                        সংসদ</div>
-
-                                </a>
-
-
-                                <?php $i++; ?>
-                            @endforeach
-
-                        </div>
-
-                    </div>
-
-
-
-
-
-                </div>
-            @else
-                @foreach ($rows as $row)
-
-
-
-
-
-
-<<<<<<< HEAD
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Session</th>
-                                <th>আসন</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-=======
-                <table class="table">
-                <thead>
-                    <tr>
-                        <th>Session</th>
-                        <th>আসন</th>
-                    </tr>
-                </thead>
-                <tbody>
-<?php
->>>>>>> 9adf561b74dde63020d582e74b4bace22197ebc0
-    $ps_history = $row->ps_history;
-    $ps_history = json_decode($ps_history);
-    rsort($ps_history);
 
                         <div class="row">
 
@@ -279,100 +105,100 @@ a.proItem:hover {
                                 <div class="prolist">
 
                                     <?php $i = 1; ?>
-                            @foreach ($rowsMale as $rowsMaleLIst)
-                                @php
-                                    $ps_history = $rowsMaleLIst->ps_history;
-                                    $ps_history = json_decode($ps_history);
-                                    rsort($ps_history);
-                                @endphp
-                                <a href="{{ url('ParliamentaryPersons?i=' . $rowsMaleLIst->id) }}"
-                                    class="proItem d-flex justify-content-between">
-                                    <div class="item1">
-                                        {{ int_en_to_bn(str_pad($i, 2, '0', STR_PAD_LEFT)) }}।</div>
-                                    <div class="item3"><img width="100px" src="{{ $rowsMaleLIst->image }}"
-                                            alt=""></div>
-                                    <div class="item4">{{ $rowsMaleLIst->name }}</div>
-                                    <div class="item4">{{ $ps_history[0]->Positon }}</div>
-                                    <div class="item4">
+                                    @foreach ($rowsMale as $rowsMaleLIst)
+                                        @php
+                                            $ps_history = $rowsMaleLIst->ps_history;
+                                            $ps_history = json_decode($ps_history);
+                                            rsort($ps_history);
+                                        @endphp
+                                        <a href="{{ url('ParliamentaryPersons?i=' . $rowsMaleLIst->id) }}"
+                                            class="proItem d-flex justify-content-between">
+                                            <div class="item1">
+                                                {{ int_en_to_bn(str_pad($i, 2, '0', STR_PAD_LEFT)) }}।</div>
+                                            <div class="item3"><img width="100px"
+                                                    src="{{ $rowsMaleLIst->image }}" alt=""></div>
+                                            <div class="item4">{{ $rowsMaleLIst->name }}</div>
+                                            <div class="item4">{{ $ps_history[0]->Positon }}</div>
+                                            <div class="item4">
 
-                                        {{ int_en_to_bn($ps_history[0]->Session_Start) }}-{{ int_en_to_bn($ps_history[0]->Session_End) }}
-                                        সংসদ</div>
+                                                {{ int_en_to_bn($ps_history[0]->Session_Start) }}-{{ int_en_to_bn($ps_history[0]->Session_End) }}
+                                                সংসদ</div>
 
-                                </a>
-
-
-                                <?php $i++; ?>
-                            @endforeach
-
-            </div>
-
-            </div>
+                                        </a>
 
 
+                                        <?php $i++; ?>
+                                    @endforeach
 
+                                </div>
 
-
-            </div>
-        @else
-            @foreach ($rows as $row)
-                <div class="about_header position-relative mt-3">
-                    <img width="100%" src="{{ asset('assets/img/ProminentPersons.png') }}" alt="">
-                    <div class="about_head">
-                        <h5 class="about_title">{{ $row->name }}</h5>
-                        <p class="about_sort"></p>
-                    </div>
-                </div>
-
-
-
-                <section class="aboutSection py-3 pl-3 pr-3">
-                    <div class="row">
-                        <div class="col-md-11">
-                            <div class="description">
-
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Session</th>
-                                            <th>Position</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $ps_history = $row->ps_history;
-                                        $ps_history = json_decode($ps_history);
-                                        rsort($ps_history);
-
-                                        ?>
-
-                                        @foreach ($ps_history as $rowshistory)
-                                            <tr>
-                                                <td>{{ $rowshistory->Session_Start }}-{{ $rowshistory->Session_End }}
-                                                </td>
-                                                <td>{{ $rowshistory->Positon }}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-
-                                </table>
-
-
-
-
-                                <p>{!! $row->info !!}</p>
                             </div>
 
 
+
+
+
                         </div>
-                        <div class="col-md-1"></div>
-                    </div>
-                </section>
-            @endforeach
-            @endif
+                    @else
+                        @foreach ($rows as $row)
+                            <div class="about_header position-relative mt-3">
+                                <img width="100%" src="{{ asset('assets/img/ProminentPersons.png') }}" alt="">
+                                <div class="about_head">
+                                    <h5 class="about_title">{{ $row->name }}</h5>
+                                    <p class="about_sort"></p>
+                                </div>
+                            </div>
 
 
 
-            </div>
+                            <section class="aboutSection py-3 pl-3 pr-3">
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <div class="description">
+
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Session</th>
+                                                        <th>আসন</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php
+                                                    $ps_history = $row->ps_history;
+                                                    $ps_history = json_decode($ps_history);
+                                                    rsort($ps_history);
+
+                                                    ?>
+
+                                                    @foreach ($ps_history as $rowshistory)
+                                                        <tr>
+                                                            <td>{{ $rowshistory->Session_Start }}-{{ $rowshistory->Session_End }}
+                                                            </td>
+                                                            <td>{{ $rowshistory->Positon }}</td>
+                                                        </tr>
+                                                    @endforeach
+                                                </tbody>
+
+                                            </table>
+
+
+
+
+                                            <p>{!! $row->info !!}</p>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+                            </section>
+                        @endforeach
+                    @endif
+
+
+
+                </div>
 
 
 
