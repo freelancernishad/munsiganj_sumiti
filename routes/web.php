@@ -1,27 +1,28 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\BrandsliderController;
-use App\Http\Controllers\Admin\MainsliderController;
-use App\Http\Controllers\Admin\MemberController;
-use App\Http\Controllers\Admin\CommitteeController;
-use App\Http\Controllers\GalleryCategoryController;
-use App\Http\Controllers\Admin\GalleryController;
-use App\Http\Controllers\Admin\AllinfoController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\Admin\AdController;
-use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\frontendController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\countryApiController;
 use App\Http\Controllers\BlogCommentController;
-use App\Http\Controllers\GlobalCommitteeController;
-use App\Http\Controllers\VideoController;
-use App\Http\Controllers\HistoryCategoryController;
+use App\Http\Controllers\Admin\MemberController;
 use App\Http\Controllers\HistoryPlaceController;
+use App\Http\Controllers\Admin\AllinfoController;
+use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CommitteeController;
+use App\Http\Controllers\GalleryCategoryController;
+use App\Http\Controllers\GlobalCommitteeController;
+use App\Http\Controllers\HistoryCategoryController;
+use App\Http\Controllers\Admin\MainsliderController;
 use App\Http\Controllers\ProminentPersonsController;
+use App\Http\Controllers\Admin\BrandsliderController;
 use App\Http\Controllers\ParliamentaryPersonController;
-use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\RegistrationGuidelineController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

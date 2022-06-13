@@ -70,7 +70,7 @@
                 <div class="row" style="width:100%">
 
                 <div class="form-group col-md-4">
-                  <label>Positon</label>
+                  <label>আসন</label>
                   <input type="text" class="form-control" name="Positon[]" id="Positon" >
                 </div>
 
