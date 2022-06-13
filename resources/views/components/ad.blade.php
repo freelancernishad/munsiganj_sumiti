@@ -50,7 +50,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.6/dist/sweetalert2.all.min.js"></script>
     <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
-<<<<<<< HEAD
+
     <style>
         .modal-backdrop.show {
             opacity: .5;
@@ -223,114 +223,7 @@
 
 
     <livewire:styles />
-=======
-<style>
 
-.modal-backdrop.show {
-    opacity: .5;
-    display: none !important;
-}
-.modal-open .modal {
-    overflow-x: hidden;
-    overflow-y: auto;
-    background: #00000085;
-}
-li.select2-results__option.select2-results__option--selectable {
-    width: 100% !important;
-    display: block;
-}
-.ourMission h6 {
-    color: red;
-    font-weight: 600;
-    margin: 19px 0px;
-    margin-top: 2px !important;
-}
-
-.sticky {
-    z-index: 999;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-.ifameVideo iframe {
-    width: 100% !important;
-    margin-top: 31px;
-    height: 206px;
-}
-.noticeHead {
-
-    position: relative;
-
-}
-
-.noticeHead:after {
-    content: '';
-    /* background: red; */
-    top: 21px;
-    right: -16px;
-    position: absolute;
-    border-top: 19px solid #cbb105;
-    border-left: 43px solid transparent;
-    border-bottom: 37px solid transparent;
-    border-right: 45px solid #cbb10500;
-    transform: rotate(450deg);
-}
-.noticeHead {
-    background: #d02804;
-    color: white;
-    padding: 16px 19px;
-    font-size: 36px !important;
-    width: 292px;
-}
-.show_dropdown {
-    background: #fdfafa !important;
-}
-
-@import url('https://fonts.maateen.me/charu-chandan-3d/font.css');
-
-p{
-   font-family: 'SolaimanLipi', sans-serif;
-}
-footer.footer {
-    margin-top: 50px;
-}
-
-h5.proHead {
-    background: #ffbfbf;
-    padding: 12px 10px;
-    border-radius: 10px;
-    text-align: center;
-    color: #3C1255;
-    font-weight: 600;
-}
-
-
-.proItem {
-    padding: 10px 17px;
-    align-items: center;
-    margin-top: 10px;
-    background: #E5E5E5;
-    border-radius: 10px;
-}
-.item1 {font-size: 16px;font-weight: 600;}
-
-.item2 h6 {font-size: 20px;font-weight: 600;color: #006792;}
-.item2 {
-    width: 70%;
-}
-
-a.details {background: #535353;padding: 4px 13px;border-radius: 8px;color: white;}
-
-a.details:hover {text-decoration: none;background: #EC0818;}
-
-
-
-</style>
-
-
-
-<livewire:styles />
->>>>>>> 9adf561b74dde63020d582e74b4bace22197ebc0
 
 </head>
 
@@ -373,7 +266,7 @@ a.details:hover {text-decoration: none;background: #EC0818;}
 
                             <?php
                             $urlfull = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-
+                            
                             ?>
                             <div class="dropdown show">
                                 <a class="btn btn-secondary dropdown-toggle"
