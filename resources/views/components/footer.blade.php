@@ -1,13 +1,10 @@
-
-
-
-
 <footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <div class="f_logo text-white">
-                    <img width="288px" src="{{ asset(env('FILE_PATH').'logo/'.$settings[0]->logo) }}" style="    padding: 10px 0;" alt="LOGO">
+                    <img width="288px" src="{{ asset(env('FILE_PATH') . 'logo/' . $settings[0]->logo) }}"
+                        style="    padding: 10px 0;" alt="LOGO">
                     <div class="f_address">
                         <ul class="list-unstyled">
                             <li class="text-white" style="    display: block;">
@@ -49,7 +46,7 @@
                 <h4 class="f_title">Others</h4>
 
 
-<h5>Visitor :  {{ $TotalVisitor }}</h5>
+                <h5>Visitor : {{ $TotalVisitor }}</h5>
 
 
 
@@ -79,12 +76,11 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-    crossorigin="anonymous"></script>
+integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.4.1/swiper-bundle.min.js"
-    integrity="sha512-pY1t/ADgTwbfGbw0+mRGd33EroA5YgRUWhQNFpPIAdBzyoSb38FsFrf4wBTcS3GFPdTfgtpRrbGCkdl2C2OXYA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+integrity="sha512-pY1t/ADgTwbfGbw0+mRGd33EroA5YgRUWhQNFpPIAdBzyoSb38FsFrf4wBTcS3GFPdTfgtpRrbGCkdl2C2OXYA=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
 
 
@@ -92,24 +88,22 @@
 
 
 <script>
+    var url = window.location.href;
+    // console.log(url);
 
-var url = window.location.href;
-// console.log(url);
+    if (url == window.location.origin + '/') {
+        url = url.split('/');
+        url = url[0] + '//' + url[2];
+    }
 
-if(url==window.location.origin+'/'){
-url = url.split('/');
-url = url[0]+'//'+url[2];
-}
+    // console.log(window.location.origin);
 
-// console.log(window.location.origin);
-
-if (url == url ) {
-  $('[href="'+url+'"]').addClass('active');
-}
+    if (url == url) {
+        $('[href="' + url + '"]').addClass('active');
+    }
 
 
-// console.log(url);
-
+    // console.log(url);
 </script>
 
 
@@ -117,201 +111,204 @@ if (url == url ) {
 
 
 <div id="uploadimageModal" class="modal" role="dialog">
-<div class="modal-dialog">
- <div class="modal-content">
+    <div class="modal-dialog">
+        <div class="modal-content">
 
-       <div class="modal-body">
-         <div class="row">
-      <div class="col-md-8 text-center">
-        <div id="upload-image"></div>
-      </div>
-      <div class="col-md-4" style="padding-top:30px;">
-       <br />
-       <br />
-       <br/>
-       <span class="btn btn-success crop_image" onclick="imagesize()" data-dismiss="modal" >Crop</span>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8 text-center">
+                        <div id="upload-image"></div>
+                    </div>
+                    <div class="col-md-4" style="padding-top:30px;">
+                        <br />
+                        <br />
+                        <br />
+                        <span class="btn btn-success crop_image" onclick="imagesize()" data-dismiss="modal">Crop</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-   </div>
-       </div>
-
-    </div>
-   </div>
-  </div>
+</div>
 
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.js" integrity="sha512-vUJTqeDCu0MKkOhuI83/MEX5HSNPW+Lw46BA775bAWIp1Zwgz3qggia/t2EnSGB9GoS2Ln6npDmbJTdNhHy1Yw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.js"
+integrity="sha512-vUJTqeDCu0MKkOhuI83/MEX5HSNPW+Lw46BA775bAWIp1Zwgz3qggia/t2EnSGB9GoS2Ln6npDmbJTdNhHy1Yw=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-   <script src="{{ asset('admin_asset/js/jquery.dataTables.min.js') }}"></script>
-  <script src="{{ asset('admin_asset/js/dataTables.bootstrap.min.js') }}"></script>
-  <script src="{{ asset('admin_asset/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('admin_asset/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('admin_asset/js/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ asset('admin_asset/js/dataTables.buttons.min.js') }}"></script>
 
 <script>
-
-$image_crop = $('#upload-image').croppie({
-enableExif: true,
-viewport: {
-width: 200,
-height: 250,
-type: 'square'
-},
-boundary: {
-width: 300,
-height: 350
-}
-});
-
+    $image_crop = $('#upload-image').croppie({
+        enableExif: true,
+        viewport: {
+            width: 200,
+            height: 250,
+            type: 'square'
+        },
+        boundary: {
+            width: 300,
+            height: 350
+        }
+    });
 
 
-$('#images').on('change', function () {
-var reader = new FileReader();
-reader.onload = function (e) {
-$image_crop.croppie('bind', {
-url: e.target.result
-}).then(function(){
-console.log('jQuery bind complete');
-});
-}
-reader.readAsDataURL(this.files[0]);
-$('#uploadimageModal').modal('show');
-});
 
-function imagesize(){
-$image_crop.croppie('result', {
-type: 'canvas',
-size: 'viewport'
-}).then(function (response) {
-console.log(response);
+    $('#images').on('change', function() {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $image_crop.croppie('bind', {
+                url: e.target.result
+            }).then(function() {
+                console.log('jQuery bind complete');
+            });
+        }
+        reader.readAsDataURL(this.files[0]);
+        $('#uploadimageModal').modal('show');
+    });
 
-$("#image").val(response);
-$("#imagepreview").attr("src",response);
+    function imagesize() {
+        $image_crop.croppie('result', {
+            type: 'canvas',
+            size: 'viewport'
+        }).then(function(response) {
+            console.log(response);
 
-$('#uploadimageModal').modal('hide');
-});
-}
+            $("#image").val(response);
+            $("#imagepreview").attr("src", response);
 
+            $('#uploadimageModal').modal('hide');
+        });
+    }
+</script>
 
-    </script>
-
-    <!-- fontawesome -->
-    {{-- <script src="{{ asset('newassets/js/all.min.js') }}"
+<!-- fontawesome -->
+{{-- <script src="{{ asset('newassets/js/all.min.js') }}"
         integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="{{ asset('newassets/js/bootstrap.bundle.min.js') }}"></script> --}}
-    <!-- Mix it up -->
-    <script src="{{ asset('newassets/js/mixitup.min.js') }}"></script>
-    <!-- main css -->
-    <script src="{{ asset('newassets/js/script.js') }}"></script>
+<!-- Mix it up -->
+<script src="{{ asset('newassets/js/mixitup.min.js') }}"></script>
+<!-- main css -->
+<script src="{{ asset('newassets/js/script.js') }}"></script>
 
-    {{-- <script src="{{ asset('newassets/js/custom.js') }}"></script> --}}
+{{-- <script src="{{ asset('newassets/js/custom.js') }}"></script> --}}
 
 <!-- Modal -->
-<div class="modal fade" id="dataModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="dataModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog  modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel"></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="modal_content">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal_content">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
 
 <!-- Modal -->
-<div class="modal fade" id="dataModal2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="dataModal2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog  modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel"></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="modal_content2">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal_content2">
 
                 <div class="row">
 
-<div class="col-md-6"><h4>Contact us : 01909756552</h4></div>
+                    <div class="col-md-6">
+                        <h4>Contact us : 01909756552</h4>
+                    </div>
 
                 </div>
 
 
 
 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
-function viewdatas(url){
+    function viewdatas(url) {
 
 
-   $.ajax({
-        url: url,
-        type: "get",
-        success: function (data) {
-            $("#modal_content").html(data);
-            $("#dataModal").modal("show");
-        }
+        $.ajax({
+            url: url,
+            type: "get",
+            success: function(data) {
+                $("#modal_content").html(data);
+                $("#dataModal").modal("show");
+            }
 
-    });
-}
+        });
+    }
 
-function adcontact(){
-
-
-            $("#dataModal2").modal("show");
-}
+    function adcontact() {
 
 
-
+        $("#dataModal2").modal("show");
+    }
 </script>
 
 
 <script>
-    window.onscroll = function() {myFunction()};
+    window.onscroll = function() {
+        myFunction()
+    };
 
     var header = document.getElementById("myHeader");
     var sticky = header.offsetTop;
 
     function myFunction() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-      } else {
-        header.classList.remove("sticky");
-      }
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
     }
-    </script>
+</script>
 
 
 
 <div class="modal fade" id="overlay">
     <div class="modal-dialog" style="    max-width: 753px;
     overflow: hidden;">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-        </div>
-        <div class="modal-body" id="popupad">
+            </div>
+            <div class="modal-body" id="popupad">
 
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
 @yield('script')
 
