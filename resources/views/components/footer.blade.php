@@ -86,6 +86,28 @@
 {{-- <button type="button" class="btn btn-danger btn-floating btn-lg" id="backToTop">
     <i class="fas fa-arrow-up"></i>
 </button> --}}
+<!-- cookie warning toast -->
+<div class="fixed-bottom p-4">
+    <div class="toast bg-dark text-white w-100 mw-100" role="alert" data-autohide="false">
+        <div class="toast-body p-4 d-flex flex-column" style="background: #ff0000;">
+            <h4>Cookie Warning</h4>
+            <p>
+                This website stores data such as cookies to enable site functionality including analytics and
+                personalization. By using this website, you automatically accept that we use cookies.
+            </p>
+            <div class="ml-auto">
+                <button type="button" class="btn btn-outline-light mr-3" id="btnDeny">
+                    Deny
+                </button>
+                <button type="button" class="btn btn-light" id="btnAccept">
+                    Accept
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out"
     data-abc="true"></a>
@@ -104,6 +126,67 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 <script>
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function eraseCookie(name) {
+        document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+
+    function cookieConsent() {
+        if (!getCookie('allowCookies')) {
+            $('.toast').toast('show')
+        }
+    }
+
+    $('#btnDeny').click(() => {
+        eraseCookie('allowCookies')
+        $('.toast').toast('hide')
+    })
+
+    $('#btnAccept').click(() => {
+        setCookie('allowCookies', '1', 7)
+        $('.toast').toast('hide')
+    })
+
+    // load
+    cookieConsent()
+
+    // for demo / testing only
+    $('#btnReset').click(() => {
+        // clear cookie to show toast after acceptance
+        eraseCookie('allowCookies')
+        $('.toast').toast('show')
+    })
+
+
+
+
+
+
+
+
+
+
+
     var url = window.location.href;
     // console.log(url);
 
