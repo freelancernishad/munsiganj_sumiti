@@ -74,6 +74,22 @@
         </div>
     </div>
 </footer>
+<style>
+    #backToTop {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        z-index: 999;
+    }
+</style>
+{{-- <button type="button" class="btn btn-danger btn-floating btn-lg" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+</button> --}}
+
+<a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out"
+    data-abc="true"></a>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
@@ -279,6 +295,7 @@ integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ
 <script>
     window.onscroll = function() {
         myFunction()
+        // scrollFunction();
     };
 
     var header = document.getElementById("myHeader");
@@ -291,6 +308,28 @@ integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ
             header.classList.remove("sticky");
         }
     }
+
+
+
+
+
+
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 20) {
+                $('#toTopBtn').fadeIn();
+            } else {
+                $('#toTopBtn').fadeOut();
+            }
+        });
+
+        $('#toTopBtn').click(function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 1000);
+            return false;
+        });
+    });
 </script>
 
 

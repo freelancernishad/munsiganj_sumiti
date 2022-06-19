@@ -138,7 +138,7 @@
                                                 <div class="col-xl-9">
                                                     <div class="counter-content">
                                                         <h5>LIVE <br> MEMBER</h5>
-                                                        <p>5000</p>
+                                                        <p>{{ $memberCount }}</p>
                                                     </div>
                                                     <!-- /.counter-content -->
                                                 </div>
@@ -216,24 +216,11 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 py-3 pt-3">
                     <h1 class="text-primary">Member Facilities</h1>
                     <div style="line-height: 1.5;">
-                        <div style="line-height: 1.5;">
-                            <div style="line-height: 1.5;"><span style="font-size: 18px; font-family: latoR;">1.
-                                    ..............................</span></div>
-                            <div style="line-height: 1.5;"><span style="font-size: 18px; font-family: latoR;">2.
-                                    ..............................</span></div>
-                            <div style="line-height: 1.5;"><span style="font-size: 18px; font-family: latoR;">3.
-                                    ..............................</span></div>
-                            <div><span style="font-size: 18px; font-family: latoR;">4.
-                                    ...............................</span></div>
-                            <div><span style="font-size: 18px; font-family: latoR;">5.
-                                    ...............................</span>
-                            </div>
-                            <div><span style="font-size: 18px; font-family: latoR;">6.
-                                    ...............................</span></div>
-                            <div><span style="font-size: 18px; font-family: latoR;">7.
-                                    ...............................</span></div>
-                            <div><span style="font-size: 18px; font-family: latoR;">8.
-                                    ...............................</span></div>
+                        <div style="line-height: 1.5;margin-left: 25px; font-family: latoR;">
+
+                            {!! settings()[0]->member_facilities !!}
+
+
                         </div>
                         <div style="line-height: 1.5;">
                             <div></div>
@@ -419,7 +406,7 @@
             }
 
             /*
-                .committeeTitle:before {position: absolute;top: -18px;right: 0px;background: #d02804;color: white;font-size: 19px;padding: 4px 19px;border-top-left-radius: 7px;border-bottom-left-radius: 7px;} */
+                                            .committeeTitle:before {position: absolute;top: -18px;right: 0px;background: #d02804;color: white;font-size: 19px;padding: 4px 19px;border-top-left-radius: 7px;border-bottom-left-radius: 7px;} */
 
             .committeeDetailr h6 {
                 font-size: 22px;
@@ -487,8 +474,8 @@
                 left: -5px;
                 /* background: linear-gradient(135deg, #21d4fd 25%, #b721ff 75%); */
                 /* background: -webkit-gradient(linear, left top, right top, from(#df3317), color-stop(16%, transparent), color-stop(86%, transparent),color-stop(101%, #db3116));
-                    background: -o-linear-gradient(left, #df3317 0%, transparent 16%, transparent 86%,#db3116 101%);
-                    background: linear-gradient(90deg, #df3317 0%, transparent 16%, transparent 86%,#db3116 101%); */
+                                                background: -o-linear-gradient(left, #df3317 0%, transparent 16%, transparent 86%,#db3116 101%);
+                                                background: linear-gradient(90deg, #df3317 0%, transparent 16%, transparent 86%,#db3116 101%); */
                 -webkit-transition: all 1s;
                 -o-transition: all 1s;
                 background: #d02804;
@@ -539,8 +526,6 @@
             }
 
             .allcommiittee:hover {
-                /* -webkit-box-shadow: 0 0 35px rgba(0,0,0,0.3);
-                 box-shadow: 0 0 35px rgba(0,0,0,0.3); */
                 color: white;
             }
         </style>
@@ -615,42 +600,6 @@
                 </div>
             </div>
         </section>
-
-
-
-
-
-        {{-- <section class="committeeSeciton">
-        <div class="row">
-            <div class="col-md-12 mt-3 committeeBox">
-                <div class="cus_container">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <h4 class="committeeTitlw">Executive Committee</h4>
-                        </div>
-                        @foreach ($committee as $committeeList)
-                        <div class="col-md-5">
-                            <div class="d-flex">
-                                <img width="120px" src="{{ $committeeList->image }}" alt="" />
-                                <div class="committeeDetails">
-                                    <h6>{{ $committeeList->name }}</h6>
-                                    <p>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                        <div class="col-md-2">
-                            <div class="committeeMore">
-                                <a href="{{ url('/Committee') }}"> More Details >> </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section> --}}
         <section class="NoticeSeciton">
             <style>
                 .news {
@@ -752,7 +701,7 @@
                     /* box-shadow: inset 0 0 3px 0px white, inset 0 0 0px 0px white; */
                     background: linear-gradient(to bottom, #da2e13, #b31a01);
                     /* border-top-left-radius: 9px;
-                        border-bottom-left-radius: 9px; */
+                                                    border-bottom-left-radius: 9px; */
                 }
 
                 .fal.fa-bars.fa-fw {
@@ -821,9 +770,7 @@
                                     </span>
                                 </div>
                             </div>
-                            {{-- <button><span class="bn-prev">pre</span></button>
-                        <button><span class="bn-action">puse</span></button>
-                        <button><span class="bn-next">next</span></button> --}}
+
                         </div>
                     </div>
                     <script type="text/javascript">
@@ -831,54 +778,11 @@
                             $('#newsTicker-249').breakingNews();
                         });
                     </script>
-                    {{-- <div class="d-flex justify-content-between align-items-center breaking-news bg-white">
-                    <div class="rainbowGradient">
-                        <div
-                            class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 news">
-                            <span class="d-flex align-items-center">&nbsp;Notice <i class="fas fa-bell fa-fw"
-                                    style="font-size:25px"></i></span>
-                        </div>
-                    </div>
-                    <marquee class="news-scroll" id="marquee1" behavior="scroll" direction="left">
-                        <?php //$n = 1;
-                        ?>
-                        @foreach (notices() as $noticesList)
-                        <span class="dot"></span> <a href="#">{{ $noticesList->dec }} </a> &nbsp;
-                        <?php //$n++;
-                        ?>
-                        @endforeach
-                    </marquee>
-                    <div class="rainbowGradient2">
-                        <div
-                            class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 nab">
-                            <span class="d-flex align-items-center">&nbsp;
-                                <i class="fas fa-caret-left fa-fw" onclick="mfast()" style="font-size:25px"></i>
-                                <span id="togglemarquee" class="run" onClick="togglemarquee('togglemarquee')"><i
-                                        class="fal fa-bars fa-fw" style=""></i></span>
-                                <i class="fas fa-caret-right fa-fw" onclick="mslow()" style="font-size:25px"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div> --}}
+
                 </div>
             </div>
         </section>
-        {{-- <section class="NoticeSeciton">
-        <div class="d-flex align-items-center">
-            <div class="noticeHead">Notice <i class="fas fa-bell fa-fw" style="font-size:25px"></i></div>
-            <div class="noticwe">
-                <marquee behavior="scroll" direction="" onMouseOver="this.stop()" onMouseOut="this.start()">
-                    <?php //$n = 1;
-                    ?>
-                    @foreach (notices() as $noticesList)
-                    * {{ $noticesList->dec }} &nbsp;
-                    <?php //$n++;
-                    ?>
-                    @endforeach
-                </marquee>
-            </div>
-        </div>
-    </section> --}}
+
     </main>
     <script src="{{ asset('admin_asset/breaking-news-ticker.min.js') }}" type="text/javascript"></script>
     {{-- <script src="{{ asset('admin_asset/site.js') }}" type="text/javascript"></script> --}}
@@ -889,30 +793,6 @@
             $("#popupad").html(`
 {!! settings()[0]->popupcontent !!}
 `);
-            // setTimeout(function() {
-            //     $('#overlay').modal('hide');
-            // }, 5000);
-            // function togglemarquee(id) {
-            //     // fas fa-play fa-fw
-            //     var classname = document.getElementById(id).classList;
-            // if(classname=='run'){
-            //     document.getElementById(id).classList.remove('run');
-            //     document.getElementById(id).classList.add('pause');
-            //     document.getElementById(id).innerHTML='<i class="fas fa-play fa-fw" style=""></i>';
-            //     document.getElementById('marquee1').stop();
-            // }else{
-            //     document.getElementById(id).classList.add('run');
-            //     document.getElementById(id).classList.remove('pause');
-            //     document.getElementById(id).innerHTML='<i class="fal fa-bars fa-fw" style=""></i>';
-            //     document.getElementById('marquee1').start();
-            // }
-            // }
-            //     function mfast() {
-            //         document.getElementById('marquee1').setAttribute('scrollamount', 3, 0);
-            //     }
-            //     function mslow() {
-            //         document.getElementById('marquee1').setAttribute('scrollamount', 10, 0);
-            //     }
         </script>
     @endif
 @endsection
