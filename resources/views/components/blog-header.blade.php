@@ -19,6 +19,11 @@
                         <div class="menu-menu-container">
                             <ul id="menu-menu" class="nav navbar-nav">
 
+                                <li itemscope="itemscope"
+                                    id="menu-item-19"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-19">
+                                    <a title="হোম"  href="{{ url('/') }}">Home</a>
+                                </li>
 
 
                                 <li itemscope="itemscope"
@@ -77,11 +82,6 @@
 
                                 @endforeach
 
-                                <li itemscope="itemscope"
-                                    id="menu-item-19"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-19">
-                                    <a title="হোম"  href="{{ url('/') }}">Back to main page</a>
-                                </li>
 
 
                             </ul>
