@@ -201,7 +201,8 @@
                 ?>
                 <div class="col-md-6 mt-3">
                     <a target="_blank" href="{{ $adbottomlist->url }}">
-                        <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adbottomlist->name) }}" alt="" />
+                        <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adbottomlist->name) }}"
+                            alt="" />
                     </a>
                 </div>
                 <?php
@@ -380,7 +381,7 @@
 
             .committeeimage {
                 position: relative;
-                width: 333px;
+                width: 266px;
                 height: 150px;
                 z-index: 9;
             }
@@ -418,7 +419,7 @@
             }
 
             /*
-            .committeeTitle:before {position: absolute;top: -18px;right: 0px;background: #d02804;color: white;font-size: 19px;padding: 4px 19px;border-top-left-radius: 7px;border-bottom-left-radius: 7px;} */
+                .committeeTitle:before {position: absolute;top: -18px;right: 0px;background: #d02804;color: white;font-size: 19px;padding: 4px 19px;border-top-left-radius: 7px;border-bottom-left-radius: 7px;} */
 
             .committeeDetailr h6 {
                 font-size: 22px;
@@ -486,8 +487,8 @@
                 left: -5px;
                 /* background: linear-gradient(135deg, #21d4fd 25%, #b721ff 75%); */
                 /* background: -webkit-gradient(linear, left top, right top, from(#df3317), color-stop(16%, transparent), color-stop(86%, transparent),color-stop(101%, #db3116));
-                background: -o-linear-gradient(left, #df3317 0%, transparent 16%, transparent 86%,#db3116 101%);
-                background: linear-gradient(90deg, #df3317 0%, transparent 16%, transparent 86%,#db3116 101%); */
+                    background: -o-linear-gradient(left, #df3317 0%, transparent 16%, transparent 86%,#db3116 101%);
+                    background: linear-gradient(90deg, #df3317 0%, transparent 16%, transparent 86%,#db3116 101%); */
                 -webkit-transition: all 1s;
                 -o-transition: all 1s;
                 background: #d02804;
@@ -539,7 +540,7 @@
 
             .allcommiittee:hover {
                 /* -webkit-box-shadow: 0 0 35px rgba(0,0,0,0.3);
-             box-shadow: 0 0 35px rgba(0,0,0,0.3); */
+                 box-shadow: 0 0 35px rgba(0,0,0,0.3); */
                 color: white;
             }
         </style>
@@ -751,7 +752,7 @@
                     /* box-shadow: inset 0 0 3px 0px white, inset 0 0 0px 0px white; */
                     background: linear-gradient(to bottom, #da2e13, #b31a01);
                     /* border-top-left-radius: 9px;
-                    border-bottom-left-radius: 9px; */
+                        border-bottom-left-radius: 9px; */
                 }
 
                 .fal.fa-bars.fa-fw {
@@ -811,13 +812,11 @@
                                 <div
                                     class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 nab">
                                     <span class="d-flex align-items-center">&nbsp;
-                                        <button class="abtn"><span class="bn-prev"><i
-                                                    class="fas fa-caret-left fa-fw"
+                                        <button class="abtn"><span class="bn-prev"><i class="fas fa-caret-left fa-fw"
                                                     style="font-size:25px"></i></span></button>
-                                        <button class="abtn"><span class="bn-action"><i
-                                                    class="fal fa-bars fa-fw" style=""></i></span></button>
-                                        <button class="abtn"><span class="bn-next"><i
-                                                    class="fas fa-caret-right fa-fw"
+                                        <button class="abtn"><span class="bn-action"><i class="fal fa-bars fa-fw"
+                                                    style=""></i></span></button>
+                                        <button class="abtn"><span class="bn-next"><i class="fas fa-caret-right fa-fw"
                                                     style="font-size:25px"></i></span></button>
                                     </span>
                                 </div>
