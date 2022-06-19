@@ -159,7 +159,7 @@
                                                                     src="{{ allcountryflag(str_replace(' ', '_', $countryList->country)) }}"
                                                                     alt="">
                                                             </div>
-                                                            <p>{{ str_replace(' ', '_', $countryList->country) }}</p>
+                                                            <p>{{ $countryList->country }}</p>
                                                         </li>
                                                     @endforeach
 
