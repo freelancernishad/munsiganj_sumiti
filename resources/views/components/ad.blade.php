@@ -129,7 +129,12 @@
             margin-top: 50px;
         }
 
-
+        .backbutton {
+            background: #d02804;
+            color: white;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
 
 
         h5.proHead {
@@ -253,6 +258,8 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-4" style="font-size: 14px">
                         <p class="welcome mb-0 text-white">
+                            <a href="{{ url()->previous() }}" class="btn btn-default backbutton"
+                                style="padding: 1px 12px;font-size: 14px;margin: 0;">Back</a>
                             {{ $settings[0]->title }}
                         </p>
                     </div>
@@ -266,13 +273,16 @@
 
                             <?php
                             $urlfull = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-                            
+
                             ?>
                             <div class="dropdown show">
                                 <a class="btn btn-secondary dropdown-toggle"
-                                    style="color: white;background: #d02804;padding: 10px 4px;" href="#" role="button"
-                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
+                                    style="color: white;
+                                    background: #d02804;
+                                    padding: 1px 3px;
+                                    font-size: 12px;"
+                                    href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-share-alt fa-fw"></i> Share This page
                                 </a>
 

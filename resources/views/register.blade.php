@@ -1,10 +1,11 @@
 @extends('layouts.master')
 @section('content')
     <style>
-                span.required {
+        span.required {
             color: red;
             font-size: 20px;
         }
+
         .register-main-form {
             background: #e6e8e7;
             border: 1px solid #b0b0b0;
@@ -34,54 +35,64 @@
             position: relative;
             top: 26px;
         }
-#bank{
-    display: none;
-}
 
-#mobleBank{
-    display: none;
-}
+        #bank {
+            display: none;
+        }
 
+        #mobleBank {
+            display: none;
+        }
+
+        .register_headline {
+            text-align: center;
+            margin: 16px 0 11px 1px;
+            font-size: 25px;
+            color: #d02804;
+            border-bottom: 2px solid #d02804;
+            background: #e3e3e3;
+        }
     </style>
 
 
-                <?php
+    <?php
                 if ($step==1){
                 ?>
-                <style>
-                .first {
-                    border: 2px solid #0d6efd !important;
-                    color: #0d6efd;
-                }
-                </style>
-                <?php
-                }else if($step==2){
-                ?>
-                <style>
-                .first,.second {
-                    border: 2px solid #0d6efd !important;
-                    color: #0d6efd;
-                }
-                </style>
-
-                <?php
-                }else if($step==3){
-                ?>
-                <style>
-                        .first,.second,.third {
+    <style>
+        .first {
             border: 2px solid #0d6efd !important;
             color: #0d6efd;
         }
+    </style>
+    <?php
+                }else if($step==2){
+                ?>
+    <style>
+        .first,
+        .second {
+            border: 2px solid #0d6efd !important;
+            color: #0d6efd;
+        }
+    </style>
 
+    <?php
+                }else if($step==3){
+                ?>
+    <style>
+        .first,
+        .second,
+        .third {
+            border: 2px solid #0d6efd !important;
+            color: #0d6efd;
+        }
+    </style>
 
-                </style>
-
-                <?php
+    <?php
                 }
                 ?>
 
 
-</style>
+    </style>
 
     <main>
         <section class="hero_area">
@@ -98,9 +109,9 @@
                     foreach($adl as $adllist){
 
                     ?>
-                  <a target="_blank" href="{{ $adllist->url  }}">
-                    <img width="100%" src="{{ asset(env('FILE_PATH').'ad/'.$adllist->name) }}" alt="" />
-                </a>
+                    <a target="_blank" href="{{ $adllist->url }}">
+                        <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adllist->name) }}" alt="" />
+                    </a>
                     <?php
                     }
                     }
@@ -138,169 +149,166 @@
 
 
 
-                        @if ($step==1)
+                        @if ($step == 1)
+                            @foreach ($rows as $row)
+                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left row"
+                                    method='post' action="{{ route('memeber.register') }}" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" name="id" id="id" value="{{ $row->id }}">
+                                    <input type="hidden" name="memberId" id="memberId" value="{{ $row->memberId }}">
+                                    <input type="hidden" name="status" id="status" value="Unpaid">
+                                    <input type="hidden" name="step" id="status" value="2">
 
 
-
-                        @foreach ($rows as $row)
-                            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left row"
-                                method='post' action="{{ route('memeber.register') }}" enctype="multipart/form-data">
-                                @csrf
-                                <input type="hidden" name="id" id="id" value="{{ $row->id }}">
-                                <input type="hidden" name="memberId" id="memberId" value="{{ $row->memberId }}">
-                                <input type="hidden" name="status" id="status" value="Unpaid">
-                                <input type="hidden" name="step" id="status" value="2">
+                                    <label>Memeber Image</label>
 
 
-                                <label>Memeber Image</label>
+                                    <input class="form-control mx-2" type="file" id="images">
+                                    <input type="hidden" class="form-control" name="image" id="image"
+                                        value="{{ $row->image }}">
 
 
-                                <input class="form-control mx-2" type="file" id="images">
-                                <input type="hidden" class="form-control" name="image" id="image"
-                                    value="{{ $row->image }}">
+                                    <div class="col-md-5 mb-3"></div>
+                                    <div class="col-md-2 mb-3"><img width="100%" id="imagepreview"
+                                            src="{{ $row->image }}" alt=""></div>
+                                    <div class="col-md-5 mb-3"></div>
 
-
-                                <div class="col-md-5 mb-3"></div>
-                                <div class="col-md-2 mb-3"><img width="100%" id="imagepreview" src="{{ $row->image }}"
-                                        alt=""></div>
-                                <div class="col-md-5 mb-3"></div>
-
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mt-2">
-                                        <label>Name <span class="required">*</span></label>
-                                        <input type="text" name="name" id="name" value="{{ $row->name }}" required
-                                            class="form-control">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mt-2">
+                                            <label>Name <span class="required">*</span></label>
+                                            <input type="text" name="name" id="name" value="{{ $row->name }}"
+                                                required class="form-control">
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="col-lg-6 col-md-6 col-sm-12 d-none">
-                                    <div class="mt-2">
-                                        <label>Age</label>
-                                        <input type="text" name="age" id="age" value="{{ $row->age }}"
-                                            class="form-control">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 d-none">
+                                        <div class="mt-2">
+                                            <label>Age</label>
+                                            <input type="text" name="age" id="age" value="{{ $row->age }}"
+                                                class="form-control">
+                                        </div>
                                     </div>
-                                </div>
 
 
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mt-2">
-                                        <label>Birthday <span class="required">*</span></label>
-                                        <input type="date" name="dob" id="dob" value="{{ $row->dob }}" required
-                                            class="form-control">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mt-2">
+                                            <label>Birthday <span class="required">*</span></label>
+                                            <input type="date" name="dob" id="dob" value="{{ $row->dob }}"
+                                                required class="form-control">
+                                        </div>
                                     </div>
-                                </div>
 
 
 
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mt-2">
-                                        <label>Father's Name</label>
-                                        <input type="text" name="father_name" id="father_name"
-                                            value="{{ $row->father_name }}" class="form-control">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mt-2">
+                                            <label>Father's Name</label>
+                                            <input type="text" name="father_name" id="father_name"
+                                                value="{{ $row->father_name }}" class="form-control">
+                                        </div>
                                     </div>
-                                </div>
 
 
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mt-2">
-                                        <label>Spouse Name <span class="required">*</span></label>
-                                        <input type="text" name="Spouse_name" id="Spouse_name"
-                                            value="{{ $row->Spouse_name }}" required class="form-control">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mt-2">
+                                            <label>Spouse Name <span class="required">*</span></label>
+                                            <input type="text" name="Spouse_name" id="Spouse_name"
+                                                value="{{ $row->Spouse_name }}" required class="form-control">
+                                        </div>
                                     </div>
-                                </div>
 
 
 
 
 
 
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mt-2">
-                                        <label>Educational Qualifications <span class="required">*</span></label>
-                                        <input type="text" name="education" id="education" value="{{ $row->education }}"
-                                            required class="form-control">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mt-2">
+                                            <label>Educational Qualifications <span class="required">*</span></label>
+                                            <input type="text" name="education" id="education"
+                                                value="{{ $row->education }}" required class="form-control">
+                                        </div>
                                     </div>
-                                </div>
 
 
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mt-2">
-                                        <label>Occupation <span class="required">*</span></label>
-                                        <input type="text" name="occupation" id="occupation"
-                                            value="{{ $row->occupation }}" required class="form-control">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mt-2">
+                                            <label>Occupation <span class="required">*</span></label>
+                                            <input type="text" name="occupation" id="occupation"
+                                                value="{{ $row->occupation }}" required class="form-control">
+                                        </div>
                                     </div>
-                                </div>
 
 
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mt-2">
-                                        <label>Contact Number 1 <span class="required">*</span></label>
-                                        <input type="text" name="phoneNumber" id="phoneNumber"
-                                            value="{{ $row->phoneNumber }}" required class="form-control">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mt-2">
+                                            <label>Contact Number 1 <span class="required">*</span></label>
+                                            <input type="text" name="phoneNumber" id="phoneNumber"
+                                                value="{{ $row->phoneNumber }}" required class="form-control">
+                                        </div>
                                     </div>
-                                </div>
 
 
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mt-2">
-                                        <label>Contact Number 2</label>
-                                        <input type="text" name="phoneNumber2" id="phoneNumber2"
-                                            value="{{ $row->phoneNumber2 }}" class="form-control">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mt-2">
+                                            <label>Contact Number 2</label>
+                                            <input type="text" name="phoneNumber2" id="phoneNumber2"
+                                                value="{{ $row->phoneNumber2 }}" class="form-control">
+                                        </div>
                                     </div>
-                                </div>
 
 
 
 
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mt-2">
-                                        <label>Email</label>
-                                        <input type="email" name="email" id="email" value="{{ $row->email }}"
-                                            class="form-control">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mt-2">
+                                            <label>Email</label>
+                                            <input type="email" name="email" id="email"
+                                                value="{{ $row->email }}" class="form-control">
+                                        </div>
                                     </div>
-                                </div>
 
 
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mt-2">
-                                        <label>Website</label>
-                                        <input type="text" name="website" id="website" value="{{ $row->website }}"
-                                            class="form-control">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mt-2">
+                                            <label>Website</label>
+                                            <input type="text" name="website" id="website"
+                                                value="{{ $row->website }}" class="form-control">
+                                        </div>
                                     </div>
-                                </div>
 
 
 
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mt-2">
-                                        <label>Professional address <span class="required">*</span></label>
-                                        <input type="text" id="pesahgot_address" value="{{ $row->pesahgot_address }}"
-                                            required class="form-control">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mt-2">
+                                            <label>Professional address <span class="required">*</span></label>
+                                            <input type="text" id="pesahgot_address"
+                                                value="{{ $row->pesahgot_address }}" required class="form-control">
+                                        </div>
                                     </div>
-                                </div>
 
 
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mt-2">
-                                        <label>Blood group <span class="required">*</span></label>
-                                        <select class="form-control" name="blood_group" id="blood_group" required>
-                                            <option value="">Select Blood Group</option>
-                                            <option>A+</option>
-                                            <option>A-</option>
-                                            <option>B+</option>
-                                            <option>B-</option>
-                                            <option>AB+</option>
-                                            <option>AB-</option>
-                                            <option>O+</option>
-                                            <option>O-</option>
-                                            <option>NA</option>
-                                        </select>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mt-2">
+                                            <label>Blood group <span class="required">*</span></label>
+                                            <select class="form-control" name="blood_group" id="blood_group" required>
+                                                <option value="">Select Blood Group</option>
+                                                <option>A+</option>
+                                                <option>A-</option>
+                                                <option>B+</option>
+                                                <option>B-</option>
+                                                <option>AB+</option>
+                                                <option>AB-</option>
+                                                <option>O+</option>
+                                                <option>O-</option>
+                                                <option>NA</option>
+                                            </select>
 
-                                        <script>
-                                            document.getElementById('blood_group').value = "{{ $row->blood_group }}";
-                                        </script>
+                                            <script>
+                                                document.getElementById('blood_group').value = "{{ $row->blood_group }}";
+                                            </script>
+                                        </div>
                                     </div>
-                                </div>
 
 
 
@@ -310,39 +318,39 @@
 
 
 
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mt-2">
-                                        <label>National ID NO. <span class="required">*</span></label>
-                                        <input type="number" name="nid" id="nid" value="{{ $row->nid }}" required
-                                            class="form-control">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mt-2">
+                                            <label>National ID NO. <span class="required">*</span></label>
+                                            <input type="number" name="nid" id="nid"
+                                                value="{{ $row->nid }}" required class="form-control">
+                                        </div>
                                     </div>
-                                </div>
 
 
-                                {{-- col-md-6 start --}}
-                                <div class="col-md-6 d-none">
-                                    <div class="form-group">
-                                        <label>Related social working details (optional)</label>
-                                        <input type="text" class="form-control" name="samagik_unoyon" id="samagik_unoyon"
-                                            value="{{ $row->samagik_unoyon }}">
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-md-6 d-none">
+                                        <div class="form-group">
+                                            <label>Related social working details (optional)</label>
+                                            <input type="text" class="form-control" name="samagik_unoyon"
+                                                id="samagik_unoyon" value="{{ $row->samagik_unoyon }}">
+                                        </div>
                                     </div>
-                                </div>
-                                {{-- col-md-6 start --}}
-                                <div class="col-md-6 d-none">
-                                    <div class="form-group">
-                                        <label>বিশেষ সখ (যদি থাকে)</label>
-                                        <input type="text" class="form-control" name="hobby" id="hobby"
-                                            value="{{ $row->hobby }}">
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-md-6 d-none">
+                                        <div class="form-group">
+                                            <label>বিশেষ সখ (যদি থাকে)</label>
+                                            <input type="text" class="form-control" name="hobby" id="hobby"
+                                                value="{{ $row->hobby }}">
+                                        </div>
                                     </div>
-                                </div>
-                                {{-- col-md-6 start --}}
-                                <div class="col-lg-6 col-md-6 col-sm-12 d-none">
-                                    <div class="form-group">
-                                        <label>Membership Fee</label>
-                                        <input type="text" class="form-control" name="fee" id="fee"
-                                            value="{{ $row->fee }}">
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-lg-6 col-md-6 col-sm-12 d-none">
+                                        <div class="form-group">
+                                            <label>Membership Fee</label>
+                                            <input type="text" class="form-control" name="fee" id="fee"
+                                                value="{{ $row->fee }}">
+                                        </div>
                                     </div>
-                                </div>
 
 
 
@@ -352,360 +360,380 @@
 
 
 
-                                <div class="col-md-12">
-                                    <h3>Permanent address</h3>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label>District <span class="required">*</span></label>
-                                        <select id="districtid1" onchange="changedistrict(1)" class="form-control"
-                                            required>
-                                            <option value="">District</option>
-                                            {{-- @foreach ($districts as $dList) --}}
+                                    <div class="col-md-12">
+                                        <h3 class="register_headline">Permanent address</h3>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label>District <span class="required">*</span></label>
+                                            <select id="districtid1" onchange="changedistrict(1)" class="form-control"
+                                                required>
+                                                <option value="">District</option>
+                                                {{-- @foreach ($districts as $dList) --}}
                                                 <option value="48">Munshiganj</option>
-                                            {{-- @endforeach --}}
-                                        </select>
-                                        <input type="hidden" class="form-control" name="pr_dist" id="pr_dist1"
-                                            value="{{ $row->pr_dist }}">
+                                                {{-- @endforeach --}}
+                                            </select>
+                                            <input type="hidden" class="form-control" name="pr_dist" id="pr_dist1"
+                                                value="{{ $row->pr_dist }}">
+                                        </div>
                                     </div>
-                                </div>
-                                {{-- col-md-6 start --}}
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label>Thana/Upazila <span class="required">*</span></label>
-                                        <select id="upszilaid1" onchange="changethana(1)" class="form-control" required>
-                                            <option value="">Thana/Upazila</option>
-                                        </select>
-                                        <input type="hidden" class="form-control" name="pr_thana" id="pr_thana1"
-                                            value="{{ $row->pr_thana }}">
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label>Thana/Upazila <span class="required">*</span></label>
+                                            <select id="upszilaid1" onchange="changethana(1)" class="form-control"
+                                                required>
+                                                <option value="">Thana/Upazila</option>
+                                            </select>
+                                            <input type="hidden" class="form-control" name="pr_thana" id="pr_thana1"
+                                                value="{{ $row->pr_thana }}">
+                                        </div>
                                     </div>
-                                </div>
-                                {{-- col-md-6 start --}}
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label>Union <span class="required">*</span></label>
-                                        <select id="unionid1" onchange="changeunioun(1)" class="form-control" required>
-                                            <option value="">Union</option>
-                                        </select>
-                                        <input type="hidden" class="form-control" name="pr_post" id="pr_post1"
-                                            value="{{ $row->pr_post }}">
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label>Union <span class="required">*</span></label>
+                                            <select id="unionid1" onchange="changeunioun(1)" class="form-control"
+                                                required>
+                                                <option value="">Union</option>
+                                            </select>
+                                            <input type="hidden" class="form-control" name="pr_post" id="pr_post1"
+                                                value="{{ $row->pr_post }}">
+                                        </div>
                                     </div>
-                                </div>
-                                {{-- col-md-6 start --}}
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label>Village <span class="required">*</span></label>
-                                        <input type="text" class="form-control" name="pr_vill" id="pr_vill"
-                                            value="{{ $row->pr_vill }}" required>
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label>Village <span class="required">*</span></label>
+                                            <input type="text" class="form-control" name="pr_vill" id="pr_vill"
+                                                value="{{ $row->pr_vill }}" required>
+                                        </div>
                                     </div>
-                                </div>
 
 
 
-                                <div class="col-md-12">
-                                    <h3>Present address  <span class="required">*</span></h3>
-                                    <h5 style="display:none"><input style="width: 32px;
-    height: 19px;" onclick="sameAddress()" type="checkbox" id="same_Address"> <label for="same_Address">একই ঠিকানা হলে টিক
-                                            দিন</label></h5>
-                                </div>
-
-
-
-
-                                {{-- col-md-6 start --}}
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <textarea name="Present_address" id="Present_address" class="form-control"
-                                            cols="30" rows="4" style="resize:none"
-                                            required>{{ $row->Present_address }}</textarea>
+                                    <div class="col-md-12">
+                                        <h3 class="register_headline">Present address <span class="required">*</span></h3>
+                                        <h5 style="display:none"><input style="width: 32px;
+    height: 19px;"
+                                                onclick="sameAddress()" type="checkbox" id="same_Address"> <label
+                                                for="same_Address">একই ঠিকানা হলে টিক
+                                                দিন</label></h5>
                                     </div>
-                                </div>
 
 
 
 
-
-
-                                <div class="col-md-12">
-                                    <h3>Short Bio  </h3>
-
-                                </div>
-
-
-                                {{-- col-md-6 start --}}
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <textarea name="bio" id="bio" class="form-control"
-                                            cols="30" rows="4" style="resize:none"
-                                            >{{ $row->bio }}</textarea>
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea name="Present_address" id="Present_address" class="form-control" cols="30" rows="4"
+                                                style="resize:none" required>{{ $row->Present_address }}</textarea>
+                                        </div>
                                     </div>
-                                </div>
 
 
 
 
 
 
+                                    <div class="col-md-12">
+                                        <h3 class="register_headline">Short Bio </h3>
 
-                                {{-- col-md-6 start --}}
-                                <div class="col-md-6 d-none">
-                                    <div class="form-group">
-                                        <label>জেলা</label>
-                                        <select id="districtid2" onchange="changedistrict(2)" class="form-control">
-                                            <option value="">জেলা</option>
-                                            @foreach ($districts as $dList)
-                                                <option value="{{ $dList->id }}">{{ $dList->bn_name }}</option>
-                                            @endforeach
-                                        </select>
-                                        <input type="hidden" class="form-control" name="p_dist" id="pr_dist2"
-                                            value="{{ $row->p_dist }}">
                                     </div>
-                                </div>
-                                {{-- col-md-6 start --}}
-                                <div class="col-md-6 d-none">
-                                    <div class="form-group">
-                                        <label>থানা/উপজেলা</label>
-                                        <select id="upszilaid2" onchange="changethana(2)" class="form-control">
-                                            <option value="">উপজেলা</option>
-                                        </select>
-                                        <input type="hidden" class="form-control" name="p_thana" id="pr_thana2"
-                                            value="{{ $row->p_thana }}">
+
+
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea name="bio" id="bio" class="form-control" cols="30" rows="4" style="resize:none">{{ $row->bio }}</textarea>
+                                        </div>
                                     </div>
-                                </div>
-                                {{-- col-md-6 start --}}
-                                <div class="col-md-6 d-none">
-                                    <div class="form-group">
-                                        <label>ডাকঘর</label>
-                                        <select id="unionid2" onchange="changeunioun(2)" class="form-control">
-                                            <option value="">ডাকঘর</option>
-                                        </select>
-                                        <input type="hidden" class="form-control" name="p_post" id="pr_post2"
-                                            value="{{ $row->p_post }}">
+
+
+
+
+
+
+
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-md-6 d-none">
+                                        <div class="form-group">
+                                            <label>জেলা</label>
+                                            <select id="districtid2" onchange="changedistrict(2)" class="form-control">
+                                                <option value="">জেলা</option>
+                                                @foreach ($districts as $dList)
+                                                    <option value="{{ $dList->id }}">{{ $dList->bn_name }}</option>
+                                                @endforeach
+                                            </select>
+                                            <input type="hidden" class="form-control" name="p_dist" id="pr_dist2"
+                                                value="{{ $row->p_dist }}">
+                                        </div>
                                     </div>
-                                </div>
-                                {{-- col-md-6 start --}}
-                                <div class="col-md-6 d-none">
-                                    <div class="form-group">
-                                        <label>গ্রাম</label>
-                                        <input type="text" class="form-control" name="p_vill" id="p_vill"
-                                            value="{{ $row->p_vill }}">
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-md-6 d-none">
+                                        <div class="form-group">
+                                            <label>থানা/উপজেলা</label>
+                                            <select id="upszilaid2" onchange="changethana(2)" class="form-control">
+                                                <option value="">উপজেলা</option>
+                                            </select>
+                                            <input type="hidden" class="form-control" name="p_thana" id="pr_thana2"
+                                                value="{{ $row->p_thana }}">
+                                        </div>
                                     </div>
-                                </div>
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-md-6 d-none">
+                                        <div class="form-group">
+                                            <label>ডাকঘর</label>
+                                            <select id="unionid2" onchange="changeunioun(2)" class="form-control">
+                                                <option value="">ডাকঘর</option>
+                                            </select>
+                                            <input type="hidden" class="form-control" name="p_post" id="pr_post2"
+                                                value="{{ $row->p_post }}">
+                                        </div>
+                                    </div>
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-md-6 d-none">
+                                        <div class="form-group">
+                                            <label>গ্রাম</label>
+                                            <input type="text" class="form-control" name="p_vill" id="p_vill"
+                                                value="{{ $row->p_vill }}">
+                                        </div>
+                                    </div>
 
-                                <div class="col-sm-12">
-                                    <input type="checkbox" id="agree" required> <label for="agree">Accept  <span class="required">*</span> </label>
-                                 </div>
-                                <button type="submit" class="btn btn-primary w-25 mx-auto mt-3" type="submit">Next</button>
-                            </form>
-                        @endforeach
-                        @elseif($step==2)
-
-
-                        @foreach ($rows as $row)
-                            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left row"
-                                method='post' action="{{ route('memeber.register') }}" enctype="multipart/form-data">
-                                @csrf
-                                <input type="hidden" name="id" id="id" value="{{ $id }}">
-                                <input type="hidden" name="status" id="status" value="Unpaid">
-                                <input type="hidden" name="step" id="status" value="3">
-
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Reference Id</label>
-                                <select name="Reference" id="Reference" class="form-control" onchange="referencechange(this.value)" required>
-                                    <option value="">Reference Id</option>
-                                    @foreach ($member as $memberList)
-                                        <option value="{{ $memberList->memberId }}">
-                                            {{ $memberList->name }} ( {{ $memberList->memberId }}) </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-
-             {{-- col-md-6 start --}}
-                          <div class="col-md-12" id="referDetails">
-
-                        </div>
-
-
-                                <div class="col-sm-12 text-center">
-                                <button type="submit" class="btn btn-primary w-25 mx-auto mt-3" type="submit">Next</button>
-                            </div>
-                            </form>
+                                    <div class="col-sm-12">
+                                        <input type="checkbox" id="agree" required> <label for="agree">Accept
+                                            <span class="required">*</span> </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-25 mx-auto mt-3"
+                                        type="submit">Next</button>
+                                </form>
                             @endforeach
+                        @elseif($step == 2)
+                            @foreach ($rows as $row)
+                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left row"
+                                    method='post' action="{{ route('memeber.register') }}"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" name="id" id="id" value="{{ $id }}">
+                                    <input type="hidden" name="status" id="status" value="Unpaid">
+                                    <input type="hidden" name="step" id="status" value="3">
 
-                            @elseif($step==3)
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Reference Id</label>
+                                            <select name="Reference" id="Reference" class="form-control"
+                                                onchange="referencechange(this.value)" required>
+                                                <option value="">Reference Id</option>
+                                                @foreach ($member as $memberList)
+                                                    <option value="{{ $memberList->memberId }}">
+                                                        {{ $memberList->name }} ( {{ $memberList->memberId }})
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
 
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-md-12" id="referDetails">
 
-                        @foreach ($rows as $row)
-                            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left row"
-                                method='post' action="{{ route('memeber.register') }}" enctype="multipart/form-data">
-                                @csrf
-                                <input type="hidden" name="id" id="id" value="{{ $id }}">
-                                <input type="hidden" name="memberid" id="memberid" value="{{ $id }}">
-                                <input type="hidden" name="status" id="status" value="Pending">
-                                <input type="hidden" name="step" id="status" value="4">
-
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Payment Method</label>
-                                <select name="method" id="method" class="form-control" onchange="bankDetail(this.value)" required>
-                                    <option value="">Select Payment Method</option>
-                                    <option value="Bank">Bank</option>
-                                    <option value="bKash">bKash</option>
-                                    <option value="Rocket">Rocket</option>
-                                    <option value="Nogod">Nogod</option>
-                                    <option value="Upay">Upay</option>
-
-                                </select>
-                            </div>
-                        </div>
-
-<div class="col-md-12 row" id="bank">
-
-
+                                    </div>
 
 
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-12">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi fuga, nesciunt qui similique quod enim accusantium magni dolorem ut in illo, necessitatibus aperiam? Error quod officiis asperiores doloremque dolor?
-                        </div>
-
-
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Account Name</label>
-                                <input type="text" name="account_name" id="account_name" class="form-control">
-                            </div>
-                        </div>
-
-
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Account Number</label>
-                                <input type="text" name="account_Number" id="account_Number" class="form-control">
-                            </div>
-                        </div>
-
-
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Bank Name </label>
-                                <input type="text" name="name" id="name" class="form-control">
-                            </div>
-                        </div>
-
-
-
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Branch</label>
-                                <input type="text" name="brance_name" id="brance_name" class="form-control">
-                            </div>
-                        </div>
-
-
-
-
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Payment Date</label>
-                                <input type="date" name="Payment_Date" id="Payment_Date" class="form-control">
-                            </div>
-                        </div>
-
-
-
-
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Amount </label>
-                                <input type="text" name="amount" id="amount1" class="form-control">
-                            </div>
-                        </div>
-
-              {{-- col-md-6 start --}}
-              <div class="col-md-6">
-                <div class="form-group">
-                    <label>Emergency Contact Number</label>
-                    <input type="text" name="Emergency" id="Emergency" class="form-control">
-                </div>
-            </div>
-
-
-               {{-- col-md-6 start --}}
-               <div class="col-md-6">
-                <div class="form-group">
-                    <label>Upload Deposit Slip</label>
-                    <input type="file" name="Slip_Upload" id="Slip_Upload" class="form-control">
-                </div>
-            </div>
-
-
-
-
-                    </div>
-
-
-<div class="col-md-12 row" id="mobleBank">
-
-
-           {{-- col-md-6 start --}}
-           <div class="col-md-12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi fuga, nesciunt qui similique quod enim accusantium magni dolorem ut in illo, necessitatibus aperiam? Error quod officiis asperiores doloremque dolor?
-        </div>
-
-
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Send from (Mobile no.)</label>
-                                <input type="text" name="number" id="number" class="form-control">
-                            </div>
-                        </div>
-
-
-
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Payment Amount</label>
-                                <input type="text" name="amount" id="amount2" class="form-control">
-                            </div>
-                        </div>
-
-
-                          {{-- col-md-6 start --}}
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Transaction ID (TRXID)</label>
-                                <input type="text" name="TRXID" id="TRXID" class="form-control">
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                                <div class="col-sm-12 text-center">
-                                    <div class="g-recaptcha"  data-sitekey="{{ env('GOOGLE_CAPTCHA_SITEKEY') }}"></div>
-                            </div>
-
-
-
-                                <div class="col-sm-12 text-center">
-                                <button type="submit" class="btn btn-primary w-25 mx-auto mt-3" type="submit">Next</button>
-                            </div>
-                            </form>
+                                    <div class="col-sm-12 text-center">
+                                        <button type="submit" class="btn btn-primary w-25 mx-auto mt-3"
+                                            type="submit">Next</button>
+                                    </div>
+                                </form>
                             @endforeach
+                        @elseif($step == 3)
+                            @foreach ($rows as $row)
+                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left row"
+                                    method='post' action="{{ route('memeber.register') }}"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" name="id" id="id" value="{{ $id }}">
+                                    <input type="hidden" name="memberid" id="memberid" value="{{ $id }}">
+                                    <input type="hidden" name="status" id="status" value="Pending">
+                                    <input type="hidden" name="step" id="status" value="4">
 
+                                    {{-- col-md-6 start --}}
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Payment Method</label>
+                                            <select name="method" id="method" class="form-control"
+                                                onchange="bankDetail(this.value)" required>
+                                                <option value="">Select Payment Method</option>
+                                                <option value="Bank">Bank</option>
+                                                <option value="bKash">bKash</option>
+                                                <option value="Rocket">Rocket</option>
+                                                <option value="Nogod">Nogod</option>
+                                                <option value="Upay">Upay</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 row" id="bank">
+
+
+
+
+                                        {{-- col-md-6 start --}}
+                                        <div class="col-md-12">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi fuga,
+                                            nesciunt qui similique quod enim accusantium magni dolorem ut in illo,
+                                            necessitatibus aperiam? Error quod officiis asperiores doloremque dolor?
+                                        </div>
+
+
+                                        {{-- col-md-6 start --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Account Name</label>
+                                                <input type="text" name="account_name" id="account_name"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+
+
+                                        {{-- col-md-6 start --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Account Number</label>
+                                                <input type="text" name="account_Number" id="account_Number"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+
+
+                                        {{-- col-md-6 start --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Bank Name </label>
+                                                <input type="text" name="name" id="name"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+
+
+
+                                        {{-- col-md-6 start --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Branch</label>
+                                                <input type="text" name="brance_name" id="brance_name"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+
+
+
+
+                                        {{-- col-md-6 start --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Payment Date</label>
+                                                <input type="date" name="Payment_Date" id="Payment_Date"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+
+
+
+
+                                        {{-- col-md-6 start --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Amount </label>
+                                                <input type="text" name="amount" id="amount1"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+
+                                        {{-- col-md-6 start --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Emergency Contact Number</label>
+                                                <input type="text" name="Emergency" id="Emergency"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+
+
+                                        {{-- col-md-6 start --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Upload Deposit Slip</label>
+                                                <input type="file" name="Slip_Upload" id="Slip_Upload"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+
+                                    <div class="col-md-12 row" id="mobleBank">
+
+
+                                        {{-- col-md-6 start --}}
+                                        <div class="col-md-12">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi fuga,
+                                            nesciunt qui similique quod enim accusantium magni dolorem ut in illo,
+                                            necessitatibus aperiam? Error quod officiis asperiores doloremque dolor?
+                                        </div>
+
+
+                                        {{-- col-md-6 start --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Send from (Mobile no.)</label>
+                                                <input type="text" name="number" id="number"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+
+
+
+                                        {{-- col-md-6 start --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Payment Amount</label>
+                                                <input type="text" name="amount" id="amount2"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+
+
+                                        {{-- col-md-6 start --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Transaction ID (TRXID)</label>
+                                                <input type="text" name="TRXID" id="TRXID"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-sm-12 text-center">
+                                        <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_CAPTCHA_SITEKEY') }}">
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-sm-12 text-center">
+                                        <button type="submit" class="btn btn-primary w-25 mx-auto mt-3"
+                                            type="submit">Next</button>
+                                    </div>
+                                </form>
+                            @endforeach
                         @endif
                     </div>
 
@@ -790,19 +818,19 @@
         //   getunioun
         function referencechange(refid) {
 
-// alert(id)
+            // alert(id)
 
 
 
             $.ajax({
                 type: 'get',
-                url: '/refdata?id='+refid,
+                url: '/refdata?id=' + refid,
                 success: function(data) {
 
 
-document.getElementById('referDetails').innerHTML=data;
+                    document.getElementById('referDetails').innerHTML = data;
 
-                    console.log(data);
+                    // console.log(data);
                 }
             });
         }
@@ -844,9 +872,9 @@ document.getElementById('referDetails').innerHTML=data;
 
         @if (session()->has('msg'))
             Swal.fire({
-            icon: "{{ session('icon') }}",
-            title: "{{ session('iconstatus') }}",
-            text: "{{ session('msg') }}",
+                icon: "{{ session('icon') }}",
+                title: "{{ session('iconstatus') }}",
+                text: "{{ session('msg') }}",
             })
         @endif
 
@@ -858,28 +886,27 @@ document.getElementById('referDetails').innerHTML=data;
         });
 
 
-        function bankDetail(value){
+        function bankDetail(value) {
 
             var bank = document.getElementById('bank');
             var mobleBank = document.getElementById('mobleBank');
             var amount1 = document.getElementById('amount1');
             var amount2 = document.getElementById('amount2');
 
-           if(value==''){
-            bank.style.display="none"
-            mobleBank.style.display="none"
-           }else if(value=='Bank'){
-            bank.style.display="flex"
-            mobleBank.style.display="none"
-            amount1.disabled = false
-            amount2.disabled = true
-           }else{
-            bank.style.display="none"
-            mobleBank.style.display="flex"
-            amount2.disabled = false
-            amount1.disabled = true
-           }
+            if (value == '') {
+                bank.style.display = "none"
+                mobleBank.style.display = "none"
+            } else if (value == 'Bank') {
+                bank.style.display = "flex"
+                mobleBank.style.display = "none"
+                amount1.disabled = false
+                amount2.disabled = true
+            } else {
+                bank.style.display = "none"
+                mobleBank.style.display = "flex"
+                amount2.disabled = false
+                amount1.disabled = true
+            }
         }
-
     </script>
 @endsection

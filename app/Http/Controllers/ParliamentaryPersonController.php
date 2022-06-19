@@ -29,7 +29,12 @@ class ParliamentaryPersonController extends Controller
         $Table =  DB::getSchemaBuilder()->getColumnListing('parliamentary__people');
         $row = [];
         foreach ($Table as $rowname) {
+            if($rowname=='ps_history'){
+                $row[$rowname] = json_encode([["Positon"=>"","Session_Start"=>"","Session_End"=>""]]);
+            }else{
+
                 $row[$rowname] = '';
+            }
         };
         $rows[] = $row;
         $object = json_decode(json_encode($rows));
@@ -142,9 +147,10 @@ class ParliamentaryPersonController extends Controller
      * @param  \App\Models\Parliamentary_Person  $parliamentary_Person
      * @return \Illuminate\Http\Response
      */
-    public function edit(Parliamentary_Person $parliamentary_Person)
+    public function edit(Parliamentary_Person $parliamentary_Person,$id)
     {
-        //
+        $data['rows'] = DB::table('parliamentary__people')->where('id',$id)->get();
+        return view('admin/Parliamentary_Person.add',$data);
     }
 
     /**

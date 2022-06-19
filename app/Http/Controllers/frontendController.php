@@ -132,6 +132,7 @@ class frontendController extends Controller
 
         echo "
             <h6 style='margin-top:10px' > <b> Name </b> : ".$data[0]->name." </h5>
+            <h6 style='margin-top:10px' > <b> Mobile </b> : ".$data[0]->phoneNumber." </h5>
             <h6 style='margin-top:10px' > <b> Father Name</b> : ".$data[0]->father_name." </h5>
             <h6 style='margin-top:10px' > <b> Address </b> : ".$data[0]->Present_address." </h5>
 
@@ -775,10 +776,9 @@ if($step==4){
 
 
             $wh3 = [
-                'name'=>$name,
                 'status'=>'Active',
             ];
-            $count3 = member::where($wh3)->count();
+            $count3 = member::where($wh3)->where('name', 'LIKE', "%{$name}%")->count();
 
 
 
@@ -803,11 +803,11 @@ if($step==4){
                 $upszilass= $name;
                 $data['totalcount'] = member::where($wh2)->count();
             }else if($count3>0){
-                $data['rows'] = member::where($wh3)
+                $data['rows'] = member::where($wh3)->where('name', 'LIKE', "%{$name}%")
                 ->orderBy('id', 'DESC')->get();
 
                 $namess= $name;
-                $data['totalcount'] = member::where($wh3)->count();
+                $data['totalcount'] = member::where($wh3)->where('name', 'LIKE', "%{$name}%")->count();
             }else{
                 $data['rows'] = member::where($wh2)
                 ->orderBy('id', 'DESC')->get();

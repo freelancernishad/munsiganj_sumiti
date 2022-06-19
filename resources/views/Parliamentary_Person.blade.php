@@ -115,8 +115,8 @@
                                             class="proItem d-flex justify-content-between">
                                             <div class="item1">
                                                 {{ int_en_to_bn(str_pad($i, 2, '0', STR_PAD_LEFT)) }}।</div>
-                                            <div class="item3"><img width="100px"
-                                                    src="{{ $rowsMaleLIst->image }}" alt=""></div>
+                                            <div class="item3"><img width="100px" src="{{ $rowsMaleLIst->image }}"
+                                                    alt=""></div>
                                             <div class="item4">{{ $rowsMaleLIst->name }}</div>
                                             <div class="item4">{{ $ps_history[0]->Positon }}</div>
                                             <div class="item4">
