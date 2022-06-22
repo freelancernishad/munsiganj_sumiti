@@ -167,7 +167,7 @@
 
                         <div class="addtoany_share_save_container addtoany_content addtoany_content_bottom">
                             <div class="a2a_kit a2a_kit_size_32 addtoany_list"
-                                data-a2a-url="{{ url('/blogs?blog=' . $singleBlogList->id) }}"
+                                data-a2a-url="{{ url('/blogs?blog=' . $singleBlogList->postid) }}"
                                 data-a2a-title="{{ $singleBlogList->title }}" style="line-height: 32px;">
                                 <a class="a2a_button_facebook" href="" title="Facebook" rel="nofollow noopener"
                                     target="_blank">
