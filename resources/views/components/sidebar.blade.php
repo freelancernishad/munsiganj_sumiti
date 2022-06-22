@@ -30,7 +30,7 @@
         <li><a href="{{ url('ParliamentaryPersons') }}">Parliamentary Persons Profile</a></li> <!--  new -->
         <li><a href="{{ url('info/Agricaltural Info') }}">Agricaltural Info</a></li>
         <li><a href="{{ url('info/Medical Info') }}">Medical Info</a></li>
-        <li><a href="{{ url('info/Cultural') }}">Cultural</a></li>
+        <li><a href="{{ url('info/Cultural Info') }}">Cultural</a></li>
         <li><a href="{{ url('info/Sports') }}">Sports</a></li>
         <li><a href="{{ url('info/Tourism') }}">Tourism</a></li>
         <li><a href="{{ url('info/Local Language') }}">Local Language</a></li>
@@ -46,7 +46,8 @@
         }
     </style>
     <div class="adcontact">
-        <img width="100%" src="{{ asset(env('FILE_PATH') . 'logo/' . settings()[0]->Advertisement) }}" alt="">
+        <img width="100%" src="{{ asset(env('FILE_PATH') . 'logo/' . settings()[0]->Advertisement) }}"
+            alt="">
 
 
 
