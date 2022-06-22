@@ -30,7 +30,7 @@
 
                     @foreach ($infoDetails as $list)
                         <div class="about_header position-relative mt-3">
-                            <img width="100%" src="{{ $list->image }}" alt="">
+                            <img width="100%" src="{{ asset($list->image) }}" alt="">
                             <div class="about_head">
                                 <h5 class="about_title">{{ $list->title }}</h5>
                                 <p class="about_sort">{{ $list->short_description }}</p>
