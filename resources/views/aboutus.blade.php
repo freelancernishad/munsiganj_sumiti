@@ -50,7 +50,8 @@
 
                     ?>
                     <a target="_blank" href="{{ $adtoplist->url }}">
-                        <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adtoplist->name) }}" alt="" />
+                        <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adtoplist->name) }}"
+                            alt="" />
                     </a>
                     <?php
                     }
@@ -106,7 +107,8 @@
 
     ?>
                                 <a target="_blank" href="{{ $adrlist->url }}">
-                                    <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adrlist->name) }}" alt="" />
+                                    <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adrlist->name) }}"
+                                        alt="" />
                                 </a>
                                 <?php
     }
@@ -148,7 +150,8 @@
 
                 <div class="col-md-6 mt-3">
                     <a target="_blank" href="{{ $adbottomlist->url }}">
-                        <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adbottomlist->name) }}" alt="" />
+                        <img width="100%" src="{{ asset(env('FILE_PATH') . 'ad/' . $adbottomlist->name) }}"
+                            alt="" />
                     </a>
                 </div>
                 <?php
@@ -162,4 +165,9 @@
         </section>
 
     </main>
+
+    <script>
+        var pageTitle = document.title;
+        document.title = pageTitle + ' || About Us';
+    </script>
 @endsection
