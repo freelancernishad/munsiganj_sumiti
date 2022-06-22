@@ -35,31 +35,32 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-@php
-    $i = 1;
-    @endphp
+                                    @php
+                                        $i = 1;
+                                    @endphp
                                     @foreach ($rows as $row)
+                                        <tr>
+                                            <td>{{ $i++ }}</td>
+                                            <td>{{ $row->title }}</td>
+                                            <td>{{ $row->category }}</td>
 
-                                    <tr>
-                                        <td>{{ $i++ }}</td>
-                                        <td>{{ $row->title }}</td>
-                                        <td>{{ $row->category }}</td>
-
-                                        <td><img width="100%" src="{{ $row->image }}" alt="" /></td>
-                                        <td>
-                                            <a href="{{ route('gallery.edit', ['gallery' => $row->id]) }}" class="btn btn-info">Edit</a>
-
-
-                                            <form method="post" action="{{ route('gallery.destroy', ['gallery' => $row->id]) }}">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
+                                            <td><img width="100%" src="{{ asset($row->image) }}" alt="" /></td>
+                                            <td>
+                                                <a href="{{ route('gallery.edit', ['gallery' => $row->id]) }}"
+                                                    class="btn btn-info">Edit</a>
 
 
+                                                <form method="post"
+                                                    action="{{ route('gallery.destroy', ['gallery' => $row->id]) }}">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
 
-                                        </td>
-                                    </tr>
+
+
+                                            </td>
+                                        </tr>
                                     @endforeach
 
 
