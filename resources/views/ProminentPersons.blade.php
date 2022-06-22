@@ -46,7 +46,7 @@
 
                             <div class="col-md-6">
 
-                                <h5 class="proHead mt-3">বিক্রামপুরের পুরুষ ব্যক্তিত্ব</h5>
+                                <h5 class="proHead mt-3">বিক্রমপুরের পুরুষ ব্যক্তিত্ব</h5>
 
 
                                 <div class="prolist">
@@ -77,7 +77,7 @@
 
                             <div class="col-md-6">
 
-                                <h5 class="proHead mt-3">বিক্রামপরের নারী ব্যক্তিত্ব</h5>
+                                <h5 class="proHead mt-3">বিক্রমপুরের নারী ব্যক্তিত্ব</h5>
 
 
                                 <div class="prolist">

@@ -98,7 +98,7 @@
 
                             <div class="col-md-12">
 
-                                <h5 class="proHead mt-3" style="background: #EC071A;color:white;">বিক্রামপুরের সংসদ
+                                <h5 class="proHead mt-3" style="background: #EC071A;color:white;">বিক্রমপুরের সংসদ
                                     সদস্যগণ</h5>
 
 

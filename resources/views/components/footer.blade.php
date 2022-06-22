@@ -87,7 +87,7 @@
     <i class="fas fa-arrow-up"></i>
 </button> --}}
 <!-- cookie warning toast -->
-<div class="fixed-bottom p-4">
+<div class="fixed-bottom" id="cookiepopup">
     <div class="toast bg-dark text-white w-100 mw-100" role="alert" data-autohide="false">
         <div class="toast-body p-4 d-flex flex-column" style="background: #ff0000;">
             <h4>Cookie Warning</h4>
@@ -114,11 +114,12 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+</script>
 <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.4.1/swiper-bundle.min.js"
-integrity="sha512-pY1t/ADgTwbfGbw0+mRGd33EroA5YgRUWhQNFpPIAdBzyoSb38FsFrf4wBTcS3GFPdTfgtpRrbGCkdl2C2OXYA=="
-crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-pY1t/ADgTwbfGbw0+mRGd33EroA5YgRUWhQNFpPIAdBzyoSb38FsFrf4wBTcS3GFPdTfgtpRrbGCkdl2C2OXYA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
 
 
@@ -178,9 +179,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     })
 
 
+    var allowCookies = getCookie("allowCookies");
 
-
-
+    if (allowCookies != null) {
+        document.getElementById('cookiepopup').style.display = "none"
+    }
 
 
 
@@ -234,8 +237,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.js"
-integrity="sha512-vUJTqeDCu0MKkOhuI83/MEX5HSNPW+Lw46BA775bAWIp1Zwgz3qggia/t2EnSGB9GoS2Ln6npDmbJTdNhHy1Yw=="
-crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-vUJTqeDCu0MKkOhuI83/MEX5HSNPW+Lw46BA775bAWIp1Zwgz3qggia/t2EnSGB9GoS2Ln6npDmbJTdNhHy1Yw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="{{ asset('admin_asset/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('admin_asset/js/dataTables.bootstrap.min.js') }}"></script>
@@ -350,7 +353,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+</script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
     function viewdatas(url) {
