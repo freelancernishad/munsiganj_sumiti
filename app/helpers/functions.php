@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\DB;
-
+// use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
 
 function month_en_to_bn($month)
 {
@@ -57,6 +58,21 @@ if($country== $value->name){
     }
 
 
+    function base64($Image)
+    {
+    //  return $Image;
+
+        if(File::exists($Image)){
+
+            $Image= $Image;
+        }else{
+            $Image= 'image.png';
+
+        }
+
+    $ext =  pathinfo($Image, PATHINFO_EXTENSION);;
+        return $b64image = "data:image/$ext;base64,".base64_encode(file_get_contents($Image));
+    }
 
 
     function settings(){

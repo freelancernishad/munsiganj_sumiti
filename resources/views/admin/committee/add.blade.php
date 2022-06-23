@@ -53,8 +53,8 @@
                                 </div>
 
                                 <div class="col-md-5 mb-3"></div>
-                                <div class="col-md-2 mb-3"><img width="100%" id="imagepreview" src="{{ $row->image }}"
-                                        alt=""></div>
+                                <div class="col-md-2 mb-3"><img width="100%" id="imagepreview"
+                                        src="{{ base64($row->image) }}" alt=""></div>
                                 <div class="col-md-5 mb-3"></div>
 
 

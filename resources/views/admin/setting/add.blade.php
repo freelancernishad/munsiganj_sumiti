@@ -224,6 +224,8 @@
                                         <label>Site Logo</label>
                                         <input type="file" class="form-control" name="logo" id="logo">
                                     </div>
+                                    <img width="100%" id="imagepreview"
+                                        src="/{{ env('FILE_PATH') . 'logo/' . $row->logo }}" alt="">
 
                                 </div>
 
