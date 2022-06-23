@@ -163,6 +163,9 @@
                                         Prominent Persons </span></a></li>
                                 <li><a href="{{ route('Parliamentary_Person.index') }}"><i class="fas fa-home"></i>
                                         Parliamentary Person </span></a></li>
+                                <li><a href="{{ route('contacts.index') }}"><i class="fas fa-home"></i> Contacts
+                                        </span></a></li>
+
                                 <li><a href="{{ route('setting.index') }}"><i class="fas fa-home"></i> Settings
                                         </span></a></li>
                             </ul>

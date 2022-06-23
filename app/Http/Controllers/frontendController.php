@@ -9,6 +9,7 @@ use App\Models\District;
 use App\Models\Thana;
 use App\Models\blog;
 use App\Models\BlogComment;
+use App\Models\Contact;
 use App\Models\PostRead;
 use App\Models\ProminentPersons;
 use App\Models\MemberShipPament;
@@ -94,6 +95,19 @@ class frontendController extends Controller
         $data['adr'] =   DB::table('ads')->where($whr)->get();
         return view('contact', $data);
     }
+
+public function contact_submit(Request $request)
+{
+    // $data=  $request->all();
+$data = $request->except('_method', '_token');
+     Contact::create($data);
+    return redirect('contact')->with('message','Thank you for Contact with us,We Will contact With you very soon.');
+}
+
+
+
+
+
     public function register_gide()
     {
         $whb = [

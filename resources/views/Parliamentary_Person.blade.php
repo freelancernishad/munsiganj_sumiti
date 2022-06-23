@@ -130,6 +130,32 @@
                                         <?php $i++; ?>
                                     @endforeach
 
+                                    <?php $ii = 1; ?>
+                                    @foreach ($rowsFemale as $rowsFemaleLIst)
+                                        @php
+                                            $ps_history = $rowsFemaleLIst->ps_history;
+                                            $ps_history = json_decode($ps_history);
+                                            rsort($ps_history);
+                                        @endphp
+                                        <a href="{{ url('ParliamentaryPersons?i=' . $rowsFemaleLIst->id) }}"
+                                            class="proItem d-flex justify-content-between">
+                                            <div class="item1">
+                                                {{ int_en_to_bn(str_pad($ii, 2, '0', STR_PAD_LEFT)) }}।</div>
+                                            <div class="item3"><img width="100px" src="{{ $rowsFemaleLIst->image }}"
+                                                    alt=""></div>
+                                            <div class="item4">{{ $rowsFemaleLIst->name }}</div>
+                                            <div class="item4">{{ $ps_history[0]->Positon }}</div>
+                                            <div class="item4">
+
+                                                {{ int_en_to_bn($ps_history[0]->Session_Start) }}-{{ int_en_to_bn($ps_history[0]->Session_End) }}
+                                                সংসদ</div>
+
+                                        </a>
+
+
+                                        <?php $ii++; ?>
+                                    @endforeach
+
                                 </div>
 
                             </div>

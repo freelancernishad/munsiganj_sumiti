@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\AdController;
 use App\Http\Controllers\frontendController;
 use App\Http\Controllers\Admin\BlogController;
@@ -59,6 +60,7 @@ Route::get('member/{disteict}/{upozila}', [frontendController::class, 'member_se
 Route::get('register-gide', [frontendController::class, 'register_gide'])->name('register_gide');
 Route::get('register', [frontendController::class, 'register'])->name('member.form');
 Route::get('contact', [frontendController::class, 'contact'])->name('contact');
+Route::post('contact', [frontendController::class, 'contact_submit'])->name('contact_submit');
 Route::get('blogs', [frontendController::class, 'blogs'])->name('blogs');
 Route::get('blogs/{category}', [frontendController::class, 'blogs_category'])->name('blogs_category');
 Route::get('blogs/single/{id}', [frontendController::class, 'blogs_single'])->name('blogs_single');
@@ -97,6 +99,7 @@ Route::resources([
     'admin/HistoryPlace' => HistoryPlaceController::class,
     'admin/ProminentPersons' => ProminentPersonsController::class,
     'admin/Parliamentary_Person' => ParliamentaryPersonController::class,
+    'admin/contacts' => ContactController::class,
     'admin/setting' => SettingController::class,
 ]);
 Route::get('admin/check/category/{category}', [CategoryController::class, 'checkCategory']);
