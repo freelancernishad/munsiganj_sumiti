@@ -12,6 +12,7 @@ use App\Models\Thana;
 use Illuminate\Support\Str;
 use App\Models\MemberShipPament;
 use App\Exports\MembersExport;
+use App\Imports\membersImport;
 use Maatwebsite\Excel\Facades\Excel;
 class MemberController extends Controller
 {
@@ -253,4 +254,26 @@ if($count>0){
         $member->delete();
         return redirect()->back();
     }
+
+
+    public function importExportView()
+    {
+       return view('admin/members.import');
+    }
+
+    public function import()
+    {
+        Excel::import(new membersImport,request()->file('file'));
+
+        return redirect('/admin/members?status=active');
+    }
+
+
+
+
+
+
+
+
+
 }

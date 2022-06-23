@@ -38,6 +38,9 @@ use App\Http\Controllers\RegistrationGuidelineController;
 //     return view('index');
 // });
 // country api
+
+
+
 Route::post('/getdistrict', [countryApiController::class, 'getdistrict']);
 Route::post('/getthana', [countryApiController::class, 'getthana']);
 Route::post('/getunioun', [countryApiController::class, 'getunioun']);
@@ -73,6 +76,16 @@ Auth::routes([
     'login' => false,
 ]);
 // Auth::routes();
+
+
+
+
+
+Route::get('/admin/members/import', [MemberController::class, 'importExportView'])->name('members.import');
+Route::post('/import', [MemberController::class, 'import'])->name('import');
+
+
+
 Route::get('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'index'])->name('login');
 Route::post('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
