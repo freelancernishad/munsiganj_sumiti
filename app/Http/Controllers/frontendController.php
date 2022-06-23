@@ -520,7 +520,10 @@ if($memberid==''){
             $data['infoDetails'] = DB::table('allinfos')->where('title', $title)->get();
             return view('infodetails', $data);
         } else {
-            return redirect()->back();
+
+            return view('404');
+
+            // return redirect()->back();
         }
     }
 
