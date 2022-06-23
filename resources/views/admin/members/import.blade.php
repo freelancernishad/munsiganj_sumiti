@@ -29,7 +29,8 @@
 
                     <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <input type="file" name="file" class="form-control">
+                        <input type="file" name="file" class="form-control"
+                            accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,.xlsx,.xls,.csv">
                         <br>
                         <button class="btn btn-success">Import Data</button>
                         {{-- <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a> --}}
