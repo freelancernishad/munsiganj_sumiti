@@ -108,7 +108,7 @@ class HistoryPlaceController extends Controller
     {
         $data['cate'] = historyCategory::orderBy('id','DESC')->get();
         $data['rows'] = DB::table('history_places')->where('id',$id)->get();
-        return view('admin/HistoryPlace.add',$data);
+        return view('admin/historyPlace.add',$data);
     }
 
     /**
